@@ -1,36 +1,36 @@
-Site,Number times sampeld
-Primary sump,6144
-After Drumfilter,1074
-Broodstock,34
-Nursery SV,20
-Amaza 5 settlement,17
-Sec Swirler,15
-Settlement,15
-Kelp catchers,13
-Hatchery,11
-Nursery,11
-Inside Settlement,10
-Seaview,5
-Larvae,4
-Nursery office,4
-Seaview effluent,4
-Bergsig,3
-Bergsig effluent,3
-Nursery under roof,3
-Sea water,3
-Amaza,2
-Broodstock before filter,1
-Broodstock filter,1
-Nursery Row10,1
-Nursery Row11,1
-Seaview Farm,1
-Seaview farm (Top-up),1
-Seaview Recirc,1
-Settlement inside,1
-Settlement outside,1
-Settlement tank,1
-Sula,1
-Sula recirc,1
-SV 1,1
-SV 2,1
-Not providede in original database,1
+Site,Number times sampeld,Order
+Primary sump,6144,
+After Drumfilter,1074,
+Broodstock,34,
+Nursery SV,20,
+Amaza 5 settlement,17,
+Sec Swirler,15,
+Settlement,15,
+Kelp catchers,13,
+Hatchery,11,
+Nursery,11,
+Inside Settlement,10,
+Seaview,5,
+Larvae,4,
+Nursery office,4,
+Seaview effluent,4,
+Bergsig,3,
+Bergsig effluent,3,
+Nursery under roof,3,
+Sea water,3,
+Amaza,2,
+Broodstock before filter,1,
+Broodstock filter,1,
+Nursery Row10,1,
+Nursery Row11,1,
+Seaview Farm,1,
+Seaview farm (Top-up),1,
+Seaview Recirc,1,
+Settlement inside,1,
+Settlement outside,1,
+Settlement tank,1,
+Sula,1,
+Sula recirc,1,
+SV 1,1,
+SV 2,1,
+Not providede in original database,1,

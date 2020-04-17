@@ -1,4 +1,4 @@
-
+library(zoo)
 #### Read in data and fix date#####
 # read in data
 all <- read.csv("All data/Final data/Final cleaned data all.csv")
@@ -64,8 +64,15 @@ dat %>%
 
  
 ####
+dat %>% 
+  filter(Classification != "Various") %>% 
+  filter(Site == "Primary sump") %>% 
+  group_by(month, months, year, monthYear, Classification) %>% 
+  summarise(numSp = n_distinct(Species)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = year, fill = numSp)) + 
+  geom_tile()
 
-
+###
 
 
 
@@ -142,6 +149,10 @@ day_group %>%
 all_shannonT <- all %>% 
   filter(Classification != "Various" & Site == "Primary sump")
 
+# SUmmarise for time period (Day)
+# COnvert long to wide and replace NA with 0
+# extract grouping columns
+# do diversity
 
 # summarise average cell density with specific groups
 ## For diveristy by MONTH

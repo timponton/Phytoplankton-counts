@@ -20,6 +20,7 @@ library(data.table)
 library(tidyr)
 library(plotly)
 library(patchwork)
+library(vegan)
 ```
 
 ```{r, include= FALSE}
@@ -169,5 +170,31 @@ ggplotly(ggplot(data = big, aes(x = dateTime, y = totalCells, col = Site)) +
   geom_line())
 ```
 
+
+The difference in average Cells/L found After the Drumfilter compared to Primary sump
+
+```{r}
+#### what species occur when after drumfilter > primary filter ####
+
+ggplotly(df %>% 
+  group_by(Date) %>% 
+  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  ungroup() %>% 
+  group_by(Date, Site, Species) %>% 
+  summarise(meanC = mean(Cells.L, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Site, values_from = meanC, 
+              values_fill = list(meanC = 0)) %>% 
+  group_by(Date, Species) %>% 
+  filter(`After Drumfilter` > `Primary sump`, `Primary sump` != 0) %>% 
+  mutate(difference = `After Drumfilter` - `Primary sump`) %>% 
+  group_by(Species) %>% 
+  summarise(totalMean = mean(difference)) %>% 
+  ggplot(., aes(x = reorder(Species, totalMean), y = totalMean)) +
+    geom_point() +
+    coord_flip())
+```
 
 
