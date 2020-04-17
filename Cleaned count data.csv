@@ -1,0 +1,3814 @@
+Sample,Species,Classification,Threat,Cells Counted ,Frames counted,Total Count
+19,Alexandrium,Dinoflagellate,, 52 ,20,2600
+20,Alexandrium,Dinoflagellate,, 52 ,20,2600
+21,Alexandrium,Dinoflagellate,, 23 ,20,1150
+1311,Alexandrium,Dinoflagellate,,1,32,156
+1313,Alexandrium,Dinoflagellate,,1,20,250
+1278,Alexandrium carterae,Dinoflagellate,,1,150,33
+1279,Alexandrium catanella,Dinoflagellate,,1,100,50
+1280,Amphidinium carterae,Dinoflagellate,,1,100,50
+1282,Amphidinium carterae,Dinoflagellate,,1,150,33
+1297,Amphidinium carterae,Dinoflagellate,,1,50,100
+1305,Amphidinium carterae,Dinoflagellate,,1,35,143
+1324,Amphidinium carterae,Dinoflagellate,,2,43,233
+1258,Amylax triacantha,Dinoflagellate,,1,200,25
+1266,Amylax triacantha,Dinoflagellate,,1,200,25
+1280,Amylax triacantha,Dinoflagellate,,1,100,50
+214,Asterionellopsis glacialis,Diatom,, 1 ,20,50
+1235,Asterionellopsis glacialis,Diatom,,4,40,100
+1243,Asterionellopsis glacialis,Diatom,,1,100,10
+1247,Asterionellopsis glacialis,Diatom,,1,328,3
+1266,Asterionellopsis glacialis,Diatom,,1,200,25
+1269,Asterionellopsis glacialis,Diatom,,1,150,33
+1272,Asterionellopsis glacialis,Diatom,,3,110,136
+1275,Asterionellopsis glacialis,Diatom,,4,110,182
+1276,Asterionellopsis glacialis,Diatom,,1,150,33
+1282,Asterionellopsis glacialis,Diatom,,3,150,100
+1290,Asterionellopsis glacialis,Diatom,,1,100,50
+1296,Asterionellopsis glacialis,Diatom,,2,48,208
+1299,Asterionellopsis glacialis,Diatom,,1,43,116
+1300,Asterionellopsis glacialis,Diatom,,1,43,116
+1301,Asterionellopsis glacialis,Diatom,,1,42,119
+1305,Asterionellopsis glacialis,Diatom,,4,35,571
+1306,Asterionellopsis glacialis,Diatom,,17,52,1635
+1307,Asterionellopsis glacialis,Diatom,,7,57,614
+1308,Asterionellopsis glacialis,Diatom,,110,50,11000
+1309,Asterionellopsis glacialis,Diatom,,105,50,10500
+1310,Asterionellopsis glacialis,Diatom,,146,54,13519
+1311,Asterionellopsis glacialis,Diatom,,62,32,9688
+1313,Asterionellopsis glacialis,Diatom,,43,20,10750
+1315,Asterionellopsis glacialis,Diatom,,77,72,5347
+1317,Asterionellopsis glacialis,Diatom,,15,53,1415
+1321,Asterionellopsis glacialis,Diatom,,2,47,213
+1322,Asterionellopsis glacialis,Diatom,,2,39,256
+1323,Asterionellopsis glacialis,Diatom,,1,36,139
+1325,Asterionellopsis glacialis,Diatom,,5,47,532
+1331,Asterionellopsis glacialis,Diatom,,2,67,149
+1188,Bacillaria,Diatom,,1,20,250
+1192,Bacillaria,Diatom,,3,20,750
+1194,Bacillaria,Diatom,,7,20,1750
+1199,Bacillaria,Diatom,,109,125,4360
+1200,Bacillaria,Diatom,,1,125,40
+1202,Bacillaria,Diatom,,2,63,159
+1203,Bacillaria,Diatom,,1,45,111
+1217,Bacillaria,Diatom,,1,20,250
+1219,Bacillaria,Diatom,,9,20,2250
+1220,Bacillaria,Diatom,,3,20,750
+1222,Bacillaria,Diatom,,4,20,1000
+1229,Bacillaria,Diatom,,3,40,375
+1241,Bacillaria,Diatom,,4,100,40
+1280,Bacillaria,Diatom,,1,100,50
+1291,Bacillaria,Diatom,,2,50,200
+1292,Bacillaria,Diatom,,3,33,455
+1294,Bacillaria,Diatom,,1,49,102
+1295,Bacillaria,Diatom,,1,39,128
+1296,Bacillaria,Diatom,,2,48,208
+1297,Bacillaria,Diatom,,4,50,400
+1298,Bacillaria,Diatom,,3,23,652
+1299,Bacillaria,Diatom,,2,43,233
+1300,Bacillaria,Diatom,,6,43,698
+1301,Bacillaria,Diatom,,3,42,357
+1302,Bacillaria,Diatom,,7,40,875
+1303,Bacillaria,Diatom,,1,36,139
+1305,Bacillaria,Diatom,,1,35,143
+1306,Bacillaria,Diatom,,3,52,288
+1307,Bacillaria,Diatom,,1,57,88
+1308,Bacillaria,Diatom,,3,50,300
+1309,Bacillaria,Diatom,,3,50,300
+1310,Bacillaria,Diatom,,2,54,185
+1311,Bacillaria,Diatom,,1,32,156
+1315,Bacillaria,Diatom,,10,72,694
+1319,Bacillaria,Diatom,,1,47,106
+1320,Bacillaria,Diatom,,2,33,303
+1321,Bacillaria,Diatom,,1,47,106
+1323,Bacillaria,Diatom,,1,36,139
+1332,Bacillaria,Diatom,,1,25,200
+390,Bacillaria paxillifera,Diatom,, 2 ,20,100
+395,Bacillaria paxillifera,Diatom,, 1 ,20,50
+396,Bacillaria paxillifera,Diatom,, 1 ,20,50
+398,Bacillaria paxillifera,Diatom,, 1 ,20,50
+399,Bacillaria paxillifera,Diatom,, 15 ,20,750
+401,Bacillaria paxillifera,Diatom,, 3 ,20,150
+402,Bacillaria paxillifera,Diatom,, 2 ,20,100
+1325,Bacillaria paxillifera,Diatom,,3,47,319
+1326,Bacillaria paxillifera,Diatom,,5,41,610
+1327,Bacillaria paxillifera,Diatom,,2,30,333
+1328,Bacillaria paxillifera,Diatom,,1,29,172
+1329,Bacillaria paxillifera,Diatom,,1,41,122
+1330,Bacillaria paxillifera,Diatom,,1,28,179
+1331,Bacillaria paxillifera,Diatom,,1,67,75
+1329,Biddulphia,Diatom,,1,41,122
+1294,Boreadium pisiforme,Dinoflagellate,,1,49,102
+1295,Boreadium pisiforme,Dinoflagellate,,1,39,128
+1297,Boreadium pisiforme,Dinoflagellate,,1,50,100
+2,Ceratium,Dinoflagellate,, 2 ,20,100
+34,Ceratium,Dinoflagellate,, 1 ,20,50
+1228,Ceratium candelabrum,Dinoflagellate,,1,7,714
+21,Ceratium dens,Dinoflagellate,, 3 ,20,150
+22,Ceratium dens,Dinoflagellate,, 1 ,20,50
+35,Ceratium dens,Dinoflagellate,, 1 ,20,50
+36,Ceratium dens,Dinoflagellate,, 1 ,20,50
+48,Ceratium dens,Dinoflagellate,, 1 ,20,50
+51,Ceratium dens,Dinoflagellate,, 1 ,20,50
+64,Ceratium dens,Dinoflagellate,, 1 ,20,50
+65,Ceratium dens,Dinoflagellate,, 1 ,20,50
+175,Ceratium dens,Dinoflagellate,, 1 ,20,50
+192,Ceratium dens,Dinoflagellate,, 1 ,20,50
+206,Ceratium dens,Dinoflagellate,, 2 ,20,100
+207,Ceratium dens,Dinoflagellate,, 2 ,20,100
+209,Ceratium dens,Dinoflagellate,, 1 ,20,50
+238,Ceratium dens,Dinoflagellate,, 2 ,20,100
+239,Ceratium dens,Dinoflagellate,, 1 ,20,50
+256,Ceratium dens,Dinoflagellate,, 2 ,20,100
+257,Ceratium dens,Dinoflagellate,, 1 ,20,50
+263,Ceratium dens,Dinoflagellate,, 2 ,20,100
+267,Ceratium dens,Dinoflagellate,, 2 ,20,100
+269,Ceratium dens,Dinoflagellate,, 2 ,20,100
+272,Ceratium dens,Dinoflagellate,, 2 ,20,100
+273,Ceratium dens,Dinoflagellate,, 1 ,20,50
+298,Ceratium dens,Dinoflagellate,, 1 ,20,50
+376,Ceratium dens,Dinoflagellate,, 1 ,20,50
+389,Ceratium dens,Dinoflagellate,, 1 ,20,50
+391,Ceratium dens,Dinoflagellate,, 1 ,20,50
+394,Ceratium dens,Dinoflagellate,, 1 ,20,50
+400,Ceratium dens,Dinoflagellate,, 1 ,20,50
+402,Ceratium dens,Dinoflagellate,, 1 ,20,50
+403,Ceratium dens,Dinoflagellate,, 1 ,20,50
+572,Ceratium dens,Dinoflagellate,, 1 ,20,50
+574,Ceratium dens,Dinoflagellate,, 1 ,20,50
+959,Ceratium dens,Dinoflagellate,,4,20,1000
+960,Ceratium dens,Dinoflagellate,,1,20,250
+961,Ceratium dens,Dinoflagellate,,2,20,500
+964,Ceratium dens,Dinoflagellate,,2,20,500
+965,Ceratium dens,Dinoflagellate,,2,20,500
+966,Ceratium dens,Dinoflagellate,,1,20,250
+980,Ceratium dens,Dinoflagellate,,1,20,250
+988,Ceratium dens,Dinoflagellate,,1,20,250
+1008,Ceratium dens,Dinoflagellate,,1,20,250
+1020,Ceratium dens,Dinoflagellate,,1,20,250
+1022,Ceratium dens,Dinoflagellate,,1,20,250
+1236,Ceratium dens,Dinoflagellate,,1,30,33
+1,Ceratium furca,Dinoflagellate,, 1 ,20,50
+2,Ceratium furca,Dinoflagellate,, 6 ,20,300
+3,Ceratium furca,Dinoflagellate,, 2 ,20,100
+4,Ceratium furca,Dinoflagellate,, 3 ,20,150
+5,Ceratium furca,Dinoflagellate,, 2 ,20,100
+6,Ceratium furca,Dinoflagellate,, 5 ,20,250
+7,Ceratium furca,Dinoflagellate,, 2 ,20,100
+8,Ceratium furca,Dinoflagellate,, 11 ,20,550
+9,Ceratium furca,Dinoflagellate,, 11 ,20,550
+10,Ceratium furca,Dinoflagellate,, 10 ,20,500
+11,Ceratium furca,Dinoflagellate,, 12 ,20,600
+12,Ceratium furca,Dinoflagellate,, 4 ,20,200
+13,Ceratium furca,Dinoflagellate,, 5 ,20,250
+14,Ceratium furca,Dinoflagellate,, 2 ,20,100
+15,Ceratium furca,Dinoflagellate,, 2 ,20,100
+17,Ceratium furca,Dinoflagellate,, 23 ,20,1150
+18,Ceratium furca,Dinoflagellate,, 10 ,20,500
+19,Ceratium furca,Dinoflagellate,, 13 ,20,650
+20,Ceratium furca,Dinoflagellate,, 40 ,20,2000
+21,Ceratium furca,Dinoflagellate,, 115 ,20,5750
+22,Ceratium furca,Dinoflagellate,, 456 ,20,22800
+23,Ceratium furca,Dinoflagellate,, 87 ,20,4350
+24,Ceratium furca,Dinoflagellate,, 17 ,20,850
+26,Ceratium furca,Dinoflagellate,, 1 ,20,50
+27,Ceratium furca,Dinoflagellate,, 11 ,20,550
+28,Ceratium furca,Dinoflagellate,, 6 ,20,300
+28,Ceratium furca,Dinoflagellate,, 8 ,20,400
+29,Ceratium furca,Dinoflagellate,, 11 ,20,550
+30,Ceratium furca,Dinoflagellate,, 6 ,20,300
+31,Ceratium furca,Dinoflagellate,, 1 ,20,50
+32,Ceratium furca,Dinoflagellate,, 6 ,20,300
+33,Ceratium furca,Dinoflagellate,, 9 ,20,450
+34,Ceratium furca,Dinoflagellate,, 5 ,20,250
+35,Ceratium furca,Dinoflagellate,, 24 ,20,1200
+36,Ceratium furca,Dinoflagellate,, 24 ,20,1200
+37,Ceratium furca,Dinoflagellate,, 10 ,20,500
+38,Ceratium furca,Dinoflagellate,, 5 ,20,250
+39,Ceratium furca,Dinoflagellate,, 3 ,20,150
+40,Ceratium furca,Dinoflagellate,, 2 ,20,100
+43,Ceratium furca,Dinoflagellate,, 5 ,20,250
+45,Ceratium furca,Dinoflagellate,, 8 ,20,400
+46,Ceratium furca,Dinoflagellate,, 2 ,20,100
+47,Ceratium furca,Dinoflagellate,, 3 ,20,150
+48,Ceratium furca,Dinoflagellate,, 4 ,20,200
+49,Ceratium furca,Dinoflagellate,, 2 ,20,100
+50,Ceratium furca,Dinoflagellate,, 2 ,20,100
+51,Ceratium furca,Dinoflagellate,, 10 ,20,500
+52,Ceratium furca,Dinoflagellate,, 24 ,20,1200
+54,Ceratium furca,Dinoflagellate,, 17 ,20,850
+56,Ceratium furca,Dinoflagellate,, 27 ,20,1350
+57,Ceratium furca,Dinoflagellate,, 24 ,20,1200
+58,Ceratium furca,Dinoflagellate,, 32 ,20,1600
+59,Ceratium furca,Dinoflagellate,, 15 ,20,750
+63,Ceratium furca,Dinoflagellate,, 14 ,20,700
+64,Ceratium furca,Dinoflagellate,, 31 ,20,1550
+65,Ceratium furca,Dinoflagellate,, 21 ,20,1050
+76,Ceratium furca,Dinoflagellate,, 21 ,20,1050
+77,Ceratium furca,Dinoflagellate,, 32 ,20,1600
+78,Ceratium furca,Dinoflagellate,, 12 ,20,600
+79,Ceratium furca,Dinoflagellate,, 4 ,20,200
+80,Ceratium furca,Dinoflagellate,, 10 ,20,500
+113,Ceratium furca,Dinoflagellate,, 4 ,20,200
+114,Ceratium furca,Dinoflagellate,, 2 ,20,100
+115,Ceratium furca,Dinoflagellate,, 1 ,20,50
+148,Ceratium furca,Dinoflagellate,, 5 ,20,250
+149,Ceratium furca,Dinoflagellate,, 1 ,20,50
+150,Ceratium furca,Dinoflagellate,, 3 ,20,150
+152,Ceratium furca,Dinoflagellate,, 4 ,20,200
+153,Ceratium furca,Dinoflagellate,, 3 ,20,150
+154,Ceratium furca,Dinoflagellate,, 2 ,20,100
+155,Ceratium furca,Dinoflagellate,, 1 ,20,50
+156,Ceratium furca,Dinoflagellate,, 1 ,20,50
+160,Ceratium furca,Dinoflagellate,, 1 ,20,50
+162,Ceratium furca,Dinoflagellate,, 1 ,20,50
+171,Ceratium furca,Dinoflagellate,, 5 ,20,250
+172,Ceratium furca,Dinoflagellate,, 5 ,20,250
+173,Ceratium furca,Dinoflagellate,, 6 ,20,300
+175,Ceratium furca,Dinoflagellate,, 19 ,20,950
+178,Ceratium furca,Dinoflagellate,, 5 ,20,250
+186,Ceratium furca,Dinoflagellate,, 15 ,20,750
+187,Ceratium furca,Dinoflagellate,, 9 ,20,450
+189,Ceratium furca,Dinoflagellate,, 3 ,20,150
+190,Ceratium furca,Dinoflagellate,, 1 ,20,50
+191,Ceratium furca,Dinoflagellate,, 7 ,20,350
+192,Ceratium furca,Dinoflagellate,, 5 ,20,250
+193,Ceratium furca,Dinoflagellate,, 6 ,20,300
+194,Ceratium furca,Dinoflagellate,, 9 ,20,450
+195,Ceratium furca,Dinoflagellate,, 3 ,20,150
+196,Ceratium furca,Dinoflagellate,, 10 ,20,500
+197,Ceratium furca,Dinoflagellate,, 3 ,20,150
+202,Ceratium furca,Dinoflagellate,, 3 ,20,150
+203,Ceratium furca,Dinoflagellate,, 7 ,20,350
+206,Ceratium furca,Dinoflagellate,, 6 ,20,300
+207,Ceratium furca,Dinoflagellate,, 7 ,20,350
+209,Ceratium furca,Dinoflagellate,, 6 ,20,300
+212,Ceratium furca,Dinoflagellate,, 12 ,20,600
+213,Ceratium furca,Dinoflagellate,, 1 ,20,50
+214,Ceratium furca,Dinoflagellate,, 7 ,20,350
+228,Ceratium furca,Dinoflagellate,, 13 ,20,650
+229,Ceratium furca,Dinoflagellate,, 5 ,20,250
+230,Ceratium furca,Dinoflagellate,, 7 ,20,350
+231,Ceratium furca,Dinoflagellate,, 1 ,20,50
+234,Ceratium furca,Dinoflagellate,, 4 ,20,200
+236,Ceratium furca,Dinoflagellate,, 7 ,20,350
+238,Ceratium furca,Dinoflagellate,, 2 ,20,100
+238,Ceratium furca,Dinoflagellate,, 4 ,20,200
+239,Ceratium furca,Dinoflagellate,, 4 ,20,200
+255,Ceratium furca,Dinoflagellate,, 4 ,20,200
+256,Ceratium furca,Dinoflagellate,, 4 ,20,200
+257,Ceratium furca,Dinoflagellate,, 2 ,20,100
+258,Ceratium furca,Dinoflagellate,, 78 ,20,3900
+260,Ceratium furca,Dinoflagellate,, 16 ,20,800
+263,Ceratium furca,Dinoflagellate,, 24 ,20,1200
+264,Ceratium furca,Dinoflagellate,, 8 ,20,400
+267,Ceratium furca,Dinoflagellate,, 52 ,20,2600
+268,Ceratium furca,Dinoflagellate,, 8 ,20,400
+269,Ceratium furca,Dinoflagellate,, 30 ,20,1500
+270,Ceratium furca,Dinoflagellate,, 16 ,20,800
+271,Ceratium furca,Dinoflagellate,, 11 ,20,550
+272,Ceratium furca,Dinoflagellate,, 10 ,20,500
+273,Ceratium furca,Dinoflagellate,, 17 ,20,850
+274,Ceratium furca,Dinoflagellate,, 10 ,20,500
+275,Ceratium furca,Dinoflagellate,, 8 ,20,400
+276,Ceratium furca,Dinoflagellate,, 4 ,20,200
+298,Ceratium furca,Dinoflagellate,, 23 ,6,3833
+302,Ceratium furca,Dinoflagellate,, 30 ,20,1500
+340,Ceratium furca,Dinoflagellate,, 37 ,10,3700
+342,Ceratium furca,Dinoflagellate,, 45 ,10,4500
+343,Ceratium furca,Dinoflagellate,, 44 ,10,4400
+344,Ceratium furca,Dinoflagellate,, 20 ,10,2000
+345,Ceratium furca,Dinoflagellate,, 48 ,10,4800
+346,Ceratium furca,Dinoflagellate,, 15 ,10,1500
+347,Ceratium furca,Dinoflagellate,, 36 ,10,3600
+348,Ceratium furca,Dinoflagellate,, 14 ,10,1400
+349,Ceratium furca,Dinoflagellate,, 63 ,10,6300
+350,Ceratium furca,Dinoflagellate,, 16 ,10,1600
+351,Ceratium furca,Dinoflagellate,, 64 ,10,6400
+352,Ceratium furca,Dinoflagellate,, 7 ,10,700
+353,Ceratium furca,Dinoflagellate,, 124 ,5,24800
+354,Ceratium furca,Dinoflagellate,, 97 ,5,19400
+355,Ceratium furca,Dinoflagellate,, 80 ,5,16000
+356,Ceratium furca,Dinoflagellate,, 3 ,5,600
+357,Ceratium furca,Dinoflagellate,, 212 ,5,42400
+359,Ceratium furca,Dinoflagellate,, 21 ,5,4200
+360,Ceratium furca,Dinoflagellate,, 1 ,5,200
+374,Ceratium furca,Dinoflagellate,, 2 ,20,100
+376,Ceratium furca,Dinoflagellate,, 8 ,20,400
+378,Ceratium furca,Dinoflagellate,, 9 ,20,450
+379,Ceratium furca,Dinoflagellate,, 1 ,20,50
+380,Ceratium furca,Dinoflagellate,, 21 ,20,1050
+381,Ceratium furca,Dinoflagellate,, 15 ,20,750
+382,Ceratium furca,Dinoflagellate,, 15 ,20,750
+383,Ceratium furca,Dinoflagellate,, 14 ,20,700
+384,Ceratium furca,Dinoflagellate,, 38 ,20,1900
+385,Ceratium furca,Dinoflagellate,, 36 ,20,1800
+386,Ceratium furca,Dinoflagellate,, 12 ,20,600
+387,Ceratium furca,Dinoflagellate,, 9 ,20,450
+388,Ceratium furca,Dinoflagellate,, 23 ,20,1150
+389,Ceratium furca,Dinoflagellate,, 5 ,20,250
+390,Ceratium furca,Dinoflagellate,, 7 ,20,350
+391,Ceratium furca,Dinoflagellate,, 13 ,20,650
+392,Ceratium furca,Dinoflagellate,, 15 ,20,750
+393,Ceratium furca,Dinoflagellate,, 3 ,20,150
+394,Ceratium furca,Dinoflagellate,, 2 ,20,100
+395,Ceratium furca,Dinoflagellate,, 2 ,20,100
+396,Ceratium furca,Dinoflagellate,, 3 ,20,150
+398,Ceratium furca,Dinoflagellate,, 6 ,20,300
+399,Ceratium furca,Dinoflagellate,, 1 ,20,50
+400,Ceratium furca,Dinoflagellate,, 15 ,20,750
+401,Ceratium furca,Dinoflagellate,, 6 ,20,300
+402,Ceratium furca,Dinoflagellate,, 19 ,20,950
+403,Ceratium furca,Dinoflagellate,, 22 ,20,1100
+538,Ceratium furca,Dinoflagellate,, 3 ,10,300
+539,Ceratium furca,Dinoflagellate,, 9 ,10,900
+570,Ceratium furca,Dinoflagellate,, 3 ,20,150
+571,Ceratium furca,Dinoflagellate,, 3 ,20,150
+572,Ceratium furca,Dinoflagellate,, 3 ,20,150
+573,Ceratium furca,Dinoflagellate,, 1 ,20,50
+574,Ceratium furca,Dinoflagellate,, 11 ,20,550
+575,Ceratium furca,Dinoflagellate,, 5 ,20,250
+956,Ceratium furca,Dinoflagellate,,29,20,7250
+957,Ceratium furca,Dinoflagellate,,19,20,4750
+958,Ceratium furca,Dinoflagellate,,15,20,3750
+959,Ceratium furca,Dinoflagellate,,25,20,6250
+960,Ceratium furca,Dinoflagellate,,18,20,4500
+961,Ceratium furca,Dinoflagellate,,18,20,4500
+962,Ceratium furca,Dinoflagellate,,16,20,4000
+963,Ceratium furca,Dinoflagellate,,32,20,8000
+964,Ceratium furca,Dinoflagellate,,18,20,4500
+965,Ceratium furca,Dinoflagellate,,19,20,4750
+966,Ceratium furca,Dinoflagellate,,16,20,4000
+967,Ceratium furca,Dinoflagellate,,14,20,3500
+968,Ceratium furca,Dinoflagellate,,6,20,1500
+969,Ceratium furca,Dinoflagellate,HAB,3,20,750
+970,Ceratium furca,Dinoflagellate,,1,20,250
+971,Ceratium furca,Dinoflagellate,,1,20,250
+972,Ceratium furca,Dinoflagellate,,4,20,1000
+973,Ceratium furca,Dinoflagellate,,10,20,2500
+974,Ceratium furca,Dinoflagellate,,10,20,2500
+975,Ceratium furca,Dinoflagellate,,9,20,2250
+976,Ceratium furca,Dinoflagellate,,6,20,1500
+977,Ceratium furca,Dinoflagellate,,21,20,5250
+978,Ceratium furca,Dinoflagellate,,10,20,2500
+979,Ceratium furca,Dinoflagellate,,6,20,1500
+980,Ceratium furca,Dinoflagellate,,76,20,19000
+981,Ceratium furca,Dinoflagellate,,37,20,9250
+984,Ceratium furca,Dinoflagellate,,214,20,53500
+985,Ceratium furca,Dinoflagellate,,109,20,27250
+986,Ceratium furca,Dinoflagellate,,160,20,40000
+987,Ceratium furca,Dinoflagellate,,66,20,16500
+988,Ceratium furca,Dinoflagellate,,71,20,17750
+989,Ceratium furca,Dinoflagellate,,31,20,7750
+992,Ceratium furca,Dinoflagellate,,28,20,7000
+993,Ceratium furca,Dinoflagellate,,18,20,4500
+994,Ceratium furca,Dinoflagellate,,36,20,9000
+995,Ceratium furca,Dinoflagellate,,21,20,5250
+996,Ceratium furca,Dinoflagellate,,51,20,12750
+997,Ceratium furca,Dinoflagellate,,37,20,9250
+998,Ceratium furca,Dinoflagellate,,30,20,7500
+1004,Ceratium furca,Dinoflagellate,,22,20,5500
+1005,Ceratium furca,Dinoflagellate,,145,20,36250
+1006,Ceratium furca,Dinoflagellate,,136,20,34000
+1008,Ceratium furca,Dinoflagellate,,70,20,17500
+1009,Ceratium furca,Dinoflagellate,,13,5,13000
+1011,Ceratium furca,Dinoflagellate,,26,20,6500
+1012,Ceratium furca,Dinoflagellate,,16,20,4000
+1014,Ceratium furca,Dinoflagellate,,23,20,5750
+1017,Ceratium furca,Dinoflagellate,,26,20,6500
+1019,Ceratium furca,Dinoflagellate,,22,20,5500
+1020,Ceratium furca,Dinoflagellate,,72,20,18000
+1021,Ceratium furca,Dinoflagellate,,13,20,3250
+1022,Ceratium furca,Dinoflagellate,,38,20,9500
+1023,Ceratium furca,Dinoflagellate,,5,20,1250
+1024,Ceratium furca,Dinoflagellate,,17,20,4250
+1025,Ceratium furca,Dinoflagellate,,6,20,1500
+1025,Ceratium furca,Dinoflagellate,,20,20,5000
+1026,Ceratium furca,Dinoflagellate,,9,20,2250
+1027,Ceratium furca,Dinoflagellate,,18,20,4500
+1043,Ceratium furca,Dinoflagellate,,97,20,24250
+1055,Ceratium furca,Dinoflagellate,,13,20,3250
+1109,Ceratium furca,Dinoflagellate,,5,20,1250
+1110,Ceratium furca,Dinoflagellate,,1,20,250
+1111,Ceratium furca,Dinoflagellate,,33,20,8250
+1112,Ceratium furca,Dinoflagellate,,17,20,4250
+1115,Ceratium furca,Dinoflagellate,,404,20,101000
+1116,Ceratium furca,Dinoflagellate,,190,20,47500
+1117,Ceratium furca,Dinoflagellate,,39,5,39000
+1118,Ceratium furca,Dinoflagellate,,75,20,18750
+1119,Ceratium furca,Dinoflagellate,,25,20,6250
+1120,Ceratium furca,Dinoflagellate,,22,20,5500
+1121,Ceratium furca,Dinoflagellate,,45,20,11250
+1122,Ceratium furca,Dinoflagellate,,23,5,23000
+1123,Ceratium furca,Dinoflagellate,,19,5,19000
+1124,Ceratium furca,Dinoflagellate,,41,10,20500
+1125,Ceratium furca,Dinoflagellate,,21,10,10500
+1126,Ceratium furca,Dinoflagellate,,48,10,24000
+1127,Ceratium furca,Dinoflagellate,,19,10,9500
+1128,Ceratium furca,Dinoflagellate,,4,5,4000
+1129,Ceratium furca,Dinoflagellate,,5,5,5000
+1130,Ceratium furca,Dinoflagellate,,9,10,4500
+1131,Ceratium furca,Dinoflagellate,,10,10,5000
+1132,Ceratium furca,Dinoflagellate,,2,10,1000
+1133,Ceratium furca,Dinoflagellate,,4,10,2000
+1134,Ceratium furca,Dinoflagellate,,16,10,8000
+1135,Ceratium furca,Dinoflagellate,,1,10,500
+1136,Ceratium furca,Dinoflagellate,,1,20,250
+1137,Ceratium furca,Dinoflagellate,,1,20,250
+1138,Ceratium furca,Dinoflagellate,,51,20,12750
+1139,Ceratium furca,Dinoflagellate,,37,10,18500
+1140,Ceratium furca,Dinoflagellate,,8,20,2000
+1141,Ceratium furca,Dinoflagellate,,27,20,6750
+1142,Ceratium furca,Dinoflagellate,,18,10,9000
+1144,Ceratium furca,Dinoflagellate,,106,20,26500
+1145,Ceratium furca,Dinoflagellate,,56,10,28000
+1146,Ceratium furca,Dinoflagellate,,7,10,3500
+1146,Ceratium furca,Dinoflagellate,,42,10,21000
+1147,Ceratium furca,Dinoflagellate,,6,20,1500
+1148,Ceratium furca,Dinoflagellate,,2,20,500
+1148,Ceratium furca,Dinoflagellate,,23,20,5750
+1149,Ceratium furca,Dinoflagellate,,10,20,2500
+1155,Ceratium furca,Dinoflagellate,,9,5,9000
+1158,Ceratium furca,Dinoflagellate,,11,20,2750
+1159,Ceratium furca,Dinoflagellate,,90,20,22500
+1160,Ceratium furca,Dinoflagellate,,35,20,8750
+1161,Ceratium furca,Dinoflagellate,,31,20,7750
+1167,Ceratium furca,Dinoflagellate,,77,10,38500
+1169,Ceratium furca,Dinoflagellate,,10,15,3333
+1171,Ceratium furca,Dinoflagellate,,21,20,5250
+1172,Ceratium furca,Dinoflagellate,,22,20,5500
+1173,Ceratium furca,Dinoflagellate,,28,20,7000
+1174,Ceratium furca,Dinoflagellate,,13,20,3250
+1175,Ceratium furca,Dinoflagellate,,12,20,3000
+1176,Ceratium furca,Dinoflagellate,,4,20,1000
+1177,Ceratium furca,Dinoflagellate,,5,20,1250
+1186,Ceratium furca,Dinoflagellate,,5,20,1250
+1187,Ceratium furca,Dinoflagellate,,4,20,1000
+1188,Ceratium furca,Dinoflagellate,,6,20,1500
+1191,Ceratium furca,Dinoflagellate,,6,20,1500
+1192,Ceratium furca,Dinoflagellate,,1,20,250
+1194,Ceratium furca,Dinoflagellate,,10,20,2500
+1196,Ceratium furca,Dinoflagellate,,10,20,2500
+1198,Ceratium furca,Dinoflagellate,,5,20,1250
+1199,Ceratium furca,Dinoflagellate,,1,125,40
+1200,Ceratium furca,Dinoflagellate,,1,125,40
+1203,Ceratium furca,Dinoflagellate,,1,45,111
+1209,Ceratium furca,Dinoflagellate,,3,20,750
+1210,Ceratium furca,Dinoflagellate,,2,20,500
+1211,Ceratium furca,Dinoflagellate,,1,20,250
+1216,Ceratium furca,Dinoflagellate,,1,20,250
+1217,Ceratium furca,Dinoflagellate,,1,20,250
+1218,Ceratium furca,Dinoflagellate,,1,20,250
+1219,Ceratium furca,Dinoflagellate,,2,20,500
+1231,Ceratium furca,Dinoflagellate,,1,40,125
+1233,Ceratium furca,Dinoflagellate,,1,40,125
+1235,Ceratium furca,Dinoflagellate,,4,40,100
+1236,Ceratium furca,Dinoflagellate,,1,30,33
+1247,Ceratium furca,Dinoflagellate,,1,328,3
+1249,Ceratium furca,Dinoflagellate,,1,200,25
+1250,Ceratium furca,Dinoflagellate,,2,150,67
+1251,Ceratium furca,Dinoflagellate,,1,200,25
+1252,Ceratium furca,Dinoflagellate,,1,100,50
+1254,Ceratium furca,Dinoflagellate,,3,150,100
+1255,Ceratium furca,Dinoflagellate,,4,150,133
+1257,Ceratium furca,Dinoflagellate,,2,200,50
+1259,Ceratium furca,Dinoflagellate,,4,150,133
+1260,Ceratium furca,Dinoflagellate,,2,150,67
+1261,Ceratium furca,Dinoflagellate,,4,200,100
+1262,Ceratium furca,Dinoflagellate,,2,150,67
+1264,Ceratium furca,Dinoflagellate,,1,150,33
+1265,Ceratium furca,Dinoflagellate,,5,200,125
+1266,Ceratium furca,Dinoflagellate,,1,200,25
+1267,Ceratium furca,Dinoflagellate,,3,150,100
+1268,Ceratium furca,Dinoflagellate,,1,200,25
+1269,Ceratium furca,Dinoflagellate,,1,150,33
+1270,Ceratium furca,Dinoflagellate,,1,150,33
+1271,Ceratium furca,Dinoflagellate,,6,110,273
+1272,Ceratium furca,Dinoflagellate,,6,110,273
+1275,Ceratium furca,Dinoflagellate,,1,110,45
+1279,Ceratium furca,Dinoflagellate,,1,100,50
+1280,Ceratium furca,Dinoflagellate,,1,100,50
+1282,Ceratium furca,Dinoflagellate,,1,150,33
+1283,Ceratium furca,Dinoflagellate,,2,100,100
+1289,Ceratium furca,Dinoflagellate,,1,30,167
+1293,Ceratium furca,Dinoflagellate,,2,66,152
+1294,Ceratium furca,Dinoflagellate,,1,49,102
+1301,Ceratium furca,Dinoflagellate,,1,42,119
+1308,Ceratium furca,Dinoflagellate,,3,50,300
+1309,Ceratium furca,Dinoflagellate,,1,50,100
+1310,Ceratium furca,Dinoflagellate,,1,54,93
+1311,Ceratium furca,Dinoflagellate,,2,32,313
+1313,Ceratium furca,Dinoflagellate,,3,20,750
+1322,Ceratium furca,Dinoflagellate,,3,39,385
+1323,Ceratium furca,Dinoflagellate,,2,36,278
+1324,Ceratium furca,Dinoflagellate,,1,43,116
+1325,Ceratium furca,Dinoflagellate,,6,47,638
+1,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+2,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+3,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+4,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+5,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+6,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+7,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+8,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+9,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+10,Ceratium fusus,Dinoflagellate,, 8 ,20,400
+11,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+12,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+13,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+14,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+15,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+16,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+17,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+18,Ceratium fusus,Dinoflagellate,, 9 ,20,450
+19,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+20,Ceratium fusus,Dinoflagellate,, 24 ,20,1200
+21,Ceratium fusus,Dinoflagellate,, 33 ,20,1650
+22,Ceratium fusus,Dinoflagellate,, 171 ,20,8550
+23,Ceratium fusus,Dinoflagellate,, 14 ,20,700
+24,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+27,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+29,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+30,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+32,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+34,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+35,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+36,Ceratium fusus,Dinoflagellate,, 7 ,20,350
+37,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+38,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+43,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+45,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+46,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+47,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+48,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+49,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+50,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+51,Ceratium fusus,Dinoflagellate,, 10 ,20,500
+52,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+54,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+56,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+57,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+58,Ceratium fusus,Dinoflagellate,, 10 ,20,500
+59,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+63,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+64,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+65,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+76,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+77,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+79,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+80,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+148,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+150,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+174,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+175,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+178,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+186,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+187,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+191,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+192,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+194,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+196,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+197,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+202,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+203,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+206,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+212,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+214,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+228,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+229,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+230,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+254,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+260,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+263,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+272,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+273,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+274,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+275,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+276,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+298,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+302,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+345,Ceratium fusus,Dinoflagellate,, 1 ,10,100
+346,Ceratium fusus,Dinoflagellate,, 1 ,10,100
+347,Ceratium fusus,Dinoflagellate,, 2 ,10,200
+353,Ceratium fusus,Dinoflagellate,, 7 ,5,1400
+358,Ceratium fusus,Dinoflagellate,, 2 ,5,400
+374,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+376,Ceratium fusus,Dinoflagellate,, 7 ,20,350
+378,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+379,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+380,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+382,Ceratium fusus,Dinoflagellate,, 12 ,20,600
+383,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+385,Ceratium fusus,Dinoflagellate,, 8 ,20,400
+385,Ceratium fusus,Dinoflagellate,, 12 ,20,600
+387,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+388,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+389,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+390,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+391,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+392,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+393,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+398,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+399,Ceratium fusus,Dinoflagellate,, 1 ,20,50
+400,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+401,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+402,Ceratium fusus,Dinoflagellate,, 4 ,20,200
+403,Ceratium fusus,Dinoflagellate,, 8 ,20,400
+538,Ceratium fusus,Dinoflagellate,, 5 ,10,500
+539,Ceratium fusus,Dinoflagellate,, 2 ,10,200
+570,Ceratium fusus,Dinoflagellate,, 10 ,20,500
+571,Ceratium fusus,Dinoflagellate,, 3 ,20,150
+572,Ceratium fusus,Dinoflagellate,, 6 ,20,300
+573,Ceratium fusus,Dinoflagellate,, 2 ,20,100
+574,Ceratium fusus,Dinoflagellate,, 10 ,20,500
+575,Ceratium fusus,Dinoflagellate,, 5 ,20,250
+956,Ceratium fusus,Dinoflagellate,,13,20,3250
+957,Ceratium fusus,Dinoflagellate,,14,20,3500
+958,Ceratium fusus,Dinoflagellate,,12,20,3000
+959,Ceratium fusus,Dinoflagellate,,16,20,4000
+960,Ceratium fusus,Dinoflagellate,,6,20,1500
+961,Ceratium fusus,Dinoflagellate,,20,20,5000
+962,Ceratium fusus,Dinoflagellate,,10,20,2500
+963,Ceratium fusus,Dinoflagellate,,7,20,1750
+964,Ceratium fusus,Dinoflagellate,,8,20,2000
+965,Ceratium fusus,Dinoflagellate,,17,20,4250
+966,Ceratium fusus,Dinoflagellate,,4,20,1000
+967,Ceratium fusus,Dinoflagellate,,11,20,2750
+968,Ceratium fusus,Dinoflagellate,,5,20,1250
+970,Ceratium fusus,Dinoflagellate,,1,20,250
+974,Ceratium fusus,Dinoflagellate,,2,20,500
+975,Ceratium fusus,Dinoflagellate,,1,20,250
+980,Ceratium fusus,Dinoflagellate,,9,20,2250
+981,Ceratium fusus,Dinoflagellate,,2,20,500
+984,Ceratium fusus,Dinoflagellate,,12,20,3000
+985,Ceratium fusus,Dinoflagellate,,5,20,1250
+986,Ceratium fusus,Dinoflagellate,,10,20,2500
+987,Ceratium fusus,Dinoflagellate,,9,20,2250
+988,Ceratium fusus,Dinoflagellate,,3,20,750
+989,Ceratium fusus,Dinoflagellate,,2,20,500
+992,Ceratium fusus,Dinoflagellate,,8,20,2000
+993,Ceratium fusus,Dinoflagellate,,3,20,750
+994,Ceratium fusus,Dinoflagellate,,5,20,1250
+995,Ceratium fusus,Dinoflagellate,,4,20,1000
+996,Ceratium fusus,Dinoflagellate,,4,20,1000
+997,Ceratium fusus,Dinoflagellate,,3,20,750
+998,Ceratium fusus,Dinoflagellate,,8,20,2000
+1004,Ceratium fusus,Dinoflagellate,,1,20,250
+1006,Ceratium fusus,Dinoflagellate,,10,20,2500
+1008,Ceratium fusus,Dinoflagellate,,7,20,1750
+1020,Ceratium fusus,Dinoflagellate,,1,20,250
+1021,Ceratium fusus,Dinoflagellate,,3,20,750
+1022,Ceratium fusus,Dinoflagellate,,4,20,1000
+1023,Ceratium fusus,Dinoflagellate,,4,20,1000
+1024,Ceratium fusus,Dinoflagellate,,1,20,250
+1025,Ceratium fusus,Dinoflagellate,,2,20,500
+1025,Ceratium fusus,Dinoflagellate,,5,20,1250
+1026,Ceratium fusus,Dinoflagellate,,2,20,500
+1027,Ceratium fusus,Dinoflagellate,,4,20,1000
+1043,Ceratium fusus,Dinoflagellate,,108,20,27000
+1055,Ceratium fusus,Dinoflagellate,,7,20,1750
+1109,Ceratium fusus,Dinoflagellate,,4,20,1000
+1110,Ceratium fusus,Dinoflagellate,,1,20,250
+1111,Ceratium fusus,Dinoflagellate,,5,20,1250
+1116,Ceratium fusus,Dinoflagellate,,1,20,250
+1118,Ceratium fusus,Dinoflagellate,,2,20,500
+1120,Ceratium fusus,Dinoflagellate,,5,20,1250
+1121,Ceratium fusus,Dinoflagellate,,34,20,8500
+1124,Ceratium fusus,Dinoflagellate,,18,10,9000
+1125,Ceratium fusus,Dinoflagellate,,9,10,4500
+1126,Ceratium fusus,Dinoflagellate,,16,10,8000
+1127,Ceratium fusus,Dinoflagellate,,12,10,6000
+1130,Ceratium fusus,Dinoflagellate,,19,10,9500
+1131,Ceratium fusus,Dinoflagellate,,9,10,4500
+1132,Ceratium fusus,Dinoflagellate,,3,10,1500
+1133,Ceratium fusus,Dinoflagellate,,2,10,1000
+1134,Ceratium fusus,Dinoflagellate,,2,10,1000
+1135,Ceratium fusus,Dinoflagellate,,6,10,3000
+1136,Ceratium fusus,Dinoflagellate,,3,20,750
+1137,Ceratium fusus,Dinoflagellate,,1,20,250
+1138,Ceratium fusus,Dinoflagellate,,17,20,4250
+1139,Ceratium fusus,Dinoflagellate,,14,10,7000
+1140,Ceratium fusus,Dinoflagellate,,3,20,750
+1141,Ceratium fusus,Dinoflagellate,,17,20,4250
+1142,Ceratium fusus,Dinoflagellate,,8,10,4000
+1144,Ceratium fusus,Dinoflagellate,,97,20,24250
+1145,Ceratium fusus,Dinoflagellate,,50,10,25000
+1146,Ceratium fusus,Dinoflagellate,,11,10,5500
+1146,Ceratium fusus,Dinoflagellate,,54,10,27000
+1147,Ceratium fusus,Dinoflagellate,,2,20,500
+1148,Ceratium fusus,Dinoflagellate,,71,20,17750
+1149,Ceratium fusus,Dinoflagellate,,16,20,4000
+1155,Ceratium fusus,Dinoflagellate,,66,5,66000
+1158,Ceratium fusus,Dinoflagellate,,46,20,11500
+1159,Ceratium fusus,Dinoflagellate,,110,20,27500
+1160,Ceratium fusus,Dinoflagellate,,95,20,23750
+1161,Ceratium fusus,Dinoflagellate,,73,20,18250
+1167,Ceratium fusus,Dinoflagellate,,133,10,66500
+1169,Ceratium fusus,Dinoflagellate,,12,15,4000
+1171,Ceratium fusus,Dinoflagellate,,11,20,2750
+1172,Ceratium fusus,Dinoflagellate,,8,20,2000
+1173,Ceratium fusus,Dinoflagellate,,9,20,2250
+1174,Ceratium fusus,Dinoflagellate,,7,20,1750
+1175,Ceratium fusus,Dinoflagellate,,8,20,2000
+1176,Ceratium fusus,Dinoflagellate,,4,20,1000
+1177,Ceratium fusus,Dinoflagellate,,0,20,0
+1186,Ceratium fusus,Dinoflagellate,,2,20,500
+1188,Ceratium fusus,Dinoflagellate,,4,20,1000
+1190,Ceratium fusus,Dinoflagellate,,2,20,500
+1191,Ceratium fusus,Dinoflagellate,,1,20,250
+1193,Ceratium fusus,Dinoflagellate,,2,20,500
+1196,Ceratium fusus,Dinoflagellate,,3,20,750
+1203,Ceratium fusus,Dinoflagellate,,1,45,111
+1259,Ceratium fusus,Dinoflagellate,,2,150,67
+1308,Ceratium fusus,Dinoflagellate,,1,50,100
+1309,Ceratium fusus,Dinoflagellate,,1,50,100
+1246,Ceratium horridum,Dinoflagellate,,1,24,42
+1278,Ceratium horridum,Dinoflagellate,,1,150,33
+1313,Ceratium horridum,Dinoflagellate,,1,20,250
+1126,Ceratium lineatum,Dinoflagellate,,1,10,500
+1325,Ceratium lineatum,Dinoflagellate,,1,47,106
+1262,Ceratium longipes,Dinoflagellate,,1,150,33
+1,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+10,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+11,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+12,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+18,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+19,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+20,Ceratium tripos,Dinoflagellate,, 7 ,20,350
+21,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+22,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+23,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+27,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+28,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+31,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+32,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+35,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+36,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+37,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+43,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+47,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+51,Ceratium tripos,Dinoflagellate,, 3 ,20,150
+52,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+63,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+64,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+175,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+193,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+207,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+213,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+272,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+275,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+380,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+396,Ceratium tripos,Dinoflagellate,, 2 ,20,100
+401,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+538,Ceratium tripos,Dinoflagellate,, 1 ,10,100
+570,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+573,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+575,Ceratium tripos,Dinoflagellate,, 1 ,20,50
+996,Ceratium tripos,Dinoflagellate,,1,20,250
+1130,Ceratium tripos,Dinoflagellate,,1,10,500
+1207,Ceratium tripos,Dinoflagellate,,1,11,455
+1212,Ceratium tripos,Dinoflagellate,,2,20,500
+1218,Ceratium tripos,Dinoflagellate,,2,20,500
+1243,Ceratium tripos,Dinoflagellate,,1,100,10
+1,Chaetoceros,Diatom,, 2 ,20,100
+2,Chaetoceros,Diatom,, 6 ,20,300
+3,Chaetoceros,Diatom,, 3 ,20,150
+4,Chaetoceros,Diatom,, 1 ,20,50
+5,Chaetoceros,Diatom,, 5 ,20,250
+6,Chaetoceros,Diatom,, 9 ,20,450
+7,Chaetoceros,Diatom,, 1 ,20,50
+8,Chaetoceros,Diatom,, 7 ,20,350
+10,Chaetoceros,Diatom,, 4 ,20,200
+11,Chaetoceros,Diatom,, 4 ,20,200
+15,Chaetoceros,Diatom,, 3 ,20,150
+16,Chaetoceros,Diatom,, 4 ,20,200
+17,Chaetoceros,Diatom,, 24 ,20,1200
+18,Chaetoceros,Diatom,, 69 ,20,3450
+19,Chaetoceros,Diatom,, 45 ,20,2250
+20,Chaetoceros,Diatom,, 56 ,20,2800
+21,Chaetoceros,Diatom,, 17 ,20,850
+22,Chaetoceros,Diatom,, 15 ,20,750
+23,Chaetoceros,Diatom,, 19 ,20,950
+27,Chaetoceros,Diatom,, 1 ,20,50
+31,Chaetoceros,Diatom,, 2 ,20,100
+32,Chaetoceros,Diatom,, 3 ,20,150
+33,Chaetoceros,Diatom,, 5 ,20,250
+34,Chaetoceros,Diatom,, 2 ,20,100
+35,Chaetoceros,Diatom,, 1 ,20,50
+36,Chaetoceros,Diatom,, 2 ,20,100
+37,Chaetoceros,Diatom,, 2 ,20,100
+38,Chaetoceros,Diatom,, 2 ,20,100
+39,Chaetoceros,Diatom,, 5 ,20,250
+40,Chaetoceros,Diatom,, 5 ,20,250
+41,Chaetoceros,Diatom,, 1 ,20,50
+42,Chaetoceros,Diatom,, 4 ,20,200
+43,Chaetoceros,Diatom,, 2 ,20,100
+46,Chaetoceros,Diatom,, 2 ,20,100
+47,Chaetoceros,Diatom,, 4 ,20,200
+48,Chaetoceros,Diatom,, 13 ,20,650
+49,Chaetoceros,Diatom,, 3 ,20,150
+50,Chaetoceros,Diatom,, 11 ,20,550
+51,Chaetoceros,Diatom,, 10 ,20,500
+63,Chaetoceros,Diatom,, 5 ,20,250
+148,Chaetoceros,Diatom,, 2 ,20,100
+149,Chaetoceros,Diatom,, 4 ,20,200
+150,Chaetoceros,Diatom,, 3 ,20,150
+152,Chaetoceros,Diatom,, 3 ,20,150
+154,Chaetoceros,Diatom,, 2 ,20,100
+164,Chaetoceros,Diatom,, 1 ,20,50
+186,Chaetoceros,Diatom,, 5 ,20,250
+187,Chaetoceros,Diatom,, 3 ,20,150
+192,Chaetoceros,Diatom,, 5 ,20,250
+193,Chaetoceros,Diatom,, 2 ,20,100
+194,Chaetoceros,Diatom,, 2 ,20,100
+195,Chaetoceros,Diatom,, 3 ,20,150
+196,Chaetoceros,Diatom,, 1 ,20,50
+197,Chaetoceros,Diatom,, 1 ,20,50
+202,Chaetoceros,Diatom,, 7 ,20,350
+203,Chaetoceros,Diatom,, 2 ,20,100
+206,Chaetoceros,Diatom,, 7 ,20,350
+213,Chaetoceros,Diatom,, 1 ,20,50
+214,Chaetoceros,Diatom,, 2 ,20,100
+228,Chaetoceros,Diatom,, 7 ,20,350
+230,Chaetoceros,Diatom,, 4 ,20,200
+232,Chaetoceros,Diatom,, 3 ,20,150
+236,Chaetoceros,Diatom,, 10 ,20,500
+237,Chaetoceros,Diatom,, 3 ,20,150
+238,Chaetoceros,Diatom,, 6 ,20,300
+239,Chaetoceros,Diatom,, 4 ,20,200
+256,Chaetoceros,Diatom,, 1 ,20,50
+264,Chaetoceros,Diatom,, 1 ,20,50
+267,Chaetoceros,Diatom,, 6 ,20,300
+269,Chaetoceros,Diatom,, 2 ,20,100
+270,Chaetoceros,Diatom,, 1 ,20,50
+271,Chaetoceros,Diatom,, 5 ,20,250
+272,Chaetoceros,Diatom,, 2 ,20,100
+273,Chaetoceros,Diatom,, 4 ,20,200
+274,Chaetoceros,Diatom,, 1 ,20,50
+275,Chaetoceros,Diatom,, 2 ,20,100
+377,Chaetoceros,Diatom,, 1 ,20,50
+388,Chaetoceros,Diatom,, 3 ,20,150
+389,Chaetoceros,Diatom,, 1 ,20,50
+390,Chaetoceros,Diatom,, 3 ,20,150
+392,Chaetoceros,Diatom,, 1 ,20,50
+393,Chaetoceros,Diatom,, 3 ,20,150
+395,Chaetoceros,Diatom,, 3 ,20,150
+396,Chaetoceros,Diatom,, 3 ,20,150
+399,Chaetoceros,Diatom,, 1 ,20,50
+402,Chaetoceros,Diatom,, 1 ,20,50
+959,Chaetoceros,Diatom,MECH,1,20,250
+1043,Chaetoceros,Diatom,,1,20,250
+1112,Chaetoceros,Diatom,,6,20,1500
+1124,Chaetoceros,Diatom,,1,10,500
+1125,Chaetoceros,Diatom,,1,10,500
+1134,Chaetoceros,Diatom,,1,10,500
+1136,Chaetoceros,Diatom,,2,20,500
+1139,Chaetoceros,Diatom,,1,10,500
+1217,Chaetoceros,Diatom,,4,20,1000
+1221,Chaetoceros,Diatom,,1,20,250
+1227,Chaetoceros,Diatom,,1,8,625
+1229,Chaetoceros,Diatom,,1,40,125
+1230,Chaetoceros,Diatom,,8,40,1000
+1231,Chaetoceros,Diatom,,8,40,1000
+1232,Chaetoceros,Diatom,,2,40,250
+1233,Chaetoceros,Diatom,,1,40,125
+1234,Chaetoceros,Diatom,,3,40,375
+1235,Chaetoceros,Diatom,,6,40,150
+1236,Chaetoceros,Diatom,,4,30,133
+1238,Chaetoceros,Diatom,,4,10,400
+1239,Chaetoceros,Diatom,,3,9,333
+1240,Chaetoceros,Diatom,,3,9,333
+1241,Chaetoceros,Diatom,,41,100,410
+1242,Chaetoceros,Diatom,,57,50,1140
+1243,Chaetoceros,Diatom,,26,100,260
+1244,Chaetoceros,Diatom,,112,200,560
+1245,Chaetoceros,Diatom,,123,100,1230
+1246,Chaetoceros,Diatom,,13,24,542
+1247,Chaetoceros,Diatom,,177,328,540
+1248,Chaetoceros,Diatom,,9,24,375
+1249,Chaetoceros,Diatom,,18,200,450
+1250,Chaetoceros,Diatom,,3,150,100
+1251,Chaetoceros,Diatom,,3,200,75
+1252,Chaetoceros,Diatom,,4,100,200
+1253,Chaetoceros,Diatom,,12,150,400
+1254,Chaetoceros,Diatom,,2,150,67
+1255,Chaetoceros,Diatom,,16,150,533
+1256,Chaetoceros,Diatom,,14,100,700
+1257,Chaetoceros,Diatom,,40,200,1000
+1258,Chaetoceros,Diatom,,16,200,400
+1259,Chaetoceros,Diatom,,31,150,1033
+1260,Chaetoceros,Diatom,,7,150,233
+1261,Chaetoceros,Diatom,,1,200,25
+1262,Chaetoceros,Diatom,,13,150,433
+1263,Chaetoceros,Diatom,,35,150,1167
+1264,Chaetoceros,Diatom,,71,150,2367
+1265,Chaetoceros,Diatom,,9,200,225
+1266,Chaetoceros,Diatom,,9,200,225
+1267,Chaetoceros,Diatom,,9,150,300
+1268,Chaetoceros,Diatom,,2,200,50
+1269,Chaetoceros,Diatom,,4,150,133
+1270,Chaetoceros,Diatom,,22,150,733
+1271,Chaetoceros,Diatom,,57,110,2591
+1272,Chaetoceros,Diatom,,28,110,1273
+1273,Chaetoceros,Diatom,,13,150,433
+1274,Chaetoceros,Diatom,,12,110,545
+1275,Chaetoceros,Diatom,,19,110,864
+1276,Chaetoceros,Diatom,,15,150,500
+1277,Chaetoceros,Diatom,,12,37,1622
+1278,Chaetoceros,Diatom,,4,150,133
+1279,Chaetoceros,Diatom,,3,100,150
+1280,Chaetoceros,Diatom,,9,100,450
+1281,Chaetoceros,Diatom,,6,100,300
+1282,Chaetoceros,Diatom,,1,150,33
+1283,Chaetoceros,Diatom,,4,100,200
+1284,Chaetoceros,Diatom,,1,50,100
+1289,Chaetoceros,Diatom,,12,30,2000
+1290,Chaetoceros,Diatom,,8,100,400
+1291,Chaetoceros,Diatom,,1,50,100
+1292,Chaetoceros,Diatom,,14,33,2121
+1293,Chaetoceros,Diatom,,32,66,2424
+1294,Chaetoceros,Diatom,,6,49,612
+1295,Chaetoceros,Diatom,,4,39,513
+1296,Chaetoceros,Diatom,,11,48,1146
+1298,Chaetoceros,Diatom,,2,23,435
+1299,Chaetoceros,Diatom,,1,43,116
+1300,Chaetoceros,Diatom,,1,43,116
+1301,Chaetoceros,Diatom,,5,42,595
+1302,Chaetoceros,Diatom,,2,40,250
+1303,Chaetoceros,Diatom,,3,36,417
+1305,Chaetoceros,Diatom,,1,35,143
+1306,Chaetoceros,Diatom,,20,52,1923
+1307,Chaetoceros,Diatom,,9,57,789
+1308,Chaetoceros,Diatom,,122,50,12200
+1309,Chaetoceros,Diatom,,141,50,14100
+1310,Chaetoceros,Diatom,,247,54,22870
+1311,Chaetoceros,Diatom,,198,32,30938
+1313,Chaetoceros,Diatom,,200,20,50000
+1315,Chaetoceros,Diatom,,148,72,10278
+1317,Chaetoceros,Diatom,,64,53,6038
+1319,Chaetoceros,Diatom,,7,47,745
+1320,Chaetoceros,Diatom,,11,33,1667
+1321,Chaetoceros,Diatom,,21,47,2234
+1322,Chaetoceros,Diatom,,9,39,1154
+1323,Chaetoceros,Diatom,,4,36,556
+1325,Chaetoceros,Diatom,,3,47,319
+1326,Chaetoceros,Diatom,,2,41,244
+1328,Chaetoceros,Diatom,,1,29,172
+1330,Chaetoceros,Diatom,,1,28,179
+1331,Chaetoceros,Diatom,,4,67,299
+1275,Chaetoceros conyolutus,Diatom,,5,110,227
+1111,Chaetoceros debilis,Diatom,,3,20,750
+1274,Chaetoceros didymus,Diatom,,6,110,273
+1275,Chaetoceros didymus,Diatom,,2,110,91
+1275,Chaetoceros radicans,Diatom,,4,110,182
+154,Chaetoceros similis,Diatom,, 5 ,20,250
+155,Chaetoceros similis,Diatom,, 3 ,20,150
+156,Chaetoceros similis,Diatom,, 1 ,20,50
+1112,Chaetoceros similis,Diatom,,1,20,250
+1274,Chaetoceros similis,Diatom,,4,110,182
+1275,Chaetoceros similis,Diatom,,3,110,136
+1200,Closterium navicula,Diatom,,2,125,80
+1244,Coscinodiscus,Diatom,,99,200,495
+1245,Coscinodiscus,Diatom,,60,100,600
+187,Coscinodiscus granii,Diatom,, 4 ,20,200
+191,Coscinodiscus granii,Diatom,, 4 ,20,200
+192,Coscinodiscus granii,Diatom,, 2 ,20,100
+194,Coscinodiscus granii,Diatom,, 3 ,20,150
+195,Coscinodiscus granii,Diatom,, 4 ,20,200
+196,Coscinodiscus granii,Diatom,, 5 ,20,250
+197,Coscinodiscus granii,Diatom,, 7 ,20,350
+212,Coscinodiscus granii,Diatom,, 1 ,20,50
+214,Coscinodiscus granii,Diatom,, 3 ,20,150
+263,Coscinodiscus granii,Diatom,, 2 ,20,100
+267,Coscinodiscus granii,Diatom,, 7 ,20,350
+268,Coscinodiscus granii,Diatom,, 3 ,20,150
+269,Coscinodiscus granii,Diatom,, 6 ,20,300
+270,Coscinodiscus granii,Diatom,, 6 ,20,300
+271,Coscinodiscus granii,Diatom,, 8 ,20,400
+272,Coscinodiscus granii,Diatom,, 3 ,20,150
+273,Coscinodiscus granii,Diatom,, 8 ,20,400
+274,Coscinodiscus granii,Diatom,, 5 ,20,250
+275,Coscinodiscus granii,Diatom,, 6 ,20,300
+276,Coscinodiscus granii,Diatom,, 5 ,20,250
+298,Coscinodiscus granii,Diatom,, 2 ,20,100
+374,Coscinodiscus granii,Diatom,, 4 ,20,200
+389,Coscinodiscus granii,Diatom,, 2 ,20,100
+390,Coscinodiscus granii,Diatom,, 4 ,20,200
+391,Coscinodiscus granii,Diatom,, 4 ,20,200
+392,Coscinodiscus granii,Diatom,, 4 ,20,200
+393,Coscinodiscus granii,Diatom,, 4 ,20,200
+394,Coscinodiscus granii,Diatom,, 2 ,20,100
+395,Coscinodiscus granii,Diatom,, 2 ,20,100
+398,Coscinodiscus granii,Diatom,, 2 ,20,100
+399,Coscinodiscus granii,Diatom,, 3 ,20,150
+400,Coscinodiscus granii,Diatom,, 4 ,20,200
+401,Coscinodiscus granii,Diatom,, 2 ,20,100
+402,Coscinodiscus granii,Diatom,, 3 ,20,150
+403,Coscinodiscus granii,Diatom,, 3 ,20,150
+572,Coscinodiscus granii,Diatom,, 2 ,20,100
+573,Coscinodiscus granii,Diatom,, 3 ,20,150
+959,Coscinodiscus granii,Diatom,,2,20,500
+961,Coscinodiscus granii,Diatom,,1,20,250
+962,Coscinodiscus granii,Diatom,,1,20,250
+981,Coscinodiscus granii,Diatom,,1,20,250
+1187,Coscinodiscus granii,Diatom,,4,20,1000
+1188,Coscinodiscus granii,Diatom,,7,20,1750
+1190,Coscinodiscus granii,Diatom,,3,20,750
+1191,Coscinodiscus granii,Diatom,,1,20,250
+1193,Coscinodiscus granii,Diatom,,3,20,750
+1197,Coscinodiscus granii,Diatom,,1,20,250
+1198,Coscinodiscus granii,Diatom,,18,20,4500
+1199,Coscinodiscus granii,Diatom,,1,125,40
+1200,Coscinodiscus granii,Diatom,,9,125,360
+1201,Coscinodiscus granii,Diatom,,3,8,1875
+1202,Coscinodiscus granii,Diatom,,1,63,79
+1203,Coscinodiscus granii,Diatom,,4,45,444
+1204,Coscinodiscus granii,Diatom,,1,16,313
+1217,Coscinodiscus granii,Diatom,,15,20,3750
+1219,Coscinodiscus granii,Diatom,,20,20,5000
+1220,Coscinodiscus granii,Diatom,,10,20,2500
+1222,Coscinodiscus granii,Diatom,,1,20,250
+1223,Coscinodiscus granii,Diatom,,4,20,1000
+1224,Coscinodiscus granii,Diatom,,4,20,1000
+1225,Coscinodiscus granii,Diatom,,2,2,5000
+1226,Coscinodiscus granii,Diatom,,3,5,3000
+1227,Coscinodiscus granii,Diatom,,6,8,3750
+1228,Coscinodiscus granii,Diatom,,6,7,4286
+1229,Coscinodiscus granii,Diatom,,32,40,4000
+1230,Coscinodiscus granii,Diatom,,5,40,625
+1231,Coscinodiscus granii,Diatom,,5,40,625
+1232,Coscinodiscus granii,Diatom,,4,40,500
+1233,Coscinodiscus granii,Diatom,,6,40,750
+1234,Coscinodiscus granii,Diatom,,3,40,375
+1235,Coscinodiscus granii,Diatom,,177,40,4425
+1236,Coscinodiscus granii,Diatom,,3,30,100
+1237,Coscinodiscus granii,Diatom,,1,7,143
+1238,Coscinodiscus granii,Diatom,,4,10,400
+1239,Coscinodiscus granii,Diatom,,2,9,222
+1241,Coscinodiscus granii,Diatom,,93,100,930
+1242,Coscinodiscus granii,Diatom,,8,50,160
+1243,Coscinodiscus granii,Diatom,,93,100,930
+1247,Coscinodiscus granii,Diatom,,29,328,88
+1248,Coscinodiscus granii,Diatom,,4,24,167
+1249,Coscinodiscus granii,Diatom,,35,200,875
+1250,Coscinodiscus granii,Diatom,,30,150,1000
+1251,Coscinodiscus granii,Diatom,,24,200,600
+1252,Coscinodiscus granii,Diatom,,13,100,650
+1253,Coscinodiscus granii,Diatom,,26,150,867
+1254,Coscinodiscus granii,Diatom,,39,150,1300
+1255,Coscinodiscus granii,Diatom,,27,150,900
+1256,Coscinodiscus granii,Diatom,,11,100,550
+1257,Coscinodiscus granii,Diatom,,22,200,550
+1258,Coscinodiscus granii,Diatom,,14,200,350
+1259,Coscinodiscus granii,Diatom,,32,150,1067
+1260,Coscinodiscus granii,Diatom,,12,150,400
+1261,Coscinodiscus granii,Diatom,,17,200,425
+1262,Coscinodiscus granii,Diatom,,19,150,633
+1263,Coscinodiscus granii,Diatom,,26,150,867
+1264,Coscinodiscus granii,Diatom,,23,150,767
+1265,Coscinodiscus granii,Diatom,,22,200,550
+1266,Coscinodiscus granii,Diatom,,27,200,675
+1267,Coscinodiscus granii,Diatom,,11,150,367
+1268,Coscinodiscus granii,Diatom,,6,200,150
+1269,Coscinodiscus granii,Diatom,,14,150,467
+1270,Coscinodiscus granii,Diatom,,13,150,433
+1273,Coscinodiscus granii,Diatom,,16,150,533
+1276,Coscinodiscus granii,Diatom,,5,150,167
+1277,Coscinodiscus granii,Diatom,,3,37,405
+1278,Coscinodiscus granii,Diatom,,13,150,433
+1279,Coscinodiscus granii,Diatom,,10,100,500
+1280,Coscinodiscus granii,Diatom,,9,100,450
+1281,Coscinodiscus granii,Diatom,,15,100,750
+1282,Coscinodiscus granii,Diatom,,14,150,467
+1283,Coscinodiscus granii,Diatom,,10,100,500
+1284,Coscinodiscus granii,Diatom,,4,50,400
+1289,Coscinodiscus granii,Diatom,,6,30,1000
+1290,Coscinodiscus granii,Diatom,,7,100,350
+1291,Coscinodiscus granii,Diatom,,6,50,600
+1292,Coscinodiscus granii,Diatom,,8,33,1212
+1293,Coscinodiscus granii,Diatom,,20,66,1515
+1294,Coscinodiscus granii,Diatom,,12,49,1224
+1295,Coscinodiscus granii,Diatom,,7,39,897
+1296,Coscinodiscus granii,Diatom,,6,48,625
+1297,Coscinodiscus granii,Diatom,,9,50,900
+1298,Coscinodiscus granii,Diatom,,1,23,217
+1299,Coscinodiscus granii,Diatom,,9,43,1047
+1300,Coscinodiscus granii,Diatom,,7,43,814
+1301,Coscinodiscus granii,Diatom,,3,42,357
+1302,Coscinodiscus granii,Diatom,,3,40,375
+1303,Coscinodiscus granii,Diatom,,3,36,417
+1304,Coscinodiscus granii,Diatom,,1,34,147
+1305,Coscinodiscus granii,Diatom,,8,35,1143
+1306,Coscinodiscus granii,Diatom,,4,52,385
+1307,Coscinodiscus granii,Diatom,,11,57,965
+1308,Coscinodiscus granii,Diatom,,128,50,12800
+1309,Coscinodiscus granii,Diatom,,88,50,8800
+1310,Coscinodiscus granii,Diatom,,162,54,15000
+1311,Coscinodiscus granii,Diatom,,142,32,22188
+1313,Coscinodiscus granii,Diatom,,60,20,15000
+1315,Coscinodiscus granii,Diatom,,111,72,7708
+1317,Coscinodiscus granii,Diatom,,47,53,4434
+1319,Coscinodiscus granii,Diatom,,6,47,638
+1320,Coscinodiscus granii,Diatom,,5,33,758
+1321,Coscinodiscus granii,Diatom,,1,47,106
+1322,Coscinodiscus granii,Diatom,,4,39,513
+1323,Coscinodiscus granii,Diatom,,4,36,556
+1324,Coscinodiscus granii,Diatom,,3,43,349
+1325,Coscinodiscus granii,Diatom,,1,47,106
+1326,Coscinodiscus granii,Diatom,,11,41,1341
+1327,Coscinodiscus granii,Diatom,,20,30,3333
+1328,Coscinodiscus granii,Diatom,,5,29,862
+1329,Coscinodiscus granii,Diatom,,8,41,976
+1330,Coscinodiscus granii,Diatom,,6,28,1071
+1331,Coscinodiscus granii,Diatom,,8,67,597
+1332,Coscinodiscus granii,Diatom,,9,25,1800
+1282,Cylindrotheca closterium,Diatom,,1,150,33
+1283,Cylindrotheca closterium,Diatom,,1,100,50
+1290,Cylindrotheca closterium,Diatom,,1,100,50
+1292,Cylindrotheca closterium,Diatom,,1,33,152
+1301,Cylindrotheca closterium,Diatom,,1,42,119
+1303,Cylindrotheca closterium,Diatom,,5,36,694
+1304,Cylindrotheca closterium,Diatom,,1,34,147
+1305,Cylindrotheca closterium,Diatom,,4,35,571
+1319,Cylindrotheca closterium,Diatom,,3,47,319
+1321,Cylindrotheca closterium,Diatom,,1,47,106
+458,Cyst,Various,, 80 ,20,4000
+459,Cyst,Various,, 1 ,10,100
+461,Cyst,Various,, 1 ,15,67
+474,Cyst,Various,, 2 ,5,400
+476,Cyst,Various,, 6 ,5,1200
+538,Cyst,Various,, 3 ,10,300
+570,Cyst,Various,, 8 ,20,400
+571,Cyst,Various,, 6 ,20,300
+572,Cyst,Various,, 9 ,20,450
+573,Cyst,Various,, 1 ,20,50
+574,Cyst,Various,, 11 ,20,550
+575,Cyst,Various,, 11 ,20,550
+959,Cyst,Various,,4,20,1000
+960,Cyst,Various,,3,20,750
+961,Cyst,Various,,1,20,250
+962,Cyst,Various,,2,20,500
+963,Cyst,Various,,3,20,750
+964,Cyst,Various,,2,20,500
+965,Cyst,Various,,2,20,500
+966,Cyst,Various,,5,20,1250
+967,Cyst,Various,,2,20,500
+968,Cyst,Various,,4,20,1000
+980,Cyst,Various,,1,20,250
+981,Cyst,Various,,1,20,250
+988,Cyst,Various,,1,20,250
+989,Cyst,Various,,1,20,250
+1020,Cyst,Various,,2,20,500
+1021,Cyst,Various,,2,20,500
+1022,Cyst,Various,,1,20,250
+1093,Cyst,Various,,3,20,750
+1186,Cyst,Various,,8,20,2000
+1187,Cyst,Various,,1,20,250
+1188,Cyst,Various,,3,20,750
+1190,Cyst,Various,,1,20,250
+1191,Cyst,Various,,3,20,750
+1192,Cyst,Various,,5,20,1250
+1193,Cyst,Various,,1,20,250
+1199,Cyst,Various,,69,125,2760
+1200,Cyst,Various,,7,125,280
+1201,Cyst,Various,,1,8,625
+1219,Cyst,Various,,3,20,750
+1310,Cyst,Various,,1,54,93
+20,Dictyocha,Dictyochophyceae,, 1 ,20,50
+45,Dictyocha,Dictyochophyceae,, 1 ,20,50
+49,Dictyocha,Dictyochophyceae,, 1 ,20,50
+1241,Dictyocha,Dictyochophyceae,,3,100,30
+1243,Dictyocha,Dictyochophyceae,,4,100,40
+1244,Dictyocha,Dictyochophyceae,,10,200,50
+1245,Dictyocha,Dictyochophyceae,,4,100,40
+1247,Dictyocha,Dictyochophyceae,,2,328,6
+1249,Dictyocha,Dictyochophyceae,,11,200,275
+1250,Dictyocha,Dictyochophyceae,,8,150,267
+1251,Dictyocha,Dictyochophyceae,,6,200,150
+1252,Dictyocha,Dictyochophyceae,,4,100,200
+1253,Dictyocha,Dictyochophyceae,,13,150,433
+1254,Dictyocha,Dictyochophyceae,,20,150,667
+1255,Dictyocha,Dictyochophyceae,,2,150,67
+1256,Dictyocha,Dictyochophyceae,,1,100,50
+1257,Dictyocha,Dictyochophyceae,,6,200,150
+1259,Dictyocha,Dictyochophyceae,,3,150,100
+1260,Dictyocha,Dictyochophyceae,,1,150,33
+1263,Dictyocha,Dictyochophyceae,,1,150,33
+1265,Dictyocha,Dictyochophyceae,,2,200,50
+1266,Dictyocha,Dictyochophyceae,,3,200,75
+1267,Dictyocha,Dictyochophyceae,,1,150,33
+1269,Dictyocha,Dictyochophyceae,,1,150,33
+1270,Dictyocha,Dictyochophyceae,,1,150,33
+1273,Dictyocha,Dictyochophyceae,,1,150,33
+1281,Dictyocha,Dictyochophyceae,,1,100,50
+1283,Dictyocha,Dictyochophyceae,,1,100,50
+1292,Dictyocha,Dictyochophyceae,,1,33,152
+1293,Dictyocha,Dictyochophyceae,,8,66,606
+1294,Dictyocha,Dictyochophyceae,,4,49,408
+1295,Dictyocha,Dictyochophyceae,,3,39,385
+1296,Dictyocha,Dictyochophyceae,,1,48,104
+1298,Dictyocha,Dictyochophyceae,,1,23,217
+1299,Dictyocha,Dictyochophyceae,,1,43,116
+1301,Dictyocha,Dictyochophyceae,,4,42,476
+1306,Dictyocha,Dictyochophyceae,,1,52,96
+1307,Dictyocha,Dictyochophyceae,,1,57,88
+1308,Dictyocha,Dictyochophyceae,,2,50,200
+1319,Dictyocha,Dictyochophyceae,,1,47,106
+1325,Dictyocha,Dictyochophyceae,,1,47,106
+45,Dinophysis acuminata,Dinoflagellate,, 2 ,20,100
+302,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+374,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+385,Dinophysis acuminata,Dinoflagellate,, 2 ,20,100
+390,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+392,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+394,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+398,Dinophysis acuminata,Dinoflagellate,, 2 ,20,100
+538,Dinophysis acuminata,Dinoflagellate,, 1 ,10,100
+570,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+574,Dinophysis acuminata,Dinoflagellate,, 1 ,20,50
+957,Dinophysis acuminata,Dinoflagellate,,1,20,250
+959,Dinophysis acuminata,Dinoflagellate,DSP,2,20,500
+960,Dinophysis acuminata,Dinoflagellate,,1,20,250
+961,Dinophysis acuminata,Dinoflagellate,,1,20,250
+962,Dinophysis acuminata,Dinoflagellate,,1,20,250
+963,Dinophysis acuminata,Dinoflagellate,,1,20,250
+968,Dinophysis acuminata,Dinoflagellate,,1,20,250
+974,Dinophysis acuminata,Dinoflagellate,,1,20,250
+980,Dinophysis acuminata,Dinoflagellate,,1,20,250
+987,Dinophysis acuminata,Dinoflagellate,,2,20,500
+988,Dinophysis acuminata,Dinoflagellate,,2,20,500
+996,Dinophysis acuminata,Dinoflagellate,,1,20,250
+998,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1004,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1043,Dinophysis acuminata,Dinoflagellate,,2,20,500
+1112,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1116,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1118,Dinophysis acuminata,Dinoflagellate,,3,20,750
+1124,Dinophysis acuminata,Dinoflagellate,,1,10,500
+1125,Dinophysis acuminata,Dinoflagellate,,1,10,500
+1130,Dinophysis acuminata,Dinoflagellate,,1,10,500
+1138,Dinophysis acuminata,Dinoflagellate,,2,20,500
+1139,Dinophysis acuminata,Dinoflagellate,,2,10,1000
+1140,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1141,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1144,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1145,Dinophysis acuminata,Dinoflagellate,,1,10,500
+1146,Dinophysis acuminata,Dinoflagellate,,1,10,500
+1147,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1160,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1219,Dinophysis acuminata,Dinoflagellate,,1,20,250
+1259,Dinophysis acuminata,Dinoflagellate,,1,150,33
+1260,Dinophysis acuminata,Dinoflagellate,,1,150,33
+1261,Dinophysis acuminata,Dinoflagellate,,2,200,50
+1262,Dinophysis acuminata,Dinoflagellate,,4,150,133
+1265,Dinophysis acuminata,Dinoflagellate,,3,200,75
+1266,Dinophysis acuminata,Dinoflagellate,,1,200,25
+1268,Dinophysis acuminata,Dinoflagellate,,1,200,25
+1269,Dinophysis acuminata,Dinoflagellate,,1,150,33
+1270,Dinophysis acuminata,Dinoflagellate,,1,150,33
+1273,Dinophysis acuminata,Dinoflagellate,,2,150,67
+1278,Dinophysis acuminata,Dinoflagellate,,2,150,67
+1279,Dinophysis acuminata,Dinoflagellate,,1,100,50
+1280,Dinophysis acuminata,Dinoflagellate,,1,100,50
+1283,Dinophysis acuminata,Dinoflagellate,,2,100,100
+1289,Dinophysis acuminata,Dinoflagellate,,1,30,167
+1291,Dinophysis acuminata,Dinoflagellate,,1,50,100
+1292,Dinophysis acuminata,Dinoflagellate,,2,33,303
+1294,Dinophysis acuminata,Dinoflagellate,,2,49,204
+1295,Dinophysis acuminata,Dinoflagellate,,2,39,256
+1297,Dinophysis acuminata,Dinoflagellate,,1,50,100
+1299,Dinophysis acuminata,Dinoflagellate,,1,43,116
+1301,Dinophysis acuminata,Dinoflagellate,,2,42,238
+1304,Dinophysis acuminata,Dinoflagellate,,3,34,441
+1305,Dinophysis acuminata,Dinoflagellate,,1,35,143
+1308,Dinophysis acuminata,Dinoflagellate,,3,50,300
+1309,Dinophysis acuminata,Dinoflagellate,,1,50,100
+1310,Dinophysis acuminata,Dinoflagellate,,1,54,93
+1311,Dinophysis acuminata,Dinoflagellate,,1,32,156
+1317,Dinophysis acuminata,Dinoflagellate,,1,53,94
+395,Dinophysis fortii,Dinoflagellate,, 1 ,20,50
+1232,Dinophysis fortii,Dinoflagellate,,1,40,125
+1293,Dinophysis fortii,Dinoflagellate,,1,66,76
+1296,Dinophysis fortii,Dinoflagellate,,1,48,104
+1145,Dinophysis rotundata,Dinoflagellate,,1,10,500
+1282,Dinophysis rotundata,Dinoflagellate,,1,150,33
+1285,Dinophysis rotundata,Dinoflagellate,,12,50,1200
+1295,Dinophysis rotundata,Dinoflagellate,,2,39,256
+1313,Dinophysis rotundata,Dinoflagellate,,1,20,250
+2,Dinophysis tripos,Dinoflagellate,, 2 ,20,100
+10,Dinophysis tripos,Dinoflagellate,, 1 ,20,50
+15,Dinophysis tripos,Dinoflagellate,, 1 ,20,50
+570,Dinophysis tripos,Dinoflagellate,, 1 ,20,50
+1243,Ditylum,Diatom,,1,100,10
+113,Ditylum brightwellii,Diatom,, 1 ,20,50
+154,Ditylum brightwellii,Diatom,, 2 ,20,100
+165,Ditylum brightwellii,Diatom,, 1 ,20,50
+186,Ditylum brightwellii,Diatom,, 2 ,20,100
+187,Ditylum brightwellii,Diatom,, 1 ,20,50
+192,Ditylum brightwellii,Diatom,, 1 ,20,50
+193,Ditylum brightwellii,Diatom,, 2 ,20,100
+196,Ditylum brightwellii,Diatom,, 5 ,20,250
+206,Ditylum brightwellii,Diatom,, 6 ,20,300
+212,Ditylum brightwellii,Diatom,, 2 ,20,100
+267,Ditylum brightwellii,Diatom,, 2 ,20,100
+269,Ditylum brightwellii,Diatom,, 1 ,20,50
+271,Ditylum brightwellii,Diatom,, 1 ,20,50
+275,Ditylum brightwellii,Diatom,, 1 ,20,50
+571,Ditylum brightwellii,Diatom,, 1 ,20,50
+571,Ditylum brightwellii,Diatom,, 1 ,20,50
+572,Ditylum brightwellii,Diatom,, 1 ,20,50
+1203,Ditylum brightwellii,Diatom,,1,45,111
+1204,Ditylum brightwellii,Diatom,,1,16,313
+1209,Ditylum brightwellii,Diatom,,1,20,250
+1217,Ditylum brightwellii,Diatom,,2,20,500
+1220,Ditylum brightwellii,Diatom,,3,20,750
+1221,Ditylum brightwellii,Diatom,,1,20,250
+1222,Ditylum brightwellii,Diatom,,1,20,250
+1223,Ditylum brightwellii,Diatom,,3,20,750
+1224,Ditylum brightwellii,Diatom,,1,20,250
+1226,Ditylum brightwellii,Diatom,,1,5,1000
+1227,Ditylum brightwellii,Diatom,,1,8,625
+1230,Ditylum brightwellii,Diatom,,2,40,250
+1231,Ditylum brightwellii,Diatom,,2,40,250
+1232,Ditylum brightwellii,Diatom,,1,40,125
+1233,Ditylum brightwellii,Diatom,,2,40,250
+1234,Ditylum brightwellii,Diatom,,4,40,500
+1236,Ditylum brightwellii,Diatom,,3,30,100
+1238,Ditylum brightwellii,Diatom,,2,10,200
+1239,Ditylum brightwellii,Diatom,,2,9,222
+1240,Ditylum brightwellii,Diatom,,2,9,222
+1241,Ditylum brightwellii,Diatom,,37,100,370
+1242,Ditylum brightwellii,Diatom,,26,50,520
+1243,Ditylum brightwellii,Diatom,,19,100,190
+1244,Ditylum brightwellii,Diatom,,41,200,205
+1245,Ditylum brightwellii,Diatom,,41,100,410
+1246,Ditylum brightwellii,Diatom,,4,24,167
+1247,Ditylum brightwellii,Diatom,,23,328,70
+1248,Ditylum brightwellii,Diatom,,3,24,125
+1249,Ditylum brightwellii,Diatom,,3,200,75
+1250,Ditylum brightwellii,Diatom,,6,150,200
+1251,Ditylum brightwellii,Diatom,,1,200,25
+1252,Ditylum brightwellii,Diatom,,1,100,50
+1253,Ditylum brightwellii,Diatom,,8,150,267
+1254,Ditylum brightwellii,Diatom,,6,150,200
+1255,Ditylum brightwellii,Diatom,,1,150,33
+1256,Ditylum brightwellii,Diatom,,3,100,150
+1257,Ditylum brightwellii,Diatom,,2,200,50
+1258,Ditylum brightwellii,Diatom,,1,200,25
+1259,Ditylum brightwellii,Diatom,,5,150,167
+1260,Ditylum brightwellii,Diatom,,2,150,67
+1263,Ditylum brightwellii,Diatom,,13,150,433
+1264,Ditylum brightwellii,Diatom,,2,150,67
+1265,Ditylum brightwellii,Diatom,,1,200,25
+1267,Ditylum brightwellii,Diatom,,1,150,33
+1268,Ditylum brightwellii,Diatom,,1,200,25
+1269,Ditylum brightwellii,Diatom,,1,150,33
+1270,Ditylum brightwellii,Diatom,,4,150,133
+1271,Ditylum brightwellii,Diatom,,9,110,409
+1272,Ditylum brightwellii,Diatom,,2,110,91
+1273,Ditylum brightwellii,Diatom,,3,150,100
+1274,Ditylum brightwellii,Diatom,,6,110,273
+1275,Ditylum brightwellii,Diatom,,6,110,273
+1281,Ditylum brightwellii,Diatom,,1,100,50
+1282,Ditylum brightwellii,Diatom,,1,150,33
+1289,Ditylum brightwellii,Diatom,,2,30,333
+1292,Ditylum brightwellii,Diatom,,2,33,303
+1293,Ditylum brightwellii,Diatom,,8,66,606
+1294,Ditylum brightwellii,Diatom,,3,49,306
+1295,Ditylum brightwellii,Diatom,,1,39,128
+1296,Ditylum brightwellii,Diatom,,1,48,104
+1298,Ditylum brightwellii,Diatom,,1,23,217
+1300,Ditylum brightwellii,Diatom,,1,43,116
+1301,Ditylum brightwellii,Diatom,,1,42,119
+1302,Ditylum brightwellii,Diatom,,3,40,375
+1303,Ditylum brightwellii,Diatom,,1,36,139
+1305,Ditylum brightwellii,Diatom,,2,35,286
+1306,Ditylum brightwellii,Diatom,,1,52,96
+1308,Ditylum brightwellii,Diatom,,13,50,1300
+1309,Ditylum brightwellii,Diatom,,15,50,1500
+1310,Ditylum brightwellii,Diatom,,16,54,1481
+1311,Ditylum brightwellii,Diatom,,6,32,938
+1313,Ditylum brightwellii,Diatom,,17,20,4250
+1315,Ditylum brightwellii,Diatom,,4,72,278
+1317,Ditylum brightwellii,Diatom,,1,53,94
+1319,Ditylum brightwellii,Diatom,,1,47,106
+1320,Ditylum brightwellii,Diatom,,1,33,152
+1321,Ditylum brightwellii,Diatom,,2,47,213
+1243,Eucampia,Diatom,,5,100,50
+1244,Eucampia,Diatom,,1,200,5
+1249,Eucampia,Diatom,,1,200,25
+1263,Eucampia,Diatom,,1,150,33
+1265,Eucampia,Diatom,,1,200,25
+1282,Eucampia,Diatom,,1,150,33
+1283,Eucampia,Diatom,,1,100,50
+1291,Eucampia,Diatom,,1,50,100
+1301,Eucampia,Diatom,,1,42,119
+1305,Eucampia,Diatom,,1,35,143
+1307,Eucampia,Diatom,,2,57,175
+1308,Eucampia,Diatom,,28,50,2800
+1309,Eucampia,Diatom,,10,50,1000
+1310,Eucampia,Diatom,,10,54,926
+1311,Eucampia,Diatom,,14,32,2188
+1313,Eucampia,Diatom,,10,20,2500
+1315,Eucampia,Diatom,,10,72,694
+1317,Eucampia,Diatom,,16,53,1509
+1321,Eucampia,Diatom,,3,47,319
+1325,Eucampia,Diatom,,1,47,106
+1147,Goniodoma polyedricum,Dinoflagellate,,28,20,7000
+1,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+2,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+4,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+5,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+6,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+7,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+8,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+9,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+10,Gonyaulax polygramma,Dinoflagellate,, 10 ,20,500
+11,Gonyaulax polygramma,Dinoflagellate,, 6 ,20,300
+12,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+13,Gonyaulax polygramma,Dinoflagellate,, 6 ,20,300
+14,Gonyaulax polygramma,Dinoflagellate,, 8 ,20,400
+15,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+16,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+33,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+35,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+36,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+38,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+40,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+46,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+49,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+50,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+52,Gonyaulax polygramma,Dinoflagellate,, 25 ,20,1250
+54,Gonyaulax polygramma,Dinoflagellate,, 89 ,20,4450
+57,Gonyaulax polygramma,Dinoflagellate,, 12 ,20,600
+58,Gonyaulax polygramma,Dinoflagellate,, 20 ,20,1000
+59,Gonyaulax polygramma,Dinoflagellate,, 17 ,20,850
+64,Gonyaulax polygramma,Dinoflagellate,, 36 ,20,1800
+65,Gonyaulax polygramma,Dinoflagellate,, 11 ,20,550
+76,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+77,Gonyaulax polygramma,Dinoflagellate,, 10 ,20,500
+78,Gonyaulax polygramma,Dinoflagellate,, 7 ,20,350
+79,Gonyaulax polygramma,Dinoflagellate,, 22 ,20,1100
+80,Gonyaulax polygramma,Dinoflagellate,, 18 ,20,900
+95,Gonyaulax polygramma,Dinoflagellate,, 10 ,20,500
+113,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+114,Gonyaulax polygramma,Dinoflagellate,, 22 ,20,1100
+115,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+116,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+148,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+149,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+150,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+151,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+153,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+154,Gonyaulax polygramma,Dinoflagellate,, 7 ,20,350
+155,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+156,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+164,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+165,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+172,Gonyaulax polygramma,Dinoflagellate,, 72 ,20,3600
+173,Gonyaulax polygramma,Dinoflagellate,, 9 ,20,450
+174,Gonyaulax polygramma,Dinoflagellate,, 22 ,20,1100
+175,Gonyaulax polygramma,Dinoflagellate,, 45 ,20,2250
+178,Gonyaulax polygramma,Dinoflagellate,, 44 ,20,2200
+184,Gonyaulax polygramma,Dinoflagellate,, 19 ,20,950
+186,Gonyaulax polygramma,Dinoflagellate,, 14 ,20,700
+187,Gonyaulax polygramma,Dinoflagellate,, 41 ,20,2050
+188,Gonyaulax polygramma,Dinoflagellate,, 13 ,20,650
+189,Gonyaulax polygramma,Dinoflagellate,, 7 ,20,350
+190,Gonyaulax polygramma,Dinoflagellate,, 15 ,20,750
+191,Gonyaulax polygramma,Dinoflagellate,, 31 ,20,1550
+192,Gonyaulax polygramma,Dinoflagellate,, 15 ,20,750
+193,Gonyaulax polygramma,Dinoflagellate,, 6 ,20,300
+194,Gonyaulax polygramma,Dinoflagellate,, 23 ,20,1150
+195,Gonyaulax polygramma,Dinoflagellate,, 16 ,20,800
+196,Gonyaulax polygramma,Dinoflagellate,, 11 ,20,550
+197,Gonyaulax polygramma,Dinoflagellate,, 11 ,20,550
+202,Gonyaulax polygramma,Dinoflagellate,, 496 ,20,24800
+203,Gonyaulax polygramma,Dinoflagellate,, 27 ,20,1350
+206,Gonyaulax polygramma,Dinoflagellate,, 809 ,20,40450
+207,Gonyaulax polygramma,Dinoflagellate,, 407 ,20,20350
+209,Gonyaulax polygramma,Dinoflagellate,, 65 ,20,3250
+211,Gonyaulax polygramma,Dinoflagellate,, 156 ,20,7800
+212,Gonyaulax polygramma,Dinoflagellate,, 9 ,20,450
+213,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+214,Gonyaulax polygramma,Dinoflagellate,, 10 ,20,500
+228,Gonyaulax polygramma,Dinoflagellate,, 784 ,20,39200
+229,Gonyaulax polygramma,Dinoflagellate,, 241 ,20,12050
+230,Gonyaulax polygramma,Dinoflagellate,, 333 ,20,16650
+231,Gonyaulax polygramma,Dinoflagellate,, 240 ,20,12000
+232,Gonyaulax polygramma,Dinoflagellate,, 342 ,20,17100
+233,Gonyaulax polygramma,Dinoflagellate,, 100 ,20,5000
+234,Gonyaulax polygramma,Dinoflagellate,, 286 ,20,14300
+235,Gonyaulax polygramma,Dinoflagellate,, 49 ,20,2450
+236,Gonyaulax polygramma,Dinoflagellate,, 332 ,20,16600
+237,Gonyaulax polygramma,Dinoflagellate,, 234 ,20,11700
+238,Gonyaulax polygramma,Dinoflagellate,, 245 ,20,12250
+239,Gonyaulax polygramma,Dinoflagellate,, 121 ,20,6050
+240,Gonyaulax polygramma,Dinoflagellate,, 64 ,20,3200
+241,Gonyaulax polygramma,Dinoflagellate,, 34 ,20,1700
+242,Gonyaulax polygramma,Dinoflagellate,, 135 ,20,6750
+243,Gonyaulax polygramma,Dinoflagellate,, 68 ,20,3400
+244,Gonyaulax polygramma,Dinoflagellate,, 232 ,20,11600
+245,Gonyaulax polygramma,Dinoflagellate,, 28 ,20,1400
+246,Gonyaulax polygramma,Dinoflagellate,, 107 ,20,5350
+247,Gonyaulax polygramma,Dinoflagellate,, 73 ,20,3650
+248,Gonyaulax polygramma,Dinoflagellate,, 95 ,20,4750
+249,Gonyaulax polygramma,Dinoflagellate,, 62 ,20,3100
+250,Gonyaulax polygramma,Dinoflagellate,, 126 ,20,6300
+251,Gonyaulax polygramma,Dinoflagellate,, 31 ,20,1550
+254,Gonyaulax polygramma,Dinoflagellate,, 48 ,20,2400
+255,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+256,Gonyaulax polygramma,Dinoflagellate,, 289 ,20,14450
+257,Gonyaulax polygramma,Dinoflagellate,, 135 ,20,6750
+258,Gonyaulax polygramma,Dinoflagellate,, 2 482 ,20,124100
+260,Gonyaulax polygramma,Dinoflagellate,, 1 193 ,20,59650
+263,Gonyaulax polygramma,Dinoflagellate,, 7 ,20,350
+264,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+267,Gonyaulax polygramma,Dinoflagellate,, 19 ,20,950
+268,Gonyaulax polygramma,Dinoflagellate,, 16 ,20,800
+269,Gonyaulax polygramma,Dinoflagellate,, 8 ,20,400
+270,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+271,Gonyaulax polygramma,Dinoflagellate,, 16 ,20,800
+272,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+273,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+274,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+275,Gonyaulax polygramma,Dinoflagellate,, 11 ,20,550
+276,Gonyaulax polygramma,Dinoflagellate,, 8 ,20,400
+298,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+302,Gonyaulax polygramma,Dinoflagellate,, 41 ,20,2050
+340,Gonyaulax polygramma,Dinoflagellate,, 1 071 ,10,107100
+342,Gonyaulax polygramma,Dinoflagellate,, 705 ,10,70500
+343,Gonyaulax polygramma,Dinoflagellate,, 702 ,10,70200
+344,Gonyaulax polygramma,Dinoflagellate,, 405 ,10,40500
+345,Gonyaulax polygramma,Dinoflagellate,, 880 ,10,88000
+346,Gonyaulax polygramma,Dinoflagellate,, 378 ,10,37800
+347,Gonyaulax polygramma,Dinoflagellate,, 985 ,10,98500
+348,Gonyaulax polygramma,Dinoflagellate,, 385 ,10,38500
+349,Gonyaulax polygramma,Dinoflagellate,, 1 011 ,10,101100
+350,Gonyaulax polygramma,Dinoflagellate,, 253 ,10,25300
+351,Gonyaulax polygramma,Dinoflagellate,, 1 107 ,10,110700
+352,Gonyaulax polygramma,Dinoflagellate,, 119 ,10,11900
+353,Gonyaulax polygramma,Dinoflagellate,, 1 304 ,5,260800
+354,Gonyaulax polygramma,Dinoflagellate,, 809 ,5,161800
+355,Gonyaulax polygramma,Dinoflagellate,, 892 ,5,178400
+356,Gonyaulax polygramma,Dinoflagellate,, 4 ,5,800
+356,Gonyaulax polygramma,Dinoflagellate,, 12 ,5,2400
+357,Gonyaulax polygramma,Dinoflagellate,, 2 236 ,5,447200
+358,Gonyaulax polygramma,Dinoflagellate,, 404 ,5,80800
+359,Gonyaulax polygramma,Dinoflagellate,, 831 ,5,166200
+360,Gonyaulax polygramma,Dinoflagellate,, 220 ,5,44000
+374,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+376,Gonyaulax polygramma,Dinoflagellate,, 436 ,20,21800
+377,Gonyaulax polygramma,Dinoflagellate,, 173 ,20,8650
+378,Gonyaulax polygramma,Dinoflagellate,, 771 ,20,38550
+379,Gonyaulax polygramma,Dinoflagellate,, 226 ,20,11300
+380,Gonyaulax polygramma,Dinoflagellate,, 1 252 ,20,62600
+381,Gonyaulax polygramma,Dinoflagellate,, 528 ,20,26400
+382,Gonyaulax polygramma,Dinoflagellate,, 999 ,20,49950
+383,Gonyaulax polygramma,Dinoflagellate,, 322 ,20,16100
+384,Gonyaulax polygramma,Dinoflagellate,, 1 205 ,20,60250
+386,Gonyaulax polygramma,Dinoflagellate,, 841 ,20,42050
+387,Gonyaulax polygramma,Dinoflagellate,, 436 ,20,21800
+388,Gonyaulax polygramma,Dinoflagellate,, 961 ,20,48050
+389,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+391,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+392,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+393,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+394,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+395,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+396,Gonyaulax polygramma,Dinoflagellate,, 6 ,20,300
+398,Gonyaulax polygramma,Dinoflagellate,, 5 ,20,250
+399,Gonyaulax polygramma,Dinoflagellate,, 2 ,20,100
+400,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+401,Gonyaulax polygramma,Dinoflagellate,, 4 ,20,200
+402,Gonyaulax polygramma,Dinoflagellate,, 3 ,20,150
+403,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+538,Gonyaulax polygramma,Dinoflagellate,, 2 ,10,200
+539,Gonyaulax polygramma,Dinoflagellate,, 1 ,10,100
+575,Gonyaulax polygramma,Dinoflagellate,, 1 ,20,50
+956,Gonyaulax polygramma,Dinoflagellate,,18,20,4500
+960,Gonyaulax polygramma,Dinoflagellate,,1,20,250
+961,Gonyaulax polygramma,Dinoflagellate,,1,20,250
+962,Gonyaulax polygramma,Dinoflagellate,,2,20,500
+963,Gonyaulax polygramma,Dinoflagellate,,3,20,750
+964,Gonyaulax polygramma,Dinoflagellate,,11,20,2750
+965,Gonyaulax polygramma,Dinoflagellate,,2,20,500
+966,Gonyaulax polygramma,Dinoflagellate,,3,20,750
+967,Gonyaulax polygramma,Dinoflagellate,,7,20,1750
+980,Gonyaulax polygramma,Dinoflagellate,,8,20,2000
+981,Gonyaulax polygramma,Dinoflagellate,,2,20,500
+992,Gonyaulax polygramma,Dinoflagellate,,170,20,42500
+1022,Gonyaulax polygramma,Dinoflagellate,,15,20,3750
+1023,Gonyaulax polygramma,Dinoflagellate,,4,20,1000
+1024,Gonyaulax polygramma,Dinoflagellate,,16,20,4000
+1025,Gonyaulax polygramma,Dinoflagellate,,10,20,2500
+1055,Gonyaulax polygramma,Dinoflagellate,HAB,10,20,2500
+1056,Gonyaulax polygramma,Dinoflagellate,HAB,68,20,17000
+1057,Gonyaulax polygramma,Dinoflagellate,HAB,30,20,7500
+1058,Gonyaulax polygramma,Dinoflagellate,HAB,53,20,13250
+1059,Gonyaulax polygramma,Dinoflagellate,HAB,26,20,6500
+1062,Gonyaulax polygramma,Dinoflagellate,HAB,12,20,3000
+1063,Gonyaulax polygramma,Dinoflagellate,HAB,1,20,250
+1064,Gonyaulax polygramma,Dinoflagellate,HAB,39,20,9750
+1065,Gonyaulax polygramma,Dinoflagellate,HAB,66,20,16500
+1066,Gonyaulax polygramma,Dinoflagellate,HAB,41,20,10250
+1067,Gonyaulax polygramma,Dinoflagellate,HAB,42,20,10500
+1120,Gonyaulax polygramma,Dinoflagellate,,2,20,500
+1121,Gonyaulax polygramma,Dinoflagellate,HAB,9,20,2250
+1124,Gonyaulax polygramma,Dinoflagellate,HAB,3,10,1500
+1125,Gonyaulax polygramma,Dinoflagellate,HAB,5,10,2500
+1126,Gonyaulax polygramma,Dinoflagellate,,9,10,4500
+1127,Gonyaulax polygramma,Dinoflagellate,,10,10,5000
+1130,Gonyaulax polygramma,Dinoflagellate,,2,10,1000
+1131,Gonyaulax polygramma,Dinoflagellate,,4,10,2000
+1132,Gonyaulax polygramma,Dinoflagellate,,1,10,500
+1188,Gonyaulax polygramma,Dinoflagellate,,1,20,250
+1247,Gonyaulax polygramma,Dinoflagellate,,3,328,9
+1257,Gonyaulax polygramma,Dinoflagellate,,2,200,50
+1258,Gonyaulax polygramma,Dinoflagellate,,1,200,25
+1259,Gonyaulax polygramma,Dinoflagellate,,2,150,67
+1260,Gonyaulax polygramma,Dinoflagellate,,1,150,33
+1261,Gonyaulax polygramma,Dinoflagellate,,1,200,25
+1263,Gonyaulax polygramma,Dinoflagellate,,1,150,33
+1264,Gonyaulax polygramma,Dinoflagellate,,3,150,100
+1273,Gonyaulax polygramma,Dinoflagellate,,1,150,33
+1276,Gonyaulax polygramma,Dinoflagellate,,1,150,33
+1279,Gonyaulax polygramma,Dinoflagellate,,4,100,200
+1280,Gonyaulax polygramma,Dinoflagellate,,1,100,50
+1281,Gonyaulax polygramma,Dinoflagellate,,1,100,50
+1282,Gonyaulax polygramma,Dinoflagellate,,1,150,33
+1283,Gonyaulax polygramma,Dinoflagellate,,3,100,150
+1284,Gonyaulax polygramma,Dinoflagellate,,1,50,100
+1290,Gonyaulax polygramma,Dinoflagellate,,2,100,100
+1291,Gonyaulax polygramma,Dinoflagellate,,5,50,500
+1292,Gonyaulax polygramma,Dinoflagellate,,1,33,152
+1293,Gonyaulax polygramma,Dinoflagellate,,1,66,76
+1294,Gonyaulax polygramma,Dinoflagellate,,4,49,408
+1295,Gonyaulax polygramma,Dinoflagellate,,1,39,128
+1296,Gonyaulax polygramma,Dinoflagellate,,2,48,208
+1301,Gonyaulax polygramma,Dinoflagellate,,2,42,238
+1304,Gonyaulax polygramma,Dinoflagellate,,1,34,147
+1306,Gonyaulax polygramma,Dinoflagellate,,1,52,96
+1308,Gonyaulax polygramma,Dinoflagellate,,1,50,100
+1309,Gonyaulax polygramma,Dinoflagellate,,2,50,200
+1319,Gonyaulax polygramma,Dinoflagellate,,2,47,213
+1320,Gonyaulax polygramma,Dinoflagellate,,1,33,152
+1321,Gonyaulax polygramma,Dinoflagellate,,1,47,106
+1322,Gonyaulax polygramma,Dinoflagellate,,1,39,128
+1323,Gonyaulax polygramma,Dinoflagellate,,2,36,278
+1324,Gonyaulax polygramma,Dinoflagellate,,1,43,116
+1325,Gonyaulax polygramma,Dinoflagellate,,2,47,213
+1326,Gonyaulax polygramma,Dinoflagellate,,1,41,122
+1327,Gonyaulax polygramma,Dinoflagellate,,1,30,167
+44,Gonyaulax spinifera,Dinoflagellate,, 1 ,20,50
+45,Gonyaulax spinifera,Dinoflagellate,, 12 ,20,600
+46,Gonyaulax spinifera,Dinoflagellate,, 5 ,20,250
+1313,Guinardia,Diatom,,2,20,500
+1264,Gymnodinium,Dinoflagellate,,1,150,33
+1270,Gymnodinium,Dinoflagellate,,1,150,33
+1276,Gymnodinium,Dinoflagellate,,1,150,33
+1254,Gyrosigma,Diatom,,4,150,133
+1010,HAB Total Count,Various,,433,10,216500
+1033,HAB Total Count,Various,,103,10,51500
+1033,HAB Total Count,Various,,467,10,233500
+1034,HAB Total Count,Various,,1409,20,352250
+1035,HAB Total Count,Various,,1600,20,400000
+1036,HAB Total Count,Various,,385,20,96250
+1038,HAB Total Count,Various,,758,20,189500
+1039,HAB Total Count,Various,,233,20,58250
+1040,HAB Total Count,Various,,15,20,3750
+1041,HAB Total Count,Various,,12,20,3000
+1042,HAB Total Count,Various,,142,10,71000
+1043,HAB Total Count,Various,,40,10,20000
+1044,HAB Total Count,Various,,108,2,270000
+1045,HAB Total Count,Various,,98,2,245000
+1046,HAB Total Count,Various,,990,2,2475000
+1047,HAB Total Count,Various,,175,2,437500
+1078,HAB Total Count,Various,,103,5,103000
+1082,HAB Total Count,Various,,196,5,196000
+1083,HAB Total Count,Various,,83,5,83000
+1084,HAB Total Count,Various,,101,5,101000
+1085,HAB Total Count,Various,,42,5,42000
+1086,HAB Total Count,Various,,40,20,10000
+1087,HAB Total Count,Various,,5,20,1250
+1088,HAB Total Count,Various,,67,5,67000
+1089,HAB Total Count,Various,,27,5,27000
+1090,HAB Total Count,Various,,23,5,23000
+1091,HAB Total Count,Various,,9,5,9000
+1094,HAB Total Count,Various,,32,5,32000
+1095,HAB Total Count,Various,,24,5,24000
+1096,HAB Total Count,Various,,32,5,32000
+1097,HAB Total Count,Various,,59,5,59000
+1113,HAB Total Count,Various,,16,20,4000
+1114,HAB Total Count,Various,,7,20,1750
+20,Karenia,Dinoflagellate,, 7 ,20,350
+21,Karenia,Dinoflagellate,, 2 ,20,100
+571,Karenia,Dinoflagellate,, 2 ,20,100
+374,Karenia cristata,Dinoflagellate,, 2 ,20,100
+389,Karenia cristata,Dinoflagellate,, 2 ,20,100
+390,Karenia cristata,Dinoflagellate,, 4 ,20,200
+391,Karenia cristata,Dinoflagellate,, 4 ,20,200
+392,Karenia cristata,Dinoflagellate,, 5 ,20,250
+393,Karenia cristata,Dinoflagellate,, 2 ,20,100
+394,Karenia cristata,Dinoflagellate,, 2 ,20,100
+398,Karenia cristata,Dinoflagellate,, 3 ,20,150
+399,Karenia cristata,Dinoflagellate,, 5 ,20,250
+400,Karenia cristata,Dinoflagellate,, 2 ,20,100
+401,Karenia cristata,Dinoflagellate,, 2 ,20,100
+403,Karenia cristata,Dinoflagellate,, 2 ,20,100
+539,Karenia cristata,Dinoflagellate,, 1 ,10,100
+961,Karenia cristata,Dinoflagellate,Toxic,3,20,750
+963,Karenia cristata,Dinoflagellate,,1,20,250
+964,Karenia cristata,Dinoflagellate,,1,20,250
+965,Karenia cristata,Dinoflagellate,,1,20,250
+966,Karenia cristata,Dinoflagellate,,3,20,750
+967,Karenia cristata,Dinoflagellate,,1,20,250
+968,Karenia cristata,Dinoflagellate,,2,20,500
+997,Karenia cristata,Dinoflagellate,,1,20,250
+1020,Karenia cristata,Dinoflagellate,,1,20,250
+1022,Karenia cristata,Dinoflagellate,,1,20,250
+1057,Karenia cristata,Dinoflagellate,Toxic,1,20,250
+1092,Karenia cristata,Dinoflagellate,,1,20,250
+1093,Karenia cristata,Dinoflagellate,,4,20,1000
+1142,Karenia cristata,Dinoflagellate,,1,10,500
+1277,Karenia cristata,Dinoflagellate,,2,37,270
+1279,Karenia cristata,Dinoflagellate,,1,100,50
+1291,Karenia cristata,Dinoflagellate,,1,50,100
+1296,Karenia cristata,Dinoflagellate,,2,48,208
+1298,Karenia cristata,Dinoflagellate,,1,23,217
+1303,Karenia cristata,Dinoflagellate,,1,36,139
+1317,Karenia cristata,Dinoflagellate,,2,53,189
+1321,Karenia cristata,Dinoflagellate,,3,47,319
+1290,Karenia mikimotoi,Dinoflagellate,,1,100,50
+1291,Karenia mikimotoi,Dinoflagellate,,1,50,100
+1296,Karenia mikimotoi,Dinoflagellate,,2,48,208
+154,Licmophora,Diatom,, 4 ,20,200
+156,Licmophora,Diatom,, 1 ,20,50
+157,Licmophora,Diatom,, 1 ,20,50
+158,Licmophora,Diatom,, 4 ,20,200
+159,Licmophora,Diatom,, 1 ,20,50
+160,Licmophora,Diatom,, 1 ,20,50
+161,Licmophora,Diatom,, 1 ,20,50
+162,Licmophora,Diatom,, 3 ,20,150
+163,Licmophora,Diatom,, 7 ,20,350
+186,Licmophora,Diatom,, 1 ,20,50
+196,Licmophora,Diatom,, 1 ,20,50
+202,Licmophora,Diatom,, 21 ,20,1050
+203,Licmophora,Diatom,, 1 ,20,50
+214,Licmophora,Diatom,, 1 ,20,50
+263,Licmophora,Diatom,, 1 ,20,50
+268,Licmophora,Diatom,, 5 ,20,250
+270,Licmophora,Diatom,, 2 ,20,100
+271,Licmophora,Diatom,, 2 ,20,100
+272,Licmophora,Diatom,, 1 ,20,50
+273,Licmophora,Diatom,, 6 ,20,300
+274,Licmophora,Diatom,, 3 ,20,150
+298,Licmophora,Diatom,, 1 ,20,50
+390,Licmophora,Diatom,, 2 ,20,100
+392,Licmophora,Diatom,, 3 ,20,150
+393,Licmophora,Diatom,, 1 ,20,50
+395,Licmophora,Diatom,, 1 ,20,50
+398,Licmophora,Diatom,, 1 ,20,50
+399,Licmophora,Diatom,, 3 ,20,150
+401,Licmophora,Diatom,, 1 ,20,50
+403,Licmophora,Diatom,, 1 ,20,50
+538,Licmophora,Diatom,, 5 ,10,500
+570,Licmophora,Diatom,, 3 ,20,150
+571,Licmophora,Diatom,, 5 ,20,250
+572,Licmophora,Diatom,, 2 ,20,100
+573,Licmophora,Diatom,, 2 ,20,100
+574,Licmophora,Diatom,, 3 ,20,150
+1020,Licmophora,Diatom,,3,20,750
+1022,Licmophora,Diatom,,1,20,250
+1023,Licmophora,Diatom,,1,20,250
+1186,Licmophora,Diatom,,2,20,500
+1188,Licmophora,Diatom,,1,20,250
+1190,Licmophora,Diatom,,1,20,250
+1191,Licmophora,Diatom,,1,20,250
+1193,Licmophora,Diatom,,1,20,250
+1197,Licmophora,Diatom,,2,20,500
+1200,Licmophora,Diatom,,4,125,160
+1202,Licmophora,Diatom,,2,63,159
+1206,Licmophora,Diatom,,1,19,263
+1207,Licmophora,Diatom,,1,11,455
+1217,Licmophora,Diatom,,2,20,500
+1219,Licmophora,Diatom,,3,20,750
+1229,Licmophora,Diatom,,1,40,125
+1241,Licmophora,Diatom,,2,100,20
+1242,Licmophora,Diatom,,1,50,20
+1247,Licmophora,Diatom,,1,328,3
+1250,Licmophora,Diatom,,2,150,67
+1251,Licmophora,Diatom,,1,200,25
+1254,Licmophora,Diatom,,1,150,33
+1256,Licmophora,Diatom,,4,100,200
+1257,Licmophora,Diatom,,8,200,200
+1258,Licmophora,Diatom,,15,200,375
+1259,Licmophora,Diatom,,4,150,133
+1260,Licmophora,Diatom,,4,150,133
+1261,Licmophora,Diatom,,9,200,225
+1262,Licmophora,Diatom,,3,150,100
+1263,Licmophora,Diatom,,4,150,133
+1264,Licmophora,Diatom,,6,150,200
+1265,Licmophora,Diatom,,5,200,125
+1266,Licmophora,Diatom,,6,200,150
+1267,Licmophora,Diatom,,14,150,467
+1268,Licmophora,Diatom,,10,200,250
+1269,Licmophora,Diatom,,6,150,200
+1270,Licmophora,Diatom,,7,150,233
+1273,Licmophora,Diatom,,4,150,133
+1276,Licmophora,Diatom,,8,150,267
+1277,Licmophora,Diatom,,4,37,541
+1278,Licmophora,Diatom,,2,150,67
+1279,Licmophora,Diatom,,5,100,250
+1280,Licmophora,Diatom,,5,100,250
+1281,Licmophora,Diatom,,3,100,150
+1282,Licmophora,Diatom,,1,150,33
+1283,Licmophora,Diatom,,3,100,150
+1289,Licmophora,Diatom,,3,30,500
+1290,Licmophora,Diatom,,5,100,250
+1291,Licmophora,Diatom,,3,50,300
+1292,Licmophora,Diatom,,3,33,455
+1293,Licmophora,Diatom,,8,66,606
+1294,Licmophora,Diatom,,2,49,204
+1295,Licmophora,Diatom,,3,39,385
+1296,Licmophora,Diatom,,3,48,313
+1297,Licmophora,Diatom,,4,50,400
+1298,Licmophora,Diatom,,4,23,870
+1299,Licmophora,Diatom,,6,43,698
+1300,Licmophora,Diatom,,8,43,930
+1301,Licmophora,Diatom,,5,42,595
+1302,Licmophora,Diatom,,16,40,2000
+1303,Licmophora,Diatom,,10,36,1389
+1304,Licmophora,Diatom,,15,34,2206
+1305,Licmophora,Diatom,,7,35,1000
+1306,Licmophora,Diatom,,9,52,865
+1307,Licmophora,Diatom,,13,57,1140
+1308,Licmophora,Diatom,,8,50,800
+1309,Licmophora,Diatom,,5,50,500
+1310,Licmophora,Diatom,,4,54,370
+1311,Licmophora,Diatom,#REF!,1,32,156
+1313,Licmophora,Diatom,,1,20,250
+1315,Licmophora,Diatom,,4,72,278
+1317,Licmophora,Diatom,,3,53,283
+1319,Licmophora,Diatom,,10,47,1064
+1320,Licmophora,Diatom,,9,33,1364
+1321,Licmophora,Diatom,,7,47,745
+1322,Licmophora,Diatom,,11,39,1410
+1323,Licmophora,Diatom,,9,36,1250
+1324,Licmophora,Diatom,,29,43,3372
+1325,Licmophora,Diatom,,11,47,1170
+1326,Licmophora,Diatom,,14,41,1707
+1327,Licmophora,Diatom,,15,30,2500
+1328,Licmophora,Diatom,,17,29,2931
+1329,Licmophora,Diatom,,16,41,1951
+1330,Licmophora,Diatom,,18,28,3214
+1331,Licmophora,Diatom,,62,67,4627
+1332,Licmophora,Diatom,,13,25,2600
+956,Lingulodinium polyedra,Dinoflagellate,HAB,150,20,37500
+957,Lingulodinium polyedra,Dinoflagellate,,161,20,40250
+958,Lingulodinium polyedra,Dinoflagellate,,126,20,31500
+959,Lingulodinium polyedra,Dinoflagellate,HAB,224,20,56000
+960,Lingulodinium polyedra,Dinoflagellate,HAB,121,20,30250
+961,Lingulodinium polyedra,Dinoflagellate,HAB,202,20,50500
+962,Lingulodinium polyedra,Dinoflagellate,HAB,127,20,31750
+963,Lingulodinium polyedra,Dinoflagellate,HAB,180,20,45000
+964,Lingulodinium polyedra,Dinoflagellate,HAB,143,20,35750
+965,Lingulodinium polyedra,Dinoflagellate,HAB,220,20,55000
+966,Lingulodinium polyedra,Dinoflagellate,HAB,144,20,36000
+967,Lingulodinium polyedra,Dinoflagellate,HAB,168,20,42000
+968,Lingulodinium polyedra,Dinoflagellate,HAB,127,20,31750
+969,Lingulodinium polyedra,Dinoflagellate,HAB,98,20,24500
+970,Lingulodinium polyedra,Dinoflagellate,HAB,41,20,10250
+971,Lingulodinium polyedra,Dinoflagellate,HAB,53,20,13250
+972,Lingulodinium polyedra,Dinoflagellate,HAB,42,20,10500
+973,Lingulodinium polyedra,Dinoflagellate,HAB,58,20,14500
+974,Lingulodinium polyedra,Dinoflagellate,HAB,31,20,7750
+975,Lingulodinium polyedra,Dinoflagellate,HAB,51,20,12750
+976,Lingulodinium polyedra,Dinoflagellate,HAB,70,20,17500
+977,Lingulodinium polyedra,Dinoflagellate,HAB,90,20,22500
+978,Lingulodinium polyedra,Dinoflagellate,HAB,81,20,20250
+979,Lingulodinium polyedra,Dinoflagellate,HAB,51,20,12750
+980,Lingulodinium polyedra,Dinoflagellate,HAB,285,20,71250
+981,Lingulodinium polyedra,Dinoflagellate,,151,20,37750
+982,Lingulodinium polyedra,Dinoflagellate,HAB,747,20,186750
+983,Lingulodinium polyedra,Dinoflagellate,HAB,551,20,137750
+984,Lingulodinium polyedra,Dinoflagellate,HAB,720,20,180000
+985,Lingulodinium polyedra,Dinoflagellate,HAB,316,20,79000
+986,Lingulodinium polyedra,Dinoflagellate,HAB,1153,20,288250
+987,Lingulodinium polyedra,Dinoflagellate,HAB,253,20,63250
+988,Lingulodinium polyedra,Dinoflagellate,HAB,483,20,120750
+989,Lingulodinium polyedra,Dinoflagellate,HAB,171,20,42750
+990,Lingulodinium polyedra,Dinoflagellate,HAB,422,20,105500
+991,Lingulodinium polyedra,Dinoflagellate,HAB,203,20,50750
+993,Lingulodinium polyedra,Dinoflagellate,HAB,47,20,11750
+994,Lingulodinium polyedra,Dinoflagellate,HAB,162,20,40500
+995,Lingulodinium polyedra,Dinoflagellate,HAB,118,20,29500
+996,Lingulodinium polyedra,Dinoflagellate,HAB,182,20,45500
+997,Lingulodinium polyedra,Dinoflagellate,HAB,255,20,63750
+998,Lingulodinium polyedra,Dinoflagellate,,144,20,36000
+1000,Lingulodinium polyedra,Dinoflagellate,HAB,278,20,69500
+1001,Lingulodinium polyedra,Dinoflagellate,HAB,207,20,51750
+1003,Lingulodinium polyedra,Dinoflagellate,HAB,318,20,79500
+1004,Lingulodinium polyedra,Dinoflagellate,,41,20,10250
+1005,Lingulodinium polyedra,Dinoflagellate,,413,20,103250
+1006,Lingulodinium polyedra,Dinoflagellate,HAB,360,20,90000
+1007,Lingulodinium polyedra,Dinoflagellate,HAB,73,20,18250
+1008,Lingulodinium polyedra,Dinoflagellate,HAB,1580,20,395000
+1009,Lingulodinium polyedra,Dinoflagellate,,21,5,21000
+1011,Lingulodinium polyedra,Dinoflagellate,,106,20,26500
+1012,Lingulodinium polyedra,Dinoflagellate,,140,20,35000
+1014,Lingulodinium polyedra,Dinoflagellate,,95,20,23750
+1017,Lingulodinium polyedra,Dinoflagellate,,120,20,30000
+1019,Lingulodinium polyedra,Dinoflagellate,,80,20,20000
+1020,Lingulodinium polyedra,Dinoflagellate,HAB,294,20,73500
+1021,Lingulodinium polyedra,Dinoflagellate,,51,20,12750
+1022,Lingulodinium polyedra,Dinoflagellate,HAB,234,20,58500
+1023,Lingulodinium polyedra,Dinoflagellate,HAB,45,20,11250
+1024,Lingulodinium polyedra,Dinoflagellate,HAB,114,20,28500
+1025,Lingulodinium polyedra,Dinoflagellate,HAB,24,20,6000
+1025,Lingulodinium polyedra,Dinoflagellate,HAB,112,20,28000
+1026,Lingulodinium polyedra,Dinoflagellate,HAB,60,20,15000
+1027,Lingulodinium polyedra,Dinoflagellate,HAB,96,20,24000
+1043,Lingulodinium polyedra,Dinoflagellate,,116,20,29000
+1055,Lingulodinium polyedra,Dinoflagellate,HAB,121,20,30250
+1056,Lingulodinium polyedra,Dinoflagellate,HAB,438,20,109500
+1057,Lingulodinium polyedra,Dinoflagellate,HAB,188,20,47000
+1058,Lingulodinium polyedra,Dinoflagellate,HAB,360,20,90000
+1059,Lingulodinium polyedra,Dinoflagellate,HAB,179,20,44750
+1060,Lingulodinium polyedra,Dinoflagellate,HAB,304,20,76000
+1061,Lingulodinium polyedra,Dinoflagellate,HAB,173,20,43250
+1062,Lingulodinium polyedra,Dinoflagellate,HAB,243,20,60750
+1063,Lingulodinium polyedra,Dinoflagellate,HAB,95,20,23750
+1064,Lingulodinium polyedra,Dinoflagellate,HAB,389,20,97250
+1065,Lingulodinium polyedra,Dinoflagellate,HAB,364,20,91000
+1066,Lingulodinium polyedra,Dinoflagellate,HAB,385,20,96250
+1067,Lingulodinium polyedra,Dinoflagellate,HAB,436,20,109000
+1068,Lingulodinium polyedra,Dinoflagellate,HAB,372,20,93000
+1071,Lingulodinium polyedra,Dinoflagellate,HAB,1817,20,454250
+1092,Lingulodinium polyedra,Dinoflagellate,,204,20,51000
+1093,Lingulodinium polyedra,Dinoflagellate,,205,20,51250
+1098,Lingulodinium polyedra,Dinoflagellate,HAB,128,20,32000
+1099,Lingulodinium polyedra,Dinoflagellate,,202,20,50500
+1100,Lingulodinium polyedra,Dinoflagellate,HAB,135,20,33750
+1101,Lingulodinium polyedra,Dinoflagellate,HAB,254,20,63500
+1102,Lingulodinium polyedra,Dinoflagellate,HAB,140,20,35000
+1103,Lingulodinium polyedra,Dinoflagellate,HAB,108,20,27000
+1104,Lingulodinium polyedra,Dinoflagellate,HAB,84,20,21000
+1105,Lingulodinium polyedra,Dinoflagellate,HAB,183,20,45750
+1106,Lingulodinium polyedra,Dinoflagellate,HAB,79,20,19750
+1107,Lingulodinium polyedra,Dinoflagellate,HAB,121,20,30250
+1108,Lingulodinium polyedra,Dinoflagellate,HAB,63,20,15750
+1109,Lingulodinium polyedra,Dinoflagellate,HAB,20,20,5000
+1110,Lingulodinium polyedra,Dinoflagellate,HAB,6,20,1500
+1111,Lingulodinium polyedra,Dinoflagellate,HAB,54,20,13500
+1112,Lingulodinium polyedra,Dinoflagellate,,36,20,9000
+1115,Lingulodinium polyedra,Dinoflagellate,HAB,85,20,21250
+1116,Lingulodinium polyedra,Dinoflagellate,,47,20,11750
+1117,Lingulodinium polyedra,Dinoflagellate,,40,5,40000
+1118,Lingulodinium polyedra,Dinoflagellate,HAB,44,20,11000
+1119,Lingulodinium polyedra,Dinoflagellate,HAB,22,20,5500
+1120,Lingulodinium polyedra,Dinoflagellate,HAB,38,20,9500
+1121,Lingulodinium polyedra,Dinoflagellate,HAB,163,20,40750
+1122,Lingulodinium polyedra,Dinoflagellate,HAB,83,5,83000
+1123,Lingulodinium polyedra,Dinoflagellate,HAB,76,5,76000
+1124,Lingulodinium polyedra,Dinoflagellate,HAB,73,10,36500
+1125,Lingulodinium polyedra,Dinoflagellate,HAB,84,10,42000
+1126,Lingulodinium polyedra,Dinoflagellate,,92,10,46000
+1127,Lingulodinium polyedra,Dinoflagellate,,64,10,32000
+1128,Lingulodinium polyedra,Dinoflagellate,,24,5,24000
+1129,Lingulodinium polyedra,Dinoflagellate,,26,5,26000
+1130,Lingulodinium polyedra,Dinoflagellate,,46,10,23000
+1131,Lingulodinium polyedra,Dinoflagellate,,40,10,20000
+1132,Lingulodinium polyedra,Dinoflagellate,,21,10,10500
+1133,Lingulodinium polyedra,Dinoflagellate,,21,10,10500
+1134,Lingulodinium polyedra,Dinoflagellate,,14,10,7000
+1135,Lingulodinium polyedra,Dinoflagellate,,12,10,6000
+1136,Lingulodinium polyedra,Dinoflagellate,,19,20,4750
+1137,Lingulodinium polyedra,Dinoflagellate,,9,20,2250
+1138,Lingulodinium polyedra,Dinoflagellate,,120,20,30000
+1139,Lingulodinium polyedra,Dinoflagellate,,77,10,38500
+1140,Lingulodinium polyedra,Dinoflagellate,,35,20,8750
+1141,Lingulodinium polyedra,Dinoflagellate,,105,20,26250
+1142,Lingulodinium polyedra,Dinoflagellate,,36,10,18000
+1144,Lingulodinium polyedra,Dinoflagellate,,144,20,36000
+1145,Lingulodinium polyedra,Dinoflagellate,,77,10,38500
+1146,Lingulodinium polyedra,Dinoflagellate,,13,10,6500
+1146,Lingulodinium polyedra,Dinoflagellate,,61,10,30500
+1148,Lingulodinium polyedra,Dinoflagellate,,80,20,20000
+1149,Lingulodinium polyedra,Dinoflagellate,,54,20,13500
+1153,Lingulodinium polyedra,Dinoflagellate,,95,20,23750
+1155,Lingulodinium polyedra,Dinoflagellate,,21,5,21000
+1158,Lingulodinium polyedra,Dinoflagellate,,20,20,5000
+1159,Lingulodinium polyedra,Dinoflagellate,,40,20,10000
+1160,Lingulodinium polyedra,Dinoflagellate,,13,20,3250
+1161,Lingulodinium polyedra,Dinoflagellate,,4,20,1000
+1167,Lingulodinium polyedra,Dinoflagellate,,103,10,51500
+1169,Lingulodinium polyedra,Dinoflagellate,,24,15,8000
+1171,Lingulodinium polyedra,Dinoflagellate,,10,20,2500
+1172,Lingulodinium polyedra,Dinoflagellate,,7,20,1750
+1173,Lingulodinium polyedra,Dinoflagellate,,8,20,2000
+1174,Lingulodinium polyedra,Dinoflagellate,,2,20,500
+1175,Lingulodinium polyedra,Dinoflagellate,,3,20,750
+1176,Lingulodinium polyedra,Dinoflagellate,,2,20,500
+1177,Lingulodinium polyedra,Dinoflagellate,,1,20,250
+1178,Lingulodinium polyedra,Dinoflagellate,,19,20,4750
+1186,Lingulodinium polyedra,Dinoflagellate,,1,20,250
+1230,Lingulodinium polyedra,Dinoflagellate,,2,40,250
+1277,Lingulodinium polyedra,Dinoflagellate,,1,37,135
+1278,Lingulodinium polyedra,Dinoflagellate,,1,150,33
+1311,Lingulodinium polyedra,Dinoflagellate,,1,32,156
+1317,Lingulodinium polyedra,Dinoflagellate,,1,53,94
+1320,Lingulodinium polyedra,Dinoflagellate,,1,33,152
+1321,Lingulodinium polyedra,Dinoflagellate,,1,47,106
+1323,Lingulodinium polyedra,Dinoflagellate,,1,36,139
+186,Melosira,Diatom,, 48 ,20,2400
+187,Melosira,Diatom,, 13 ,20,650
+191,Melosira,Diatom,, 1 ,20,50
+192,Melosira,Diatom,, 20 ,20,1000
+193,Melosira,Diatom,, 6 ,20,300
+194,Melosira,Diatom,, 32 ,20,1600
+195,Melosira,Diatom,, 9 ,20,450
+196,Melosira,Diatom,, 40 ,20,2000
+197,Melosira,Diatom,, 12 ,20,600
+212,Melosira,Diatom,, 16 ,20,800
+213,Melosira,Diatom,, 2 ,20,100
+214,Melosira,Diatom,, 11 ,20,550
+263,Melosira,Diatom,, 42 ,20,2100
+267,Melosira,Diatom,, 24 ,20,1200
+268,Melosira,Diatom,, 10 ,20,500
+269,Melosira,Diatom,, 17 ,20,850
+270,Melosira,Diatom,, 12 ,20,600
+271,Melosira,Diatom,, 21 ,20,1050
+272,Melosira,Diatom,, 13 ,20,650
+273,Melosira,Diatom,, 17 ,20,850
+274,Melosira,Diatom,, 10 ,20,500
+275,Melosira,Diatom,, 12 ,20,600
+276,Melosira,Diatom,, 6 ,20,300
+298,Melosira,Diatom,, 1 ,20,50
+302,Melosira,Diatom,, 2 ,20,100
+393,Melosira,Diatom,, 1 ,20,50
+401,Melosira,Diatom,, 1 ,20,50
+571,Melosira,Diatom,, 2 ,20,100
+572,Melosira,Diatom,, 1 ,20,50
+573,Melosira,Diatom,, 7 ,20,350
+574,Melosira,Diatom,, 1 ,20,50
+575,Melosira,Diatom,, 2 ,20,100
+1192,Melosira,Diatom,,13,20,3250
+1194,Melosira,Diatom,,3,20,750
+1195,Melosira,Diatom,,5,20,1250
+1196,Melosira,Diatom,,5,20,1250
+1203,Melosira,Diatom,,1,45,111
+1222,Melosira,Diatom,,2,20,500
+1229,Melosira,Diatom,,1,40,125
+1241,Melosira,Diatom,,40,100,400
+1242,Melosira,Diatom,,21,50,420
+1243,Melosira,Diatom,,34,100,340
+1244,Melosira,Diatom,,42,200,210
+1245,Melosira,Diatom,,40,100,400
+1247,Melosira,Diatom,,49,328,149
+1249,Melosira,Diatom,,8,200,200
+1250,Melosira,Diatom,,8,150,267
+1251,Melosira,Diatom,,3,200,75
+1252,Melosira,Diatom,,2,100,100
+1253,Melosira,Diatom,,3,150,100
+1254,Melosira,Diatom,,3,150,100
+1255,Melosira,Diatom,,2,150,67
+1256,Melosira,Diatom,,3,100,150
+1257,Melosira,Diatom,,2,200,50
+1258,Melosira,Diatom,,7,200,175
+1259,Melosira,Diatom,,8,150,267
+1260,Melosira,Diatom,,3,150,100
+1261,Melosira,Diatom,,3,200,75
+1262,Melosira,Diatom,,7,150,233
+1263,Melosira,Diatom,,29,150,967
+1264,Melosira,Diatom,,12,150,400
+1265,Melosira,Diatom,,9,200,225
+1266,Melosira,Diatom,,7,200,175
+1267,Melosira,Diatom,,4,150,133
+1268,Melosira,Diatom,,1,200,25
+1269,Melosira,Diatom,,5,150,167
+1270,Melosira,Diatom,,4,150,133
+1273,Melosira,Diatom,,7,150,233
+1276,Melosira,Diatom,,2,150,67
+1278,Melosira,Diatom,,5,150,167
+1279,Melosira,Diatom,,3,100,150
+1280,Melosira,Diatom,,5,100,250
+1281,Melosira,Diatom,,4,100,200
+1283,Melosira,Diatom,,2,100,100
+1290,Melosira,Diatom,,2,100,100
+1291,Melosira,Diatom,,1,50,100
+1292,Melosira,Diatom,,3,33,455
+1293,Melosira,Diatom,,2,66,152
+1294,Melosira,Diatom,,5,49,510
+1295,Melosira,Diatom,,3,39,385
+1296,Melosira,Diatom,,3,48,313
+1297,Melosira,Diatom,,2,50,200
+1299,Melosira,Diatom,,2,43,233
+1300,Melosira,Diatom,,3,43,349
+1301,Melosira,Diatom,,4,42,476
+1302,Melosira,Diatom,,2,40,250
+1303,Melosira,Diatom,,3,36,417
+1304,Melosira,Diatom,,1,34,147
+1305,Melosira,Diatom,,2,35,286
+1306,Melosira,Diatom,,3,52,288
+1307,Melosira,Diatom,,7,57,614
+1308,Melosira,Diatom,,17,50,1700
+1309,Melosira,Diatom,,11,50,1100
+1310,Melosira,Diatom,,62,54,5741
+1311,Melosira,Diatom,,23,32,3594
+1313,Melosira,Diatom,,1,20,250
+1315,Melosira,Diatom,,9,72,625
+1317,Melosira,Diatom,,1,53,94
+1319,Melosira,Diatom,,2,47,213
+1321,Melosira,Diatom,,1,47,106
+1324,Melosira,Diatom,,2,43,233
+1325,Melosira,Diatom,,1,47,106
+1326,Melosira,Diatom,,2,41,244
+1327,Melosira,Diatom,,1,30,167
+1328,Melosira,Diatom,,2,29,345
+1329,Melosira,Diatom,,1,41,122
+1332,Melosira,Diatom,,2,25,400
+1257,Myrionecta rubra,Litostomatea,,1,200,25
+1264,Myrionecta rubra,Litostomatea,,1,150,33
+1266,Myrionecta rubra,Litostomatea,,1,200,25
+1273,Myrionecta rubra,Litostomatea,,1,150,33
+1276,Myrionecta rubra,Litostomatea,,1,150,33
+1302,Myrionecta rubra,Litostomatea,,1,40,125
+1308,Myrionecta rubra,Litostomatea,,3,50,300
+1310,Myrionecta rubra,Litostomatea,,1,54,93
+1311,Myrionecta rubra,Litostomatea,,3,32,469
+1313,Myrionecta rubra,Litostomatea,,1,20,250
+1315,Myrionecta rubra,Litostomatea,,2,72,139
+1317,Myrionecta rubra,Litostomatea,,1,53,94
+1324,Myrionecta rubra,Litostomatea,,1,43,116
+571,Navicula,Diatom,, 3 ,20,150
+1111,Navicula,Diatom,,3,20,750
+1207,Navicula,Diatom,,2,11,909
+1208,Navicula,Diatom,,1,7,714
+1229,Navicula,Diatom,,1,40,125
+1231,Navicula,Diatom,,2,40,250
+1232,Navicula,Diatom,,1,40,125
+1233,Navicula,Diatom,,3,40,375
+1234,Navicula,Diatom,,1,40,125
+1236,Navicula,Diatom,,3,30,100
+1237,Navicula,Diatom,,1,7,143
+1238,Navicula,Diatom,,1,10,100
+1241,Navicula,Diatom,,2,100,20
+1244,Navicula,Diatom,,2,200,10
+1245,Navicula,Diatom,,4,100,40
+1247,Navicula,Diatom,,2,328,6
+1248,Navicula,Diatom,,1,24,42
+1249,Navicula,Diatom,,7,200,175
+1250,Navicula,Diatom,,3,150,100
+1250,Navicula,Diatom,,3,150,100
+1251,Navicula,Diatom,,1,200,25
+1252,Navicula,Diatom,,2,100,100
+1253,Navicula,Diatom,,3,150,100
+1254,Navicula,Diatom,,28,150,933
+1255,Navicula,Diatom,,2,150,67
+1257,Navicula,Diatom,,3,200,75
+1258,Navicula,Diatom,,5,200,125
+1259,Navicula,Diatom,,8,150,267
+1260,Navicula,Diatom,,1,150,33
+1261,Navicula,Diatom,,1,200,25
+1262,Navicula,Diatom,,2,150,67
+1263,Navicula,Diatom,,8,150,267
+1264,Navicula,Diatom,,6,150,200
+1265,Navicula,Diatom,,4,200,100
+1266,Navicula,Diatom,,15,200,375
+1267,Navicula,Diatom,,5,150,167
+1268,Navicula,Diatom,,3,200,75
+1271,Navicula,Diatom,,4,110,182
+1273,Navicula,Diatom,,1,150,33
+1275,Navicula,Diatom,,2,110,91
+1276,Navicula,Diatom,,1,150,33
+1277,Navicula,Diatom,,3,37,405
+1278,Navicula,Diatom,,3,150,100
+1281,Navicula,Diatom,,8,100,400
+1282,Navicula,Diatom,,2,150,67
+1283,Navicula,Diatom,,3,100,150
+1284,Navicula,Diatom,,1,50,100
+1289,Navicula,Diatom,,1,30,167
+1290,Navicula,Diatom,,1,100,50
+1291,Navicula,Diatom,,3,50,300
+1292,Navicula,Diatom,,5,33,758
+1293,Navicula,Diatom,,12,66,909
+1294,Navicula,Diatom,,15,49,1531
+1295,Navicula,Diatom,,11,39,1410
+1296,Navicula,Diatom,,16,48,1667
+1297,Navicula,Diatom,,10,50,1000
+1298,Navicula,Diatom,,6,23,1304
+1299,Navicula,Diatom,,5,43,581
+1300,Navicula,Diatom,,17,43,1977
+1301,Navicula,Diatom,,9,42,1071
+1302,Navicula,Diatom,,2,40,250
+1303,Navicula,Diatom,,1,36,139
+1304,Navicula,Diatom,,3,34,441
+1306,Navicula,Diatom,,1,52,96
+1307,Navicula,Diatom,,4,57,351
+1308,Navicula,Diatom,,3,50,300
+1309,Navicula,Diatom,,2,50,200
+1310,Navicula,Diatom,,3,54,278
+1315,Navicula,Diatom,,3,72,208
+1317,Navicula,Diatom,,1,53,94
+1319,Navicula,Diatom,,3,47,319
+1320,Navicula,Diatom,,2,33,303
+1321,Navicula,Diatom,,3,47,319
+1322,Navicula,Diatom,,1,39,128
+1323,Navicula,Diatom,,4,36,556
+1324,Navicula,Diatom,,4,43,465
+1325,Navicula,Diatom,,5,47,532
+1326,Navicula,Diatom,,5,41,610
+1327,Navicula,Diatom,,5,30,833
+1328,Navicula,Diatom,,3,29,517
+1329,Navicula,Diatom,,13,41,1585
+1330,Navicula,Diatom,,5,28,893
+1331,Navicula,Diatom,,5,67,373
+1332,Navicula,Diatom,,2,25,400
+212,Nitzschia,Diatom,, 2 ,20,100
+975,Nitzschia,Diatom,,1,20,250
+1111,Nitzschia,Diatom,,3,20,750
+1112,Nitzschia,Diatom,,1,20,250
+1249,Nitzschia,Diatom,,3,200,75
+1252,Nitzschia,Diatom,,8,100,400
+1256,Nitzschia,Diatom,,1,100,50
+1257,Nitzschia,Diatom,,2,200,50
+1259,Nitzschia,Diatom,,24,150,800
+1260,Nitzschia,Diatom,,1,150,33
+1261,Nitzschia,Diatom,,7,200,175
+1262,Nitzschia,Diatom,,23,150,767
+1301,Nitzschia,Diatom,,2,42,238
+1304,Nitzschia,Diatom,,6,34,882
+1319,Nitzschia,Diatom,,3,47,319
+1328,Nitzschia,Diatom,,1,29,172
+1329,Nitzschia,Diatom,,2,41,244
+18,Noctiluca,Dinoflagellate,, 17 ,20,850
+19,Noctiluca,Dinoflagellate,, 3 ,20,150
+20,Noctiluca,Dinoflagellate,, 2 ,20,100
+21,Noctiluca,Dinoflagellate,, 20 ,20,1000
+22,Noctiluca,Dinoflagellate,, 2 ,20,100
+23,Noctiluca,Dinoflagellate,, 1 ,20,50
+24,Noctiluca,Dinoflagellate,, 1 ,20,50
+25,Noctiluca,Dinoflagellate,, 2 ,20,100
+26,Noctiluca,Dinoflagellate,, 1 ,20,50
+27,Noctiluca,Dinoflagellate,, 1 ,20,50
+28,Noctiluca,Dinoflagellate,, 2 ,20,100
+29,Noctiluca,Dinoflagellate,, 1 ,20,50
+35,Noctiluca,Dinoflagellate,, 1 ,20,50
+43,Noctiluca,Dinoflagellate,, 4 ,20,200
+44,Noctiluca,Dinoflagellate,, 3 ,20,150
+45,Noctiluca,Dinoflagellate,, 9 ,20,450
+46,Noctiluca,Dinoflagellate,, 1 ,20,50
+47,Noctiluca,Dinoflagellate,, 2 ,20,100
+49,Noctiluca,Dinoflagellate,, 4 ,20,200
+149,Noctiluca,Dinoflagellate,, 1 ,20,50
+173,Noctiluca,Dinoflagellate,, 1 ,20,50
+175,Noctiluca,Dinoflagellate,, 1 ,20,50
+196,Noctiluca,Dinoflagellate,, 2 ,20,100
+212,Noctiluca,Dinoflagellate,, 2 ,20,100
+214,Noctiluca,Dinoflagellate,, 1 ,20,50
+263,Noctiluca,Dinoflagellate,, 1 ,20,50
+267,Noctiluca,Dinoflagellate,, 1 ,20,50
+268,Noctiluca,Dinoflagellate,, 1 ,20,50
+270,Noctiluca,Dinoflagellate,, 1 ,20,50
+272,Noctiluca,Dinoflagellate,, 3 ,20,150
+273,Noctiluca,Dinoflagellate,, 1 ,20,50
+274,Noctiluca,Dinoflagellate,, 1 ,20,50
+374,Noctiluca,Dinoflagellate,, 1 ,20,50
+389,Noctiluca,Dinoflagellate,, 2 ,20,100
+391,Noctiluca,Dinoflagellate,, 2 ,20,100
+392,Noctiluca,Dinoflagellate,, 1 ,20,50
+394,Noctiluca,Dinoflagellate,, 1 ,20,50
+395,Noctiluca,Dinoflagellate,, 1 ,20,50
+396,Noctiluca,Dinoflagellate,, 1 ,20,50
+398,Noctiluca,Dinoflagellate,, 1 ,20,50
+399,Noctiluca,Dinoflagellate,, 1 ,20,50
+400,Noctiluca,Dinoflagellate,, 1 ,20,50
+402,Noctiluca,Dinoflagellate,, 2 ,20,100
+538,Noctiluca,Dinoflagellate,, 1 ,10,100
+572,Noctiluca,Dinoflagellate,, 1 ,20,50
+573,Noctiluca,Dinoflagellate,, 1 ,20,50
+575,Noctiluca,Dinoflagellate,, 1 ,20,50
+1190,Noctiluca scintillans,Dinoflagellate,,2,20,500
+1193,Noctiluca scintillans,Dinoflagellate,,2,20,500
+1196,Noctiluca scintillans,Dinoflagellate,,3,20,750
+1199,Noctiluca scintillans,Dinoflagellate,,3,125,120
+1283,Noctiluca scintillans,Dinoflagellate,,1,100,50
+1297,Noctiluca scintillans,Dinoflagellate,,1,50,100
+1306,Noctiluca scintillans,Dinoflagellate,,4,52,385
+1307,Noctiluca scintillans,Dinoflagellate,,4,57,351
+1308,Noctiluca scintillans,Dinoflagellate,,12,50,1200
+1309,Noctiluca scintillans,Dinoflagellate,,2,50,200
+1315,Noctiluca scintillans,Dinoflagellate,,1,72,69
+1317,Noctiluca scintillans,Dinoflagellate,,5,53,472
+1319,Noctiluca scintillans,Dinoflagellate,,1,47,106
+1320,Noctiluca scintillans,Dinoflagellate,,1,33,152
+1323,Noctiluca scintillans,Dinoflagellate,,1,36,139
+1325,Noctiluca scintillans,Dinoflagellate,,2,47,213
+1326,Noctiluca scintillans,Dinoflagellate,,2,41,244
+1328,Noctiluca scintillans,Dinoflagellate,,1,29,172
+1329,Noctiluca scintillans,Dinoflagellate,,1,41,122
+1330,Noctiluca scintillans,Dinoflagellate,,1,28,179
+154,Octactis,Dictyochophyceae,, 1 ,20,50
+157,Octactis,Dictyochophyceae,, 1 ,20,50
+238,Octactis,Dictyochophyceae,, 1 ,20,50
+975,Octactis,Dictyochophyceae,,1,20,250
+1024,Octactis,Dictyochophyceae,,1,20,250
+1043,Octactis,Dictyochophyceae,,1,20,250
+1111,Octactis,Dictyochophyceae,,1,20,250
+1144,Octactis,Dictyochophyceae,,1,20,250
+1209,Octactis,Dictyochophyceae,,4,20,1000
+1210,Octactis,Dictyochophyceae,,4,20,1000
+1211,Octactis,Dictyochophyceae,,1,20,250
+1212,Octactis,Dictyochophyceae,,2,20,500
+1213,Octactis,Dictyochophyceae,,1,20,250
+1214,Octactis,Dictyochophyceae,,1,20,250
+1215,Octactis,Dictyochophyceae,,2,20,500
+1216,Octactis,Dictyochophyceae,,2,20,500
+1217,Octactis,Dictyochophyceae,,2,20,500
+1218,Octactis,Dictyochophyceae,,1,20,250
+1219,Octactis,Dictyochophyceae,,6,20,1500
+1221,Octactis,Dictyochophyceae,,4,20,1000
+1222,Octactis,Dictyochophyceae,,1,20,250
+1223,Octactis,Dictyochophyceae,,1,20,250
+1224,Octactis,Dictyochophyceae,,3,20,750
+1226,Octactis,Dictyochophyceae,,1,5,1000
+1227,Octactis,Dictyochophyceae,,1,8,625
+1229,Octactis,Dictyochophyceae,,1,40,125
+1231,Octactis,Dictyochophyceae,,3,40,375
+1233,Octactis,Dictyochophyceae,,8,40,1000
+1234,Octactis,Dictyochophyceae,,2,40,250
+1235,Octactis,Dictyochophyceae,,2,40,50
+1236,Octactis,Dictyochophyceae,,4,30,133
+1241,Octactis,Dictyochophyceae,,2,100,20
+1259,Octactis,Dictyochophyceae,,2,150,67
+1260,Octactis,Dictyochophyceae,,1,150,33
+1263,Octactis,Dictyochophyceae,,1,150,33
+1264,Octactis,Dictyochophyceae,,5,150,167
+1266,Octactis,Dictyochophyceae,,3,200,75
+1267,Octactis,Dictyochophyceae,,2,150,67
+1268,Octactis,Dictyochophyceae,,4,200,100
+1269,Octactis,Dictyochophyceae,,10,150,333
+1270,Octactis,Dictyochophyceae,,1,150,33
+1271,Octactis,Dictyochophyceae,,17,110,773
+1272,Octactis,Dictyochophyceae,,4,110,182
+1273,Octactis,Dictyochophyceae,,1,150,33
+1275,Octactis,Dictyochophyceae,,1,110,45
+1279,Octactis,Dictyochophyceae,,4,100,200
+1280,Octactis,Dictyochophyceae,,2,100,100
+1281,Octactis,Dictyochophyceae,,1,100,50
+1282,Octactis,Dictyochophyceae,,1,150,33
+1292,Octactis,Dictyochophyceae,,3,33,455
+1294,Octactis,Dictyochophyceae,,11,49,1122
+1295,Octactis,Dictyochophyceae,,7,39,897
+1296,Octactis,Dictyochophyceae,,8,48,833
+1297,Octactis,Dictyochophyceae,,7,50,700
+1298,Octactis,Dictyochophyceae,,2,23,435
+1299,Octactis,Dictyochophyceae,,5,43,581
+1300,Octactis,Dictyochophyceae,,8,43,930
+1301,Octactis,Dictyochophyceae,,8,42,952
+1302,Octactis,Dictyochophyceae,,2,40,250
+1303,Octactis,Dictyochophyceae,,1,36,139
+1304,Octactis,Dictyochophyceae,,1,34,147
+1305,Octactis,Dictyochophyceae,,1,35,143
+1306,Octactis,Dictyochophyceae,,2,52,192
+1307,Octactis,Dictyochophyceae,,3,57,263
+1310,Octactis,Dictyochophyceae,,12,54,1111
+1311,Octactis,Dictyochophyceae,,17,32,2656
+1313,Octactis,Dictyochophyceae,,8,20,2000
+1315,Octactis,Dictyochophyceae,,6,72,417
+1317,Octactis,Dictyochophyceae,,4,53,377
+1319,Octactis,Dictyochophyceae,,3,47,319
+1320,Octactis,Dictyochophyceae,,1,33,152
+1321,Octactis,Dictyochophyceae,,2,47,213
+1324,Octactis,Dictyochophyceae,,2,43,233
+1326,Octactis,Dictyochophyceae,,1,41,122
+1242,Odontella,Diatom,,1,50,20
+1247,Odontella,Diatom,,2,328,6
+1311,Odontella,Diatom,,1,32,156
+394,Pleurosigma,Diatom,, 1 ,20,50
+399,Pleurosigma,Diatom,, 1 ,20,50
+401,Pleurosigma,Diatom,, 2 ,20,100
+570,Pleurosigma,Diatom,, 1 ,20,50
+573,Pleurosigma,Diatom,, 7 ,20,350
+1199,Pleurosigma,Diatom,,1,125,40
+1202,Pleurosigma,Diatom,,1,63,79
+1219,Pleurosigma,Diatom,,1,20,250
+1220,Pleurosigma,Diatom,,1,20,250
+1229,Pleurosigma,Diatom,,1,40,125
+1310,Pleurosigma,Diatom,,1,54,93
+1320,Pleurosigma,Diatom,,1,33,152
+1254,Pleurosigma capensis,Diatom,,2,150,67
+18,Lingulodinium polyedra,Dinoflagellate,HAB, 29 ,20,1450
+19,Lingulodinium polyedra,Dinoflagellate,HAB, 51 ,20,2550
+20,Lingulodinium polyedra,Dinoflagellate,HAB, 127 ,20,6350
+21,Lingulodinium polyedra,Dinoflagellate,HAB, 149 ,20,7450
+22,Lingulodinium polyedra,Dinoflagellate,HAB, 990 ,20,49500
+23,Lingulodinium polyedra,Dinoflagellate,HAB, 210 ,20,10500
+24,Lingulodinium polyedra,Dinoflagellate,HAB, 81 ,20,4050
+25,Lingulodinium polyedra,Dinoflagellate,HAB, 23 ,20,1150
+26,Lingulodinium polyedra,Dinoflagellate,HAB, 15 ,20,750
+27,Lingulodinium polyedra,Dinoflagellate,HAB, 24 ,20,1200
+28,Lingulodinium polyedra,Dinoflagellate,HAB, 33 ,20,1650
+29,Lingulodinium polyedra,Dinoflagellate,HAB, 14 ,20,700
+30,Lingulodinium polyedra,Dinoflagellate,HAB, 4 ,20,200
+31,Lingulodinium polyedra,Dinoflagellate,HAB, 4 ,20,200
+32,Lingulodinium polyedra,Dinoflagellate,HAB, 21 ,20,1050
+33,Lingulodinium polyedra,Dinoflagellate,HAB, 25 ,20,1250
+34,Lingulodinium polyedra,Dinoflagellate,HAB, 16 ,20,800
+35,Lingulodinium polyedra,Dinoflagellate,HAB, 76 ,20,3800
+36,Lingulodinium polyedra,Dinoflagellate,HAB, 173 ,20,8650
+37,Lingulodinium polyedra,Dinoflagellate,HAB, 31 ,20,1550
+38,Lingulodinium polyedra,Dinoflagellate,HAB, 28 ,20,1400
+39,Lingulodinium polyedra,Dinoflagellate,HAB, 7 ,20,350
+40,Lingulodinium polyedra,Dinoflagellate,HAB, 2 ,20,100
+43,Lingulodinium polyedra,Dinoflagellate,HAB, 5 ,20,250
+44,Lingulodinium polyedra,Dinoflagellate,HAB, 4 ,20,200
+45,Lingulodinium polyedra,Dinoflagellate,HAB, 11 ,20,550
+46,Lingulodinium polyedra,Dinoflagellate,HAB, 6 ,20,300
+47,Lingulodinium polyedra,Dinoflagellate,HAB, 8 ,20,400
+48,Lingulodinium polyedra,Dinoflagellate,HAB, 10 ,20,500
+49,Lingulodinium polyedra,Dinoflagellate,HAB, 5 ,20,250
+50,Lingulodinium polyedra,Dinoflagellate,HAB, 5 ,20,250
+51,Lingulodinium polyedra,Dinoflagellate,HAB, 65 ,20,3250
+52,Lingulodinium polyedra,Dinoflagellate,HAB, 209 ,20,10450
+54,Lingulodinium polyedra,Dinoflagellate,HAB, 7 ,20,350
+55,Lingulodinium polyedra,Dinoflagellate,HAB, 160 ,20,8000
+56,Lingulodinium polyedra,Dinoflagellate,HAB, 59 ,20,2950
+57,Lingulodinium polyedra,Dinoflagellate,HAB, 262 ,20,13100
+58,Lingulodinium polyedra,Dinoflagellate,HAB, 332 ,20,16600
+59,Lingulodinium polyedra,Dinoflagellate,HAB, 84 ,20,4200
+63,Lingulodinium polyedra,Dinoflagellate,HAB, 199 ,20,9950
+64,Lingulodinium polyedra,Dinoflagellate,HAB, 216 ,20,10800
+65,Lingulodinium polyedra,Dinoflagellate,HAB, 218 ,20,10900
+66,Lingulodinium polyedra,Dinoflagellate,HAB,2000,20,100000
+67,Lingulodinium polyedra,Dinoflagellate,HAB, 1 000 ,20,50000
+68,Lingulodinium polyedra,Dinoflagellate,HAB, 1 400 ,20,70000
+71,Lingulodinium polyedra,Dinoflagellate,HAB, 966 ,20,48300
+76,Lingulodinium polyedra,Dinoflagellate,HAB, 41 ,20,2050
+77,Lingulodinium polyedra,Dinoflagellate,HAB, 227 ,20,11350
+78,Lingulodinium polyedra,Dinoflagellate,HAB, 201 ,20,10050
+79,Lingulodinium polyedra,Dinoflagellate,HAB, 88 ,20,4400
+80,Lingulodinium polyedra,Dinoflagellate,HAB, 48 ,20,2400
+95,Lingulodinium polyedra,Dinoflagellate,HAB, 65 ,20,3250
+113,Lingulodinium polyedra,Dinoflagellate,HAB, 15 ,20,750
+114,Lingulodinium polyedra,Dinoflagellate,HAB, 9 ,20,450
+115,Lingulodinium polyedra,Dinoflagellate,HAB, 45 ,20,2250
+116,Lingulodinium polyedra,Dinoflagellate,HAB, 30 ,20,1500
+148,Lingulodinium polyedra,Dinoflagellate,HAB, 26 ,20,1300
+149,Lingulodinium polyedra,Dinoflagellate,HAB, 10 ,20,500
+150,Lingulodinium polyedra,Dinoflagellate,HAB, 12 ,20,600
+151,Lingulodinium polyedra,Dinoflagellate,HAB, 12 ,20,600
+152,Lingulodinium polyedra,Dinoflagellate,HAB, 14 ,20,700
+153,Lingulodinium polyedra,Dinoflagellate,HAB, 3 ,20,150
+154,Lingulodinium polyedra,Dinoflagellate,HAB, 12 ,20,600
+155,Lingulodinium polyedra,Dinoflagellate,HAB, 1 ,20,50
+156,Lingulodinium polyedra,Dinoflagellate,HAB, 2 ,20,100
+164,Lingulodinium polyedra,Dinoflagellate,HAB, 3 ,20,150
+165,Lingulodinium polyedra,Dinoflagellate,HAB, 11 ,20,550
+166,Lingulodinium polyedra,Dinoflagellate,HAB, 320 ,20,16000
+167,Lingulodinium polyedra,Dinoflagellate,HAB, 104 ,20,5200
+168,Lingulodinium polyedra,Dinoflagellate,HAB, 800 ,20,40000
+169,Lingulodinium polyedra,Dinoflagellate,HAB, 400 ,20,20000
+170,Lingulodinium polyedra,Dinoflagellate,HAB, 500 ,20,25000
+171,Lingulodinium polyedra,Dinoflagellate,HAB, 104 ,20,5200
+172,Lingulodinium polyedra,Dinoflagellate,HAB, 201 ,20,10050
+173,Lingulodinium polyedra,Dinoflagellate,HAB, 165 ,20,8250
+174,Lingulodinium polyedra,Dinoflagellate,HAB, 159 ,20,7950
+175,Lingulodinium polyedra,Dinoflagellate,HAB, 404 ,20,20200
+178,Lingulodinium polyedra,Dinoflagellate,HAB, 134 ,20,6700
+183,Lingulodinium polyedra,Dinoflagellate,HAB, 123 ,20,6150
+186,Lingulodinium polyedra,Dinoflagellate,HAB, 105 ,20,5250
+187,Lingulodinium polyedra,Dinoflagellate,HAB, 172 ,20,8600
+188,Lingulodinium polyedra,Dinoflagellate,HAB, 48 ,20,2400
+189,Lingulodinium polyedra,Dinoflagellate,HAB, 99 ,20,4950
+190,Lingulodinium polyedra,Dinoflagellate,HAB, 113 ,20,5650
+191,Lingulodinium polyedra,Dinoflagellate,HAB, 191 ,20,9550
+192,Lingulodinium polyedra,Dinoflagellate,HAB, 101 ,20,5050
+193,Lingulodinium polyedra,Dinoflagellate,HAB, 53 ,20,2650
+194,Lingulodinium polyedra,Dinoflagellate,HAB, 112 ,20,5600
+195,Lingulodinium polyedra,Dinoflagellate,HAB, 89 ,20,4450
+196,Lingulodinium polyedra,Dinoflagellate,HAB, 183 ,20,9150
+197,Lingulodinium polyedra,Dinoflagellate,HAB, 85 ,20,4250
+200,Lingulodinium polyedra,Dinoflagellate,HAB, 488 ,20,24400
+201,Lingulodinium polyedra,Dinoflagellate,HAB, 228 ,20,11400
+202,Lingulodinium polyedra,Dinoflagellate,HAB, 361 ,20,18050
+203,Lingulodinium polyedra,Dinoflagellate,HAB, 35 ,20,1750
+204,Lingulodinium polyedra,Dinoflagellate,HAB, 709 ,20,35450
+205,Lingulodinium polyedra,Dinoflagellate,HAB, 525 ,20,26250
+206,Lingulodinium polyedra,Dinoflagellate,HAB, 474 ,20,23700
+207,Lingulodinium polyedra,Dinoflagellate,HAB, 121 ,20,6050
+209,Lingulodinium polyedra,Dinoflagellate,HAB, 2 ,20,100
+213,Lingulodinium polyedra,Dinoflagellate,HAB, 16 ,20,800
+214,Lingulodinium polyedra,Dinoflagellate,HAB, 146 ,20,7300
+228,Lingulodinium polyedra,Dinoflagellate,HAB, 149 ,20,7450
+229,Lingulodinium polyedra,Dinoflagellate,HAB, 17 ,20,850
+230,Lingulodinium polyedra,Dinoflagellate,HAB, 50 ,20,2500
+231,Lingulodinium polyedra,Dinoflagellate,HAB, 11 ,20,550
+232,Lingulodinium polyedra,Dinoflagellate,HAB, 46 ,20,2300
+233,Lingulodinium polyedra,Dinoflagellate,HAB, 17 ,20,850
+235,Lingulodinium polyedra,Dinoflagellate,HAB, 11 ,20,550
+237,Lingulodinium polyedra,Dinoflagellate,HAB, 43 ,20,2150
+238,Lingulodinium polyedra,Dinoflagellate,HAB, 43 ,20,2150
+240,Lingulodinium polyedra,Dinoflagellate,HAB, 109 ,20,5450
+241,Lingulodinium polyedra,Dinoflagellate,HAB, 35 ,20,1750
+242,Lingulodinium polyedra,Dinoflagellate,HAB, 274 ,20,13700
+243,Lingulodinium polyedra,Dinoflagellate,HAB, 123 ,20,6150
+244,Lingulodinium polyedra,Dinoflagellate,HAB, 289 ,20,14450
+245,Lingulodinium polyedra,Dinoflagellate,HAB, 166 ,20,8300
+246,Lingulodinium polyedra,Dinoflagellate,HAB, 219 ,20,10950
+247,Lingulodinium polyedra,Dinoflagellate,HAB, 89 ,20,4450
+248,Lingulodinium polyedra,Dinoflagellate,HAB, 180 ,20,9000
+249,Lingulodinium polyedra,Dinoflagellate,HAB, 138 ,20,6900
+250,Lingulodinium polyedra,Dinoflagellate,HAB, 289 ,20,14450
+251,Lingulodinium polyedra,Dinoflagellate,HAB, 75 ,20,3750
+254,Lingulodinium polyedra,Dinoflagellate,HAB, 4 ,20,200
+257,Lingulodinium polyedra,Dinoflagellate,HAB, 2 ,20,100
+258,Lingulodinium polyedra,Dinoflagellate,HAB, 121 ,20,6050
+260,Lingulodinium polyedra,Dinoflagellate,HAB, 15 ,20,750
+263,Lingulodinium polyedra,Dinoflagellate,HAB, 258 ,20,12900
+264,Lingulodinium polyedra,Dinoflagellate,HAB, 53 ,20,2650
+267,Lingulodinium polyedra,Dinoflagellate,HAB, 342 ,20,17100
+268,Lingulodinium polyedra,Dinoflagellate,HAB, 186 ,20,9300
+269,Lingulodinium polyedra,Dinoflagellate,HAB, 439 ,20,21950
+270,Lingulodinium polyedra,Dinoflagellate,HAB, 220 ,20,11000
+271,Lingulodinium polyedra,Dinoflagellate,HAB, 325 ,20,16250
+272,Lingulodinium polyedra,Dinoflagellate,HAB, 198 ,20,9900
+273,Lingulodinium polyedra,Dinoflagellate,HAB, 421 ,20,21050
+274,Lingulodinium polyedra,Dinoflagellate,HAB, 455 ,20,22750
+275,Lingulodinium polyedra,Dinoflagellate,HAB, 328 ,20,16400
+276,Lingulodinium polyedra,Dinoflagellate,HAB, 281 ,20,14050
+298,Lingulodinium polyedra,Dinoflagellate,HAB, 351 ,6,58500
+302,Lingulodinium polyedra,Dinoflagellate,HAB, 253 ,20,12650
+340,Lingulodinium polyedra,Dinoflagellate,HAB, 31 ,10,3100
+342,Lingulodinium polyedra,Dinoflagellate,HAB, 34 ,10,3400
+343,Lingulodinium polyedra,Dinoflagellate,HAB, 110 ,10,11000
+344,Lingulodinium polyedra,Dinoflagellate,HAB, 60 ,10,6000
+345,Lingulodinium polyedra,Dinoflagellate,HAB, 134 ,10,13400
+346,Lingulodinium polyedra,Dinoflagellate,HAB, 61 ,10,6100
+347,Lingulodinium polyedra,Dinoflagellate,HAB, 110 ,10,11000
+348,Lingulodinium polyedra,Dinoflagellate,HAB, 100 ,10,10000
+349,Lingulodinium polyedra,Dinoflagellate,HAB, 163 ,10,16300
+350,Lingulodinium polyedra,Dinoflagellate,HAB, 47 ,10,4700
+351,Lingulodinium polyedra,Dinoflagellate,HAB, 160 ,10,16000
+352,Lingulodinium polyedra,Dinoflagellate,HAB, 32 ,10,3200
+354,Lingulodinium polyedra,Dinoflagellate,HAB, 433 ,5,86600
+355,Lingulodinium polyedra,Dinoflagellate,HAB, 131 ,5,26200
+356,Lingulodinium polyedra,Dinoflagellate,HAB, 52 ,5,10400
+358,Lingulodinium polyedra,Dinoflagellate,HAB, 43 ,5,8600
+359,Lingulodinium polyedra,Dinoflagellate,HAB, 105 ,5,21000
+360,Lingulodinium polyedra,Dinoflagellate,HAB, 40 ,5,8000
+374,Lingulodinium polyedra,Dinoflagellate,HAB, 159 ,20,7950
+378,Lingulodinium polyedra,Dinoflagellate,HAB, 52 ,20,2600
+379,Lingulodinium polyedra,Dinoflagellate,HAB, 47 ,20,2350
+380,Lingulodinium polyedra,Dinoflagellate,HAB, 81 ,20,4050
+382,Lingulodinium polyedra,Dinoflagellate,HAB, 165 ,20,8250
+383,Lingulodinium polyedra,Dinoflagellate,HAB, 73 ,20,3650
+384,Lingulodinium polyedra,Dinoflagellate,HAB, 160 ,20,8000
+385,Lingulodinium polyedra,Dinoflagellate,HAB, 58 ,20,2900
+388,Lingulodinium polyedra,Dinoflagellate,HAB, 108 ,20,5400
+389,Lingulodinium polyedra,Dinoflagellate,HAB, 512 ,20,25600
+390,Lingulodinium polyedra,Dinoflagellate,HAB, 212 ,20,10600
+391,Lingulodinium polyedra,Dinoflagellate,HAB, 164 ,20,8200
+392,Lingulodinium polyedra,Dinoflagellate,HAB, 110 ,20,5500
+393,Lingulodinium polyedra,Dinoflagellate,HAB, 44 ,20,2200
+394,Lingulodinium polyedra,Dinoflagellate,HAB, 50 ,20,2500
+395,Lingulodinium polyedra,Dinoflagellate,HAB, 6 ,20,300
+396,Lingulodinium polyedra,Dinoflagellate,HAB, 6 ,20,300
+398,Lingulodinium polyedra,Dinoflagellate,HAB, 78 ,20,3900
+399,Lingulodinium polyedra,Dinoflagellate,HAB, 19 ,20,950
+400,Lingulodinium polyedra,Dinoflagellate,HAB, 144 ,20,7200
+401,Lingulodinium polyedra,Dinoflagellate,HAB, 102 ,20,5100
+402,Lingulodinium polyedra,Dinoflagellate,HAB, 200 ,20,10000
+403,Lingulodinium polyedra,Dinoflagellate,HAB, 196 ,20,9800
+538,Lingulodinium polyedra,Dinoflagellate,HAB, 69 ,10,6900
+539,Lingulodinium polyedra,Dinoflagellate,HAB, 153 ,10,15300
+570,Lingulodinium polyedra,Dinoflagellate,HAB, 36 ,20,1800
+571,Lingulodinium polyedra,Dinoflagellate,HAB, 33 ,20,1650
+572,Lingulodinium polyedra,Dinoflagellate,HAB, 34 ,20,1700
+573,Lingulodinium polyedra,Dinoflagellate,HAB, 16 ,20,800
+574,Lingulodinium polyedra,Dinoflagellate,HAB, 203 ,20,10150
+575,Lingulodinium polyedra,Dinoflagellate,HAB, 95 ,20,4750
+570,Prorocentrum gracile,Dinoflagellate,, 8 ,20,400
+571,Prorocentrum gracile,Dinoflagellate,, 6 ,20,300
+572,Prorocentrum gracile,Dinoflagellate,, 11 ,20,550
+573,Prorocentrum gracile,Dinoflagellate,, 6 ,20,300
+574,Prorocentrum gracile,Dinoflagellate,, 9 ,20,450
+575,Prorocentrum gracile,Dinoflagellate,, 5 ,20,250
+959,Prorocentrum gracile,Dinoflagellate,,6,20,1500
+960,Prorocentrum gracile,Dinoflagellate,,3,20,750
+961,Prorocentrum gracile,Dinoflagellate,,13,20,3250
+962,Prorocentrum gracile,Dinoflagellate,,10,20,2500
+964,Prorocentrum gracile,Dinoflagellate,,8,20,2000
+969,Prorocentrum gracile,Dinoflagellate,,3,20,750
+971,Prorocentrum gracile,Dinoflagellate,,1,20,250
+974,Prorocentrum gracile,Dinoflagellate,,1,20,250
+975,Prorocentrum gracile,Dinoflagellate,,2,20,500
+976,Prorocentrum gracile,Dinoflagellate,,2,20,500
+1024,Prorocentrum gracile,Dinoflagellate,,4,20,1000
+1025,Prorocentrum gracile,Dinoflagellate,,4,20,1000
+1213,Prorocentrum gracile,Dinoflagellate,,1,20,250
+1214,Prorocentrum gracile,Dinoflagellate,,1,20,250
+1215,Prorocentrum gracile,Dinoflagellate,,1,20,250
+1259,Prorocentrum gracile,Dinoflagellate,,2,150,67
+1260,Prorocentrum gracile,Dinoflagellate,,2,150,67
+1261,Prorocentrum gracile,Dinoflagellate,,4,200,100
+1282,Prorocentrum gracile,Dinoflagellate,,1,150,33
+1283,Prorocentrum gracile,Dinoflagellate,,1,100,50
+1319,Prorocentrum gracile,Dinoflagellate,,1,47,106
+1320,Prorocentrum gracile,Dinoflagellate,,1,33,152
+1321,Prorocentrum gracile,Dinoflagellate,,2,47,213
+1325,Prorocentrum gracile,Dinoflagellate,,2,47,213
+1276,Prorocentrum lima,Dinoflagellate,,1,150,33
+1293,Prorocentrum lima,Dinoflagellate,,6,66,455
+1294,Prorocentrum lima,Dinoflagellate,,1,49,102
+1307,Prorocentrum lima,Dinoflagellate,,1,57,88
+175,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+196,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+269,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+271,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+274,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+374,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+380,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+381,Prorocentrum micans,Dinoflagellate,, 4 ,20,200
+390,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+391,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+393,Prorocentrum micans,Dinoflagellate,, 2 ,20,100
+395,Prorocentrum micans,Dinoflagellate,, 4 ,20,200
+398,Prorocentrum micans,Dinoflagellate,, 2 ,20,100
+399,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+403,Prorocentrum micans,Dinoflagellate,, 1 ,20,50
+538,Prorocentrum micans,Dinoflagellate,, 9 ,10,900
+539,Prorocentrum micans,Dinoflagellate,, 22 ,10,2200
+570,Prorocentrum micans,Dinoflagellate,, 15 ,20,750
+571,Prorocentrum micans,Dinoflagellate,, 24 ,20,1200
+572,Prorocentrum micans,Dinoflagellate,, 33 ,20,1650
+573,Prorocentrum micans,Dinoflagellate,, 25 ,20,1250
+574,Prorocentrum micans,Dinoflagellate,, 31 ,20,1550
+575,Prorocentrum micans,Dinoflagellate,, 14 ,20,700
+956,Prorocentrum micans,Dinoflagellate,,178,20,44500
+957,Prorocentrum micans,Dinoflagellate,,228,20,57000
+958,Prorocentrum micans,Dinoflagellate,,126,20,31500
+959,Prorocentrum micans,Dinoflagellate,,212,20,53000
+960,Prorocentrum micans,Dinoflagellate,,120,20,30000
+961,Prorocentrum micans,Dinoflagellate,,177,20,44250
+962,Prorocentrum micans,Dinoflagellate,,114,20,28500
+963,Prorocentrum micans,Dinoflagellate,,181,20,45250
+964,Prorocentrum micans,Dinoflagellate,,136,20,34000
+965,Prorocentrum micans,Dinoflagellate,,156,20,39000
+966,Prorocentrum micans,Dinoflagellate,,179,20,44750
+967,Prorocentrum micans,Dinoflagellate,,159,20,39750
+968,Prorocentrum micans,Dinoflagellate,,137,20,34250
+969,Prorocentrum micans,Dinoflagellate,,92,20,23000
+970,Prorocentrum micans,Dinoflagellate,,48,20,12000
+971,Prorocentrum micans,Dinoflagellate,,48,20,12000
+972,Prorocentrum micans,Dinoflagellate,,19,20,4750
+973,Prorocentrum micans,Dinoflagellate,,70,20,17500
+974,Prorocentrum micans,Dinoflagellate,,47,20,11750
+975,Prorocentrum micans,Dinoflagellate,,52,20,13000
+976,Prorocentrum micans,Dinoflagellate,,50,20,12500
+977,Prorocentrum micans,Dinoflagellate,,80,20,20000
+978,Prorocentrum micans,Dinoflagellate,,43,20,10750
+979,Prorocentrum micans,Dinoflagellate,,40,20,10000
+980,Prorocentrum micans,Dinoflagellate,,213,20,53250
+981,Prorocentrum micans,Dinoflagellate,,135,20,33750
+984,Prorocentrum micans,Dinoflagellate,,483,20,120750
+985,Prorocentrum micans,Dinoflagellate,,203,20,50750
+986,Prorocentrum micans,Dinoflagellate,,308,20,77000
+987,Prorocentrum micans,Dinoflagellate,,187,20,46750
+988,Prorocentrum micans,Dinoflagellate,,381,20,95250
+989,Prorocentrum micans,Dinoflagellate,,140,20,35000
+992,Prorocentrum micans,Dinoflagellate,,280,20,70000
+993,Prorocentrum micans,Dinoflagellate,,70,20,17500
+994,Prorocentrum micans,Dinoflagellate,,253,20,63250
+995,Prorocentrum micans,Dinoflagellate,,153,20,38250
+996,Prorocentrum micans,Dinoflagellate,,171,20,42750
+997,Prorocentrum micans,Dinoflagellate,,171,20,42750
+998,Prorocentrum micans,Dinoflagellate,,178,20,44500
+1004,Prorocentrum micans,Dinoflagellate,,68,20,17000
+1005,Prorocentrum micans,Dinoflagellate,,519,20,129750
+1006,Prorocentrum micans,Dinoflagellate,,496,20,124000
+1008,Prorocentrum micans,Dinoflagellate,,370,20,92500
+1009,Prorocentrum micans,Dinoflagellate,,17,5,17000
+1011,Prorocentrum micans,Dinoflagellate,,79,20,19750
+1012,Prorocentrum micans,Dinoflagellate,,111,20,27750
+1014,Prorocentrum micans,Dinoflagellate,,95,20,23750
+1017,Prorocentrum micans,Dinoflagellate,,86,20,21500
+1019,Prorocentrum micans,Dinoflagellate,,102,20,25500
+1020,Prorocentrum micans,Dinoflagellate,,455,20,113750
+1021,Prorocentrum micans,Dinoflagellate,,121,20,30250
+1022,Prorocentrum micans,Dinoflagellate,,529,20,132250
+1023,Prorocentrum micans,Dinoflagellate,,4,20,1000
+1024,Prorocentrum micans,Dinoflagellate,,232,20,58000
+1025,Prorocentrum micans,Dinoflagellate,,51,20,12750
+1025,Prorocentrum micans,Dinoflagellate,,208,20,52000
+1026,Prorocentrum micans,Dinoflagellate,,122,20,30500
+1027,Prorocentrum micans,Dinoflagellate,,168,20,42000
+1043,Prorocentrum micans,Dinoflagellate,,2,20,500
+1055,Prorocentrum micans,Dinoflagellate,,404,20,101000
+1109,Prorocentrum micans,Dinoflagellate,,138,20,34500
+1110,Prorocentrum micans,Dinoflagellate,,26,20,6500
+1111,Prorocentrum micans,Dinoflagellate,,217,20,54250
+1112,Prorocentrum micans,Dinoflagellate,,149,20,37250
+1115,Prorocentrum micans,Dinoflagellate,,238,20,59500
+1116,Prorocentrum micans,Dinoflagellate,,135,20,33750
+1117,Prorocentrum micans,Dinoflagellate,,80,5,80000
+1118,Prorocentrum micans,Dinoflagellate,,150,20,37500
+1119,Prorocentrum micans,Dinoflagellate,,100,20,25000
+1120,Prorocentrum micans,Dinoflagellate,,115,20,28750
+1121,Prorocentrum micans,Dinoflagellate,,268,20,67000
+1122,Prorocentrum micans,Dinoflagellate,,99,5,99000
+1123,Prorocentrum micans,Dinoflagellate,,76,5,76000
+1124,Prorocentrum micans,Dinoflagellate,,145,10,72500
+1125,Prorocentrum micans,Dinoflagellate,,102,10,51000
+1126,Prorocentrum micans,Dinoflagellate,,169,10,84500
+1127,Prorocentrum micans,Dinoflagellate,,100,10,50000
+1128,Prorocentrum micans,Dinoflagellate,,28,5,28000
+1129,Prorocentrum micans,Dinoflagellate,,32,5,32000
+1130,Prorocentrum micans,Dinoflagellate,,50,10,25000
+1131,Prorocentrum micans,Dinoflagellate,,65,10,32500
+1132,Prorocentrum micans,Dinoflagellate,,38,10,19000
+1133,Prorocentrum micans,Dinoflagellate,,35,10,17500
+1134,Prorocentrum micans,Dinoflagellate,,36,10,18000
+1135,Prorocentrum micans,Dinoflagellate,,13,10,6500
+1136,Prorocentrum micans,Dinoflagellate,,21,20,5250
+1137,Prorocentrum micans,Dinoflagellate,,18,20,4500
+1138,Prorocentrum micans,Dinoflagellate,,13,20,3250
+1139,Prorocentrum micans,Dinoflagellate,,4,10,2000
+1140,Prorocentrum micans,Dinoflagellate,,5,20,1250
+1141,Prorocentrum micans,Dinoflagellate,,8,20,2000
+1142,Prorocentrum micans,Dinoflagellate,,3,10,1500
+1144,Prorocentrum micans,Dinoflagellate,,3,20,750
+1145,Prorocentrum micans,Dinoflagellate,,5,10,2500
+1146,Prorocentrum micans,Dinoflagellate,,3,10,1500
+1146,Prorocentrum micans,Dinoflagellate,,5,10,2500
+1147,Prorocentrum micans,Dinoflagellate,,1,20,250
+1147,Prorocentrum micans,Dinoflagellate,,2,20,500
+1148,Prorocentrum micans,Dinoflagellate,,1,20,250
+1149,Prorocentrum micans,Dinoflagellate,,1,20,250
+1160,Prorocentrum micans,Dinoflagellate,,2,20,500
+1161,Prorocentrum micans,Dinoflagellate,,1,20,250
+1186,Prorocentrum micans,Dinoflagellate,,1,20,250
+1187,Prorocentrum micans,Dinoflagellate,,3,20,750
+1190,Prorocentrum micans,Dinoflagellate,,4,20,1000
+1191,Prorocentrum micans,Dinoflagellate,,1,20,250
+1193,Prorocentrum micans,Dinoflagellate,,4,20,1000
+1195,Prorocentrum micans,Dinoflagellate,,10,20,2500
+1197,Prorocentrum micans,Dinoflagellate,,8,20,2000
+1200,Prorocentrum micans,Dinoflagellate,,1,125,40
+1201,Prorocentrum micans,Dinoflagellate,,2,8,1250
+1202,Prorocentrum micans,Dinoflagellate,,2,63,159
+1204,Prorocentrum micans,Dinoflagellate,,1,16,313
+1210,Prorocentrum micans,Dinoflagellate,,1,20,250
+1211,Prorocentrum micans,Dinoflagellate,,1,20,250
+1212,Prorocentrum micans,Dinoflagellate,,1,20,250
+1219,Prorocentrum micans,Dinoflagellate,,1,20,250
+1236,Prorocentrum micans,Dinoflagellate,,2,30,67
+1241,Prorocentrum micans,Dinoflagellate,,1,100,10
+1250,Prorocentrum micans,Dinoflagellate,,1,150,33
+1251,Prorocentrum micans,Dinoflagellate,,7,200,175
+1252,Prorocentrum micans,Dinoflagellate,,4,100,200
+1253,Prorocentrum micans,Dinoflagellate,,11,150,367
+1254,Prorocentrum micans,Dinoflagellate,,2,150,67
+1255,Prorocentrum micans,Dinoflagellate,,4,150,133
+1256,Prorocentrum micans,Dinoflagellate,,4,100,200
+1257,Prorocentrum micans,Dinoflagellate,,13,200,325
+1258,Prorocentrum micans,Dinoflagellate,,6,200,150
+1259,Prorocentrum micans,Dinoflagellate,,4,150,133
+1260,Prorocentrum micans,Dinoflagellate,,9,150,300
+1261,Prorocentrum micans,Dinoflagellate,,3,200,75
+1262,Prorocentrum micans,Dinoflagellate,,3,150,100
+1263,Prorocentrum micans,Dinoflagellate,,3,150,100
+1273,Prorocentrum micans,Dinoflagellate,,1,150,33
+1277,Prorocentrum micans,Dinoflagellate,,8,37,1081
+1279,Prorocentrum micans,Dinoflagellate,,1,100,50
+1280,Prorocentrum micans,Dinoflagellate,,2,100,100
+1281,Prorocentrum micans,Dinoflagellate,,2,100,100
+1283,Prorocentrum micans,Dinoflagellate,,1,100,50
+1304,Prorocentrum micans,Dinoflagellate,,1,34,147
+1306,Prorocentrum micans,Dinoflagellate,,1,52,96
+1307,Prorocentrum micans,Dinoflagellate,,1,57,88
+1311,Prorocentrum micans,Dinoflagellate,,1,32,156
+1315,Prorocentrum micans,Dinoflagellate,,3,72,208
+1317,Prorocentrum micans,Dinoflagellate,,1,53,94
+1187,Prorocentrum minimum,Dinoflagellate,,8,20,2000
+1188,Prorocentrum minimum,Dinoflagellate,,2,20,500
+1190,Prorocentrum minimum,Dinoflagellate,,10,20,2500
+1191,Prorocentrum minimum,Dinoflagellate,,8,20,2000
+1193,Prorocentrum minimum,Dinoflagellate,,10,20,2500
+1195,Prorocentrum minimum,Dinoflagellate,,17,20,4250
+1197,Prorocentrum minimum,Dinoflagellate,,10,20,2500
+1198,Prorocentrum minimum,Dinoflagellate,,12,20,3000
+1200,Prorocentrum minimum,Dinoflagellate,,6,125,240
+1201,Prorocentrum minimum,Dinoflagellate,,3,8,1875
+1202,Prorocentrum minimum,Dinoflagellate,,54,63,4286
+1203,Prorocentrum minimum,Dinoflagellate,,34,45,3778
+1204,Prorocentrum minimum,Dinoflagellate,,12,16,3750
+1205,Prorocentrum minimum,Dinoflagellate,,22,22,5000
+1206,Prorocentrum minimum,Dinoflagellate,,19,19,5000
+1207,Prorocentrum minimum,Dinoflagellate,,7,11,3182
+1208,Prorocentrum minimum,Dinoflagellate,,5,7,3571
+1217,Prorocentrum minimum,Dinoflagellate,,12,20,3000
+1219,Prorocentrum minimum,Dinoflagellate,,16,20,4000
+1220,Prorocentrum minimum,Dinoflagellate,,3,20,750
+1222,Prorocentrum minimum,Dinoflagellate,,1,20,250
+1253,Prorocentrum minimum,Dinoflagellate,,3,150,100
+1254,Prorocentrum minimum,Dinoflagellate,,14,150,467
+1255,Prorocentrum minimum,Dinoflagellate,,8,150,267
+1256,Prorocentrum minimum,Dinoflagellate,,8,100,400
+1257,Prorocentrum minimum,Dinoflagellate,,12,200,300
+1258,Prorocentrum minimum,Dinoflagellate,,14,200,350
+1259,Prorocentrum minimum,Dinoflagellate,,14,150,467
+1260,Prorocentrum minimum,Dinoflagellate,,4,150,133
+1261,Prorocentrum minimum,Dinoflagellate,,7,200,175
+1262,Prorocentrum minimum,Dinoflagellate,,5,150,167
+1263,Prorocentrum minimum,Dinoflagellate,,8,150,267
+1264,Prorocentrum minimum,Dinoflagellate,,4,150,133
+1265,Prorocentrum minimum,Dinoflagellate,,8,200,200
+1266,Prorocentrum minimum,Dinoflagellate,,9,200,225
+1267,Prorocentrum minimum,Dinoflagellate,,7,150,233
+1268,Prorocentrum minimum,Dinoflagellate,,4,200,100
+1269,Prorocentrum minimum,Dinoflagellate,,2,150,67
+1270,Prorocentrum minimum,Dinoflagellate,,9,150,300
+1273,Prorocentrum minimum,Dinoflagellate,,3,150,100
+1276,Prorocentrum minimum,Dinoflagellate,,3,150,100
+1278,Prorocentrum minimum,Dinoflagellate,,6,150,200
+1279,Prorocentrum minimum,Dinoflagellate,,1,100,50
+1280,Prorocentrum minimum,Dinoflagellate,,3,100,150
+1281,Prorocentrum minimum,Dinoflagellate,,6,100,300
+1282,Prorocentrum minimum,Dinoflagellate,,5,150,167
+1283,Prorocentrum minimum,Dinoflagellate,,1,100,50
+1290,Prorocentrum minimum,Dinoflagellate,,2,100,100
+1291,Prorocentrum minimum,Dinoflagellate,,3,50,300
+1292,Prorocentrum minimum,Dinoflagellate,,1,33,152
+1294,Prorocentrum minimum,Dinoflagellate,,5,49,510
+1295,Prorocentrum minimum,Dinoflagellate,,4,39,513
+1296,Prorocentrum minimum,Dinoflagellate,,1,48,104
+1299,Prorocentrum minimum,Dinoflagellate,,1,43,116
+1301,Prorocentrum minimum,Dinoflagellate,,4,42,476
+1302,Prorocentrum minimum,Dinoflagellate,,2,40,250
+1303,Prorocentrum minimum,Dinoflagellate,,3,36,417
+1304,Prorocentrum minimum,Dinoflagellate,,2,34,294
+1305,Prorocentrum minimum,Dinoflagellate,,3,35,429
+1306,Prorocentrum minimum,Dinoflagellate,,1,52,96
+1308,Prorocentrum minimum,Dinoflagellate,,4,50,400
+1309,Prorocentrum minimum,Dinoflagellate,,1,50,100
+1315,Prorocentrum minimum,Dinoflagellate,,2,72,139
+1319,Prorocentrum minimum,Dinoflagellate,,2,47,213
+1320,Prorocentrum minimum,Dinoflagellate,,1,33,152
+1321,Prorocentrum minimum,Dinoflagellate,,4,47,426
+1322,Prorocentrum minimum,Dinoflagellate,,2,39,256
+1324,Prorocentrum minimum,Dinoflagellate,,1,43,116
+1325,Prorocentrum minimum,Dinoflagellate,,2,47,213
+1120,Prorocentrum sigmoides,Dinoflagellate,,7,20,1750
+1126,Prorocentrum sigmoides,Dinoflagellate,,3,10,1500
+1127,Prorocentrum sigmoides,Dinoflagellate,,1,10,500
+1137,Prorocentrum sigmoides,Dinoflagellate,,1,20,250
+1188,Prorocentrum sigmoides,Dinoflagellate,,1,20,250
+1202,Prorocentrum sigmoides,Dinoflagellate,,1,63,79
+1203,Prorocentrum sigmoides,Dinoflagellate,,1,45,111
+1208,Prorocentrum sigmoides,Dinoflagellate,,1,7,714
+1211,Prorocentrum sigmoides,Dinoflagellate,,1,20,250
+1213,Prorocentrum sigmoides,Dinoflagellate,,2,20,500
+1215,Prorocentrum sigmoides,Dinoflagellate,,1,20,250
+1259,Protoceratium reticulatum,Dinoflagellate,,3,150,100
+1268,Protoceratium reticulatum,Dinoflagellate,,1,200,25
+1324,Protoperidinium bipes,Dinoflagellate,,1,43,116
+390,Protoperidinium brevipes,Dinoflagellate,, 1 ,20,50
+1278,Protoperidinium brevipes,Dinoflagellate,,1,150,33
+1307,Protoperidinium brevis,Dinoflagellate,,1,57,88
+1281,Protoperidinium claudicans,Dinoflagellate,,1,100,50
+1292,Protoperidinium claudicans,Dinoflagellate,,1,33,152
+1305,Protoperidinium claudicans,Dinoflagellate,,1,35,143
+1307,Protoperidinium claudicans,Dinoflagellate,,1,57,88
+1308,Protoperidinium claudicans,Dinoflagellate,,1,50,100
+1315,Protoperidinium claudicans,Dinoflagellate,,1,72,69
+1317,Protoperidinium claudicans,Dinoflagellate,,3,53,283
+1319,Protoperidinium claudicans,Dinoflagellate,,2,47,213
+1325,Protoperidinium claudicans,Dinoflagellate,,1,47,106
+1,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+2,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+3,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+4,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+5,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+6,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+7,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+8,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+9,Protoperidinium conicum,Dinoflagellate,, 5 ,20,250
+10,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+11,Protoperidinium conicum,Dinoflagellate,, 5 ,20,250
+12,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+13,Protoperidinium conicum,Dinoflagellate,, 7 ,20,350
+14,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+15,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+16,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+17,Protoperidinium conicum,Dinoflagellate,, 5 ,20,250
+18,Protoperidinium conicum,Dinoflagellate,, 72 ,20,3600
+19,Protoperidinium conicum,Dinoflagellate,, 104 ,20,5200
+20,Protoperidinium conicum,Dinoflagellate,, 67 ,20,3350
+21,Protoperidinium conicum,Dinoflagellate,, 109 ,20,5450
+22,Protoperidinium conicum,Dinoflagellate,, 173 ,20,8650
+23,Protoperidinium conicum,Dinoflagellate,, 57 ,20,2850
+24,Protoperidinium conicum,Dinoflagellate,, 15 ,20,750
+25,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+27,Protoperidinium conicum,Dinoflagellate,, 8 ,20,400
+28,Protoperidinium conicum,Dinoflagellate,, 7 ,20,350
+29,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+30,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+31,Protoperidinium conicum,Dinoflagellate,, 8 ,20,400
+32,Protoperidinium conicum,Dinoflagellate,, 10 ,20,500
+33,Protoperidinium conicum,Dinoflagellate,, 9 ,20,450
+34,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+35,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+36,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+44,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+50,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+51,Protoperidinium conicum,Dinoflagellate,, 5 ,20,250
+54,Protoperidinium conicum,Dinoflagellate,, 14 ,20,700
+63,Protoperidinium conicum,Dinoflagellate,, 20 ,20,1000
+154,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+155,Protoperidinium conicum,Dinoflagellate,, 5 ,20,250
+157,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+160,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+162,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+174,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+202,Protoperidinium conicum,Dinoflagellate,, 9 ,20,450
+203,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+206,Protoperidinium conicum,Dinoflagellate,, 10 ,20,500
+207,Protoperidinium conicum,Dinoflagellate,, 12 ,20,600
+209,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+228,Protoperidinium conicum,Dinoflagellate,, 16 ,20,800
+229,Protoperidinium conicum,Dinoflagellate,, 6 ,20,300
+232,Protoperidinium conicum,Dinoflagellate,, 9 ,20,450
+233,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+234,Protoperidinium conicum,Dinoflagellate,, 4 ,20,200
+235,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+238,Protoperidinium conicum,Dinoflagellate,, 9 ,20,450
+239,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+254,Protoperidinium conicum,Dinoflagellate,, 7 ,20,350
+255,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+256,Protoperidinium conicum,Dinoflagellate,, 7 ,20,350
+258,Protoperidinium conicum,Dinoflagellate,, 18 ,20,900
+260,Protoperidinium conicum,Dinoflagellate,, 7 ,20,350
+340,Protoperidinium conicum,Dinoflagellate,, 183 ,10,18300
+342,Protoperidinium conicum,Dinoflagellate,, 87 ,10,8700
+343,Protoperidinium conicum,Dinoflagellate,, 21 ,10,2100
+344,Protoperidinium conicum,Dinoflagellate,, 38 ,10,3800
+345,Protoperidinium conicum,Dinoflagellate,, 41 ,10,4100
+346,Protoperidinium conicum,Dinoflagellate,, 29 ,10,2900
+347,Protoperidinium conicum,Dinoflagellate,, 38 ,10,3800
+348,Protoperidinium conicum,Dinoflagellate,, 7 ,10,700
+349,Protoperidinium conicum,Dinoflagellate,, 131 ,10,13100
+350,Protoperidinium conicum,Dinoflagellate,, 12 ,10,1200
+351,Protoperidinium conicum,Dinoflagellate,, 74 ,10,7400
+352,Protoperidinium conicum,Dinoflagellate,, 15 ,10,1500
+353,Protoperidinium conicum,Dinoflagellate,, 122 ,5,24400
+354,Protoperidinium conicum,Dinoflagellate,, 101 ,5,20200
+355,Protoperidinium conicum,Dinoflagellate,, 75 ,5,15000
+357,Protoperidinium conicum,Dinoflagellate,, 290 ,5,58000
+358,Protoperidinium conicum,Dinoflagellate,, 14 ,5,2800
+359,Protoperidinium conicum,Dinoflagellate,, 33 ,5,6600
+360,Protoperidinium conicum,Dinoflagellate,, 5 ,5,1000
+376,Protoperidinium conicum,Dinoflagellate,, 10 ,20,500
+377,Protoperidinium conicum,Dinoflagellate,, 2 ,20,100
+378,Protoperidinium conicum,Dinoflagellate,, 9 ,20,450
+379,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+380,Protoperidinium conicum,Dinoflagellate,, 15 ,20,750
+381,Protoperidinium conicum,Dinoflagellate,, 3 ,20,150
+382,Protoperidinium conicum,Dinoflagellate,, 22 ,20,1100
+384,Protoperidinium conicum,Dinoflagellate,, 12 ,20,600
+385,Protoperidinium conicum,Dinoflagellate,, 14 ,20,700
+386,Protoperidinium conicum,Dinoflagellate,, 20 ,20,1000
+388,Protoperidinium conicum,Dinoflagellate,, 18 ,20,900
+389,Protoperidinium conicum,Dinoflagellate,, 1 ,20,50
+956,Protoperidinium conicum,Dinoflagellate,,13,20,3250
+958,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+969,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+970,Protoperidinium conicum,Dinoflagellate,,1,20,250
+971,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+973,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+974,Protoperidinium conicum,Dinoflagellate,,7,20,1750
+976,Protoperidinium conicum,Dinoflagellate,,4,20,1000
+977,Protoperidinium conicum,Dinoflagellate,,2,20,500
+978,Protoperidinium conicum,Dinoflagellate,,3,20,750
+979,Protoperidinium conicum,Dinoflagellate,,2,20,500
+992,Protoperidinium conicum,Dinoflagellate,,7,20,1750
+993,Protoperidinium conicum,Dinoflagellate,,3,20,750
+995,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+998,Protoperidinium conicum,Dinoflagellate,,4,20,1000
+1004,Protoperidinium conicum,Dinoflagellate,,3,20,750
+1009,Protoperidinium conicum,Dinoflagellate,,2,5,2000
+1012,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1017,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1024,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+1025,Protoperidinium conicum,Dinoflagellate,,8,20,2000
+1026,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1027,Protoperidinium conicum,Dinoflagellate,,4,20,1000
+1109,Protoperidinium conicum,Dinoflagellate,,2,20,500
+1110,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1111,Protoperidinium conicum,Dinoflagellate,,14,20,3500
+1112,Protoperidinium conicum,Dinoflagellate,,2,20,500
+1118,Protoperidinium conicum,Dinoflagellate,,4,20,1000
+1119,Protoperidinium conicum,Dinoflagellate,,2,20,500
+1126,Protoperidinium conicum,Dinoflagellate,,12,10,6000
+1127,Protoperidinium conicum,Dinoflagellate,,10,10,5000
+1130,Protoperidinium conicum,Dinoflagellate,,7,10,3500
+1131,Protoperidinium conicum,Dinoflagellate,,6,10,3000
+1133,Protoperidinium conicum,Dinoflagellate,,2,10,1000
+1134,Protoperidinium conicum,Dinoflagellate,,3,10,1500
+1135,Protoperidinium conicum,Dinoflagellate,,5,10,2500
+1136,Protoperidinium conicum,Dinoflagellate,,2,20,500
+1137,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1138,Protoperidinium conicum,Dinoflagellate,,32,20,8000
+1139,Protoperidinium conicum,Dinoflagellate,,25,10,12500
+1140,Protoperidinium conicum,Dinoflagellate,,13,20,3250
+1141,Protoperidinium conicum,Dinoflagellate,,39,20,9750
+1142,Protoperidinium conicum,Dinoflagellate,,8,10,4000
+1143,Protoperidinium conicum,Dinoflagellate,,91,20,22750
+1144,Protoperidinium conicum,Dinoflagellate,,51,20,12750
+1145,Protoperidinium conicum,Dinoflagellate,,27,10,13500
+1146,Protoperidinium conicum,Dinoflagellate,,5,10,2500
+1146,Protoperidinium conicum,Dinoflagellate,,15,10,7500
+1148,Protoperidinium conicum,Dinoflagellate,,6,20,1500
+1149,Protoperidinium conicum,Dinoflagellate,,8,20,2000
+1155,Protoperidinium conicum,Dinoflagellate,,13,5,13000
+1158,Protoperidinium conicum,Dinoflagellate,,12,20,3000
+1161,Protoperidinium conicum,Dinoflagellate,,30,20,7500
+1190,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1193,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1209,Protoperidinium conicum,Dinoflagellate,,2,20,500
+1218,Protoperidinium conicum,Dinoflagellate,,1,20,250
+1230,Protoperidinium conicum,Dinoflagellate,,2,40,250
+1232,Protoperidinium conicum,Dinoflagellate,,2,40,250
+1235,Protoperidinium conicum,Dinoflagellate,,2,40,50
+1236,Protoperidinium conicum,Dinoflagellate,,1,30,33
+1237,Protoperidinium conicum,Dinoflagellate,,1,7,143
+1248,Protoperidinium conicum,Dinoflagellate,,2,24,83
+1249,Protoperidinium conicum,Dinoflagellate,,1,200,25
+1250,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1251,Protoperidinium conicum,Dinoflagellate,,1,200,25
+1253,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1254,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1255,Protoperidinium conicum,Dinoflagellate,,4,150,133
+1256,Protoperidinium conicum,Dinoflagellate,,1,100,50
+1257,Protoperidinium conicum,Dinoflagellate,,2,200,50
+1260,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1261,Protoperidinium conicum,Dinoflagellate,,2,200,50
+1263,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1264,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1265,Protoperidinium conicum,Dinoflagellate,,2,200,50
+1267,Protoperidinium conicum,Dinoflagellate,,3,150,100
+1268,Protoperidinium conicum,Dinoflagellate,,2,200,50
+1271,Protoperidinium conicum,Dinoflagellate,,9,110,409
+1276,Protoperidinium conicum,Dinoflagellate,,1,150,33
+1277,Protoperidinium conicum,Dinoflagellate,,1,37,135
+1279,Protoperidinium conicum,Dinoflagellate,,1,100,50
+1280,Protoperidinium conicum,Dinoflagellate,,2,100,100
+1291,Protoperidinium conicum,Dinoflagellate,,1,50,100
+1308,Protoperidinium conicum,Dinoflagellate,,2,50,200
+1309,Protoperidinium conicum,Dinoflagellate,,2,50,200
+1311,Protoperidinium conicum,Dinoflagellate,,7,32,1094
+1313,Protoperidinium conicum,Dinoflagellate,,5,20,1250
+1315,Protoperidinium conicum,Dinoflagellate,,3,72,208
+1317,Protoperidinium conicum,Dinoflagellate,,5,53,472
+1320,Protoperidinium conicum,Dinoflagellate,,1,33,152
+1325,Protoperidinium conicum,Dinoflagellate,,1,47,106
+1328,Protoperidinium conicum,Dinoflagellate,,1,29,172
+25,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+34,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+36,Protoperidinium depressum,Dinoflagellate,, 11 ,20,550
+38,Protoperidinium depressum,Dinoflagellate,, 2 ,20,100
+39,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+40,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+43,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+45,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+46,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+48,Protoperidinium depressum,Dinoflagellate,, 3 ,20,150
+49,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+152,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+155,Protoperidinium depressum,Dinoflagellate,, 2 ,20,100
+206,Protoperidinium depressum,Dinoflagellate,, 5 ,20,250
+207,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+214,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+228,Protoperidinium depressum,Dinoflagellate,, 2 ,20,100
+238,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+256,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+257,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+258,Protoperidinium depressum,Dinoflagellate,, 4 ,20,200
+270,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+276,Protoperidinium depressum,Dinoflagellate,, 3 ,20,150
+389,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+572,Protoperidinium depressum,Dinoflagellate,, 1 ,20,50
+998,Protoperidinium depressum,Dinoflagellate,,1,20,250
+1248,Protoperidinium depressum,Dinoflagellate,,1,24,42
+1254,Protoperidinium depressum,Dinoflagellate,,2,150,67
+1257,Protoperidinium depressum,Dinoflagellate,,2,200,50
+5,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+6,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+7,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+8,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+9,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+10,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+11,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+12,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+13,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+14,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+15,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+16,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+17,Protoperidinium diabolum,Dinoflagellate,, 12 ,20,600
+18,Protoperidinium diabolum,Dinoflagellate,, 21 ,20,1050
+19,Protoperidinium diabolum,Dinoflagellate,, 30 ,20,1500
+20,Protoperidinium diabolum,Dinoflagellate,, 34 ,20,1700
+21,Protoperidinium diabolum,Dinoflagellate,, 49 ,20,2450
+22,Protoperidinium diabolum,Dinoflagellate,, 7 ,20,350
+23,Protoperidinium diabolum,Dinoflagellate,, 24 ,20,1200
+24,Protoperidinium diabolum,Dinoflagellate,, 6 ,20,300
+25,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+27,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+28,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+29,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+30,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+31,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+32,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+33,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+34,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+35,Protoperidinium diabolum,Dinoflagellate,, 6 ,20,300
+36,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+37,Protoperidinium diabolum,Dinoflagellate,, 11 ,20,550
+38,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+39,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+43,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+44,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+45,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+46,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+47,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+48,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+49,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+51,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+54,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+63,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+64,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+150,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+175,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+178,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+186,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+187,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+191,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+192,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+193,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+197,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+206,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+207,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+209,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+212,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+214,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+228,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+232,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+234,Protoperidinium diabolum,Dinoflagellate,, 11 ,20,550
+260,Protoperidinium diabolum,Dinoflagellate,, 6 ,20,300
+263,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+268,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+269,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+270,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+271,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+272,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+273,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+274,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+275,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+276,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+298,Protoperidinium diabolum,Dinoflagellate,, 6 ,20,300
+302,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+340,Protoperidinium diabolum,Dinoflagellate,, 1 ,10,100
+343,Protoperidinium diabolum,Dinoflagellate,, 4 ,10,400
+347,Protoperidinium diabolum,Dinoflagellate,, 7 ,10,700
+349,Protoperidinium diabolum,Dinoflagellate,, 33 ,10,3300
+350,Protoperidinium diabolum,Dinoflagellate,, 3 ,10,300
+351,Protoperidinium diabolum,Dinoflagellate,, 36 ,10,3600
+352,Protoperidinium diabolum,Dinoflagellate,, 2 ,10,200
+353,Protoperidinium diabolum,Dinoflagellate,, 20 ,5,4000
+357,Protoperidinium diabolum,Dinoflagellate,, 142 ,5,28400
+358,Protoperidinium diabolum,Dinoflagellate,, 8 ,5,1600
+359,Protoperidinium diabolum,Dinoflagellate,, 20 ,5,4000
+374,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+376,Protoperidinium diabolum,Dinoflagellate,, 6 ,20,300
+377,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+378,Protoperidinium diabolum,Dinoflagellate,, 8 ,20,400
+380,Protoperidinium diabolum,Dinoflagellate,, 7 ,20,350
+381,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+382,Protoperidinium diabolum,Dinoflagellate,, 12 ,20,600
+384,Protoperidinium diabolum,Dinoflagellate,, 5 ,20,250
+385,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+386,Protoperidinium diabolum,Dinoflagellate,, 7 ,20,350
+389,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+390,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+391,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+392,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+393,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+395,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+396,Protoperidinium diabolum,Dinoflagellate,, 3 ,20,150
+398,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+399,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+400,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+402,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+539,Protoperidinium diabolum,Dinoflagellate,, 5 ,10,500
+570,Protoperidinium diabolum,Dinoflagellate,, 4 ,20,200
+571,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+572,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+573,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+574,Protoperidinium diabolum,Dinoflagellate,, 1 ,20,50
+575,Protoperidinium diabolum,Dinoflagellate,, 2 ,20,100
+956,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+959,Protoperidinium diabolum,Dinoflagellate,,3,20,750
+960,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+962,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+967,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+968,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+971,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+977,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+978,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+981,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1009,Protoperidinium diabolum,Dinoflagellate,,5,5,5000
+1011,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1012,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1014,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1017,Protoperidinium diabolum,Dinoflagellate,,5,20,1250
+1022,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1024,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1025,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1043,Protoperidinium diabolum,Dinoflagellate,,3,20,750
+1112,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1115,Protoperidinium diabolum,Dinoflagellate,,3,20,750
+1116,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1118,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1120,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1121,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1126,Protoperidinium diabolum,Dinoflagellate,,3,10,1500
+1127,Protoperidinium diabolum,Dinoflagellate,,1,10,500
+1130,Protoperidinium diabolum,Dinoflagellate,,1,10,500
+1131,Protoperidinium diabolum,Dinoflagellate,,1,10,500
+1136,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1138,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1139,Protoperidinium diabolum,Dinoflagellate,,2,10,1000
+1142,Protoperidinium diabolum,Dinoflagellate,,1,10,500
+1144,Protoperidinium diabolum,Dinoflagellate,,4,20,1000
+1145,Protoperidinium diabolum,Dinoflagellate,,2,10,1000
+1146,Protoperidinium diabolum,Dinoflagellate,,2,10,1000
+1160,Protoperidinium diabolum,Dinoflagellate,,2,20,500
+1161,Protoperidinium diabolum,Dinoflagellate,,3,20,750
+1186,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1187,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1210,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1230,Protoperidinium diabolum,Dinoflagellate,,1,40,125
+1292,Protoperidinium diabolum,Dinoflagellate,,1,33,152
+1298,Protoperidinium diabolum,Dinoflagellate,,1,23,217
+1302,Protoperidinium diabolum,Dinoflagellate,,1,40,125
+1310,Protoperidinium diabolum,Dinoflagellate,,3,54,278
+1311,Protoperidinium diabolum,Dinoflagellate,,4,32,625
+1313,Protoperidinium diabolum,Dinoflagellate,,1,20,250
+1315,Protoperidinium diabolum,Dinoflagellate,,1,72,69
+1317,Protoperidinium diabolum,Dinoflagellate,,1,53,94
+1319,Protoperidinium diabolum,Dinoflagellate,,1,47,106
+1322,Protoperidinium diabolum,Dinoflagellate,,2,39,256
+1323,Protoperidinium diabolum,Dinoflagellate,,4,36,556
+1324,Protoperidinium diabolum,Dinoflagellate,,1,43,116
+39,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+41,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+43,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+44,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+45,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+46,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+47,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+48,Protoperidinium divergens,Dinoflagellate,, 1 ,20,50
+49,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+50,Protoperidinium divergens,Dinoflagellate,, 1 ,20,50
+51,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+64,Protoperidinium divergens,Dinoflagellate,, 13 ,20,650
+148,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+149,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+150,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+151,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+152,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+153,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+154,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+164,Protoperidinium divergens,Dinoflagellate,, 30 ,20,1500
+171,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+172,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+173,Protoperidinium divergens,Dinoflagellate,, 17 ,20,850
+174,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+175,Protoperidinium divergens,Dinoflagellate,, 26 ,20,1300
+186,Protoperidinium divergens,Dinoflagellate,, 9 ,20,450
+187,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+189,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+191,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+192,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+193,Protoperidinium divergens,Dinoflagellate,, 1 ,20,50
+194,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+195,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+196,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+197,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+206,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+212,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+213,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+214,Protoperidinium divergens,Dinoflagellate,, 8 ,20,400
+263,Protoperidinium divergens,Dinoflagellate,, 11 ,20,550
+267,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+268,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+269,Protoperidinium divergens,Dinoflagellate,, 11 ,20,550
+270,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+271,Protoperidinium divergens,Dinoflagellate,, 8 ,20,400
+272,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+273,Protoperidinium divergens,Dinoflagellate,, 16 ,20,800
+274,Protoperidinium divergens,Dinoflagellate,, 11 ,20,550
+275,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+276,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+298,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+302,Protoperidinium divergens,Dinoflagellate,, 12 ,20,600
+374,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+389,Protoperidinium divergens,Dinoflagellate,, 15 ,20,750
+390,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+391,Protoperidinium divergens,Dinoflagellate,, 6 ,20,300
+392,Protoperidinium divergens,Dinoflagellate,, 5 ,20,250
+393,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+394,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+395,Protoperidinium divergens,Dinoflagellate,, 1 ,20,50
+396,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+397,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+400,Protoperidinium divergens,Dinoflagellate,, 9 ,20,450
+401,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+402,Protoperidinium divergens,Dinoflagellate,, 7 ,20,350
+403,Protoperidinium divergens,Dinoflagellate,, 2 ,20,100
+538,Protoperidinium divergens,Dinoflagellate,, 3 ,10,300
+539,Protoperidinium divergens,Dinoflagellate,, 3 ,10,300
+570,Protoperidinium divergens,Dinoflagellate,, 4 ,20,200
+571,Protoperidinium divergens,Dinoflagellate,, 8 ,20,400
+572,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+573,Protoperidinium divergens,Dinoflagellate,, 8 ,20,400
+574,Protoperidinium divergens,Dinoflagellate,, 12 ,20,600
+575,Protoperidinium divergens,Dinoflagellate,, 3 ,20,150
+959,Protoperidinium divergens,Dinoflagellate,,16,20,4000
+960,Protoperidinium divergens,Dinoflagellate,,5,20,1250
+961,Protoperidinium divergens,Dinoflagellate,,9,20,2250
+962,Protoperidinium divergens,Dinoflagellate,,9,20,2250
+963,Protoperidinium divergens,Dinoflagellate,,5,20,1250
+964,Protoperidinium divergens,Dinoflagellate,,12,20,3000
+965,Protoperidinium divergens,Dinoflagellate,,15,20,3750
+966,Protoperidinium divergens,Dinoflagellate,,10,20,2500
+967,Protoperidinium divergens,Dinoflagellate,,7,20,1750
+968,Protoperidinium divergens,Dinoflagellate,,7,20,1750
+980,Protoperidinium divergens,Dinoflagellate,,17,20,4250
+981,Protoperidinium divergens,Dinoflagellate,,7,20,1750
+986,Protoperidinium divergens,Dinoflagellate,,31,20,7750
+987,Protoperidinium divergens,Dinoflagellate,,10,20,2500
+988,Protoperidinium divergens,Dinoflagellate,,13,20,3250
+989,Protoperidinium divergens,Dinoflagellate,,10,20,2500
+996,Protoperidinium divergens,Dinoflagellate,,4,20,1000
+997,Protoperidinium divergens,Dinoflagellate,,7,20,1750
+1020,Protoperidinium divergens,Dinoflagellate,,6,20,1500
+1022,Protoperidinium divergens,Dinoflagellate,,7,20,1750
+1023,Protoperidinium divergens,Dinoflagellate,,2,20,500
+1024,Protoperidinium divergens,Dinoflagellate,,1,20,250
+1055,Protoperidinium divergens,Dinoflagellate,,3,20,750
+1115,Protoperidinium divergens,Dinoflagellate,,9,20,2250
+1116,Protoperidinium divergens,Dinoflagellate,,1,20,250
+1120,Protoperidinium divergens,Dinoflagellate,,2,20,500
+1121,Protoperidinium divergens,Dinoflagellate,,9,20,2250
+1124,Protoperidinium divergens,Dinoflagellate,,13,10,6500
+1125,Protoperidinium divergens,Dinoflagellate,,17,10,8500
+1126,Protoperidinium divergens,Dinoflagellate,,5,10,2500
+1291,Protoperidinium divergens,Dinoflagellate,,1,50,100
+1310,Protoperidinium divergens,Dinoflagellate,,8,54,741
+1324,Protoperidinium divergens,Dinoflagellate,,1,43,116
+1325,Protoperidinium divergens,Dinoflagellate,,4,47,426
+967,Protoperidinium minutum,Dinoflagellate,,2,20,500
+1214,Protoperidinium minutum,Dinoflagellate,,1,20,250
+232,Protoperidinium oceanicum,Dinoflagellate,, 1 ,20,50
+236,Protoperidinium oceanicum,Dinoflagellate,, 10 ,20,500
+351,Protoperidinium oceanicum,Dinoflagellate,, 29 ,10,2900
+353,Protoperidinium oceanicum,Dinoflagellate,, 24 ,5,4800
+354,Protoperidinium oceanicum,Dinoflagellate,, 59 ,5,11800
+1043,Protoperidinium oceanicum,Dinoflagellate,,2,20,500
+1118,Protoperidinium oceanicum,Dinoflagellate,,2,20,500
+1126,Protoperidinium oceanicum,Dinoflagellate,,1,10,500
+1132,Protoperidinium oceanicum,Dinoflagellate,,4,10,2000
+1147,Protoperidinium oceanicum,Dinoflagellate,,1,20,250
+1246,Protoperidinium oceanicum,Dinoflagellate,,1,24,42
+1259,Protoperidinium oceanicum,Dinoflagellate,,1,150,33
+1263,Protoperidinium oceanicum,Dinoflagellate,,1,150,33
+1264,Protoperidinium oceanicum,Dinoflagellate,,1,150,33
+1266,Protoperidinium oceanicum,Dinoflagellate,,1,200,25
+1280,Protoperidinium oceanicum,Dinoflagellate,,1,100,50
+1283,Protoperidinium oceanicum,Dinoflagellate,,1,100,50
+1311,Protoperidinium oceanicum,Dinoflagellate,,3,32,469
+1321,Protoperidinium oceanicum,Dinoflagellate,,2,47,213
+1231,Protoperidinium steinii,Dinoflagellate,,1,40,125
+1271,Protoperidinium steinii,Dinoflagellate,,3,110,136
+1275,Protoperidinium steinii,Dinoflagellate,,1,110,45
+2,Pseudo-nitzschia,Diatom,, 3 ,20,150
+5,Pseudo-nitzschia,Diatom,, 1 ,20,50
+6,Pseudo-nitzschia,Diatom,, 1 ,20,50
+7,Pseudo-nitzschia,Diatom,, 2 ,20,100
+8,Pseudo-nitzschia,Diatom,, 3 ,20,150
+9,Pseudo-nitzschia,Diatom,, 4 ,20,200
+10,Pseudo-nitzschia,Diatom,, 3 ,20,150
+11,Pseudo-nitzschia,Diatom,, 2 ,20,100
+13,Pseudo-nitzschia,Diatom,, 1 ,20,50
+14,Pseudo-nitzschia,Diatom,, 2 ,20,100
+16,Pseudo-nitzschia,Diatom,, 1 ,20,50
+17,Pseudo-nitzschia,Diatom,, 6 ,20,300
+18,Pseudo-nitzschia,Diatom,, 3 ,20,150
+19,Pseudo-nitzschia,Diatom,, 1 ,20,50
+20,Pseudo-nitzschia,Diatom,, 1 ,20,50
+21,Pseudo-nitzschia,Diatom,, 5 ,20,250
+23,Pseudo-nitzschia,Diatom,, 1 ,20,50
+46,Pseudo-nitzschia,Diatom,, 1 ,20,50
+47,Pseudo-nitzschia,Diatom,, 1 ,20,50
+51,Pseudo-nitzschia,Diatom,, 3 ,20,150
+63,Pseudo-nitzschia,Diatom,, 5 ,20,250
+154,Pseudo-nitzschia,Diatom,, 2 ,20,100
+155,Pseudo-nitzschia,Diatom,, 1 ,20,50
+172,Pseudo-nitzschia,Diatom,, 2 ,20,100
+173,Pseudo-nitzschia,Diatom,, 1 ,20,50
+174,Pseudo-nitzschia,Diatom,, 17 ,20,850
+175,Pseudo-nitzschia,Diatom,, 3 ,20,150
+178,Pseudo-nitzschia,Diatom,, 2 ,20,100
+186,Pseudo-nitzschia,Diatom,, 5 ,20,250
+187,Pseudo-nitzschia,Diatom,, 2 ,20,100
+191,Pseudo-nitzschia,Diatom,, 1 ,20,50
+192,Pseudo-nitzschia,Diatom,, 2 ,20,100
+193,Pseudo-nitzschia,Diatom,, 2 ,20,100
+194,Pseudo-nitzschia,Diatom,, 4 ,20,200
+196,Pseudo-nitzschia,Diatom,, 6 ,20,300
+203,Pseudo-nitzschia,Diatom,, 1 ,20,50
+206,Pseudo-nitzschia,Diatom,, 4 ,20,200
+207,Pseudo-nitzschia,Diatom,, 2 ,20,100
+209,Pseudo-nitzschia,Diatom,, 2 ,20,100
+214,Pseudo-nitzschia,Diatom,, 1 ,20,50
+228,Pseudo-nitzschia,Diatom,, 5 ,20,250
+230,Pseudo-nitzschia,Diatom,, 3 ,20,150
+231,Pseudo-nitzschia,Diatom,, 1 ,20,50
+232,Pseudo-nitzschia,Diatom,, 2 ,20,100
+236,Pseudo-nitzschia,Diatom,, 6 ,20,300
+237,Pseudo-nitzschia,Diatom,, 2 ,20,100
+238,Pseudo-nitzschia,Diatom,, 7 ,20,350
+239,Pseudo-nitzschia,Diatom,, 3 ,20,150
+254,Pseudo-nitzschia,Diatom,, 1 ,20,50
+257,Pseudo-nitzschia,Diatom,, 1 ,20,50
+260,Pseudo-nitzschia,Diatom,, 4 ,20,200
+263,Pseudo-nitzschia,Diatom,, 4 ,20,200
+267,Pseudo-nitzschia,Diatom,, 5 ,20,250
+272,Pseudo-nitzschia,Diatom,, 2 ,20,100
+273,Pseudo-nitzschia,Diatom,, 2 ,20,100
+298,Pseudo-nitzschia,Diatom,, 1 ,20,50
+302,Pseudo-nitzschia,Diatom,, 1 ,20,50
+399,Pseudo-nitzschia,Diatom,, 1 ,20,50
+572,Pseudo-nitzschia,Diatom,, 4 ,20,200
+575,Pseudo-nitzschia,Diatom,, 1 ,20,50
+1269,Pseudo-nitzschia,Diatom,,38,150,1267
+1270,Pseudo-nitzschia,Diatom,,46,150,1533
+1271,Pseudo-nitzschia,Diatom,,22,110,1000
+1272,Pseudo-nitzschia,Diatom,,11,110,500
+1273,Pseudo-nitzschia,Diatom,,13,150,433
+1276,Pseudo-nitzschia,Diatom,,4,150,133
+1280,Pseudo-nitzschia,Diatom,,6,100,300
+1281,Pseudo-nitzschia,Diatom,,3,100,150
+1284,Pseudo-nitzschia,Diatom,,1,50,100
+1290,Pseudo-nitzschia,Diatom,,3,100,150
+1292,Pseudo-nitzschia,Diatom,,2,33,303
+1293,Pseudo-nitzschia,Diatom,,1,66,76
+1294,Pseudo-nitzschia,Diatom,,3,49,306
+1296,Pseudo-nitzschia,Diatom,,1,48,104
+1297,Pseudo-nitzschia,Diatom,,1,50,100
+1299,Pseudo-nitzschia,Diatom,,3,43,349
+1300,Pseudo-nitzschia,Diatom,,3,43,349
+1301,Pseudo-nitzschia,Diatom,,1,42,119
+1304,Pseudo-nitzschia,Diatom,,1,34,147
+1308,Pseudo-nitzschia,Diatom,,9,50,900
+1309,Pseudo-nitzschia,Diatom,,2,50,200
+1310,Pseudo-nitzschia,Diatom,,10,54,926
+1311,Pseudo-nitzschia,Diatom,,4,32,625
+1313,Pseudo-nitzschia,Diatom,,6,20,1500
+1315,Pseudo-nitzschia,Diatom,,6,72,417
+1317,Pseudo-nitzschia,Diatom,,4,53,377
+1319,Pseudo-nitzschia,Diatom,,1,47,106
+1328,Pseudo-nitzschia,Diatom,,1,29,172
+1329,Pseudo-nitzschia,Diatom,,1,41,122
+1146,Pseudo-nitzschia australis,Diatom,,1,10,500
+1212,Pseudo-nitzschia australis,Diatom,,1,20,250
+1216,Pseudo-nitzschia australis,Diatom,,1,20,250
+1231,Pseudo-nitzschia australis,Diatom,,1,40,125
+1236,Pseudo-nitzschia australis,Diatom,,3,30,100
+1242,Pseudo-nitzschia australis,Diatom,,1,50,20
+1246,Pseudo-nitzschia australis,Diatom,,1,24,42
+1247,Pseudo-nitzschia australis,Diatom,,7,328,21
+1252,Pseudo-nitzschia australis,Diatom,,1,100,50
+1253,Pseudo-nitzschia australis,Diatom,,15,150,500
+1254,Pseudo-nitzschia australis,Diatom,,7,150,233
+1255,Pseudo-nitzschia australis,Diatom,,1,150,33
+1256,Pseudo-nitzschia australis,Diatom,,2,100,100
+1257,Pseudo-nitzschia australis,Diatom,,4,200,100
+1258,Pseudo-nitzschia australis,Diatom,,4,200,100
+1259,Pseudo-nitzschia australis,Diatom,,5,150,167
+1260,Pseudo-nitzschia australis,Diatom,,1,150,33
+1263,Pseudo-nitzschia australis,Diatom,,122,150,4067
+1264,Pseudo-nitzschia australis,Diatom,,29,150,967
+1265,Pseudo-nitzschia australis,Diatom,,37,200,925
+1266,Pseudo-nitzschia australis,Diatom,,21,200,525
+1267,Pseudo-nitzschia australis,Diatom,,12,150,400
+1268,Pseudo-nitzschia australis,Diatom,,23,200,575
+1274,Pseudo-nitzschia australis,Diatom,,26,110,1182
+1275,Pseudo-nitzschia australis,Diatom,,13,110,591
+228,Pyrophacus,Dinoflagellate,, 2 ,20,100
+238,Pyrophacus,Dinoflagellate,, 2 ,20,100
+1230,Pyrophacus,Dinoflagellate,,1,40,125
+1231,Pyrophacus,Dinoflagellate,,1,40,125
+1248,Pyrophacus,Dinoflagellate,,1,24,42
+1,Rhizosolenia,Diatom,, 1 ,20,50
+2,Rhizosolenia,Diatom,, 2 ,20,100
+3,Rhizosolenia,Diatom,, 1 ,20,50
+5,Rhizosolenia,Diatom,, 1 ,20,50
+6,Rhizosolenia,Diatom,, 4 ,20,200
+7,Rhizosolenia,Diatom,, 2 ,20,100
+8,Rhizosolenia,Diatom,, 2 ,20,100
+9,Rhizosolenia,Diatom,, 3 ,20,150
+10,Rhizosolenia,Diatom,, 2 ,20,100
+11,Rhizosolenia,Diatom,, 3 ,20,150
+12,Rhizosolenia,Diatom,, 4 ,20,200
+13,Rhizosolenia,Diatom,, 2 ,20,100
+14,Rhizosolenia,Diatom,, 1 ,20,50
+17,Rhizosolenia,Diatom,, 15 ,20,750
+18,Rhizosolenia,Diatom,, 7 ,20,350
+19,Rhizosolenia,Diatom,, 8 ,20,400
+21,Rhizosolenia,Diatom,, 1 ,20,50
+46,Rhizosolenia,Diatom,, 2 ,20,100
+51,Rhizosolenia,Diatom,, 1 ,20,50
+54,Rhizosolenia,Diatom,, 1 ,20,50
+63,Rhizosolenia,Diatom,, 4 ,20,200
+64,Rhizosolenia,Diatom,, 1 ,20,50
+115,Rhizosolenia,Diatom,, 1 ,20,50
+164,Rhizosolenia,Diatom,, 40 ,20,2000
+192,Rhizosolenia,Diatom,, 1 ,20,50
+202,Rhizosolenia,Diatom,, 6 ,20,300
+207,Rhizosolenia,Diatom,, 1 ,20,50
+228,Rhizosolenia,Diatom,, 2 ,20,100
+256,Rhizosolenia,Diatom,, 2 ,20,100
+271,Rhizosolenia,Diatom,, 1 ,20,50
+374,Rhizosolenia,Diatom,, 1 ,20,50
+393,Rhizosolenia,Diatom,, 1 ,20,50
+395,Rhizosolenia,Diatom,, 1 ,20,50
+400,Rhizosolenia,Diatom,, 1 ,20,50
+572,Rhizosolenia,Diatom,, 1 ,20,50
+1120,Rhizosolenia,Diatom,,1,20,250
+1127,Rhizosolenia,Diatom,,1,10,500
+1130,Rhizosolenia,Diatom,,3,10,1500
+1131,Rhizosolenia,Diatom,,1,10,500
+1134,Rhizosolenia,Diatom,,1,10,500
+1186,Rhizosolenia,Diatom,,1,20,250
+1200,Rhizosolenia,Diatom,,1,125,40
+1209,Rhizosolenia,Diatom,,1,20,250
+1229,Rhizosolenia,Diatom,,1,40,125
+1231,Rhizosolenia,Diatom,,1,40,125
+1234,Rhizosolenia,Diatom,,1,40,125
+1236,Rhizosolenia,Diatom,,2,30,67
+1238,Rhizosolenia,Diatom,,1,10,100
+1239,Rhizosolenia,Diatom,,2,9,222
+1240,Rhizosolenia,Diatom,,2,9,222
+1241,Rhizosolenia,Diatom,,6,100,60
+1242,Rhizosolenia,Diatom,,2,50,40
+1243,Rhizosolenia,Diatom,,2,100,20
+1244,Rhizosolenia,Diatom,,2,200,10
+1245,Rhizosolenia,Diatom,,4,100,40
+1246,Rhizosolenia,Diatom,,2,24,83
+1247,Rhizosolenia,Diatom,,8,328,24
+1248,Rhizosolenia,Diatom,,1,24,42
+1249,Rhizosolenia,Diatom,,5,200,125
+1250,Rhizosolenia,Diatom,,1,150,33
+1251,Rhizosolenia,Diatom,,2,200,50
+1253,Rhizosolenia,Diatom,,4,150,133
+1254,Rhizosolenia,Diatom,,3,150,100
+1255,Rhizosolenia,Diatom,,1,150,33
+1260,Rhizosolenia,Diatom,,1,150,33
+1261,Rhizosolenia,Diatom,,1,200,25
+1263,Rhizosolenia,Diatom,,1,150,33
+1264,Rhizosolenia,Diatom,,5,150,167
+1269,Rhizosolenia,Diatom,,64,150,2133
+1270,Rhizosolenia,Diatom,,59,150,1967
+1271,Rhizosolenia,Diatom,,46,110,2091
+1272,Rhizosolenia,Diatom,,163,110,7409
+1273,Rhizosolenia,Diatom,,17,150,567
+1274,Rhizosolenia,Diatom,,106,110,4818
+1275,Rhizosolenia,Diatom,,74,110,3364
+1276,Rhizosolenia,Diatom,,14,150,467
+1277,Rhizosolenia,Diatom,,2,37,270
+1282,Rhizosolenia,Diatom,,3,150,100
+1289,Rhizosolenia,Diatom,,4,30,667
+1290,Rhizosolenia,Diatom,,1,100,50
+1293,Rhizosolenia,Diatom,,8,66,606
+1296,Rhizosolenia,Diatom,,1,48,104
+1297,Rhizosolenia,Diatom,,1,50,100
+1299,Rhizosolenia,Diatom,,4,43,465
+1302,Rhizosolenia,Diatom,,1,40,125
+1303,Rhizosolenia,Diatom,,2,36,278
+1307,Rhizosolenia,Diatom,,3,57,263
+1308,Rhizosolenia,Diatom,,9,50,900
+1309,Rhizosolenia,Diatom,,3,50,300
+1310,Rhizosolenia,Diatom,,10,54,926
+1311,Rhizosolenia,Diatom,,10,32,1563
+1313,Rhizosolenia,Diatom,,12,20,3000
+1315,Rhizosolenia,Diatom,,6,72,417
+1317,Rhizosolenia,Diatom,,2,53,189
+1319,Rhizosolenia,Diatom,,1,47,106
+1321,Rhizosolenia,Diatom,,2,47,213
+1322,Rhizosolenia,Diatom,,4,39,513
+1325,Rhizosolenia,Diatom,,2,47,213
+1265,Scrippsiella,Dinoflagellate,,3,200,75
+1266,Scrippsiella,Dinoflagellate,,13,200,325
+1267,Scrippsiella,Dinoflagellate,,3,150,100
+1268,Scrippsiella,Dinoflagellate,,2,200,50
+1269,Scrippsiella,Dinoflagellate,,1,150,33
+1273,Scrippsiella,Dinoflagellate,,1,150,33
+1276,Scrippsiella,Dinoflagellate,,2,150,67
+1278,Scrippsiella,Dinoflagellate,,4,150,133
+1279,Scrippsiella,Dinoflagellate,,4,100,200
+1280,Scrippsiella,Dinoflagellate,,4,100,200
+1281,Scrippsiella,Dinoflagellate,,1,100,50
+1282,Scrippsiella,Dinoflagellate,,5,150,167
+1283,Scrippsiella,Dinoflagellate,,4,100,200
+1289,Scrippsiella,Dinoflagellate,,11,30,1833
+1291,Scrippsiella,Dinoflagellate,,4,50,400
+1294,Scrippsiella,Dinoflagellate,,3,49,306
+1295,Scrippsiella,Dinoflagellate,,5,39,641
+1296,Scrippsiella,Dinoflagellate,,3,48,313
+1297,Scrippsiella,Dinoflagellate,,4,50,400
+1299,Scrippsiella,Dinoflagellate,,2,43,233
+1301,Scrippsiella,Dinoflagellate,,2,42,238
+1302,Scrippsiella,Dinoflagellate,,4,40,500
+1304,Scrippsiella,Dinoflagellate,,3,34,441
+1305,Scrippsiella,Dinoflagellate,,4,35,571
+1306,Scrippsiella,Dinoflagellate,,2,52,192
+1308,Scrippsiella,Dinoflagellate,,2,50,200
+1309,Scrippsiella,Dinoflagellate,,4,50,400
+1315,Scrippsiella,Dinoflagellate,,4,72,278
+1317,Scrippsiella,Dinoflagellate,,6,53,566
+1319,Scrippsiella,Dinoflagellate,,5,47,532
+1320,Scrippsiella,Dinoflagellate,,3,33,455
+1321,Scrippsiella,Dinoflagellate,,2,47,213
+1322,Scrippsiella,Dinoflagellate,,1,39,128
+1323,Scrippsiella,Dinoflagellate,,3,36,417
+1324,Scrippsiella,Dinoflagellate,,1,43,116
+1325,Scrippsiella,Dinoflagellate,,2,47,213
+1326,Scrippsiella,Dinoflagellate,,1,41,122
+178,Scrippsiella trochoidea,Dinoflagellate,, 1 ,20,50
+185,Scrippsiella trochoidea,Dinoflagellate,, 3 ,20,150
+187,Scrippsiella trochoidea,Dinoflagellate,, 1 ,20,50
+193,Scrippsiella trochoidea,Dinoflagellate,, 2 ,20,100
+1258,Scrippsiella trochoidea,Dinoflagellate,,2,200,50
+1260,Scrippsiella trochoidea,Dinoflagellate,,1,150,33
+1261,Scrippsiella trochoidea,Dinoflagellate,,3,200,75
+1262,Scrippsiella trochoidea,Dinoflagellate,,2,150,67
+1310,Scrippsiella trochoidea,Dinoflagellate,,1,54,93
+1311,Scrippsiella trochoidea,Dinoflagellate,,2,32,313
+1313,Scrippsiella trochoidea,Dinoflagellate,,3,20,750
+1235,Skeletonema costatum,Diatom,,5,40,125
+1236,Skeletonema costatum,Diatom,,3,30,100
+1241,Skeletonema costatum,Diatom,,39,100,390
+1242,Skeletonema costatum,Diatom,,6,50,120
+1243,Skeletonema costatum,Diatom,,9,100,90
+1244,Skeletonema costatum,Diatom,,12,200,60
+1245,Skeletonema costatum,Diatom,,3,100,30
+1247,Skeletonema costatum,Diatom,,12,328,37
+1249,Skeletonema costatum,Diatom,,1,200,25
+1252,Skeletonema costatum,Diatom,,1,100,50
+1253,Skeletonema costatum,Diatom,,1,150,33
+1254,Skeletonema costatum,Diatom,,3,150,100
+1256,Skeletonema costatum,Diatom,,2,100,100
+1258,Skeletonema costatum,Diatom,,1,200,25
+1259,Skeletonema costatum,Diatom,,2,150,67
+1260,Skeletonema costatum,Diatom,,2,150,67
+1261,Skeletonema costatum,Diatom,,1,200,25
+1263,Skeletonema costatum,Diatom,,6,150,200
+1266,Skeletonema costatum,Diatom,,3,200,75
+1267,Skeletonema costatum,Diatom,,2,150,67
+1268,Skeletonema costatum,Diatom,,1,200,25
+1270,Skeletonema costatum,Diatom,,2,150,67
+1273,Skeletonema costatum,Diatom,,1,150,33
+1281,Skeletonema costatum,Diatom,,1,100,50
+1283,Skeletonema costatum,Diatom,,1,100,50
+1284,Skeletonema costatum,Diatom,,1,50,100
+1293,Skeletonema costatum,Diatom,,2,66,152
+1294,Skeletonema costatum,Diatom,,1,49,102
+1296,Skeletonema costatum,Diatom,,1,48,104
+1297,Skeletonema costatum,Diatom,,1,50,100
+1300,Skeletonema costatum,Diatom,,1,43,116
+1301,Skeletonema costatum,Diatom,,1,42,119
+1308,Skeletonema costatum,Diatom,,21,50,2100
+1309,Skeletonema costatum,Diatom,,37,50,3700
+1315,Skeletonema costatum,Diatom,,27,72,1875
+1317,Skeletonema costatum,Diatom,,12,53,1132
+1319,Skeletonema costatum,Diatom,,3,47,319
+1322,Skeletonema costatum,Diatom,,1,39,128
+1326,Skeletonema costatum,Diatom,,1,41,122
+1328,Skeletonema costatum,Diatom,,1,29,172
+1329,Skeletonema costatum,Diatom,,2,41,244
+1262,Stephanopyxis,Diatom,,2,150,67
+1263,Stephanopyxis,Diatom,,3,150,100
+1264,Stephanopyxis,Diatom,,3,150,100
+1265,Stephanopyxis,Diatom,,1,200,25
+1229,Thalassionema,Diatom,,1,40,125
+1241,Thalassionema,Diatom,,28,100,280
+1242,Thalassionema,Diatom,,11,50,220
+1243,Thalassionema,Diatom,,28,100,280
+1247,Thalassionema,Diatom,,4,328,12
+1258,Thalassionema,Diatom,,3,200,75
+1263,Thalassionema,Diatom,,3,150,100
+1264,Thalassionema,Diatom,,3,150,100
+1265,Thalassionema,Diatom,,1,200,25
+1269,Thalassionema,Diatom,,2,150,67
+1270,Thalassionema,Diatom,,3,150,100
+1276,Thalassionema,Diatom,,1,150,33
+1280,Thalassionema,Diatom,,3,100,150
+1281,Thalassionema,Diatom,,5,100,250
+1289,Thalassionema,Diatom,,1,30,167
+1303,Thalassionema,Diatom,,1,36,139
+1309,Thalassionema,Diatom,,1,50,100
+1322,Thalassionema,Diatom,,1,39,128
+1251,Thalassionema nitzschioides,Diatom,,2,200,50
+1253,Thalassionema nitzschioides,Diatom,,2,150,67
+1254,Thalassionema nitzschioides,Diatom,,1,150,33
+1259,Thalassionema nitzschioides,Diatom,,3,150,100
+1274,Thalassionema nitzschioides,Diatom,,1,110,45
+1275,Thalassionema nitzschioides,Diatom,,4,110,182
+1244,Thalassiosira,Diatom,,11,200,55
+1245,Thalassiosira,Diatom,,7,100,70
+1250,Thalassiosira,Diatom,,3,150,100
+1251,Thalassiosira,Diatom,,3,200,75
+1254,Thalassiosira,Diatom,,5,150,167
+1257,Thalassiosira,Diatom,,2,200,50
+1258,Thalassiosira,Diatom,,2,200,50
+1259,Thalassiosira,Diatom,,2,150,67
+1262,Thalassiosira,Diatom,,1,150,33
+1264,Thalassiosira,Diatom,,2,150,67
+1266,Thalassiosira,Diatom,,1,200,25
+1267,Thalassiosira,Diatom,,4,150,133
+1269,Thalassiosira,Diatom,,2,150,67
+1270,Thalassiosira,Diatom,,1,150,33
+1271,Thalassiosira,Diatom,,3,110,136
+1280,Thalassiosira,Diatom,,1,100,50
+1281,Thalassiosira,Diatom,,2,100,100
+1282,Thalassiosira,Diatom,,1,150,33
+1302,Thalassiosira,Diatom,,1,40,125
+1307,Thalassiosira,Diatom,,6,57,526
+1308,Thalassiosira,Diatom,,117,50,11700
+1309,Thalassiosira,Diatom,,68,50,6800
+1310,Thalassiosira,Diatom,,109,54,10093
+1311,Thalassiosira,Diatom,,59,32,9219
+1313,Thalassiosira,Diatom,,66,20,16500
+1315,Thalassiosira,Diatom,,67,72,4653
+1317,Thalassiosira,Diatom,,45,53,4245
+1319,Thalassiosira,Diatom,,1,47,106
+1320,Thalassiosira,Diatom,,1,33,152
+1321,Thalassiosira,Diatom,,2,47,213
+1322,Thalassiosira,Diatom,,2,39,256
+1323,Thalassiosira,Diatom,,2,36,278
+1326,Thalassiosira,Diatom,,4,41,488
+1328,Thalassiosira,Diatom,,1,29,172
+1329,Thalassiosira,Diatom,,3,41,366
+1330,Thalassiosira,Diatom,,3,28,536
+1242,Tintinnid,Spirotrichea,,1,50,20
+1277,Tintinnid,Spirotrichea,,1,37,135
+196,Triceratium,Diatom,, 2 ,20,100
+389,Triceratium,Diatom,, 1 ,20,50
+400,Triceratium,Diatom,, 1 ,20,50
+1194,Triceratium,Diatom,,2,20,500
+1196,Triceratium,Diatom,,1,20,250
+1197,Triceratium,Diatom,,1,20,250
+1198,Triceratium,Diatom,,1,20,250
+1199,Triceratium,Diatom,,3,125,120
+1203,Triceratium,Diatom,,1,45,111
+1204,Triceratium,Diatom,,1,16,313
+1247,Triceratium,Diatom,,1,328,3
+1259,Triceratium,Diatom,,1,150,33
+1261,Triceratium,Diatom,,1,200,25
+1265,Triceratium,Diatom,,2,200,50
+1266,Triceratium,Diatom,,2,200,50
+1267,Triceratium,Diatom,,1,150,33
+1270,Triceratium,Diatom,,1,150,33
+1273,Triceratium,Diatom,,2,150,67
+1292,Triceratium,Diatom,,1,33,152
+1293,Triceratium,Diatom,,2,66,152
+1297,Triceratium,Diatom,,1,50,100
+1303,Triceratium,Diatom,,1,36,139
+1304,Triceratium,Diatom,,1,34,147
+1307,Triceratium,Diatom,,1,57,88
+1315,Triceratium,Diatom,,1,72,69
+1319,Triceratium,Diatom,,1,47,106
+1321,Triceratium,Diatom,,1,47,106
+1327,Triceratium,Diatom,,1,30,167
+1332,Triceratium,Diatom,,1,25,200
+2,Zygabikodinium,Dinoflagellate,, 6 ,20,300
+3,Zygabikodinium,Dinoflagellate,, 1 ,20,50
+8,Zygabikodinium,Dinoflagellate,, 1 ,20,50
+11,Zygabikodinium,Dinoflagellate,, 3 ,20,150
+12,Zygabikodinium,Dinoflagellate,, 1 ,20,50
+14,Zygabikodinium,Dinoflagellate,, 3 ,20,150
+16,Zygabikodinium,Dinoflagellate,, 2 ,20,100
+1231,Zygabikodinium lenticulatum,Dinoflagellate,,1,40,125

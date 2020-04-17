@@ -1,0 +1,93 @@
+Species,Info,Low,Up
+Alexandrium,25-46,25,46
+Alexandrium carterae,20-55,20,55
+Alexandrium catanella,"Length 20 - 48 ?m, width 18 - 34 ?m",20,48
+Amphidinium carterae,"Length 7 - 10 ?m, width 12 - 17 ?m",7,10
+Amylax triacantha,Length 40-60um,40,60
+Asterionellopsis glacialis,Length 30 - 150 ?m,30,150
+Bacillaria,"Length 70 - 200 ?m, width 5 - 8 ?m",70,200
+Bacillaria paxillifera,"Length 70 - 200 ?m, width 5 - 8 ?m",70,200
+Biddulphia,60-160,60,160
+Boreadium pisiforme,45,,45
+Ceratium,100-360,100,360
+Ceratium candelabrum,50-100,50,100
+Ceratium dens,,,
+Ceratium furca,"Length 150 - 230 ?m, width 30 - 35 ?m",150,230
+Ceratium fusus,"Length 150 - 230 ?m, width 15 - 30 ?m",150,230
+Ceratium horridum,Length 280-360 µm,280,360
+Ceratium lineatum,Length 100-130 µm,100,130
+Ceratium longipes,"Length 150 - 250 µm,",150,250
+Ceratium tripos,Length 195-360 µm,195,360
+Chaetoceros,"Large diameter 2 - 85 ?m, length 2 - 45 ?m,",2,85
+Chaetoceros convolutus,"Large diameter 10 - 27 ?m, length 25 - 60 ?m",10,27
+Chaetoceros debilis,"Large diameter 8 - 40 ?m, length 6 - 20 ?m",8,40
+Chaetoceros didymus,"Large diameter 10 - 40 ?m, length 6 - 30 ?m",10,40
+Chaetoceros radicans,Large diameter 6 - 25 ?m,6,25
+Chaetoceros similis,Large diameter 7 - 17 ?m,7,17
+Closterium navicula,35-84,35,84
+Coscinodiscus,"Diameter 40 - 200 ?m, height 30 - 180 ?m",40,200
+Coscinodiscus granii,"Diameter 40 - 200 ?m, height 30 - 180 ?m",40,200
+Cylindrotheca closterium,"Length 25 - 400 ?m, width 2.5 - 8 ?m",25,400
+Cyst,,,
+Dictyocha,Length 10 - 45 ?m,10,45
+Dinophysis acuminata,"Length 30 - 35 ?m, diameter 38 - 58 ?m",30,35
+Dinophysis fortii,"Length 62 - 66 ?m, width 41 - 58 ?m",62,66
+Dinophysis rotundata,Length 36-56 µm,36,56
+Dinophysis tripos,40-120,40,120
+Ditylum,Length 40 - 300 ?m,40,300
+Ditylum brightwellii,"Length 40 - 300 ?m, diameter 14 - 120 ?m",40,300
+Eucampia,Length 10 - 92 ?m,10,92
+Goniodoma polyedricum,"Length 30-60 ?m (Wood,",30,60
+Gonyaulax polygramma,29-66,29,66
+Gonyaulax spinifera,Length 24-50 ,24,50
+Guinardia,27-110 µm,27,110
+Gymnodinium,Length 40-75um,40,75
+Gyrosigma,100-150,100,150
+HAB Total Count,,,
+Karenia,20-90,20,90
+Karenia cristata,20-90,20,90
+Karenia mikimotoi,18-40 µm,18,40
+Licmophora,Length 20-60um,20,60
+Lingulodinium polyedra,40-54 µm,40,54
+Melosira,9-81,9,81
+Myrionecta rubra,Length: 25-100 µm,25,100
+Navicula,"Length 32 - 130 ?m, width 7 - 21 ?m",32,130
+Nitzschia,6-375,6,375
+Noctiluca,Width 200 - 2000 ?m,200,2000
+Noctiluca scintillans,Width 200 - 2000 ?m,200,2000
+Octactis,50-60,50,60
+Odontella,Width (apical axis) 15-110um,15,110
+Pleurosigma,65-75,65,75
+Pleurosigma capensis,,,
+Prorocentrum gracile,"Length 45 - 55 ?m, width 25 - 30 ?m",45,55
+Prorocentrum lima,35-45 µm long,35,45
+Prorocentrum micans,Length 35-75 ?m,35,75
+Prorocentrum minimum,"Length 14 - 22 ?m, width 10 - 15 ?m",14,22
+Prorocentrum sigmoides,50-60,50,60
+Protoceratium reticulatum,"Length 28 - 43 ?m, width 25 - 35 ?m",28,43
+Protoperidinium bipes,20-35 ?m long,20,35
+Protoperidinium brevipes,,,
+Protoperidinium brevis,,,
+Protoperidinium claudicans,"Length 50 - 105 ?m, width 48 - 75 ?m",50,105
+Protoperidinium conicum,Length 70-85 ?m;,70,85
+Protoperidinium depressum,100-200,100,200
+Protoperidinium diabolum,,,
+Protoperidinium divergens,80-84,80,84
+Protoperidinium minutum,23-56,23,56
+Protoperidinium oceanicum,"Length 220 - 300 ?m, width 150 ?m",220,300
+Protoperidinium steinii,"Length 39 - 60 ?m, width 22 - 44 ?m",39,60
+Pseudo-nitzschia,"Length 25 - 160 ?m, width 0.5 -8 ?m",25,160
+Pseudo-nitzschia australis,"Length 66 - 144 ?m, width 3 - 8 ?m",66,144
+Pyrophacus,40-136,40,136
+Rhizosolenia,,,
+Scrippsiella,,,
+Scrippsiella trochoidea,"Length 16 - 36 ?m, width 20 - 23 ?m",16,36
+Skeletonema costatum,"Length 2 - 61 ?m, diameter 2 - 21 ?m",2,61
+Stephanopyxis,,,
+Thalassionema,Length 10 - 110 ?m,10,110
+Thalassionema nitzschioides,Length 10 - 110 ?m,10,110
+Thalassiosira,2-80,2,80
+Tintinnid,,,
+Triceratium,,,
+Zygabikodinium,,,
+Zygabikodinium lenticulatum,,,

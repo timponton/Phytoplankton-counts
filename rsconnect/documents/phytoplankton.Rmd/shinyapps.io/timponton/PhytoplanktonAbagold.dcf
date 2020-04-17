@@ -1,0 +1,12 @@
+name: PhytoplanktonAbagold
+title: PhytoplanktonAbagold
+username:
+account: timponton
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1761248
+bundleId: 2775123
+url: https://timponton.shinyapps.io/PhytoplanktonAbagold/
+when: 1580850217.1199
+asMultiple: FALSE
+asStatic: FALSE

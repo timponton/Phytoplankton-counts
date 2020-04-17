@@ -1,0 +1,893 @@
+Sample,Date,Time,Counted.by,Site,DO..mg.L.,Saturation....,Temperature...C.,Species,Threat,Cells Counted,Frames counted,Total Count
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Coscinodiscus Granii,NA,4,30,666.6666667
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Licmophora sp.,NA,15,30,2500
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Thalassiosira sp,NA,4,30,666.6666667
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Rhizosolenia sp.,NA,1,30,166.6666667
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Chaetoceros sp.,NA,4,30,666.6666667
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Navicula sp,NA,2,30,333.3333333
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Eucompia sp.,NA,1,30,166.6666667
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Asterinellopsis glacialis,NA,2,30,333.3333333
+1333,13/12/2019,08:00,Kabelo,Primary sump,10.5,107,14.5,Bacillaria paxillifera,NA,1,30,166.6666667
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Melosira sp,NA,12,67,895.5223881
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Skeletonema costalum,NA,16,67,1194.029851
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Scripsiella Sp.,NA,10,67,746.2686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Rhizosolenia sp.,NA,3,67,223.880597
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Licmophora sp.,NA,12,67,895.5223881
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Thalassiosira sp.,NA,4,67,298.5074627
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Coscinodiscus Granii,NA,9,67,671.641791
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Chaetoceros sp.,NA,43,67,3208.955224
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Ditylum Brightwell,NA,2,67,149.2537313
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Asterinellopsis glacialis,NA,2,67,149.2537313
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Bacillaria paxillifera,NA,3,67,223.880597
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Ceratium furca,NA,1,67,74.62686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Gonyaulax Polygramma,NA,3,67,223.880597
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Nitzschia,NA,6,67,447.761194
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Navicula sp,NA,4,67,298.5074627
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Protoperidinium conicum,NA,1,67,74.62686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Prorocentrum minimum,NA,3,67,223.880597
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Eucompia sp.,NA,1,67,74.62686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Lingulodinium polyedrum,NA,1,67,74.62686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Prorocentrum Gracile,NA,1,67,74.62686567
+1334,17/12/2019,08:00,Kabelo,Primary sump,9.87,105,16.8,Protoperidinium diabolum,NA,1,67,74.62686567
+1335,17/12/2019,10:00,Kabelo,After Drumfilter,NA,NA,NA,All species,NA,157,72,10902.77778
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Coscinodiscus Granii,NA,10,62,806.4516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Licmophora sp.,NA,23,62,1854.83871
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Chaetoceros sp.,NA,8,62,645.1612903
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Dinophysis acuminata,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Melosira sp,NA,4,62,322.5806452
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Amphidinium carterae,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Scripsiella Sp.,NA,26,62,2096.774194
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Rhizosolenia sp.,NA,4,62,322.5806452
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Prorocentrum micans,NA,2,62,161.2903226
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Ceratium furca,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Protoperidinium diabolum,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Protoperidinium conicum,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Nocticula scintillans,NA,1,62,80.64516129
+1336,18/12/2019,08:00,Pertunia,Primary sump,9.95,104.8,17.3,Protoperidinium oceanicum,NA,1,62,80.64516129
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Pseudo-nitzschia australis,NA,9,80,562.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Rhizosolenia sp.,NA,1,80,62.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Ceratium furca,NA,16,80,1000
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Protoperidinium conicum,NA,13,80,812.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Protoperidinium diabolum,NA,6,80,375
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Scrippsiella trochoidea,NA,14,80,875
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Dinophysis tripos,NA,1,80,62.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,B. pisiforme,NA,1,80,62.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Protoperidinium bipes,NA,1,80,62.5
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Coscinodiscus Granii,NA,36,80,2250
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Licmophora sp.,NA,20,80,1250
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Melosira sp,NA,10,80,625
+1337,19/12/2019,08:30,Justin,Primary sump,11.76,116.6,16.8,Navicula sp,NA,12,80,750
+1338,20/12/2019,07:40,Peter,Primary sump,9.79,104.8,17.8,Melosira sp,NA,1,4,1250
+1338,20/12/2019,07:40,Peter,Primary sump,9.79,104.8,17.8,Navicula sp,NA,1,4,1250
+1338,20/12/2019,07:40,Peter,Primary sump,9.79,104.8,17.8,Coscinodiscus Granii,NA,1,4,1250
+1338,20/12/2019,07:40,Peter,Primary sump,9.79,104.8,17.8,Ceratium furca,NA,1,4,1250
+1338,20/12/2019,07:40,Peter,Primary sump,9.79,104.8,17.8,Protoperidinium claudicans,NA,1,4,1250
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Licmophora sp.,NA,7,34,1029.411765
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Navicula sp,NA,4,34,588.2352941
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Pleurosigma,NA,1,34,147.0588235
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Nocticula scintillans,NA,5,34,735.2941176
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Coscinodiscus Granii,NA,11,34,1617.647059
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Protoperidinium conicum,NA,2,34,294.1176471
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Rhizosolenia sp.,NA,3,34,441.1764706
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Eucompia sp.,NA,1,34,147.0588235
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Protoperidinium claudicans,NA,1,34,147.0588235
+1339,23/12/2019,08:00,Pertunia,Primary sump,8.27,94.1,18.7,Melosira sp,NA,1,34,147.0588235
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Rhizosolenia sp.,NA,9,37,1216.216216
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Chaetoceros sp.,NA,6,37,810.8108108
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Ceratium furca,NA,6,37,810.8108108
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Protoperidinium conicum,NA,2,37,270.2702703
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Nitzschia,NA,1,37,135.1351351
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Licmophora sp.,NA,2,37,270.2702703
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Coscinodiscus Granii,NA,6,37,810.8108108
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Scripsiella Sp.,NA,2,37,270.2702703
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Ceratium tripos,NA,1,37,135.1351351
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Navicula sp,NA,1,37,135.1351351
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Nocticula scintillans,NA,3,37,405.4054054
+1340,24/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Bacillaria sp.,NA,1,37,135.1351351
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Coscinodiscus Granii,NA,15,37,2027.027027
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Navicula sp,NA,11,37,1486.486486
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Scripsiella Sp.,NA,2,37,270.2702703
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Licmophora sp.,NA,2,37,270.2702703
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Ceratium fusus,NA,2,37,270.2702703
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Thalassionema sp,NA,1,37,135.1351351
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Ceratium furca,NA,4,37,540.5405405
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Melosira sp,NA,4,37,540.5405405
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Ceratium lineatum,NA,1,37,135.1351351
+1341,27/12/2019,08:00,Pertunia,Primary sump,NA,NA,NA,Protoperidinium conicum,NA,1,37,135.1351351
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Ceratium furca,NA,61,71,4295.774648
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Coscinodiscus Granii,NA,19,71,1338.028169
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Skeletonema costalum,NA,4,71,281.6901408
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Licmophora sp.,NA,2,71,140.8450704
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Protoperidinium diabolum,NA,1,71,70.42253521
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Navicula sp,NA,2,71,140.8450704
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Ceratium fusus,NA,7,71,492.9577465
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Pseudo-nitzschia,NA,1,71,70.42253521
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Protoperidinium conicum,NA,3,71,211.2676056
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Rhizosolenia sp.,NA,2,71,140.8450704
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Protoperidinium claudicans,NA,2,71,140.8450704
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Chaetoceros sp.,NA,1,71,70.42253521
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Gonyaulax Polygramma,NA,1,71,70.42253521
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Thalassiosira sp,NA,1,71,70.42253521
+1342,30/12/2019,08:00,Kabelo,Primary sump,8.44,94.5,20.7,Melosira sp,NA,1,71,70.42253521
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Bacillaria paxillifera,NA,7,58,603.4482759
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Coscinodiscus Granii,NA,21,58,1810.344828
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Ceratium furca,NA,27,58,2327.586207
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Skeletonema costalum,NA,4,58,344.8275862
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Protoperidinium divergens,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Licmophora sp.,NA,8,58,689.6551724
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Scripsiella Sp.,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Melosira sp,NA,5,58,431.0344828
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Ceratium horridum,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Gonyaulax Polygramma,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Nocticula scintillans,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Protoperidinium claudicans,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Protoperidinium diabolum,NA,1,58,86.20689655
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Navicula sp,NA,3,58,258.6206897
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Chaetoceros sp.,NA,2,58,172.4137931
+1343,31/12/2019,08:00,Kabelo,Primary sump,9.59,101.2,18.2,Ceratium fusus,NA,1,58,86.20689655
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Navicula sp,NA,9,45,1000
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Ceratium furca,NA,10,45,1111.111111
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Licmophora sp.,NA,5,45,555.5555556
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Skeletonema costalum,NA,2,45,222.2222222
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Coscinodiscus Granii,NA,12,45,1333.333333
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Thalassiosira sp,NA,1,45,111.1111111
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Scripsiella Sp.,NA,9,45,1000
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Protoperidinium brevipes,NA,1,45,111.1111111
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Bacillaria paxillifera,NA,2,45,222.2222222
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Prorocetrum micans,NA,1,45,111.1111111
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Chaetoceros sp.,NA,2,45,222.2222222
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Protoperidinium divergens,NA,1,45,111.1111111
+1344,02/01/2020,08:00,Kabelo,Primary sump,9.12,96.8,18.2,Nocticula scintillans,NA,1,45,111.1111111
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Coscinodiscus Granii,NA,40,63,3174.603175
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Skeletonema costalum,NA,12,63,952.3809524
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Ceratium furca,NA,22,63,1746.031746
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Protoperidinium divergens,NA,6,63,476.1904762
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Scripsiella Sp.,NA,14,63,1111.111111
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Protoperidinium conicum,NA,1,63,79.36507937
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Melosira sp,NA,6,63,476.1904762
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Rhizosolenia sp.,NA,1,63,79.36507937
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Licmophora sp.,NA,1,63,79.36507937
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Protoperidinium claudicans,NA,4,63,317.4603175
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Thalassiosira sp,NA,1,63,79.36507937
+1345,02/01/2020,16:30,Kabelo,Primary sump,9.79,103.7,18.3,Boreadium pisiforme,NA,1,63,79.36507937
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Coscinodiscus Granii,NA,33,56,2946.428571
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Ceratium furca,NA,8,56,714.2857143
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Skeletonema costalum,NA,7,56,625
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Melosira sp,NA,4,56,357.1428571
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Chaetoceros sp.,NA,3,56,267.8571429
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Thalassiosira sp,NA,2,56,178.5714286
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Licmophora sp.,NA,6,56,535.7142857
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Scripsiella Sp.,NA,15,56,1339.285714
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Boreadium pisiforme,NA,1,56,89.28571429
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Protoperidinium conicum,NA,1,56,89.28571429
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Thalassionema sp,NA,1,56,89.28571429
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Octactis sp.,NA,2,56,178.5714286
+1346,03/01/2020,08:00,Kabelo,Primary sump,9.89,103.4,16.6,Protoperidinium divergens,NA,1,56,89.28571429
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,C. Furca,NA,26,88,1477.272727
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,C. similis,NA,56,88,3181.818182
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Coscinodiscus,NA,8,88,454.5454545
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,P. bipes,NA,9,88,511.3636364
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Navicula sp,NA,5,88,284.0909091
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,P. conicum,NA,9,88,511.3636364
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Triceratium sp,NA,11,88,625
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Pseudo-Nitzschia Australis,NA,1,88,56.81818182
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,P. claudicansil,NA,1,88,56.81818182
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,C. Fusus,NA,2,88,113.6363636
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Noctilucali,NA,1,88,56.81818182
+1347,06/01/2020,07:50,Justin,Primary sump,9.8,105.9,18.6,Rhizosolenia sp.,NA,2,88,113.6363636
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Melosira sp,NA,24,42,2857.142857
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Polygramma sp,NA,4,42,476.1904762
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Licmophora sp.,NA,7,42,833.3333333
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Coscinodiscus,NA,9,42,1071.428571
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Triceratium sp,NA,1,42,119.047619
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,C.furca,NA,4,42,476.1904762
+1348,07/01/2020,07:56,Peter,Primary sump,9.68,103.4,18.2,Chaetoceros sp.,NA,1,42,119.047619
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Rhizosolenia sp.,NA,1,29,172.4137931
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Triceratium sp,NA,8,29,1379.310345
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,C. similis,NA,10,29,1724.137931
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Navicula sp,NA,1,29,172.4137931
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,P. conicum,NA,2,29,344.8275862
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,P. minimum,NA,1,29,172.4137931
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Cocinodiscus,NA,3,29,517.2413793
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,C. Furca,NA,5,29,862.0689655
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Melosira sp,NA,1,29,172.4137931
+1349,08/01/2020,07:45,Justin,Primary sump,9.43,123.9,16.5,Prorocentrum lima,NA,1,29,172.4137931
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,C.furca,NA,8,62,645.1612903
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Octactis sp.,NA,2,62,161.2903226
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Melosira sp,NA,38,62,3064.516129
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Cocinodiscus,NA,5,62,403.2258065
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Licmophora sp.,NA,8,62,645.1612903
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Skeletonema costalum,NA,1,62,80.64516129
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,A.carterae,NA,6,62,483.8709677
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,O.didymus,NA,1,62,80.64516129
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,P.bipes,NA,2,62,161.2903226
+1350,09/01/2020,08:09,Peter,Primary sump,8.79,95.4,19.2,Pseudo-Nitzschia Australis,NA,1,62,80.64516129
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Chaetoceros sp.,NA,49,63,3888.888889
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,C.furca,NA,7,63,555.5555556
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Melosira sp,NA,3,63,238.0952381
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Eucompia sp.,NA,2,63,158.7301587
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Rhizosolenia sp.,NA,1,63,79.36507937
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Licmophora sp.,NA,11,63,873.015873
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,C. Fusus,NA,2,63,158.7301587
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Coscinodiscus,NA,3,63,238.0952381
+1351,10/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Navicula sp,NA,2,63,158.7301587
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,P.bipes,NA,2,50,200
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,C.furca,NA,34,50,3400
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,G.polygramma,NA,3,50,300
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,Melosira sp,NA,3,50,300
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,Licmophora sp.,NA,11,50,1100
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,Cocinodiscus,NA,7,50,700
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,P.steinii,NA,1,50,100
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,Skeletonema costalum,NA,1,50,100
+1352,13/01/2020,08:09,Peter,Primary sump,NA,NA,19,C. similis,NA,1,50,100
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Ceratium furca,NA,33,85,1941.176471
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Chaetoceros sp.,NA,34,85,2000
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Stephanophyxis,NA,2,85,117.6470588
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Skeletonema costalum,NA,8,85,470.5882353
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Coscinodiscus,NA,21,85,1235.294118
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Melosira sp,NA,24,85,1411.764706
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Octactis sp.,NA,7,85,411.7647059
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Navicula sp,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Protoperidinium steinii,NA,4,85,235.2941176
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Licmophora sp.,NA,9,85,529.4117647
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Scripsiella Sp.,NA,4,85,235.2941176
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Prorocentrum lima,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Rhizosolenia sp.,NA,4,85,235.2941176
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Bright-welli,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Thalassiosira sp,NA,20,85,1176.470588
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Eucompia sp.,NA,4,85,235.2941176
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Karenia cristata,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Protoperidinium divergens,NA,3,85,176.4705882
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Gonyaulax spinifera,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Prorocentrum Gracile,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Pseudo-nitzschia,NA,5,85,294.1176471
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Protoperidinium brevipes,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,D. Acuminate,NA,1,85,58.82352941
+1353,14/01/2020,08:00,Kabelo,Primary sump,NA,NA,17,Cyst,NA,3,85,176.4705882
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Nitzschia,NA,4,111,180.1801802
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Chaetoceros sp.,NA,61,111,2747.747748
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Rhizosolenia sp.,NA,5,111,225.2252252
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Ceratium furca,NA,36,111,1621.621622
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Gonyaulax Polygramma,NA,3,111,135.1351351
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Karenia cristata,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Noctiluca,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Protoperidinium conicum,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Protoperidinium depressum,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Protoperidinium divergens,NA,4,111,180.1801802
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Scripsiella Sp.,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Protoperidinium diabolum,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,A.carterae,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Prorocentrum micans,NA,2,111,90.09009009
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Prorocentrum sigmoides,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Octactis sp.,NA,3,111,135.1351351
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Lingulodinium polyedrum,NA,1,111,45.04504505
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Licmophora sp.,NA,6,111,270.2702703
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Coscinodiscus sp,NA,37,111,1666.666667
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Thalassiosira sp,NA,3,111,135.1351351
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Eucompia sp.,NA,13,111,585.5855856
+1354,15/01/2020,08:00,Pertunia,Primary sump,NA,NA,16,Melosira sp,NA,8,111,360.3603604
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Chaetoceros sp.,NA,75,105,3571.428571
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Licmophora sp.,NA,28,105,1333.333333
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Coscinodiscus sp,NA,15,105,714.2857143
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,C. Furca,NA,12,105,571.4285714
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Eucompia sp.,NA,26,105,1238.095238
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,B. pisiforme,NA,2,105,95.23809524
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Skeletonema sp.,NA,11,105,523.8095238
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Protoperidiniaceae,NA,1,105,47.61904762
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Pseudo-Nitzschia Australis,NA,4,105,190.4761905
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Zooplankton,NA,3,105,142.8571429
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,S. trochodia,NA,1,105,47.61904762
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Melosira sp,NA,4,105,190.4761905
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,P. micans,NA,2,105,95.23809524
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Ditylum sp.,NA,2,105,95.23809524
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,C. tripos,NA,1,105,47.61904762
+1355,16/01/2020,07:50,Justin,Primary sump,NA,NA,NA,Rhizosolenia sp.,NA,1,105,47.61904762
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Cocinodiscus,NA,15,66,1136.363636
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Melosira sp,NA,3,66,227.2727273
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Licmophora sp.,NA,30,66,2272.727273
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,C.furca,NA,18,66,1363.636364
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Skeletonema sp.,NA,1,66,75.75757576
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,P.divergens,NA,1,66,75.75757576
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Eucompia sp.,NA,3,66,227.2727273
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,Chaetoceros sp.,NA,8,66,606.0606061
+1356,17/01/2020,07:46,Peter,Primary sump,NA,NA,14,P.micans,NA,1,66,75.75757576
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,Navicula sp,NA,3,27,555.5555556
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,Coscinodiscus sp.,NA,5,27,925.9259259
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,Triceratium sp,NA,2,27,370.3703704
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,Licmophora sp.,NA,15,27,2777.777778
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,Melosira sp,NA,2,27,370.3703704
+1357,20/01/2020,07:40,Justin,Primary sump,NA,NA,12,C. furca,NA,1,27,185.1851852
+1358,21/01/2020,07:40,Justin,Primary sump,NA,NA,11,Navicula sp,NA,2,15,666.6666667
+1358,21/01/2020,07:40,Justin,Primary sump,NA,NA,11,Licmophora sp.,NA,8,15,2666.666667
+1358,21/01/2020,07:40,Justin,Primary sump,NA,NA,11,Coscinodiscus sp.,NA,3,15,1000
+1358,21/01/2020,07:40,Justin,Primary sump,NA,NA,11,Bacilaria,NA,3,15,1000
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Navicula sp,NA,3,35,428.5714286
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Licmophora sp.,NA,24,35,3428.571429
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Melosira sp,NA,2,35,285.7142857
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Coscinodiscus sp.,NA,8,35,1142.857143
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Bacilaria,NA,5,35,714.2857143
+1359,22/01/2020,07:45,Justin,Primary sump,NA,NA,11,Triceratium sp.,NA,1,35,142.8571429
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Licmophora sp.,NA,25,35,3571.428571
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Navicula sp.,NA,3,35,428.5714286
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Bacilaria sp.,NA,4,35,571.4285714
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Coscinodiscus sp.,NA,5,35,714.2857143
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Melosira sp,NA,2,35,285.7142857
+1360,23/01/2020,07:45,Justin,Primary sump,NA,NA,11,Chaetoceros sp.,NA,1,35,142.8571429
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Ceratium fusus,NA,1,40,125
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Prorocentrum micans,NA,7,40,875
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Ceratium furca,NA,28,40,3500
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Lingulodinium polyedrum,NA,4,40,500
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Protoperidinium diabolum,NA,2,40,250
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Dinophysis acuminata,NA,1,40,125
+1361,24/01/2020,07:43,Peter,Primary sump,NA,NA,12,Ceratium fusus,NA,1,40,125
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Protoperidinium conicum,NA,1,100,50
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Chaetoceros sp.,NA,277,100,13850
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Pseudo-nitzschia sp.,NA,112,100,5600
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Bacillaria paxillifera,NA,2,100,100
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Asterinellopsis glacialis,NA,2,100,100
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Ditylum Brightwell,NA,5,100,250
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Dinophysis acuminata,NA,1,100,50
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Melosira sp,NA,119,100,5950
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Stephanophyxis,NA,8,100,400
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Prorocentrum gracile,NA,3,100,150
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Ceratium furca,NA,4,100,200
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Thalasionema sp,NA,4,100,200
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Dictyocha Sp.,NA,1,100,50
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Noctiluca scintillans,NA,3,100,150
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Coscinodiscus Granii,NA,63,100,3150
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Thalassiosira sp,NA,49,100,2450
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Skeletonema sp.,NA,18,100,900
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Eucompia sp.,NA,18,100,900
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Navicula sp.,NA,27,100,1350
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Licmophora sp.,NA,17,100,850
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Rhizosolenia sp.,NA,61,100,3050
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Cylindrotheca Closterrium,NA,5,100,250
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Nitzschia,NA,16,100,800
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Scripsiella trochoidea,NA,1,100,50
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Octactis sp.,NA,13,100,650
+1362,27/01/2020,07:45,Kabelo,Primary sump,NA,NA,13,Cyst,NA,1,100,50
+1363,27/01/2020,16:05,Kabelo,Primary sump,NA,NA,14,All Species,NA,755,100,37750
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Chaetoceros sp.,NA,418,126,16587.30159
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Pseudo-nitzschia sp.,NA,105,126,4166.666667
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Coscinodiscus Granii,NA,128,126,5079.365079
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Melosira sp,NA,81,126,3214.285714
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Ceratium furca,NA,17,126,674.6031746
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Rhizosolenia sp.,NA,44,126,1746.031746
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Scripsiella trochoidea,NA,3,126,119.047619
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Protoperidinium diabolum,NA,2,126,79.36507937
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Thalassiosira sp,NA,59,126,2341.269841
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Skeletonema sp.,NA,30,126,1190.47619
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Protoperidinium conicum,NA,4,126,158.7301587
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Licmophora sp.,NA,23,126,912.6984127
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Eucompia sp.,NA,17,126,674.6031746
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Prorocentrum gracile,NA,3,126,119.047619
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Octactis sp.,NA,13,126,515.8730159
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Navicula sp.,NA,8,126,317.4603175
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Cylindrotheca Closterrium,NA,1,126,39.68253968
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Ditylum Brightwell,NA,2,126,79.36507937
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Dictyocha Sp.,NA,5,126,198.4126984
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Alexandrium sp.,NA,3,126,119.047619
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Thalasionema sp,NA,3,126,119.047619
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Bacillaria paxillifera,NA,4,126,158.7301587
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Asterinellopsis glacialis,NA,4,126,158.7301587
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Triceratium sp.,NA,1,126,39.68253968
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Gonyaulax spinifera,NA,1,126,39.68253968
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Karenia cristata,NA,1,126,39.68253968
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Cyst,NA,8,126,317.4603175
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Protoperidinium steinii,NA,6,126,238.0952381
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Protoperidinium claudicans,NA,1,126,39.68253968
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Prorocentrum minimum,NA,2,126,79.36507937
+1364,28/01/2020,07:42,Kabelo,Primary sump,NA,NA,15,Myrionecta rubra,NA,1,126,39.68253968
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Chaetoceros sp.,NA,171,200,4275
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Pseudo-nitzschia sp.,NA,63,200,1575
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Ceratium furca,NA,31,200,775
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Navicula sp.,NA,8,200,200
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Thalassiosira sp,NA,13,200,325
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Prorocentrum gracile,NA,10,200,250
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Ceratium fusus,NA,2,200,50
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Protoperidinium diabolum,NA,8,200,200
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Octactis sp.,NA,5,200,125
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Alexandrium sp.,NA,1,200,25
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Protoperidinium depressum,NA,6,200,150
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Rhizosolenia sp.,NA,10,200,250
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Prorocentrum micans,NA,7,200,175
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Protoperidinium conicum,NA,6,200,150
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Coscinodiscus Granii,NA,22,200,550
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Ditylum Brightwell,NA,8,200,200
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Skeletonema sp.,NA,7,200,175
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Eucompia sp.,NA,4,200,100
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Protoperidinium oceanicum,NA,3,200,75
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Licmophora sp.,NA,4,200,100
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Scripsiella trochoidea,NA,2,200,50
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Prorocentrum sigmoides,NA,5,200,125
+1365,29/01/2020,07:45,Lorna,Primary sump,NA,NA,16,Protoperidinium claudicans,NA,6,200,150
+1366,29/01/2020,14:42,Peter,Primary sump,NA,NA,17,All Species,NA,391,37,52837.83784
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Licmophora sp.,NA,9,100,450
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Chaetoceros sp.,NA,242,100,12100
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,B. pisiforme,NA,2,100,100
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Dictyocha Sp.,NA,8,100,400
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,C. Furca,NA,2,100,100
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Pseudo-Nitzschia Australis,NA,231,100,11550
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Coscinodiscus,NA,94,100,4700
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Navicula sp.,NA,10,100,500
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,P. bipes,NA,13,100,650
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Eucompia sp.,NA,14,100,700
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Melosira sp,NA,48,100,2400
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Thalassiosira,NA,28,100,1400
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Rhizosolenia sp.,NA,4,100,200
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,C. Fusus,NA,9,100,450
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Skeletonema sp.,NA,4,100,200
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,P. micans,NA,12,100,600
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Mesodinium rubrum,NA,1,100,50
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,P. conicum,NA,7,100,350
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,Bacalaria sp,NA,1,100,50
+1367,30/01/2020,07:45,Justin,Primary sump,NA,NA,13.5,T. nitzschioides,NA,3,100,150
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Chaetoceros sp.,NA,91,200,2275
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Pseudo nitzschia s.,NA,65,200,1625
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Navicula sp.,NA,9,200,225
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Coscinodiscus Granii,NA,137,200,3425
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Octactis sp.,NA,2,200,50
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Melosira sp,NA,58,200,1450
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium bipes,NA,4,200,100
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Licmophora sp.,NA,7,200,175
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Thalassiosira,NA,22,200,550
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Eucompia sp.,NA,6,200,150
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Ditylum,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Ceratium furca,NA,6,200,150
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Bright-welli,NA,3,200,75
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium diabolum,NA,9,200,225
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Lingulodinium polyedrum,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium steinii,NA,2,200,50
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium conicum,NA,5,200,125
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Thalassionema sp,NA,3,200,75
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium brevipes,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Protoperidinium divergens,NA,2,200,50
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Rhizosolenia sp.,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Ceratium dens,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Scripsiella trochoidea,NA,2,200,50
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Corethron sp.,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Bacillaria sp.,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Noctiluca scintillans,NA,2,200,50
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Prorocentrum sigmoides,NA,1,200,25
+1368,31/01/2020,08:30,Pertunia,Primary sump,NA,NA,12,Prorocentrum gracile,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,L. polyedrum,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,P. bipes,NA,4,200,100
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Coscinodiscus,NA,43,200,1075
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Melosira sp,NA,11,200,275
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Licmophora sp.,NA,5,200,125
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Gyrosigma sp.,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Navicula sp.,NA,11,200,275
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Thalassionema sp.,NA,5,200,125
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Chaetoceros sp.,NA,29,200,725
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,C. furca,NA,16,200,400
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Rhizosolenia sp.,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,P. conicum,NA,4,200,100
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Pseudo-nitzchia,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,P. micans,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Skeletonema sp.,NA,1,200,25
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,T. nitzschioides,NA,2,200,50
+1369,03/02/2020,07:45,Justin,Primary sump,NA,NA,12,Bacillaria sp.,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Octactis sp.,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Licmophora sp.,NA,12,200,300
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Chaetoceros sp.,NA,54,200,1350
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Scripsiella sp.,NA,9,200,225
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Coscinodiscus sp.,NA,8,200,200
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Navicula sp.,NA,12,200,300
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Prorocentrum gracile,NA,3,200,75
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Ceratium furca,NA,7,200,175
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Pseudo-nitzschia,NA,6,200,150
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Protoperidinium brevipes,NA,4,200,100
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Melosira sp.,NA,5,200,125
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Nocticula scintillans,NA,1,200,25
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Dictyocha Sp.,NA,5,200,125
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Prorocentrum minimum,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Prorocentrum lima,NA,1,200,25
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Bacillaria paxillifera,NA,3,200,75
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Skeletonema sp.,NA,1,200,25
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Rhizosolenia sp.,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Thalasionema sp,NA,3,200,75
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Lingulodinium polyedrum,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Myrionecta rubra,NA,1,200,25
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Thalassionema sp.,NA,1,200,25
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Nitzschia,NA,2,200,50
+1370,03/02/2020,13:25,Kabelo,Primary sump,NA,NA,13,Cyst,NA,1,200,25
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,P. conicum,NA,2,200,50
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Pseudo-nitzschia,NA,10,200,250
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,C. Furca,NA,11,200,275
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,P. diabolum,NA,6,200,150
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Coscinodiscus,NA,13,200,325
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Licmophora sp.,NA,8,200,200
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Navicula sp.,NA,4,200,100
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Chaetoceros sp.,NA,31,200,775
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Melosira sp.,NA,1,200,25
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,P. brevipes,NA,2,200,50
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,P. micans,NA,1,200,25
+1371,04/02/2020,07:45,Justin,Primary sump,NA,NA,13,Notiluca sp.,NA,2,200,50
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Dictyocha Sp.,NA,2,200,50
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Licmophora sp.,NA,19,200,475
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,C. fusus,NA,4,200,100
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Pseudo-nitzschia,NA,22,200,550
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Navicula sp.,NA,7,200,175
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,D. acuminate,NA,1,200,25
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,C. furca,NA,9,200,225
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Chaetoceros sp.,NA,42,200,1050
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Rhizosolenia sp.,NA,4,200,100
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Coscinodiscus,NA,8,200,200
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,B. pisiforme,NA,1,200,25
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,P. micans,NA,2,200,50
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,Karenia sp.,NA,1,200,25
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,P. conicum,NA,4,200,100
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,T. nitzschioides,NA,1,200,25
+1372,05/02/2020,07:40,Justin,Primary sump,NA,NA,14.5,N. scintillans,NA,1,200,25
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,C. furca,NA,37,200,925
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Cocinodiscus,NA,3,200,75
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Licmophora sp.,NA,17,200,425
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Navicula sp.,NA,9,200,225
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,P.conicum,NA,8,200,200
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,P.bipes,NA,5,200,125
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,P.gracile,NA,6,200,150
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Chaetoceros sp,NA,3,200,75
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Pseudo nitzschia s.,NA,3,200,75
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,P.diabolum,NA,2,200,50
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Octactis sp.,NA,1,200,25
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Prorocentrum lima,NA,1,200,25
+1373,06/02/2020,07:42,Peter,Primary sump,NA,NA,16,Melosira sp,NA,1,200,25
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Navicula sp,NA,7,200,175
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Coscinodiscus,NA,22,200,550
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Chaetoceros sp,NA,16,200,400
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Prorocentrum sp,NA,11,200,275
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,C. furca,NA,19,200,475
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Pseudo-nitzschia sp.,NA,7,200,175
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,D. acuminate,NA,10,200,250
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Thalassiosira sp,NA,6,200,150
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Noctiluca sp,NA,2,200,50
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Gonyaulax spinifera,NA,15,200,375
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Melosira sp,NA,11,200,275
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,P. conicum,NA,3,200,75
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Licmophora sp.,NA,10,200,250
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,P. depressum,NA,2,200,50
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,Bacillaria sp.,NA,1,200,25
+1374,07/02/2020,07:40,Justin,Primary sump,NA,NA,14,P. claudicansil,NA,2,200,50
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Coscinodiscus sp,NA,4,200,100
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Navicula sp.,NA,7,200,175
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Scripsiella trochoidea,NA,12,200,300
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Ceratium furca,NA,13,200,325
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Prorocentrum gracile,NA,5,200,125
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Protoperidinium steinii,NA,2,200,50
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Ceratium fusus,NA,1,200,25
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Bacillaria paxillifera,NA,2,200,50
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Prorocentrum lima,NA,4,200,100
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Pseudo-nitzschia,NA,1,200,25
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Protoperidinium brevibes,NA,1,200,25
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Protoperidinium divergens,NA,1,200,25
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Protoperidinium conicum,NA,3,200,75
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Dinophysis acuminata,NA,11,200,275
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Dinophysis fortii,NA,5,200,125
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Licmophora sp.,NA,7,200,175
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Octactis sp.,NA,4,200,100
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Nocticula scintillans,NA,3,200,75
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Thalasiosira sp,NA,1,200,25
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Chaetoceros sp.,NA,7,200,175
+1375,10/02/2020,07:55,Kabelo,Primary sump,NA,NA,12,Cyst,NA,2,200,50
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Coscinodiscus sp.,NA,11,200,275
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Ceratium furca,NA,3,200,75
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Prorocentrum lima,NA,10,200,250
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Octactis sp.,NA,2,200,50
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Bacillaria paxillifera,NA,4,200,100
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Licmophora sp.,NA,14,200,350
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Navicula sp.,NA,5,200,125
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Thalassiorira sp.,NA,6,200,150
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Chaetoceros sp.,NA,7,200,175
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Scripsiella trochoidea,NA,5,200,125
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Dinophysis acuminata,NA,3,200,75
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Melosira sp.,NA,3,200,75
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Dictyocha Sp.,NA,1,200,25
+1376,11/02/2020,07:45,Kabelo,Primary sump,NA,NA,10.5,Cyst,NA,5,200,125
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Chaetoceros sp,NA,14,200,350
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Licmophora sp.,NA,8,200,200
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,C.furca,NA,23,200,575
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Cocinodiscus,NA,36,200,900
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,B. pisiforme,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,P.divergens,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Triceratium sp,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Pseudo-Nitzschia,NA,3,200,75
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Navicula,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Dinophysis,NA,2,200,50
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Thalassiosira,NA,2,200,50
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Zygsbicodinium lenticulatum,NA,4,200,100
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,P.bipes,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,P.conicum,NA,1,200,25
+1377,12/02/2020,07:55,Peter,Primary sump,NA,NA,11,Scripsiella trochoidea,NA,4,200,100
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Prorocentrum lima,NA,3,200,75
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Coscinodiscus sp.,NA,13,200,325
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Chaetoceros sp.,NA,3,200,75
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Ceratium furca,NA,6,200,150
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Navicula sp.,NA,10,200,250
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Melosira sp.,NA,1,200,25
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Licmophora sp.,NA,5,200,125
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Scripsiella trochoidea,NA,3,200,75
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Dinophysis acuminata,NA,4,200,100
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Protoperidinium brevipes,NA,1,200,25
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Thalassiosira sp.,NA,1,200,25
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Nitzschia,NA,1,200,25
+1378,13/02/2020,07:43,Kabelo,Primary sump,NA,NA,11,Cyst,NA,3,200,75
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Chaetoceros sp,NA,7,200,175
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Dinophysis acuminata,NA,30,200,750
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Licmophora sp.,NA,8,200,200
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Cocinodiscus,NA,19,200,475
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Melosira sp,NA,3,200,75
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Navicula,NA,1,200,25
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,P.divergens,NA,5,200,125
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,C.furca,NA,6,200,150
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,Scripsiella trochoidea,NA,5,200,125
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,P.micans,NA,2,200,50
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,B.paxillifera,NA,1,200,25
+1379,14/02/2020,07:41,Peter,Primary sump,NA,NA,12,P.bipes,NA,1,200,25
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Prorocentrum gracile,NA,10,200,250
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Chaetoceros sp.,NA,2,200,50
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Licmophora sp.,NA,7,200,175
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Rhizosolenia sp.,NA,7,200,175
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Dinophysis acuminata,NA,9,200,225
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Navicula sp.,NA,5,200,125
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Protoperidinium conicum,NA,8,200,200
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Coscinodiscus sp.,NA,16,200,400
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Protoperidinium steinii,NA,3,200,75
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Scripsiella trochoidea,NA,13,200,325
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Octactis sp.,NA,6,200,150
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Ceratium furca,NA,26,200,650
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Prorocentrum lima,NA,2,200,50
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Ceratium fusus,NA,4,200,100
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Bacillaria paxillifera,NA,1,200,25
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Alexandrium sp.,NA,2,200,50
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Protoperidinium diabolum,NA,3,200,75
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Nitzschia,NA,1,200,25
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Protoperidinium brevipes,NA,2,200,50
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Dinophysis fortii,NA,3,200,75
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Karenia sp.,NA,1,200,25
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Melosira sp.,NA,2,200,50
+1380,17/02/2020,07:46,Kabelo,Primary sump,NA,NA,14,Cyst,NA,2,200,50
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Ceratium furca,NA,11,200,275
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Melosira sp.,NA,2,200,50
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Octactis sp.,NA,12,200,300
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidinium divergens,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidinium steinii,NA,5,200,125
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Licmophora sp.,NA,4,200,100
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidium brevipes,NA,2,200,50
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Coscinodiscus sp.,NA,8,200,200
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Prorocentrum lima,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Dinophysis acuminata,NA,5,200,125
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidinium conicum,NA,5,200,125
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Navicula sp.,NA,3,200,75
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Prorocentrum gracile,NA,5,200,125
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Chaetoceros sp.,NA,2,200,50
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidinium oceanicum,NA,3,200,75
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Scripsiella trochoidea,NA,6,200,150
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Protoperidinium diabolum,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Karenia cristata,NA,2,200,50
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Thalassiosira,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Rhizosolenia sp.,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Alexandrium sp.,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Dinophysis fortii,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Dinophysis tripos,NA,1,200,25
+1381,18/02/2020,07:50,Kabelo,Primary sump,NA,NA,14,Cyst,NA,1,200,25
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Coscinodiscus,NA,15,200,375
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Melosira sp.,NA,7,200,175
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,C. furca,NA,3,200,75
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Pseudo-nitzschia sp.,NA,5,200,125
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Chaetoceros sp.,NA,4,200,100
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Navicula,NA,1,200,25
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,P. concum,NA,3,200,75
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Licomophora,NA,6,200,150
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,P. gracile,NA,1,200,25
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,A. carterae,NA,1,200,25
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,P. bipes,NA,2,200,50
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,Nitzschia sp.,NA,2,200,50
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,B. pisiforme,NA,1,200,25
+1382,19/02/2020,07:35,Justin,Primary sump,NA,NA,14.5,G. polygramma,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Coscinodiscus,NA,12,200,300
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P.Lima,NA,10,200,250
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,C.furca,NA,23,200,575
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Scripsiella trochoidea,NA,8,200,200
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Chaetoceros,NA,7,200,175
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Licmophora sp.,NA,8,200,200
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Bacillaria paxillifera,NA,2,200,50
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Octactis sp.,NA,8,200,200
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,D. acuminate,NA,4,200,100
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Navicula,NA,7,200,175
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P. claudicans,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P. Steinii,NA,4,200,100
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Thalasiosira sp,NA,5,200,125
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P.Brevipes,NA,2,200,50
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Dictyocha Sp.,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Melosira sp.,NA,2,200,50
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P. conicum,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Karenia sp.,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Skeletonema sp.,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Alexandrium sp.,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,P. micans,NA,1,200,25
+1383,20/02/2020,08:05,Kabelo,Primary sump,NA,NA,14,Cyst,NA,2,200,50
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Cocinodiscus,NA,26,200,650
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Octactis sp.,NA,5,200,125
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Melosira sp.,NA,8,200,200
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Scripsiella trochoidea,NA,12,200,300
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Chaetoceros,NA,5,200,125
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Pseudo-nitzschia sp.,NA,5,200,125
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,C.furca,NA,23,200,575
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Dinophysis acuminata,NA,24,200,600
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Licmophora sp.,NA,12,200,300
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,P.depressum,NA,6,200,150
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,P.micans,NA,4,200,100
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,C.horridium,NA,1,200,25
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,P.conicum,NA,3,200,75
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,Navicula,NA,3,200,75
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,P.bipes,NA,1,200,25
+1384,21/02/2020,07:41,Peter,Primary sump,NA,NA,14,G.spinifera,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,P. Lima,NA,15,200,375
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Chaetoceros sp.,NA,23,200,575
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,P. Conicum,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Octactis sp.,NA,15,200,375
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Melosira sp.,NA,3,200,75
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Coscinodiscus sp.,NA,13,200,325
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Licmophora sp.,NA,6,200,150
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,P. Steinii,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,D. acuminate,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,P. gracile,NA,4,200,100
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Bacillaria paxillifera,NA,3,200,75
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Nocticula scintillans,NA,1,200,25
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Skeletonema sp.,NA,5,200,125
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Navicula sp.,NA,7,200,175
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Scripsiella trochoidea,NA,8,200,200
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Rhizosolenia sp.,NA,1,200,25
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Thalassiosira sp.,NA,5,200,125
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Gonyaulax spinifera,NA,1,200,25
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,P. diabolum,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Dictyocha Sp.,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Pseudo-nitzschia,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,C. furca,NA,2,200,50
+1385,24/02/2020,07:40,Kabelo,Primary sump,NA,NA,11.9,Cyst,NA,1,200,25
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,D. acuminate,NA,10,200,250
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Navicula sp.,NA,12,200,300
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Octactis sp.,NA,7,200,175
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Chaetoceroes sp.,NA,19,200,475
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Dictyocha Sp.,NA,3,200,75
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Scripsiella trochoidea,NA,1,200,25
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Licmophora sp.,NA,3,200,75
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Skeletonema sp.,NA,5,200,125
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Coscinodiscus sp.,NA,12,200,300
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Bacillaria paxillifera,NA,5,200,125
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Ditylum Brightwell,NA,1,200,25
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,P. diabolum,NA,3,200,75
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,P. Steinii,NA,1,200,25
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Thalassiosira sp.,NA,4,200,100
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Melosira sp.,NA,3,200,75
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,P. Lima,NA,4,200,100
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Nitzschia sp.,NA,1,200,25
+1386,25/02/2020,07:44,Kabelo,Primary sump,NA,NA,11,Cyst,NA,2,200,50
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Cocinodiscus,NA,17,200,425
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,C.furca,NA,5,200,125
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Licmophora sp.,NA,6,200,150
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Dinophysis acuminata,NA,2,200,50
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Melosira sp.,NA,4,200,100
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,P.micans,NA,4,200,100
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Nitzschia sp.,NA,2,200,50
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Chaetoceros sp,NA,2,200,50
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Stripsiella trochoidea,NA,3,200,75
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Navicula,NA,3,200,75
+1387,26/02/2020,08:53,Peter,Primary sump,NA,NA,13,Octactis sp.,NA,1,200,25
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Chaetoceros sp,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,C.furca,NA,4,200,100
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Cocinodiscus,NA,13,200,325
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Stripsiella trochoidea,NA,6,200,150
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Dinophysis acuminata,NA,5,200,125
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Pseudo nitzschia s.,NA,22,200,550
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Zygsbicodinium lenticulatum,NA,1,200,25
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Licmophora sp.,NA,7,200,175
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,P.steinii,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Melosira sp.,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Skeletonema sp.,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,P.micans,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,Octactis sp.,NA,1,200,25
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,P.gracile,NA,2,200,50
+1388,27/02/2020,07:57,Peter,Primary sump,NA,NA,14,P.conicum,NA,1,200,25
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Dinophysis acuminate,NA,4,200,100
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,P.gracile,NA,11,200,275
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Rhizosolenia sp.,NA,54,200,1350
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Cocinodiscus,NA,30,200,750
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,C.furca,NA,8,200,200
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Octactis sp.,NA,4,200,100
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,P.conicum,NA,1,200,25
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Pseudo nitzschia s.,NA,2,200,50
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Chaetoceros,NA,12,200,300
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,S. trochodia,NA,3,200,75
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,P.diabolum,NA,3,200,75
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Melosira sp.,NA,2,200,50
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,P.divergens,NA,3,200,75
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Licmophora sp.,NA,5,200,125
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Gonyaulax spinifera,NA,2,200,50
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,P.micans,NA,3,200,75
+1389,28/02/2020,07:44,Peter,Primary sump,NA,NA,12,Navicula,NA,3,200,75
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Cocinodiscus,NA,28,200,700
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Melosira sp.,NA,2,200,50
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Pleurosigma sp.,NA,1,200,25
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Chaetoceros sp.,NA,5,200,125
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,N.scintillans,NA,2,200,50
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Stephanophyxis,NA,1,200,25
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Octactis sp.,NA,3,200,75
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Navicula,NA,1,200,25
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,C.furca,NA,2,200,50
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,Licmophora sp.,NA,3,200,75
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,P.diabolum,NA,1,200,25
+1390,02/03/2020,07:45,Peter,Primary sump,NA,NA,12,D.acuminata,NA,1,200,25
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Cocinodiscus,NA,43,200,1075
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Melosira sp.,NA,4,200,100
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Stephanophyxis,NA,4,200,100
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Navicula,NA,4,200,100
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Octactis sp.,NA,6,200,150
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Chaetoceros,NA,12,200,300
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Pleurosigma sp.,NA,1,200,25
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Licmophora sp.,NA,3,200,75
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Bacillaria paxillifera,NA,2,200,50
+1391,03/03/2020,07:44,Peter,Primary sump,NA,NA,10,Triceratium sp,NA,1,200,25
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Rhizosolenia sp.,NA,2,200,50
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Melosira sp.,NA,3,200,75
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Cocinodiscus,NA,44,200,1100
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Chaetoceros,NA,6,200,150
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Navicula,NA,1,200,25
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Octactis sp.,NA,1,200,25
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Licmophora sp.,NA,2,200,50
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,Bacillaria paxillifera,NA,3,200,75
+1392,04/03/2020,07:37,Peter,Primary sump,NA,NA,11,P.gracile,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Chaetoceros sp,NA,76,200,1900
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Cocinodiscus,NA,27,200,675
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Pseudo nitzschia s.,NA,5,200,125
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Melosira sp.,NA,4,200,100
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Octactis sp.,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Licmophora sp.,NA,2,200,50
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,N.scintillans,NA,3,200,75
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,D.acuminata,NA,3,200,75
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,C.furca,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,P.micans,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Cyst,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,P.divergens,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,T.nizchioides,NA,2,200,50
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,P.diabolum,NA,1,200,25
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Rhizosolenia sp.,NA,2,200,50
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,Navicula,NA,2,200,50
+1393,05/03/2020,07:57,Peter,Primary sump,NA,NA,11,P.conicum,NA,1,200,25
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,Chaetoceros sp,NA,24,200,600
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,coscinodiscus,NA,10,200,250
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,Navicula,NA,5,200,125
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,P. micans,NA,1,200,25
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,C. furca,NA,4,200,100
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,Licmophora sp.,NA,7,200,175
+1394,06/03/2020,08:00,Justin,Primary sump,NA,NA,12,P. Conicum,NA,2,200,50
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Chaetoceros,NA,3,200,75
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,N.scintillans,NA,1,200,25
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,P.diabolum,NA,1,200,25
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Cocinodiscus,NA,29,200,725
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,P.micans,NA,5,200,125
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,S. trochodia,NA,1,200,25
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,T.nizchioides,NA,3,200,75
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Licmophora sp.,NA,8,200,200
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,C.furca,NA,11,200,275
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Navicula,NA,8,200,200
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,P.conicum,NA,6,200,150
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Pseudo nitzschia s.,NA,17,200,425
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Melosira sp.,NA,4,200,100
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Rhizosolenia sp.,NA,3,200,75
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,Eucampia,NA,1,200,25
+1395,09/03/2020,07:37,Peter,Primary sump,NA,NA,13,D.acuminata,NA,2,200,50
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Pseudo nitzschia s.,NA,11,200,275
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Cocinodiscus,NA,39,200,975
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,D.acuminata,NA,1,200,25
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Melosira sp.,NA,4,200,100
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Chaetoceros,NA,9,200,225
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,C.furca,NA,4,200,100
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Thallassiosira,NA,3,200,75
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Ditylum,NA,1,200,25
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Licmophora sp.,NA,4,200,100
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,T.nizchioides,NA,1,200,25
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Octactis sp.,NA,1,200,25
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,P.micans,NA,1,200,25
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,P.conicum,NA,2,200,50
+1396,10/03/2020,07:42,Peter,Primary sump,NA,NA,13,Navicula,NA,4,200,100

@@ -1,0 +1,173 @@
+---
+title: "Filter test data"
+author: "Tim Ponton"
+date: "16/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(anytime)
+library(dplyr)
+library(reshape2)
+library(data.table)
+library(tidyr)
+library(plotly)
+library(patchwork)
+```
+
+```{r, include= FALSE}
+df <- read.csv("Updated data from April 2020/Combo-as-of-April-2020-OpenRefineCopy.csv")
+
+# fix date
+df$Date <- as.Date(df$Date, "%d/%m/%Y")
+
+# merge date and times and coerce to proper format 
+df$dateTime <- as.POSIXct(paste(df$Date, df$Time), format = "%Y-%m-%d %H:%M")
+
+```
+
+
+```{r, include= FALSE}
+# original df, summarise to daily total (i.e deal with two samples per day)
+df_daily <- df %>% 
+  group_by(Date, Site, Species, Classification) %>% 
+  summarise(dailyCells = mean(Cells.L))
+
+# Filter out where after drumfilter occurs to get days with >1 count site
+df_daily_moreSite <- df_daily %>% 
+  group_by(Date) %>% 
+  filter("After Drumfilter" %in% Site)
+
+# sum all cells
+sum_df_daily_moreSite <- df_daily_moreSite %>% 
+  group_by(Date, Site) %>% 
+  summarise(TotalCells = sum(dailyCells))
+
+# sum all cells
+sum_df_daily_moreSite <- df_daily_moreSite %>% 
+  group_by(Date, Site) %>% 
+  summarise(TotalCells = sum(dailyCells))
+
+# number of different sampling sites on a specific date
+numberSites <- sum_df_daily_moreSite %>% 
+  group_by(Date) %>% 
+  summarise(n = n_distinct(Site))
+```
+
+
+
+When at least Primary sump and After Drumfilter have been sampeld on the same day
+```{r, include= FALSE}
+# subset dates where just 2 sites are present
+TwoSiteClassify <- numberSites %>% 
+  filter(n == 2)
+# use dates as classifier to subset (And exclude December record)
+TwoSite <- sum_df_daily_moreSite %>% 
+  filter(Date %in% TwoSiteClassify$Date) %>% 
+  filter(Date != "2019-12-17")
+```
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+ggplot(data = TwoSite, aes(x = Date, y = TotalCells, fill = Site)) +
+  geom_bar(stat = "Identity", position = "Dodge")
+
+```
+
+The percentage difference of cells counted after the drumfilter after being counted in primary sump i.e how well do the drum filters filter out cells
+```{r, include= FALSE}
+
+wide_TwoSite <- TwoSite %>% 
+  pivot_wider(names_from = Site, values_from = TotalCells)
+
+ #calculate percentage of afterdrum to primary counts
+percentage <- wide_TwoSite %>% 
+  mutate(PercentDrumFilter = (`After Drumfilter`/`Primary sump`)*100) %>% 
+  mutate(MoreDrum = ifelse(`After Drumfilter` > `Primary sump`, "Greater", "Less"))
+```
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+ggplot(data = percentage, aes(x = Date, y = PercentDrumFilter)) +
+  geom_point() +
+  geom_line() +
+  geom_hline(yintercept = 100, linetype="dashed", color = "red")
+
+```
+
+
+
+
+
+Total cells collected from different points on the farm on the 2019-02-26, where the most sites were sampled
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+mostSiteClassify <- numberSites %>% 
+  filter(n > 10)
+
+mostSites <- df_daily %>% 
+  filter(Date %in% mostSiteClassify$Date) %>% 
+  group_by(Date, Site) %>% 
+  summarise(totalCells = sum(dailyCells))
+
+```
+
+
+
+Total cells collected from different points on the farm on the 2019-02-12, where 2nd most sample sites were visited
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+df %>% 
+  filter(Date == "2019-02-12") %>% 
+  group_by(Site) %>% 
+  summarise(meanCells = mean(Cells.L)) %>% 
+  ggplot(., aes(x = reorder(Site, -meanCells), y = meanCells)) +
+  geom_bar(stat = "Identity", position = "Dodge") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) 
+```
+
+
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+mostSites %>% 
+    filter(Date == "2019-02-26") %>% 
+    ggplot(., aes(x = reorder(Site, -totalCells), y = totalCells)) + 
+    geom_bar(stat = "Identity") +
+    scale_x_discrete(guide = guide_axis(n.dodge = 2))
+```
+
+Counts at different times on the 2019-03-19 at Primary sump and after drumfilter
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+df %>% 
+  filter(Date == "2019-03-19") %>% 
+  ggplot(., aes(x = Time, y = Cells.L, fill = Site)) +
+  geom_bar(stat = "Identity", position = "Dodge") +
+    scale_x_discrete(guide = guide_axis(n.dodge = 2))
+```
+
+Fine scale line graph of totals cells counted Primary sump and after drumfilter for several consecutive days, where sampling occurred multiple times a day
+
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+big <- df %>% 
+  filter(Date >= as.Date("2019-03-18") & Date <= as.Date("2019-03-27")) %>% 
+  filter(Site %in% c("Primary sump", "After Drumfilter")) %>% 
+  group_by(dateTime, Site) %>% 
+  summarise(totalCells = sum(Cells.L))
+
+
+ggplotly(ggplot(data = big, aes(x = dateTime, y = totalCells, col = Site)) +
+  geom_line())
+```
+
+
+
