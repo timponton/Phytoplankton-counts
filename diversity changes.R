@@ -154,5 +154,4 @@ ggplot(data = div_gather) +
   facet_wrap(~Index,  scales = "free_y", ncol = 1) +
   xlab("Months in 2019") +
   theme(axis.text.x=element_text(angle=35, hjust=1))
-  
 

@@ -9,7 +9,7 @@ library(tidyr)
 library(plotly)
 library(patchwork)
 library(vegan)
-
+library(zoo)
 
 ##### Data #####
 
@@ -133,6 +133,41 @@ AD_only <- AD %>%
 # Join unequal site species
 differentSpecies <- rbind(Ps_only, AD_only)
 
+ggplot(data = differentSpecies, aes(x = Site, y = meanC, fill = Species)) +
+  geom_bar(stat = "Identity") +
+  facet_wrap(~Date, ncol = 5)
+
+df %>% 
+  group_by(Date) %>% 
+  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  ungroup() %>% 
+  group_by(Date, Site, Species) %>% 
+  summarise(meanC = mean(Cells.L, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = 0)) %>% 
+  mutate(filteredOut = ifelse(`Primary sump` > `After Drumfilter`, "Good filtered", 
+                              ifelse(`Primary sump` == `After Drumfilter`, "same", "Bad filtered")), 
+         DifferenceFiltered = `Primary sump` - `After Drumfilter`) %>%
+  pivot_longer(-c(Date, Species, filteredOut, DifferenceFiltered), names_to = "Site", values_to = "MeanCells") %>%
+  ungroup()  %>%
+  group_by(Date) %>%
+  arrange(desc(abs(DifferenceFiltered))) %>% 
+  top_n(5) %>% 
+  ggplot(., aes(x = Date, y = DifferenceFiltered)) +
+  geom_bar(stat = "Identity", position = "Dodge") +
+  facet_wrap(~Species)
+  
+  ggplot(., aes(x = filteredOut, y = MeanCells, col = Species)) +
+  geom_jitter() +
+  facet_wrap(~Date)
+  
+  filter(filteredOut == "no") %>% 
+  ggplot(., aes(x = Date, y = MeanCells, col = Species)) +
+  geom_jitter()
+  
+
+
 #### what species occur when after drumfilter > primary filter ####
 
 ggplotly(df %>% 
@@ -168,4 +203,47 @@ ggplotly(df %>%
   geom_point()
 
 
+##### Rounding off times or grouping to daily groups ####
+  
+  # round off time to certain amount
+df$roundTime <- round_date(df$dateTime, "2 hour")
 
+
+  
+# check the time difference when rounding off times
+ggplotly(df %>%
+  group_by(Date) %>% 
+  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>%
+  mutate(timeDiff = (dateTime - roundTime)/60) %>% 
+  ggplot(., aes(x = dateTime, y = timeDiff, col = Site)) +
+  geom_point())
+  
+# Total cells when rounded off
+ggplotly(df %>%
+           group_by(Date) %>% 
+           filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+           filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+           filter(Site %in% c("After Drumfilter", "Primary sump")) %>%
+           mutate(timeDiff = (dateTime - roundTime)/60) %>% 
+           ungroup() %>% 
+           group_by(roundTime, Site) %>% 
+           summarise(totalCells = sum(Cells.L)) %>%
+           filter(roundTime >= as.Date("2019-02-19") & roundTime <= as.Date("2019-02-20")) %>% 
+           ggplot(., aes(x = roundTime, y = totalCells, fill = Site)) +
+           geom_bar(stat = "Identity", position = "Dodge"))
+
+# difference in time
+ggplotly(df %>%
+           group_by(Date) %>% 
+           filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+           filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+           filter(Site %in% c("After Drumfilter", "Primary sump")) %>%
+           mutate(timeDiff = (dateTime - roundTime)/60) %>% 
+           filter(roundTime >= as.Date("2019-02-19") & roundTime <= as.Date("2019-02-20")) %>% 
+           ggplot(., aes(x = roundTime, y = timeDiff, fill = Site)) +
+           geom_bar(stat = "Identity", position = "Dodge", col = "black") +
+           geom_hline(yintercept = 0, color = "black"))
+
+   

@@ -1,7 +1,7 @@
 ---
 title: "Filter test data"
 author: "Tim Ponton"
-date: "16/04/2020"
+date: 
 output: html_document
 ---
 
@@ -21,9 +21,11 @@ library(tidyr)
 library(plotly)
 library(patchwork)
 library(vegan)
+library(zoo)
 ```
 
 ```{r, include= FALSE}
+options(scipen = 999)
 df <- read.csv("Updated data from April 2020/Combo-as-of-April-2020-OpenRefineCopy.csv")
 
 # fix date
@@ -81,6 +83,9 @@ ggplot(data = TwoSite, aes(x = Date, y = TotalCells, fill = Site)) +
   geom_bar(stat = "Identity", position = "Dodge")
 
 ```
+
+
+
 
 The percentage difference of cells counted after the drumfilter after being counted in primary sump i.e how well do the drum filters filter out cells
 ```{r, include= FALSE}
@@ -171,9 +176,11 @@ ggplotly(ggplot(data = big, aes(x = dateTime, y = totalCells, col = Site)) +
 ```
 
 
+
+
 The difference in average Cells/L found After the Drumfilter compared to Primary sump
 
-```{r}
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
 #### what species occur when after drumfilter > primary filter ####
 
 ggplotly(df %>% 
@@ -195,6 +202,48 @@ ggplotly(df %>%
   ggplot(., aes(x = reorder(Species, totalMean), y = totalMean)) +
     geom_point() +
     coord_flip())
+```
+
+
+  
+
+When times are rounded off, a look at two consecutive days, where multiple samples are taken throughtout the time period, and the difference in time from original to rounded off for each time period
+
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+# round off time to certain amount
+df$roundTime <- round_date(df$dateTime, "2 hour")
+
+a <- df %>% 
+  group_by(Date) %>% 
+  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>%
+  mutate(timeDiff = (dateTime - roundTime)/60) %>% 
+  ungroup() %>% 
+  group_by(roundTime, Site) %>% 
+  summarise(totalCells = sum(Cells.L)) %>%
+  filter(roundTime >= as.Date("2019-02-19") & roundTime <= as.Date("2019-02-20")) %>% 
+  ggplot(., aes(x = roundTime, y = totalCells, fill = Site)) +
+  geom_bar(stat = "Identity", position = "Dodge")
+
+
+
+b <- df %>% 
+  group_by(Date) %>% 
+  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>%
+  mutate(timeDiff = (dateTime - roundTime)/60) %>% 
+  filter(roundTime >= as.Date("2019-02-19") & roundTime <= as.Date("2019-02-20")) %>% 
+  ggplot(., aes(x = roundTime, y = timeDiff, fill = Site)) +
+  geom_bar(stat = "Identity", position = "Dodge", col = "black") +
+  geom_hline(yintercept = 0, color = "black")
+
+
+a/b   
+
 ```
 
 
