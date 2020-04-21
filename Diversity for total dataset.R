@@ -18,7 +18,7 @@ all$year <- as.factor(all$year)
 all$monthYear <- as.yearmon(paste(all$year, all$month), "%Y %m")
 
 # create month year column but this creates character so FIND SOLUTION
-all$yearMonth <- format(as.Date(all$Date), "%Y-%m")
+all$yearMonth <- format(as.Date(all$Date))
 
 ####
 

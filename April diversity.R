@@ -22,6 +22,17 @@ df$Date <- as.Date(df$Date, "%d/%m/%Y")
 df$dateTime <- as.POSIXct(paste(df$Date, df$Time), format = "%Y-%m-%d %H:%M")
 
 # Add month and year column
+df <- df %>% 
+  mutate(months = months(Date), month = month(Date), year = year(Date))
+
+
+df %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m"))
+
+
+
+# coerce year column as factor
+df$year <- as.factor(df$year)
 
 # Add indices
 
@@ -246,4 +257,100 @@ ggplotly(df %>%
            geom_bar(stat = "Identity", position = "Dodge", col = "black") +
            geom_hline(yintercept = 0, color = "black"))
 
-   
+  ##### geom_tile for year/monthly diversity #####
+
+df %>% 
+  filter(CodeCount == 4605)
+
+# create group df
+matrix <- df %>% 
+  mutate(months = months(Date), month = month(Date), year = year(Date)) %>%
+  filter(Classification != "Various", Site == "Primary sump", Species != "Diatom") %>% 
+  group_by(months, month, year, Species) %>% 
+  summarise(meanC = mean(Cells.L, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Species, values_from = meanC, 
+              values_fill = list(meanC = 0))
+# subset groups
+group <- matrix %>% 
+  select(1:3)
+
+# add diveristy to group df
+group <- group %>% 
+  mutate(shannon = diversity(matrix[, 4:ncol(matrix)], "shannon"), 
+         Adjsimpson = 1-(diversity(matrix[, 4:ncol(matrix)], "simpson")), 
+         simpson = diversity(matrix[, 4:ncol(matrix)], "simpson"))
+
+h <- ggplot(data = group, aes(x = reorder(months, month), y = year, fill = shannon)) +
+  geom_tile(col = "black") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  scale_fill_gradient(low = "yellow", high = "red") +
+  xlab("Months") +
+  ylab("Year") +
+  ggtitle("Monthly Shannon index of diversity over 4 years") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# vs
+
+l <- ggplot(data = group, aes(x = month, y = shannon, col = as.factor(year))) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = 1:12, labels = c("Jan", "Feb", "Mar", 
+                                               "Apr", "May", "Jun", 
+                                               "Jul", "Aug", "Sep", 
+                                               "Oct", "Nov", "Dec")) +
+  xlab("Months") +
+  ylab("Shannon Index") +
+  labs(col = "Year") +
+  theme_classic()
+
+h/l
+
+# vs 
+ggplot(data = group, aes(x = shannon, y = reorder(months, month))) +
+  geom_density_ridges()
+
+group %>% 
+  filter(year != "2020") %>% 
+ggplot(., aes(x = shannon, y = as.factor(year), fill = stat(x))) +
+  geom_density_ridges_gradient()
+
+install.packages("ggridges")
+library(ggridges)
+
+
+
+
+##### daily diversity ####
+# create group df
+daymatrix <- df %>% 
+  mutate(months = months(Date), month = month(Date), year = year(Date)) %>%
+  filter(Classification != "Various", Site == "Primary sump", Species != "Diatom") %>% 
+  group_by(Date, months, month, year, Species) %>% 
+  summarise(meanC = mean(Cells.L, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Species, values_from = meanC, 
+              values_fill = list(meanC = 0))
+
+# subset groups
+daygroup <- daymatrix %>% 
+  select(1:4)
+
+# add diveristy to group df
+daygroup <- daygroup %>% 
+  mutate(shannon = diversity(daymatrix[, 5:ncol(daymatrix)], "shannon"), 
+         Adjsimpson = 1-(diversity(daymatrix[, 4:ncol(daymatrix)], "simpson")), 
+         simpson = diversity(daymatrix[, 4:ncol(daymatrix)], "simpson")) %>% 
+  filter(shannon != 0, simpson != 0, Adjsimpson != 0)
+
+ggplot(data = daygroup, aes(x = Date, y = shannon, col = as.factor(year))) +
+  geom_line()
+
+daygroup %>% 
+  filter(year != "2020") %>% 
+  ggplot(., aes(x = shannon, y = reorder(months, month), fill = stat(x))) +
+  geom_density_ridges_gradient() +
+  facet_wrap(~year, ncol = 3)
+
+
