@@ -100,6 +100,7 @@ df %>%
   geom_bar(stat = "Identity", position = "Dodge") +
   scale_x_discrete(guide = guide_axis(n.dodge = 3))
 
+
 ####
 
 percentage <- wide_TwoSite %>% 

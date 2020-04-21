@@ -14,6 +14,9 @@ library(zoo)
 ##### Data #####
 
 df <- read.csv("Updated data from April 2020/Combo-as-of-April-2020-OpenRefineCopy.csv")
+order <- read.csv("Updated data from April 2020/Ordered Sample sites - Abagold.csv")
+df <- df %>% 
+  left_join(order, by = "Site")
 
 # fix date
 df$Date <- as.Date(df$Date, "%d/%m/%Y")

@@ -1,0 +1,36 @@
+Site,Order,Proper Site,Location
+Kelp catchers,1,Kelp catchers,Incoming seawater
+Primary sump,2,Primary sump,Incoming seawater
+Sec Swirler,3,Sec Swirler,Incoming seawater
+After Drumfilter,4,After Drumfilter,Incoming seawater
+Seaview Recirc,5,Seaview Recirc,Seaview farm
+Seaview farm (Top-up),6,Seaview farm (Top-up),Seaview farm
+Seaview,7,Seaview Farm,Seaview farm
+Seaview Farm,7,Seaview Farm,Seaview farm
+SV 1,8,Seaview 1,Seaview farm
+SV 2,9,Seaview 2,Seaview farm
+Amaza,10,Amaza,Seaview farm
+Seaview effluent,11,Seaview effluent,Seaview farm
+Broodstock before filter,12,Broodstock before filter,Hatchery farm
+Broodstock filter,13,Broodstock filter,Hatchery farm
+Broodstock,14,Broodstock,Hatchery farm
+Settlement tank,15,Settlement tank,Hatchery farm
+Settlement inside,15,Settlement tank,Hatchery farm
+Inside Settlement,15,Settlement tank,Hatchery farm
+Settlement,15,Settlement tank,Hatchery farm
+Larvae,15,Settlement tank,Hatchery farm
+Settlement outside,16,Settlement outside,Hatchery farm
+Amaza 5 settlement,17,Amaza 5 settlement,Hatchery farm
+Hatchery,18,Hatchery,Hatchery farm
+Nursery,18,Hatchery,Hatchery farm
+Nursery under roof,18,Hatchery,Hatchery farm
+Nursery office,19,Nursery office,Hatchery farm
+Nursery SV,20,Nursery SV,Hatchery farm
+Nursery Row10,21,Nursery Row10,Hatchery farm
+Nursery Row11,22,Nursery Row11,Hatchery farm
+Bergsig,23,Bergsig,Bergsig farm
+Bergsig effluent,24,Bergsig effluent,Bergsig farm
+Sula recirc,25,Sula recirc,Sulamanzi farm
+Sula,26,Sula,Sulamanzi farm
+Sea water,27,Unknown ,I'm not sure which site this two is
+Not providede in original database,28,Unknown ,I'm not sure which site this two is
