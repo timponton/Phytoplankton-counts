@@ -26,11 +26,14 @@ df$dateTime <- as.POSIXct(paste(df$Date, df$Time), format = "%Y-%m-%d %H:%M")
 
 # Add month and year column
 df <- df %>% 
-  mutate(months = months(Date), month = month(Date), year = year(Date))
-
-
-df %>% 
-  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m"))
+  mutate(months = months(Date), month = month(Date), year = year(Date)) %>% 
+  mutate(Season = ifelse(month %in% c(12, 1, 2), "Summer", 
+                         ifelse(month %in% c(3, 4, 5), "Autumn", 
+                                ifelse(month %in% c(6, 7, 8), "Winter", "Spring")))) %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
+  mutate(SeasonOrder = ifelse(month %in% c(12, 1, 2), 1, 
+                              ifelse(month %in% c(3, 4, 5), 2, 
+                                     ifelse(month %in% c(6, 7, 8), 3, 4))))
 
 
 
