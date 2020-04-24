@@ -39,7 +39,7 @@ df <- df %>%
 
 # coerce year column as factor
 df$year <- as.factor(df$year)
-
+ 
 # Add indices
 
 
@@ -358,5 +358,8 @@ daygroup %>%
   ggplot(., aes(x = shannon, y = reorder(months, month), fill = stat(x))) +
   geom_density_ridges_gradient() +
   facet_wrap(~year, ncol = 3)
+
+#### dino vs diat
+
 
 
