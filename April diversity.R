@@ -40,6 +40,25 @@ df <- df %>%
 # coerce year column as factor
 df$year <- as.factor(df$year)
  
+# Add Red Tide categories
+# incorporating red tide presence into df
+## first set parameters for each cate
+RT <- df %>% 
+  filter(Site == "Primary sump") %>% 
+  group_by(Date) %>% 
+  summarise(totalCells = sum(Cells.L, na.rm = TRUE)) %>% 
+  mutate(RedTide = ifelse(totalCells <= 1000, "None detected", 
+                          ifelse(totalCells >= 1001 & totalCells <= 5000, "Very Low (A)", 
+                                 ifelse(totalCells >= 5001 & totalCells <= 10000, "Very Low (B)", 
+                                        ifelse(totalCells >= 10001 & totalCells <= 50000, "Low (A)", 
+                                               ifelse(totalCells >= 50001 & totalCells <= 100000, "Low (B)", 
+                                                      ifelse(totalCells >= 100001 & totalCells <= 1000000, "Medium", "High")))))))
+# left join to main df
+df <- df %>% 
+  left_join(RT, by = "Date")
+
+
+
 # Add indices
 
 
