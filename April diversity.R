@@ -46,7 +46,7 @@ df$year <- as.factor(df$year)
 RT <- df %>% 
   filter(Site == "Primary sump") %>% 
   group_by(Date) %>% 
-  summarise(totalCells = sum(Cells.L, na.rm = TRUE)) %>% 
+  summarise(totalCells = sum(Cells.L)) %>% 
   mutate(RedTide = ifelse(totalCells <= 1000, "None detected", 
                           ifelse(totalCells >= 1001 & totalCells <= 5000, "Very Low (A)", 
                                  ifelse(totalCells >= 5001 & totalCells <= 10000, "Very Low (B)", 
