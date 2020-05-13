@@ -111,14 +111,28 @@ dailyMeans %>%
   geom_line() +
   facet_wrap(~year, ncol = 3)
   
+ggplot(data = PS, aes(x = log(Cells.L))) +
+  geom_density()
+ggqqplot(sqrt(dailyMeans$meanBiomass + 1) - dailyMeans$meanBiomass)
+
+library(ggpubr)
+
+shapiro.test(dailyMeans$meanBiomass)
+
+#model <- glm(log1Mean ~ month + year, family = Gamma(link = "inverse"), data = dailyMeans)
+
+#summ(model)
+
+#effect_plot(model, pred = month, interval = TRUE, plot.points = TRUE)
 
 
 
-model <- glm(log1Mean ~ month + year, family = Gamma(link = "inverse"), data = dailyMeans)
 
-summ(model)
+# Total data view ---------------------------------------------------------
 
-effect_plot(model, pred = month, interval = TRUE, plot.points = TRUE)
+
+
+
 
 
 
@@ -145,8 +159,7 @@ ggplotly(dailyMeans %>%
   group_by(third, months, month, year, Season, YEarMonth, SeasonOrder) %>% 
   summarise(thirdmean = mean(meanBiomass, na.rm = TRUE)) %>% 
   ggplot(., aes(x = third, y = log(thirdmean))) +
-  geom_point() +
-  geom_smooth(method = "loess") +
+  geom_point(aes(col = Season)) +
   geom_line())
 
 SeasonOther_dailymeans <- PS %>% 
@@ -291,16 +304,14 @@ checking <- PS %>%
 
 
 
-ggplotly(ggplot(data = maximal, aes(x = Date, y = log1p(totalCells))) +
-  geom_point(aes(col = FWC_mod)) +
-  geom_line(size = 0.1))
+
 
 
 # Maximum values used  ----------------------------------------------------
 
 
 maximal <- PS %>% 
-  group_by(Date, months) %>% 
+  group_by(Date, months, month) %>% 
   summarise(totalCells = max(Cells.L)) %>% 
   mutate(RedTide = ifelse(totalCells <= 1000, "None detected", 
                           ifelse(totalCells >= 1001 & totalCells <= 5000, "Very Low (A)", 
@@ -318,7 +329,13 @@ maximal %>%
   group_by(months, FWC_mod) %>% 
   tally() %>% 
   arrange(desc(n))
-
+maximal %>% 
+  filter(FWC_mod == "Medium" | FWC_mod == "High" | FWC_mod == "Low") %>% 
+  group_by(months, month, FWC_mod) %>% 
+  tally() %>% 
+  arrange(desc(n)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
+  geom_col(position = "dodge")
 
 
 anotherMean <- PS %>% 
@@ -327,6 +344,10 @@ anotherMean <- PS %>%
   summarise(meanBiomass = mean(Cells.L, na.rm = TRUE)) %>% 
   mutate(log1Mean = log1p(meanBiomass))
 
+ggplot(data = maximal, aes(x = Date, y = log1p(totalCells))) + 
+  geom_line(size = 0.1) +
+  geom_point(aes(col = FWC_mod), size = 2) +
+  theme_classic()
 
 
 # group by times ----------------------------------------------------------------
@@ -367,6 +388,376 @@ ggplot(data = biomass, aes(x = Date, y = log1p(dayTotal))) +
   geom_point()
 
 
+# When diveristy can be measured ------------------------------------------
+
+# summarise to daily means for each species
+Sp_only <- PS %>% 
+  filter(year != "2020") %>% 
+  filter(Classification != "Various") %>% 
+  group_by(Date, Species, Classification, months, month, year, 
+           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
+  summarise(meanCells = mean(Cells.L, na.rm = TRUE))
+
+PS %>% 
+  filter(year != "2020") %>% 
+  filter(Classification != "Various") %>% 
+  group_by(Date, Species, Classification, months, month, year, 
+           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
+  ggplot(., aes(x = log10(Cells.L))) +
+  geom_histogram(bins = 30) +
+  theme_classic()
+
+
+# calculate total density by adding all average species up per day they were sampled to get daily total cells
+total_Sp_cells <- Sp_only %>% 
+  group_by(Date, months, month, year, 
+           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
+  summarise(total_biomass = sum(meanCells)) %>% 
+  ungroup()
+
+Sp_only %>% 
+  group_by(Date, months, month, year, 
+           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
+  summarise(mC = mean(meanCells)) %>% 
+  ggplot(., aes(x = Date, y = log1p(mC))) +
+  geom_point(aes(col = Season)) +
+  geom_line(size = 0.2) +
+  theme_classic()
+
+#For 3 days
+Sp_only %>% 
+  mutate(third = round_date(Date, "3 day")) %>% 
+           group_by(third, months, month, year, Season, YEarMonth, SeasonOrder) %>% 
+           summarise(thirdmean = mean(meanCells, na.rm = TRUE)) %>% 
+           ggplot(., aes(x = third, y = log10(thirdmean))) +
+           geom_point(aes(col = Season)) +
+           geom_line() +
+  theme_classic()
+
+# boxplots
+
+Sp_only %>% 
+  group_by(Date, months, month, year, 
+           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
+  summarise(mC = mean(meanCells)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = log1p(mC), fill = Season)) +
+  geom_violin(width=1.4) +
+  geom_boxplot(width=0.1, color="black", alpha=0.2) +
+  theme_classic()
+
+# calculate species richness (S) by calculating number of species per day
+richness <- Sp_only %>% 
+  group_by(Date) %>% 
+  summarise(S = n_distinct(Species))
+Sp_only %>% 
+  group_by(YEarMonth, Season) %>% 
+  summarise(S = n_distinct(Species)) %>% 
+  ggplot(., aes(x = as.factor(YEarMonth), y = S)) +
+  geom_col(aes(fill = Season), col = "black") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 3))
+
+# diversity of each day by calculating shannon index (H') for each day 
+div <- Sp_only %>% 
+  ungroup() %>% 
+  select(Date, Species, meanCells) %>% 
+  pivot_wider(names_from = Species, values_from = meanCells, 
+              values_fill = list(meanCells = 0))
+
+group_date <- div %>% 
+  select(Date)
+
+group_date <- group_date %>% 
+  mutate(shannon2 = diversity(div[, 2:ncol(div)], "shannon", base = 2),
+         shannon = diversity(div[, 2:ncol(div)], "shannon"),
+         simpson = diversity(div[, 2:ncol(div)], "simpson"), 
+         Inv_simpson = diversity(div[, 2:ncol(div)], "inv"))
+
+# evenness  by calculating Pielou’s index (J’) for each day 
+# calculated as J' = H'/log(S)
+
+# join S, H' and J' together to total daily biomass df
+
+group_date # H' 
+Richness # S
+total_Sp_cells # biomass
+
+# join
+dailyDesc <- left_join(total_Sp_cells, group_date, by = "Date") %>% 
+  left_join(., richness, by = "Date")
+
+# calculate J'
+dailyDesc <- dailyDesc %>% 
+  mutate(J2 = shannon2/log(S), 
+         J = shannon/log(S))
+
+ggplot(data = dailyDesc, aes(x = shannon, y = J)) +
+  geom_point(aes(col = FWC_mod)) +
+  geom_smooth(method = "lm")
+
+
+## using graphs to check data 
+# total cells over dates when diversity cna be calcualated
+ggplot(data = total_Sp_cells, aes(x = Date, y = log1p(total_biomass))) +
+  geom_point(aes(col = Season)) +
+  geom_line(size = 0.5) +
+  theme_classic()
+
+
+ggplot(data = Sp_only, aes(x = Date, fill = months)) +
+  geom_histogram(bins = 300)
+
+
+# how does diversity change over time, by rate of richness
+ggplot(data = dailyDesc, aes(x = Date, y = shannon, col = S)) +
+  geom_point() +
+  geom_line()
+
+# relationship between biomass and richness
+ggplot(data = dailyDesc, aes(x = log1p(total_biomass), y = S)) +
+  geom_point() +
+  geom_smooth()
+
+# relationship between biomass and evenness
+ggplot(data = dailyDesc, aes(x = log1p(total_biomass), y = J)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+ggplot(data = dailyDesc, aes(x = as.factor(YEarMonth), y = S, fill = Season)) +
+  geom_boxplot()
+
+Sp_only %>% 
+  group_by(year) %>% 
+  filter(Classification != "Various") %>% 
+  summarise(n = n_distinct(Species))
+
+ggplot(data = dailyDesc, aes(x = as.factor(YEarMonth), y = S)) +
+  geom_boxplot(aes(fill = Season))
+
+dailyDesc %>% 
+  pivot_longer(-c(1:9), names_to = "statistic", values_to = "measure") %>% 
+  filter(statistic %in% c("simpson", "shannon")) %>% 
+  ggplot(., aes(x = as.factor(YEarMonth), y = measure)) +
+  geom_boxplot(aes(fill = Season)) +
+  facet_wrap(~statistic, ncol = 1, scales = "free_y") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 3)) +
+  theme_classic()
+
+dailyDesc %>% 
+  pivot_longer(-c(1:9), names_to = "statistic", values_to = "measure") %>% 
+  filter(statistic %in% c("S", "J")) %>% 
+  ggplot(., aes(x = as.factor(YEarMonth), y = measure)) +
+  geom_boxplot(aes(fill = Season)) +
+  facet_wrap(~statistic, ncol = 1, scales = "free_y") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 3)) +
+  theme_classic()
+
+
+# Diatom-Dino fluctuations ------------------------------------------------
+
+Sp_only %>% 
+  filter(Classification %in% c("Dinoflagellate", "Diatom")) %>% 
+  ggplot(., aes(x = reorder(months, month), y = log(meanCells), fill = Classification)) +
+  geom_boxplot() +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  theme_classic()
+
+PS %>% 
+  filter(Classification %in% c("Dinoflagellate", "Diatom")) %>% 
+  ggplot(., aes(x = reorder(months, month), y = log10(Cells.L), fill = Classification)) +
+  geom_boxplot()
+
+###
+
+# NMDS on daily densities etc ---------------------------------------------
+
+# NMDS of all data per month
+
+testmonth <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>%
+  #mutate(spAb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(months, Species) %>% 
+  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>%
+  pivot_wider(names_from = Species, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="months")
+
+
+NMDStestmonth <- metaMDS(testmonth, k = 3, autotransform = TRUE)
+
+NMDStestmonth
+stressplot(NMDStestmonth)
+
+
+
+plot(NMDStestmonth)
+ordiplot(NMDStestmonth,type="n")
+orditorp(NMDStestmonth,display="species",col="red",air=0.01)
+orditorp(NMDStestmonth,display="sites",cex=1.25,air=0.01)
+
+
+# ANOSIM ------------------------------------------------------------------
+
+ANOSIM_month <- Sp_only %>%
+  ungroup() %>% 
+  select(-Classification) %>% 
+  filter(Species != "Diatom") %>%
+  group_by(months, year, Species) %>% 
+  summarise(cells = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Species, values_from = cells, 
+              values_fill = list(cells = 0))
+
+com <- ANOSIM_month[, 3:ncol(ANOSIM_month)]
+m_com <- as.matrix(com)
+
+ano <- anosim(m_com, ANOSIM_month$year, distance = "bray", permutations = 9999)
+ano
+summary(ano)
+plot(ano)
+
+
+# 2019
+test <- Sp_only %>%
+  ungroup() %>% 
+  filter(year == "2019") %>%
+  filter(Species != "Diatom") %>% 
+  group_by(months, Species) %>% 
+  summarise(averageDens = log1p(mean(meanCells, na.rm = TRUE))) %>%
+  pivot_wider(names_from = Species, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="months")
+
+
+
+
+
+
+NMDS <- metaMDS(testmonth, k = 2, autotransform = TRUE)
+
+NMDS
+stressplot(NMDS)
+
+
+
+plot(NMDS)
+ordiplot(NMDS,type="n")
+orditorp(NMDS,display="species",col="red",air=0.01)
+orditorp(NMDS,display="sites",cex=1.25,air=0.01)
+
+
+# ANOSIM of months 
+
+
+
+## create data frame sna dplot in ggplot2
+# create dataframes
+Sp_NMDS <- as.data.frame(NMDS[["species"]]) %>% 
+  rownames_to_column(var = "variable") %>% 
+  mutate(variableType = "Species")
+months_MNDS <- as.data.frame(NMDS[["points"]]) %>% 
+  rownames_to_column(var = "variable") %>% 
+  mutate(variableType = "Month")
+
+# bind df's
+NMDS_2019 <- rbind(months_MNDS, Sp_NMDS)
+
+# plot in ggplot2
+ggplot(data = NMDS_2019, aes(x = MDS1, y = MDS2)) +
+  geom_point() +
+  geom_text(aes(label = variable, col = variableType)) +
+  scale_color_manual(values=c("Black", "red"))
+
+plot_ly(NMDS_2019, x = ~MDS1, y = ~MDS2, z = ~MDS3, color = ~variableType, text = ~variable)
+
+scatter3
+
+# 2018
+
+test18 <- Sp_only %>%
+  ungroup() %>% 
+  filter(year == "2018") %>% 
+  group_by(months, Species) %>% 
+  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Species, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="months")
+
+
+NMDS18 <- metaMDS(test18, k = 2)
+stressplot(NMDS18)
+
+
+plot(NMDS18)
+ordiplot(NMDS18,type="n")
+orditorp(NMDS18,display="species",col="red",air=0.01)
+orditorp(NMDS18,display="sites",cex=1.25,air=0.01)
+
+# 2017
+test17 <- Sp_only %>%
+  ungroup() %>% 
+  filter(year == "2017") %>% 
+  group_by(months, Species) %>% 
+  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Species, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="months")
+
+
+NMDS17 <- metaMDS(test17, k = 2)
+stressplot(NMDS17)
+
+
+plot(NMDS17)
+ordiplot(NMDS17,type="n")
+orditorp(NMDS17,display="species",col="red",air=0.01)
+orditorp(NMDS17,display="sites",cex=1.25,air=0.01)
+
+
+## another NMDS method 
+
+another <- Sp_only %>%
+  ungroup() %>% 
+  filter(year != "2020") %>%
+  group_by(year, months, Species) %>% 
+  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Species, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) 
+
+another_mat <- another[, 3:ncol(another)]
+m_another_mat <- as.matrix(another_mat)
+
+another_NMDS <- metaMDS(m_another_mat, k = 3, distance = "bray")
+another_NMDS
+plot(another_NMDS)
+another_data.scores <- as.data.frame(scores(another_NMDS))
+
+another_data.scores$year <- another$year
+another_data.scores$months <- another$months
+allOf <- ggplot(another_data.scores, aes(x = NMDS1, y = NMDS2)) + 
+  geom_point(size = 9, aes(shape = year, col = months))
+
+ggplot(another_data.scores, aes(x = NMDS1, y = NMDS2)) + 
+  geom_point()
+
+
+first <- another_data.scores %>% 
+  filter(months %in% c("March", "February", "January")) %>% 
+  ggplot(aes(x = NMDS1, y = NMDS2)) + 
+  geom_point(size = 9, aes(shape = year, col = months)) +
+  geom_path()
+
+allOf + first
+
+
+scori <- as.data.frame(another_NMDS[["species"]]) %>% 
+  rownames_to_column(var = "Species")
+
+plot_ly(scori, x = ~MDS1, y = ~MDS2, z = ~MDS3)
+
 # Specific species  -------------------------------------------------------
 
 dominantSp <- PS %>% 
@@ -378,3 +769,5 @@ dominantSp %>%
   summarise(averaging = mean(Cells.L, na.rm = TRUE)) %>% 
   ggplot(., aes(x = Date, y = averaging, col = Species)) +
   geom_point()
+
+
