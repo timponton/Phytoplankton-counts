@@ -106,7 +106,7 @@ dailyMeans <- PS %>%
 
 # Wrangle data ------------------------------------------------------------
 
-## SPecies biomass per day
+## Species biomass per day
 # summarise to daily means for each species
 Sp_only <- PS %>% 
   filter(year != "2020") %>% 
@@ -177,7 +177,8 @@ dailyDesc <- dailyDesc %>%
 
 # Create monthly aggregates -----------------------------------------------
 
-# Plot monthly totla biomass, comparing years
+#'*year-monthly biomass (1)*
+# Plot monthly total biomass, comparing years
 Sp_only %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
@@ -185,14 +186,14 @@ Sp_only %>%
   geom_line(size = 2) +
   theme_classic()
 
-PS %>% 
-  filter(year != "2020") %>% 
-  filter(Classification != "Various") %>% 
-  group_by(months, month, year, Season) %>% 
-  summarise(monthlyMean = mean(Cells.L, na.rm = TRUE)) %>% 
-  ggplot(., aes(x = reorder(months, month), y = log10(monthlyMean), col = year, group = year)) +
-  geom_line(size = 2) +
-  theme_classic()
+# PS %>% 
+#   filter(year != "2020") %>% 
+#   filter(Classification != "Various") %>% 
+#   group_by(months, month, year, Season) %>% 
+#   summarise(monthlyMean = mean(Cells.L, na.rm = TRUE)) %>% 
+#   ggplot(., aes(x = reorder(months, month), y = log10(monthlyMean), col = year, group = year)) +
+#   geom_line(size = 2) +
+#   theme_classic()
 
 ## Monthly averages for each species
 SP_monthly <- PS %>% 
@@ -202,9 +203,11 @@ SP_monthly <- PS %>%
            YEarMonth, Species, Classification) %>% 
   summarise(meanCells = mean(Cells.L, na.rm = TRUE))
 
-
+#'*year-monthly metrics (1)*
 ## comparing years over months for indices
 
+
+#'*(1)*
 # Richness
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
@@ -213,6 +216,7 @@ dailyDesc %>%
   geom_line(size = 2) +
   theme_classic()
 
+#'*(1)*
 # Evenness (J')
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
@@ -221,6 +225,7 @@ dailyDesc %>%
   geom_line(size = 2) +
   theme_classic()
 
+#'*(1)*
 # Shannon
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
@@ -229,6 +234,7 @@ dailyDesc %>%
   geom_line(size = 2) +
   theme_classic()
 
+#'*(1)*
 # Simpson
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
@@ -251,15 +257,17 @@ PS %>%
   geom_bar(stat = "Identity", position = "fill") +
   theme_classic()
 
+#'*[Stacked bar graph] of different phyto classes, by year-months*
 # from Sp_Only df all years together
 Sp_only %>% 
   group_by(months, month, year, Season, Classification) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
   geom_bar(stat = "Identity", position = "fill") +
-  facet_wrap(~year, ncol = 1) +
   theme_classic()
 
+
+#'*[Stacked bar graph] of different phyto classes, by months, facetd by year*
 # from Sp_Only df facet_wrap(~year)
 Sp_only %>% 
   group_by(months, month, year, Season, Classification) %>% 
@@ -268,6 +276,18 @@ Sp_only %>%
   geom_bar(stat = "Identity", position = "fill") +
   facet_wrap(~year, ncol = 1) +
   theme_classic()
+
+
+
+#'*Add this in as a comparison*
+# All classes plot together
+Sp_only %>% 
+  group_by(YEarMonth, Season, Classification) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
+  ggplot(., aes(x = YEarMonth, y = monthlyMean, fill = Classification)) +
+  geom_bar(stat = "Identity", position = "fill") +
+  theme_classic()
+
 
 
 ## when were diatoms or dinos dominant
@@ -293,10 +313,29 @@ Dino_dom <- DD_dom %>%
   select(months, month, year, YEarMonth, Season, Dominant)
 
 
+#'*When either Diatoms or Dino's are dominant over the other*
 # plot dominants
-ggplot(DD_dom, aes(x = YEarMonth, y = monthlyMean, fill = Dominant)) +
+ggplot(DD_dom, aes(x = YEarMonth, y = sqrt(monthlyMean), fill = Dominant)) +
   geom_bar(stat = "Identity") +
   theme_classic()
+
+
+#'*Include*
+# all month aggregated togtehr to see when diatoms or dino's are domiannt over the other
+Sp_only %>% 
+  group_by(months, month, Season, Classification) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = "Classification", values_from = "monthlyMean",
+              values_fill = list(monthlyMean = 0)) %>% 
+  mutate(Dominant = ifelse(Diatom > Dinoflagellate, "Diatom", 
+                           ifelse(Diatom < Dinoflagellate, "Dinoflagellate", "Other"))) %>% 
+  pivot_longer(-c(months, month, Season, Dominant), names_to = "Classification", values_to = "monthlyMean") %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Dominant)) +
+  geom_bar(stat = "Identity") +
+  theme_classic()
+
+
+
 
 ## Join dominant class to monthly species data
 
@@ -304,9 +343,6 @@ Sp_monthly_with.Dom <- SP_monthly %>%
   left_join(all_dom, by = c("months", "month", "year"))
 
 
-
-ggplotly(ggplot(t3, aes(x = reorder(months, month), y = meanCells, fill = Species)) +
-  geom_col(position = "fill", col = "black"))
 
 
 
@@ -317,6 +353,7 @@ ggplotly(ggplot(t3, aes(x = reorder(months, month), y = meanCells, fill = Specie
 
 #total per time
 max_cells_day <- PS %>% 
+  filter(year == "2019") %>%   # 2019 subsetted as previous years did not employ fine-scale monitoring
   group_by(Date, Time, months, month, Species) %>% 
   summarise(total.per.time = sum(Cells.L)) %>% 
   ungroup() %>% 
@@ -364,31 +401,74 @@ Time_count %>%
   group_by(months, month, year) %>% 
   summarise(meanTimeCounts = mean(count_times, na.rm = TRUE))
 
-# merge red tide dates and number of times sampled per day
-resources <- left_join(max_cells_day, Time_count, by = "Date")
 
-ggplot(resources, aes(x = Date, y = count_times)) +
-  geom_line()
+#'*comapre overall cells vs dates, sized by counting times*
+# how do counting times change over time, linked to total cells 
+left_join(max_cells_day, Time_count, by = "Date") %>% 
+  filter(count_times > 0) %>% 
+  ggplot(., aes(x = Date, y = log(totalCells))) +
+  geom_line() +
+  geom_point(aes(col = FWC_mod, size = count_times))
 
-ggplot(resources, aes(x = reorder(months, month), y = log(count_times))) +
-  geom_boxplot()
+# calculate average counting times/day
+left_join(max_cells_day, Time_count, by = "Date") %>% 
+  ungroup() %>% 
+  summarise(meanc = mean(count_times, na.rm = TRUE))
 
-ggplot(resources, aes(x = log(totalCells), y = log(count_times))) +
-  geom_point(aes(col = FWC_mod))
+
+# merge red tide dates and number of times sampled per day and filter above avergae counting days
+resources <- left_join(max_cells_day, Time_count, by = "Date") %>% 
+  filter(count_times > 3.12) # > average counts per day
+
+
+#'* [Scatter and relationship line (smooth)] used to show counting times correlation, above daily counting average*
+# correlation between total cells counted and numebr of times counted per day
+ggplot(resources, aes(x = log(totalCells), y = count_times)) +
+  geom_point(aes(col = FWC_mod)) +
+  geom_smooth(method = "loess")
+
+#'*comapre overall cells vs dates above average number of counting times, sized by counting times*
+# how do counting times change over time, linked to total cells 
+ggplot(data = resources, aes(x = Date, y = log(totalCells))) +
+  geom_line() +
+  geom_point(aes(col = FWC_mod, size = count_times))
 
 
 
 # number of times different red tide classes were experienced per  --------
 
+#total per time
+all_max_cells_day <- PS %>% 
+  group_by(Date, Time, months, month, Species) %>% 
+  summarise(total.per.time = sum(Cells.L)) %>% 
+  ungroup() %>% 
+  group_by(Date, Time, months, month) %>% 
+  summarise(totTime = sum(total.per.time)) %>% 
+  ungroup() %>% 
+  group_by(Date, months, month) %>% 
+  summarise(totalCells = max(totTime, na.rm = TRUE)) %>% 
+  mutate(RedTide = ifelse(totalCells <= 1000, "None detected", 
+                          ifelse(totalCells >= 1001 & totalCells <= 5000, "Very Low (A)", 
+                                 ifelse(totalCells >= 5001 & totalCells <= 10000, "Very Low (B)", 
+                                        ifelse(totalCells >= 10001 & totalCells <= 50000, "Low (A)", 
+                                               ifelse(totalCells >= 50001 & totalCells <= 100000, "Low (B)", 
+                                                      ifelse(totalCells >= 100001 & totalCells <= 1000000, "Medium", "High"))))))) %>% 
+  mutate(FWC_mod = ifelse(totalCells >= 1 & totalCells <= 1000, "Normal", 
+                          ifelse(totalCells >= 1001 & totalCells <= 10000, "Very Low", 
+                                 ifelse(totalCells >= 10001 & totalCells <= 100000, "Low", 
+                                        ifelse(totalCells >= 100001 & totalCells < 1000000, "Medium", "High")))))
+
+
+
 # make classes as.factor
-max_cells_day$FWC_mod <- as.factor(max_cells_day$FWC_mod)
+all_max_cells_day$FWC_mod <- as.factor(all_max_cells_day$FWC_mod)
 # check factors
-levels(max_cells_day$FWC_mod)
+levels(all_max_cells_day$FWC_mod)
 # set order of factors 
-max_cells_day$FWC_mod <-  factor(max_cells_day$FWC_mod, 
+all_max_cells_day$FWC_mod <-  factor(all_max_cells_day$FWC_mod, 
                                  levels = c("High","Medium", "Low", "Very Low", "Normal"))
 # join year columns, tally per class per month per year (remove 2020)
-RT.classNumbers_monthYear <- max_cells_day %>% 
+RT.classNumbers_monthYear <- all_max_cells_day %>% 
   left_join(select(PS, Date, months, year, YEarMonth), by = "Date", keep = FALSE) %>%
   filter(year != "2020") %>% 
   group_by(months.x, month, year, YEarMonth, FWC_mod) %>% 
