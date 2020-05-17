@@ -1,3 +1,14 @@
+---
+title: "Untitled"
+author: "Tim Ponton"
+date: "17/05/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 
 # Load data and clean -----------------------------------------------------
 
@@ -21,7 +32,7 @@ library(funrar)
 
 
 ### read in data and fix####
- 
+
 df <- read.csv("Updated data from April 2020/Combo-as-of-April-2020-OpenRefineCopy.csv")
 order <- read.csv("Updated data from April 2020/Ordered Sample sites - Abagold.csv")
 df <- df %>% 
@@ -177,24 +188,14 @@ dailyDesc <- dailyDesc %>%
 
 # Create monthly aggregates -----------------------------------------------
 
-
-  
-#'*year-monthly biomass (1) ---------------*
+#'*year-monthly biomass (1)*
 # Plot monthly total biomass, comparing years
 Sp_only %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = log10(monthlyMean), col = year, group = year)) +
   geom_line(size = 2) +
-  xlab("Months") +
-  ylab("Log10 phyotplankton counts") + 
-  ggtitle("Comparing the log10 monthly mean phytoplankton counts between three consecutive years ") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
-  
-
-
-
+  theme_classic()
 
 # PS %>% 
 #   filter(year != "2020") %>% 
@@ -217,61 +218,41 @@ SP_monthly <- PS %>%
 ## comparing years over months for indices
 
 
-
-#'*(1) ------------------*
+#'*(1)*
 # Richness
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlyRichness = mean(S, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyRichness, col = year, group = year)) +
   geom_line(size = 2) +
-  xlab("Months") +
-  ylab("Species Richness") + 
-  ggtitle("Comparing the monthly species richness of phytoplankton counts between three consecutive years ") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
-
-
-#'*(1) -----------------*
+#'*(1)*
 # Evenness (J')
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlyEvenness = mean(J, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyEvenness, col = year, group = year)) +
   geom_line(size = 2) +
-  xlab("Months") +
-  ylab("Pielou's J' evenness") + 
-  ggtitle("Comparing the monthly species evenness (J') of phytoplankton counts between three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
-#'*(1) ---------------*
+#'*(1)*
 # Shannon
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlyshannon = mean(shannon, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyshannon, col = year, group = year)) +
   geom_line(size = 2) +
-  xlab("Months") +
-  ylab("Shannon Index of Diversity") + 
-  ggtitle("Comparing the monthly Shannon (H') Index of Diversity of phytoplankton between three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
-
-#'*(1) ----------------*
+#'*(1)*
 # Simpson
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
   summarise(monthlysimpson = mean(simpson, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlysimpson, col = year, group = year)) +
   geom_line(size = 2) +
-  xlab("Months") +
-  ylab("Simpson Index of Diversity") + 
-  ggtitle("Comparing the monthly Simpson Index of Diversity of phytoplankton between three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
 
@@ -287,22 +268,17 @@ PS %>%
   geom_bar(stat = "Identity", position = "fill") +
   theme_classic()
 
-#'*[Stacked bar graph] of different phyto classes, by year-months -------------*
+#'*[Stacked bar graph] of different phyto classes, by year-months*
 # from Sp_Only df all years together
 Sp_only %>% 
   group_by(months, month, year, Season, Classification) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
   geom_bar(stat = "Identity", position = "fill") +
-  xlab("Months") +
-  ylab("Proportion monthly mean") + 
-  labs(fill = "Phytoplankton class") +
-  ggtitle("Comparing the proportion of mean monthly counts between phytoplankton classes over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
-#'*[Stacked bar graph] of different phyto classes, by months, facetd by year ------------------*
+#'*[Stacked bar graph] of different phyto classes, by months, facetd by year*
 # from Sp_Only df facet_wrap(~year)
 Sp_only %>% 
   group_by(months, month, year, Season, Classification) %>% 
@@ -310,28 +286,18 @@ Sp_only %>%
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
   geom_bar(stat = "Identity", position = "fill") +
   facet_wrap(~year, ncol = 1) +
-  xlab("Months") +
-  ylab("Proportion monthly mean") + 
-  labs(fill = "Phytoplankton class") +
-  ggtitle("Comparing the proportion of mean monthly counts between phytoplankton classes over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
 
-#'*Add this in as a comparison ------------*
+#'*Add this in as a comparison*
 # All classes plot together
 Sp_only %>% 
   group_by(YEarMonth, Season, Classification) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
   ggplot(., aes(x = YEarMonth, y = monthlyMean, fill = Classification)) +
   geom_bar(stat = "Identity", position = "fill") +
-  xlab("Month Year") +
-  ylab("Proportion monthly mean") + 
-  labs(fill = "Phytoplankton class") +
-  ggtitle("Comparing the proportion of mean monthly counts between phytoplankton classes over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
 
@@ -358,20 +324,15 @@ Dino_dom <- DD_dom %>%
   select(months, month, year, YEarMonth, Season, Dominant)
 
 
-#'*When either Diatoms or Dino's are dominant over the other --------*
+#'*When either Diatoms or Dino's are dominant over the other*
 # plot dominants
 ggplot(DD_dom, aes(x = YEarMonth, y = sqrt(monthlyMean), fill = Dominant)) +
   geom_bar(stat = "Identity") +
-  xlab("Month Year") +
-  ylab("Monthly Mean of all Phytoplankton") + 
-  labs(fill = "Dominant phytoplankton class") +
-  ggtitle("Investigate which phytoplankton classes are dominant on a monthly basis over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
-#'*Include -----------------*
-# all month aggregated togtehr to see when diatoms or dino's are dominant over the other
+#'*Include*
+# all month aggregated togtehr to see when diatoms or dino's are domiannt over the other
 Sp_only %>% 
   group_by(months, month, Season, Classification) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
@@ -382,12 +343,7 @@ Sp_only %>%
   pivot_longer(-c(months, month, Season, Dominant), names_to = "Classification", values_to = "monthlyMean") %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Dominant)) +
   geom_bar(stat = "Identity") +
-  xlab("Months") +
-  ylab("Monthly Mean of all Phytoplankton") + 
-  labs(fill = "Dominant phytoplankton class") +
-  ggtitle("Investigate which phytoplankton classes are dominant on a monthly basis over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme_classic()
 
 
 
@@ -457,28 +413,13 @@ Time_count %>%
   summarise(meanTimeCounts = mean(count_times, na.rm = TRUE))
 
 
-# make classes as.factor
-max_cells_day$FWC_mod <- as.factor(max_cells_day$FWC_mod)
-# check factors
-levels(max_cells_day$FWC_mod)
-# set order of factors 
-max_cells_day$FWC_mod <-  factor(max_cells_day$FWC_mod, 
-                                     levels = c("High","Medium", "Low", "Very Low", "Normal"))
-
-
-#'*Compare overall cells vs dates, sized by counting times ------------*
+#'*comapre overall cells vs dates, sized by counting times*
 # how do counting times change over time, linked to total cells 
 left_join(max_cells_day, Time_count, by = "Date") %>% 
   filter(count_times > 0) %>% 
   ggplot(., aes(x = Date, y = log(totalCells))) +
   geom_line() +
-  geom_point(aes(col = FWC_mod, size = count_times)) +
-  xlab("Date") +
-  ylab("Log Phytoplankton counts") + 
-  labs(col = "Red Tide class", size = "Samples collected per day") +
-  ggtitle("Investigating how sampling frequency varied in relation to red tide severity over three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  geom_point(aes(col = FWC_mod, size = count_times))
 
 # calculate average counting times/day
 left_join(max_cells_day, Time_count, by = "Date") %>% 
@@ -488,39 +429,16 @@ left_join(max_cells_day, Time_count, by = "Date") %>%
 
 # merge red tide dates and number of times sampled per day and filter above avergae counting days
 resources <- left_join(max_cells_day, Time_count, by = "Date") %>% 
-  filter(count_times > 0) # > average counts per day
+  filter(count_times > 3.12) # > average counts per day
 
-#'* USE TO COMPARE EXCLUDING ALL vs BELOW AVERAGE REGRESSIONS [Scatter and relationship line (smooth)] used to show counting times correlation, above daily counting average ------------*
+
+#'* [Scatter and relationship line (smooth)] used to show counting times correlation, above daily counting average*
 # correlation between total cells counted and numebr of times counted per day
-ggplot(left_join(max_cells_day, Time_count, by = "Date") %>% 
-         filter(count_times > 0), aes(x = log(totalCells), y = count_times)) +
+ggplot(resources, aes(x = log(totalCells), y = count_times)) +
   geom_point(aes(col = FWC_mod)) +
-  geom_smooth(method = "lm", aes(col = FWC_mod), se = FALSE) +
-  geom_smooth(method = "loess", se = FALSE) +
-  xlab("Log Cells/L") +
-  ylab("Number samples collected per day") + 
-  labs(col = "Red Tide class") +
-  ggtitle("Relationship between Cells/L counted and number of sampels collected per day, when different Red tide severity classes were experienced") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  geom_smooth(method = "loess")
 
-
-#'* CHANGE PARAMETER [Scatter and relationship line (smooth)] used to show counting times correlation, above daily counting average ------------*
-# correlation between total cells counted and numebr of times counted per day
-ggplot(left_join(max_cells_day, Time_count, by = "Date") %>% 
-         filter(count_times > 3.12), aes(x = log(totalCells), y = count_times)) +
-  geom_point(aes(col = FWC_mod)) +
-  geom_smooth(method = "lm", aes(col = FWC_mod), se = FALSE) +
-  geom_smooth(method = "loess", se = FALSE) +
-  xlab("Log Cells/L") +
-  ylab("Number samples collected per day") + 
-  labs(col = "Red Tide class") +
-  ggtitle("Relationship between Cells/L counted and number of sampels collected per day, when different Red tide severity classes were experienced") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-
-#'*Compare overall cells vs dates above average number of counting times, sized by counting times*
+#'*comapre overall cells vs dates above average number of counting times, sized by counting times*
 # how do counting times change over time, linked to total cells 
 ggplot(data = resources, aes(x = Date, y = log(totalCells))) +
   geom_line() +
