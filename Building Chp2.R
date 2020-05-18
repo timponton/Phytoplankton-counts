@@ -585,7 +585,13 @@ ggplot(RT.classNumbers_monthYear, aes(x = reorder(months.x, month), y = n, fill 
 
 # NMDS --------------------------------------------------------------------
 
-
+# dataframe of species with their abbreviations
+Sp_abbre <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  select(Species) %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  distinct()
 
 # finding relative abundance across total samples
 te <- Sp_only %>%
@@ -632,6 +638,60 @@ mtet <- make_relative(as.matrix(mte))
 mtet <- as.data.frame(mtet)%>% 
   rownames_to_column(var = "months")
 
+# HAB species vs everything else relative abundance 
+# Get relative abundance per month for each species
+month.rel <- as.data.frame(
+  make_relative(
+  as.matrix(
+  Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(months, Sp_abb) %>% 
+  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+              values_fill = list(averageDens = 0)) %>% 
+  remove_rownames %>% 
+  column_to_rownames(var="months")))) %>% 
+  rownames_to_column(var = "months")
+
+# add month order into df
+monthOrder <- Sp_only %>% 
+  ungroup() %>% 
+  select(months, month)
+
+# join month order, reorder columns and pivot longer
+month.rel <- month.rel %>%
+  ungroup() %>% 
+  left_join(monthOrder, by = "months", keep = FALSE) %>% 
+  select(months, month, everything()) %>% 
+  pivot_longer(-c(months, month), names_to = "Sp_abb", values_to = "abun") %>% 
+  inner_join(Sp_abbre, by = "Sp_abb")
+  
+
+# find dom species
+dom_sp <- month.rel %>% 
+  group_by(Sp_abb) %>% 
+  filter(abun > 0.2) %>% 
+  ungroup()
+
+
+# Plot dominants with others greyed out 
+ggplot() +
+  geom_line(data = month.rel, 
+            aes(x = reorder(months, month), 
+                y = abun, group = Species, col = Species), 
+            colour = alpha("grey", 0.7)) +
+  geom_line(data = month.rel %>% 
+              filter(Sp_abb %in% dom_sp$Sp_abb), 
+            aes(x = reorder(months, month), 
+                y = abun, group = Species, col = Species), size = 1) +
+  xlab("Months") +
+  ylab("Relative abundance") + 
+  labs(col = "Phytoplankton species") +
+  ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 mse <- mtet %>%
