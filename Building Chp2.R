@@ -568,9 +568,17 @@ RT.classNumbers_monthYear <- all_max_cells_day %>%
   tally() %>% 
   arrange(desc(n))
 
+#'*Compare Red tide classes per month ---------*
+# Compare the proportion of differnt red tide classes per month over the three years
 ggplot(RT.classNumbers_monthYear, aes(x = reorder(months.x, month), y = n, fill = FWC_mod)) +
   geom_bar(stat = "Identity", position = "fill") +
-  facet_wrap(~year, ncol = 1)
+  facet_wrap(~year, ncol = 1) +
+  xlab("Months") +
+  ylab("Proportion number of days") + 
+  labs(fill = "Red Tide class") +
+  ggtitle("Compare the proportion of different red tide classes per month over the three years") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 
@@ -632,10 +640,35 @@ mse <- mtet %>%
   arrange(desc(abun)) %>% 
   filter(abun > 0.01)
 
-ggplot(data = mse, aes(x = reorder(Sp_abb, abun), y = abun)) +
+#'*Use to show all species 97 sp --*
+# All species
+ggplot(data = mtet %>%
+         pivot_longer(-months, names_to = "Sp_abb", values_to = "abun") %>% 
+         group_by(months) %>% 
+         arrange(desc(abun)), aes(x = reorder(Sp_abb, abun), y = abun)) +
   geom_col(position = "Dodge") +
   coord_flip() +
-  facet_wrap(~months, scales = "free_y")
+  xlab("Species") +
+  ylab("Relative abundance") +
+  ggtitle("Relative abundance of species") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+#'*Use to show dom species species 73 sp --*
+# Species above relative abundance of 0.01 per month
+ggplot(data = mtet %>%
+         pivot_longer(-months, names_to = "Sp_abb", values_to = "abun") %>% 
+         group_by(months) %>% 
+         arrange(desc(abun)) %>% 
+         filter(abun > 0.01), aes(x = reorder(Sp_abb, abun), y = abun)) +
+  geom_col(position = "Dodge") +
+  coord_flip() +
+  xlab("Species") +
+  ylab("Relative abundance") +
+  ggtitle("Species with a relative abundance > 0.01 per month") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 mse %>% 
@@ -643,9 +676,6 @@ mse %>%
   summarise(S = n_distinct(Sp_abb))
 
 
-ggplotly(ggplot(data = mse, aes(x = reorder(Sp_abb, abun), y = abun)) +
-           geom_col() +
-           coord_flip())
 
 ## Overall months combined
 # summarise species to monthly aggre. and abbrev. species names after log10 transforming
@@ -670,6 +700,8 @@ monthly.species_wide <- monthly.species %>%
   remove_rownames %>% 
   column_to_rownames(var="months")
 
+
+
 # whether to use relative abundance for NMDS or not
 # calculate relative abundances per month
 monthly.species_wide <- as.matrix(monthly.species_wide)
@@ -685,7 +717,7 @@ NMDStestmonth
 stressplot(NMDStestmonth)
 
 
-#'*[NMDS] check what it is based on i.e relative abundance or actual counts*
+#'*[NMDS] check what it is based on i.e relative abundance or actual counts ------*
 plot(NMDStestmonth)
 ordiplot(NMDStestmonth,type="n")
 orditorp(NMDStestmonth,display="species",col="red",air=0.01)

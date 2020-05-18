@@ -84,21 +84,50 @@ dailydesc_filter <- dailydesc_filter %>%
 
 ## summarise down to monthly measurements to compare sites [boxplot graph]
 
-#'* Graphs for Aim 1a*
+#'* Graphs for Aim 1a -------------*
 # biomass
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = total_biomass, fill = Site)) +
-  geom_boxplot()
+  geom_boxplot() +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+  ggtitle("Compare the difference in biomass of phytoplankton between the two sites, for three consecutive months") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
 
 # richness
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = S, fill = Site)) +
-  geom_boxplot()
+  geom_boxplot() +
+  xlab("Months") +
+  ylab("Number of species") + 
+  labs(fill = "Site") +
+  ggtitle("Compare the difference in species richness of phytoplankton between 
+          the two sites, for three consecutive months of 2019") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 # evenness
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = J, fill = Site)) +
-  geom_boxplot()
+  geom_boxplot() +
+  xlab("Months") +
+  ylab("Species Evenness") + 
+  labs(fill = "Site") +
+  ggtitle("Compare the difference in species evenness (J') of phytoplankton between 
+          the two sites, for three consecutive months of 2019") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
 # diversity
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = shannon, fill = Site)) +
-  geom_boxplot()
+  geom_boxplot() +
+  xlab("Months") +
+  ylab("Shannon Index of Diversity") + 
+  labs(fill = "Site") +
+  ggtitle("Compare the difference in Shannon index of diversity between phytoplankton species between 
+          the two sites, for three consecutive months of 2019") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 
@@ -106,7 +135,7 @@ ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = shannon, fil
 
 # Comparing biomass at different points on farm  --------------------------------------------------------
 
-# subset specfic day when many sites had been sampled (2019-02-26)
+# subset specific day when many sites had been sampled (2019-02-26)
 ## Filter unknown sites
 
 # codecounts are filtered for all sampels after 12pm (afternoon)
@@ -126,12 +155,13 @@ pos$`Day Time period` <-factor(pos$`Day Time period`, levels = c("Morning", "Aft
 # fix order of Locations
 pos$Location <- factor(pos$Location, levels = c("Incoming seawater", "Seaview farm", "Hatchery farm", "Bergsig farm"))
 
-#'* Graphs for Aim 1b*
+#'* Graphs for Aim 1b --------------*
 ggplot(pos, aes(x = Location, y = log10(Cells.L))) +
   geom_boxplot(outlier.shape = NA) +
   geom_jitter(aes(col = `Day Time period`), size = 2) +
   xlab("Location") +
   ylab(" Log10 Total Cells/L") +
+  labs(col = "Period of Day") +
   ggtitle("Cells/L measured on each subfarm on the 
           26/02/2019, with farms 
           ordered in flow position, and points indicating relative sampling period") +
@@ -174,16 +204,14 @@ top_species <- Sp.only_filter %>%
   ungroup() %>% 
   top_n(4)
 
-# Filter top n species 
-sp_site_diff_monthly <- sp_site_diff_monthly %>% 
-  filter(Species %in% top_species$Species)
+
 
 ggplot(data = sp_site_diff_monthly, aes(x = reorder(months, month), y = site.Diff, col = Species, group = Species)) +
   geom_line(size = 0.8) +
   geom_hline(yintercept = 0, col = "red", size = 1)
 
 
-#'* Graph for Aim 2*
+#'* Graph for Aim 2 -----------*
 # [Stacked bargraph] of Top n species, comparing monthly averages between two sites
 Sp.only_filter %>% 
   group_by(Site, months, month, Species, Classification) %>% 
@@ -192,10 +220,17 @@ Sp.only_filter %>%
   ggplot(., aes(x = reorder(months, month), y = monthly.mean, fill = Site)) +
   geom_bar(stat = "Identity", position = "fill") +
   geom_hline(yintercept = 0.5, col = "black") +
-  coord_flip() +
-  facet_wrap(~ reorder(Species, -monthly.mean), ncol = 2)
+  #coord_flip() +
+  facet_wrap(~ reorder(Species, -monthly.mean), ncol = 2) +
+  xlab("Months") +
+  ylab("Proportion momthly mean Cells/L") + 
+  labs(fill = "Site") +
+  ggtitle("The proportion of cells counted between the Primary sump and After Drumfilter for the 
+          top four dominant species for three consecutive months of 2019") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
-#'* used to back up ind spe graph (Aim 2), can possibly do stats on this*
+#'* used to back up ind spe graph (Aim 2), can possibly do stats on this ---------*
 
 # [Stacked bar graph] comparing PS and ADf biomass on monthly level (more broad than above)
 Sp.only_filter %>% 
@@ -203,10 +238,18 @@ Sp.only_filter %>%
   summarise(monthly.mean = mean(meanCells, na.rm = TRUE)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthly.mean, fill = Site)) +
   geom_bar(stat = "Identity", position = "fill") +
-  geom_hline(yintercept = 0.5, col = "black")
+  geom_hline(yintercept = 0.5, col = "black") +
+  xlab("Months") +
+  ylab("Proportion momthly mean Cells/L") + 
+  labs(fill = "Site") +
+  ggtitle("The proportion of cells counted between the Primary sump and After Drumfilter 
+          for three consecutive months of 2019") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 # number of red tide days per month
+## THIS IS NOT HELPFUL 
 Sp.only_filter %>%
   ungroup() %>% 
   select(Date, months, month, FWC_mod) %>% 
