@@ -647,44 +647,45 @@ month.rel <- as.data.frame(
   ungroup() %>% 
   filter(Species != "Diatom") %>% 
   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(months, Sp_abb) %>% 
+  group_by(YEarMonth, Sp_abb) %>% 
   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
               values_fill = list(averageDens = 0)) %>% 
   remove_rownames %>% 
-  column_to_rownames(var="months")))) %>% 
-  rownames_to_column(var = "months")
+  column_to_rownames(var="YEarMonth")))) %>% 
+  rownames_to_column(var = "YEarMonth")
 
 # add month order into df
 monthOrder <- Sp_only %>% 
   ungroup() %>% 
-  select(months, month)
+  select(YEarMonth, months, month, year)
+
+monthOrder$YEarMonth <- as.factor(monthOrder$YEarMonth)
 
 # join month order, reorder columns and pivot longer
 month.rel <- month.rel %>%
   ungroup() %>% 
-  left_join(monthOrder, by = "months", keep = FALSE) %>% 
-  select(months, month, everything()) %>% 
-  pivot_longer(-c(months, month), names_to = "Sp_abb", values_to = "abun") %>% 
+  left_join(monthOrder, by = "YEarMonth", keep = FALSE) %>% 
+  select(YEarMonth, months, month, year, everything()) %>% 
+  pivot_longer(-c(YEarMonth, months, month, year), names_to = "Sp_abb", values_to = "abun") %>% 
   inner_join(Sp_abbre, by = "Sp_abb")
   
 
 # find dom species
 dom_sp <- month.rel %>% 
-  group_by(Sp_abb) %>% 
-  filter(abun > 0.2) %>% 
+  group_by(Sp_abb) %>%
+  filter(abun > 0.5) %>% 
   ungroup()
-
 
 # Plot dominants with others greyed out 
 ggplot() +
   geom_line(data = month.rel, 
-            aes(x = reorder(months, month), 
+            aes(x = YEarMonth, 
                 y = abun, group = Species, col = Species), 
             colour = alpha("grey", 0.7)) +
   geom_line(data = month.rel %>% 
               filter(Sp_abb %in% dom_sp$Sp_abb), 
-            aes(x = reorder(months, month), 
+            aes(x = YEarMonth, 
                 y = abun, group = Species, col = Species), size = 1) +
   xlab("Months") +
   ylab("Relative abundance") + 

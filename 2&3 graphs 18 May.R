@@ -381,3 +381,25 @@ Sp.only_filter %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
+
+
+#'*This was added late*
+# Plot dominants with others greyed out 
+ggplot() +
+  geom_line(data = month.rel, 
+            aes(x = reorder(months, month), 
+                y = abun, group = Species, col = Species), 
+            colour = alpha("grey", 0.7)) +
+  geom_line(data = month.rel %>% 
+              filter(Sp_abb %in% dom_sp$Sp_abb), 
+            aes(x = reorder(months, month), 
+                y = abun, group = Species, col = Species), size = 1) +
+  xlab("Months") +
+  ylab("Relative abundance") + 
+  labs(col = "Phytoplankton species") +
+  ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+

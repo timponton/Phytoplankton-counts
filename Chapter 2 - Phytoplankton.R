@@ -12,9 +12,11 @@ library(patchwork)
 library(vegan)
 library(zoo)
 library(GGally)
-install.packages("ggstance")
+library(funrar)
 library(jtools)
 library(ggstance)
+library(RColorBrewer)
+library(ggpubr)
 
 
 ### read in data and fix####
@@ -113,9 +115,9 @@ dailyMeans %>%
   
 ggplot(data = PS, aes(x = log(Cells.L))) +
   geom_density()
-ggqqplot(sqrt(dailyMeans$meanBiomass + 1) - dailyMeans$meanBiomass)
 
-library(ggpubr)
+
+
 
 shapiro.test(dailyMeans$meanBiomass)
 
