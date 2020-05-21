@@ -1,7 +1,8 @@
 # run  lines from 'Building Chp2' until before subsetting PS only 
 
-
-
+## load data
+# size classes of dominant species 
+sp_sizes <- read.csv("Updated data from April 2020/Dominant sizes.csv", stringsAsFactors = FALSE)
 
 # subset dates for when both Ps and ADF were sampled ----------------------
 
@@ -202,13 +203,25 @@ top_species <- Sp.only_filter %>%
   summarise(Sp_average = mean(meanCells, na.rm = TRUE)) %>% 
   arrange(desc(Sp_average)) %>% 
   ungroup() %>% 
-  top_n(4)
+  top_n(3) %>% 
+  ungroup()
+
+# calculate mean size class
+sp_sizes <- sp_sizes %>% 
+  group_by(Species) %>% 
+  mutate(mean_length = mean(min_length:max_length, na.rm = TRUE))
+
+top_species <- top_species %>% 
+  left_join(sp_sizes, by = "Species")
 
 
-
-ggplot(data = sp_site_diff_monthly, aes(x = reorder(months, month), y = site.Diff, col = Species, group = Species)) +
-  geom_line(size = 0.8) +
-  geom_hline(yintercept = 0, col = "red", size = 1)
+site_size <- Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  #summarise(monthly.mean = mean(meanCells, na.rm = TRUE)) %>% 
+  filter(Species %in% top_species$Species) %>% 
+  left_join(top_species, by = "Species") %>% 
+  ungroup()
+  
 
 
 #'* Graph for Aim 2 -----------*

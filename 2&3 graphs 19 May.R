@@ -3,6 +3,11 @@
 ## Run 'Building Chp2' and 'Building Chp3" first ###
 
 
+## Load data
+
+
+
+
 ###### Chapter 2 Phytoplanktpn #########
 ## PHYTOPLANKTON COMMUNITY DIVERSITY ETC -----------------------------------
 
@@ -30,6 +35,41 @@ biomass.YM <- Sp_only %>%
   theme(plot.title = element_text(hjust = 0.5))
 
 biomass.YM
+
+
+# STATS for biomass differences between years and months 
+
+sp_mat <- Sp_only %>% 
+  group_by(month, year, Species) %>% 
+  summarise(avg = mean(meanCells, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = "Species", values_from = "avg", 
+              values_fill = list(avg = 0))
+
+sp_mat <- Sp_only %>% 
+  ungroup() %>% 
+  select(Date, months, year, Species, meanCells) %>% 
+  pivot_wider(names_from = "Species", values_from = "meanCells", 
+              values_fill = list(meanCells = 0))
+
+
+com <- sp_mat[, 4:ncol(sp_mat)]
+com <- as.matrix(com)
+com <- vegdist(com, distance = "bray")
+sp_grou <- sp_mat[, 2:3]
+
+
+ano <- anosim(com, grouping = sp_grou$year, distance = "bray")
+ano
+
+
+adon <- adonis2(com ~ months, data = sp_grou, method = "bray", permutations = 999)
+
+
+anosim(m_com, pc$Type, distance = "bray", permutations = 9999)
+
+
+###############
+
 
 #'*year-monthly metrics (1)*
 ## comparing years over months for indices
@@ -446,6 +486,8 @@ ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = shannon, fil
 ## DOMINANT SPECIES DENSITIES BETWEEN SITES --------------------------------
 
 
+
+
 #'* used to back up ind spe graph (Aim 2), can possibly do stats on this ---------*
 # [Stacked bar graph] comparing PS and ADf biomass on monthly level (more broad than above)
 Sp.only_filter %>% 
@@ -483,4 +525,11 @@ Sp.only_filter %>%
           top four dominant species for three consecutive months of 2019") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
+
+
+
+
+
+
+
 
