@@ -601,6 +601,13 @@ orditorp(NMDStestmonth,display="sites",cex=1.25,air=0.01)
 
 # ANOSIM ------------------------------------------------------------------
 
+library(devtools)
+library(Rtools)
+install_github("pmartinezarbizu/pairwiseAdonis/pairwiseAdonis")
+
+install.packages("Rtools")
+
+
 ANOSIM_month <- Sp_only %>%
   ungroup() %>% 
   select(-Classification) %>% 
@@ -613,10 +620,16 @@ ANOSIM_month <- Sp_only %>%
 com <- ANOSIM_month[, 3:ncol(ANOSIM_month)]
 m_com <- as.matrix(com)
 
-ano <- anosim(m_com, ANOSIM_month$year, distance = "bray", permutations = 9999)
+com_group <- ANOSIM_month[, 1:2]
+ano <- anosim(m_com, ANOSIM_month$year, distance = "bray", permutations = 999)
 ano
 summary(ano)
 plot(ano)
+
+
+pairwise.adonis2(com ~ year, data = com_group)
+
+
 
 
 # 2019
