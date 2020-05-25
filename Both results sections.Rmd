@@ -1265,179 +1265,20 @@ Sp.only_filter %>%
 
 
 ```{r}
-# Compare biomass between months and years using ANOSIM
 ```
 
 
 ```{r}
-
-# Summarise species to monthly avg
-# pivot wider to prep for matrix
-year_month <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(months, year, Sp_abb) %>% 
-  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
-  semi_join(., mse, by = "Sp_abb") %>% 
-  ungroup() %>% 
-  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
-              values_fill = list(averageDens = 0))
-
-# create grouping df
-year_month_groups <- year_month %>% 
-  select(months, year)
-
-year_month_groups$months <- as.factor(year_month_groups$months)
-class(year_month_groups$months )
-
-# create dissim matrix
-year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
-  select(-c(months, year))), method = "bray")
-
-
-
-
-# adonis for years stratified by months
-adonis(year_month_mat_relative ~ months, 
-       data = year_month_groups, 
-       method = "bray", 
-       perm = 999, strata = year_month_groups$year)
-
-betadisper(year_month_mat_relative, year_month_groups$year)
-
-# adonis for months stratified by years
-adonis(year_month_mat_relative ~ months, 
-       data = year_month_groups, 
-       method = "bray", 
-       perm = 999, strata = year_month_groups$year)
-
-bt <- betadisper(year_month_mat_relative, year_month_groups$months)
-
-
-
-summary(with(year_month_groups, anosim(year_month_mat_relative, months, strata = year)))
-
-```
-
-
-```{r pairwise adonis}
-library(cluster)
-library(pairwiseAdonis)
-
-pairwise.adonis(year_month_mat_relative, year_month_groups$months, perm = 999,)
-
-pairwise.adonis2(year_month_mat_relative ~ months, 
-                 data = year_month_groups, 
-                 perm = 999, strata = year)
-
-
-
+# NMDS plot made (on monthly averaged level)
+# ANOSIM to show differences between years
+# ANOSIM to show differences between months
 ```
 
 
 
-```{r Dates include}
-
-# Summarise species to monthly avg
-# pivot wider to prep for matrix
-year_month <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(Date, months, year, Sp_abb) %>% 
-  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
-  semi_join(., mse, by = "Sp_abb") %>% 
-  ungroup() %>% 
-  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
-              values_fill = list(averageDens = 0))
-
-# create grouping df
-year_month_groups <- year_month %>% 
-  select(months, year)
-
-# create dissim matrix
-year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
-  select(-c(months, year, Date))), method = "bray")
-
-# adonis using months and year
-adonis(year_month_mat_relative ~ year, 
-       data = year_month_groups, 
-       method = "bray", 
-       perm = 999)
-
-betadisper(year_month_mat_relative, year_month_groups$months)
-
-```
-
-```{r March April only}
-
-# Summarise species to monthly avg
-# pivot wider to prep for matrix
-year_month <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  filter(months %in% c("March", "April"), year == "2019") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(Date, months, year, Sp_abb) %>% 
-  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
-  semi_join(., mse, by = "Sp_abb") %>% 
-  ungroup() %>% 
-  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
-              values_fill = list(averageDens = 0))
-
-# create grouping df
-year_month_groups <- year_month %>% 
-  select(months, year)
-
-# create dissim matrix
-year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
-  select(-c(Date, months, year))), method = "bray")
-
-# adonis using months and year
-adonis(year_month_mat_relative ~ months, 
-       data = year_month_groups, 
-       method = "bray", 
-       perm = 999)
-
-betadisper(year_month_mat_relative, year_month_groups$months)
-
-```
 
 
-```{r Different NMDS based on all months and years used (YEarMonth)}
-
-# YEarMonth
-
-wide_all_months <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(YEarMonth, Sp_abb) %>% 
-  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
-  semi_join(., mse, by = "Sp_abb") %>% 
-  ungroup() %>% 
-  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
-              values_fill = list(averageDens = 0))  %>%
-  remove_rownames %>% 
-  column_to_rownames(var= "YEarMonth")
-
-
-wide_all_months_relative <- make_relative(as.matrix(wide_all_months))
-
-NMDStestmonth_test <- metaMDS(wide_all_months_relative, k = 3, autotransform = FALSE, trymax = 100)
-
-
-NMDStestmonth_test
-
-plot(NMDStestmonth_test)
-ordiplot(NMDStestmonth_test,type="n")
-orditorp(NMDStestmonth_test,display="species",col="red",air=0.01)
-orditorp(NMDStestmonth_test,display="sites",cex=1.25,air=0.01)
-
-```
-
-```{r All years summarised to months}
+```{r All years summarised to months CORRECT METHOD}
 # All years summarised to 12 months (Shows good grouping)
 
 wide_avg_months <- Sp_only %>%
@@ -1469,11 +1310,12 @@ orditorp(NMDS_avg_months,display="sites",cex=1.25,air=0.01)
 ## Convert results to use in ggplot2
 av_months_site_scores <- as.data.frame(scores(NMDS_avg_months, display = "sites")) %>% 
   rownames_to_column(var = "label") %>% 
-mutate(level = as.factor("avg_months"))
+  mutate(level = as.factor("avg_months"))
+
 
 av_months_species <- as.data.frame(scores(NMDS_avg_months, display = "species")) %>% 
   rownames_to_column(var = "label") %>% 
-mutate(level = as.factor("Species"))
+  mutate(level = as.factor("Species"))
 
 # Might not be nec  
 av_months_site_sp <- bind_rows(av_months_site_scores, av_months_species)
@@ -1486,64 +1328,97 @@ ggplot(data = av_months_species, aes(x = NMDS1, y = NMDS2, col = level, label = 
   theme_classic() +
   theme(legend.position = "none")
 
+## ANOSIM on results
+
+
+
+
+```
+
+
+```{r ANOSIM testing}
+# Compare biomass between months and years using ANOSIM
+# Two way crossed method
+# Summarise by year first and compare
+# Summarise by months and compare
+
+# Year
+
+# All years summarised to 12 months (Shows good grouping)
+
+# anosim of months
+
+date_year <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(Date, year, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))
+
+# create matrix
+date_year_relative <- as.matrix(
+    date_month[,3:ncol(date_year)]
+    )
+
+# Correct
+ano_year <- anosim(date_year_relative, 
+                     date_year$year,
+                     distance="bray", 
+                     permutations = 999)
+ano_year
+
+# # Simper years
+# simper_year <- simper(date_year_relative, 
+#                      date_year$year,
+#                      permutations = 999)
+# simper_year
+# 
+# simper_year_summ <- summary(simper_year)
+
+
+
+# # Simper months
+# simper_months <- simper(wide_avg_months_relative_t, 
+#                      wide_avg_months_t$months,
+#                      permutations = 999)
+# simper_months
+# 
+# simper_months_summ <- summary(simper_months)
+
+
+## anosim of months
+
+date_month <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(Date, months, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))
+
+# create matrix
+date_month_relative <- as.matrix(
+    date_month[,3:ncol(date_month)]
+    )
+
+# Correct
+ano_months <- anosim(date_month_relative, 
+                     date_month$months,
+                     distance="bray", 
+                     permutations = 999)
+ano_months
 
 
 
 ```
 
-
-```{r}
-set.seed(123456789)
-num<-30
-disp.a<-5
-sites.a<-data.frame(sp.a=rnbinom(num,mu = 40, size = disp.a),
-                    sp.b=rnbinom(num,mu = 60, size = disp.a),
-                    sp.c=rnbinom(num,mu = 50, size = disp.a),
-                    sp.d=rnbinom(num,mu = 70, size = disp.a),
-                    sp.e=rnbinom(num,mu = 10, size = disp.a),
-                    sp.f=rnbinom(num,mu = 180, size = disp.a),
-                    sp.g=rnbinom(num,mu = 100, size = disp.a),
-                    sp.h=rnbinom(num,mu = 80, size = disp.a),
-                    sp.i=rnbinom(num,mu = 40, size = disp.a),
-                    sp.j=rnbinom(num,mu = 50, size = disp.a))
-
-disp.b<-50
-sites.b<-data.frame(sp.a=rnbinom(num,mu = 40, size = disp.a),
-                    sp.b=rnbinom(num,mu = 60, size = disp.b),
-                    sp.c=rnbinom(num,mu = 50, size = disp.a),
-                    sp.d=rnbinom(num,mu = 70, size = disp.b),
-                    sp.e=rnbinom(num,mu = 10, size = disp.a),
-                    sp.f=rnbinom(num,mu = 180, size = disp.a),
-                    sp.g=rnbinom(num,mu = 100, size = disp.b),
-                    sp.h=rnbinom(num,mu = 80, size = disp.a),
-                    sp.i=rnbinom(num,mu = 40, size = disp.b),
-                    sp.j=rnbinom(num,mu = 50, size = disp.a))
-
-disp.c<-200
-sites.c<-data.frame(sp.a=rnbinom(num,mu = 40, size = disp.a),
-                    sp.b=rnbinom(num,mu = 60, size = disp.b),
-                    sp.c=rnbinom(num,mu = 50, size = disp.c),
-                    sp.d=rnbinom(num,mu = 70, size = disp.b),
-                    sp.e=rnbinom(num,mu = 10, size = disp.c),
-                    sp.f=rnbinom(num,mu = 180, size = disp.a),
-                    sp.g=rnbinom(num,mu = 100, size = disp.b),
-                    sp.h=rnbinom(num,mu = 80, size = disp.c),
-                    sp.i=rnbinom(num,mu = 40, size = disp.b),
-                    sp.j=rnbinom(num,mu = 50, size = disp.c))
-
-all.sites<-rbind(sites.a,sites.b,sites.c)
-
-
-trt<-rep(c("C","H","L"),each=nrow(sites.a))
-
-all.mds <- metaMDS(all.sites) 
-data.scores <- as.data.frame(scores(all.mds))  
-data.scores$site <- rownames(data.scores)  
-data.scores$grp <- trt
-adon.results<-adonis(all.sites ~ trt, method="bray",perm=999)
-
-
-```
 
 
 
@@ -1664,6 +1539,175 @@ plot(NMDS_2017)
 ordiplot(NMDS_2017,type="n")
 orditorp(NMDS_2017,display="species",col="red",air=0.01)
 orditorp(NMDS_2017,display="sites",cex=1.25,air=0.01)
+```
+
+
+```{r adonis testing #1}
+
+# Summarise species to monthly avg
+# pivot wider to prep for matrix
+year_month <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(months, year, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))
+
+# create grouping df
+year_month_groups <- year_month %>% 
+  select(months, year)
+
+year_month_groups$months <- as.factor(year_month_groups$months)
+class(year_month_groups$months )
+
+# create dissim matrix
+year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
+  select(-c(months, year))), method = "bray")
+
+
+
+
+# adonis for years stratified by months
+adonis(year_month_mat_relative ~ months, 
+       data = year_month_groups, 
+       method = "bray", 
+       perm = 999, strata = year_month_groups$year)
+
+betadisper(year_month_mat_relative, year_month_groups$year)
+
+# adonis for months stratified by years
+adonis(year_month_mat_relative ~ months, 
+       data = year_month_groups, 
+       method = "bray", 
+       perm = 999, strata = year_month_groups$year)
+
+bt <- betadisper(year_month_mat_relative, year_month_groups$months)
+
+
+
+summary(with(year_month_groups, anosim(year_month_mat_relative, months, strata = year)))
+
+```
+
+
+```{r pairwise adonis testing}
+library(cluster)
+library(pairwiseAdonis)
+
+pairwise.adonis(year_month_mat_relative, year_month_groups$months, perm = 999,)
+
+pairwise.adonis2(year_month_mat_relative ~ months, 
+                 data = year_month_groups, 
+                 perm = 999, strata = year)
+
+
+
+```
+
+
+
+```{r adonis testing #2 Dates include}
+
+# Summarise species to monthly avg
+# pivot wider to prep for matrix
+year_month <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(Date, months, year, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))
+
+# create grouping df
+year_month_groups <- year_month %>% 
+  select(months, year)
+
+# create dissim matrix
+year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
+  select(-c(months, year, Date))), method = "bray")
+
+# adonis using months and year
+adonis(year_month_mat_relative ~ year, 
+       data = year_month_groups, 
+       method = "bray", 
+       perm = 999)
+
+betadisper(year_month_mat_relative, year_month_groups$months)
+
+```
+
+```{r March April only}
+
+# Summarise species to monthly avg
+# pivot wider to prep for matrix
+year_month <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  filter(months %in% c("March", "April"), year == "2019") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(Date, months, year, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))
+
+# create grouping df
+year_month_groups <- year_month %>% 
+  select(months, year)
+
+# create dissim matrix
+year_month_mat_relative <- vegdist(as.matrix(year_month  %>%
+  select(-c(Date, months, year))), method = "bray")
+
+# adonis using months and year
+adonis(year_month_mat_relative ~ months, 
+       data = year_month_groups, 
+       method = "bray", 
+       perm = 999)
+
+betadisper(year_month_mat_relative, year_month_groups$months)
+
+```
+
+
+```{r Different NMDS based on all months and years used (YEarMonth)}
+
+# YEarMonth
+
+wide_all_months <- Sp_only %>%
+  ungroup() %>% 
+  filter(Species != "Diatom") %>% 
+  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+  group_by(YEarMonth, Sp_abb) %>% 
+  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+  semi_join(., mse, by = "Sp_abb") %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Sp_abb", values_from = "averageDens", 
+              values_fill = list(averageDens = 0))  %>%
+  remove_rownames %>% 
+  column_to_rownames(var= "YEarMonth")
+
+
+wide_all_months_relative <- make_relative(as.matrix(wide_all_months))
+
+NMDStestmonth_test <- metaMDS(wide_all_months_relative, k = 3, autotransform = FALSE, trymax = 100)
+
+
+NMDStestmonth_test
+
+plot(NMDStestmonth_test)
+ordiplot(NMDStestmonth_test,type="n")
+orditorp(NMDStestmonth_test,display="species",col="red",air=0.01)
+orditorp(NMDStestmonth_test,display="sites",cex=1.25,air=0.01)
+
 ```
 
 
