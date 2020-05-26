@@ -34,6 +34,7 @@ library(GGally)
 library(jtools)
 library(ggstance)
 library(funrar)
+library(PMCMRplus)
 
 
 ### read in data and fix####
@@ -728,14 +729,15 @@ site_size <- Sp.only_filter %>%
 # Plot monthly total biomass, comparing years
 biomass.YM <- Sp_only %>% 
   group_by(months, month, year, Season) %>% 
-  summarise(monthlyMean = mean(log10(meanCells), na.rm = TRUE), 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
             monthlyN = n(),
-            monthlySD = sd(log10(meanCells), na.rm = TRUE), 
-            monthlySE = sd(log10(meanCells), na.rm = TRUE)/sqrt(n())) %>% 
-  ggplot(., aes(x = reorder(months, month), y = (monthlyMean), col = year, group = year)) +
-  geom_point(size = 1) +
-  #geom_line(size = 0.8) +
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyMean)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, col = year)) +
+  geom_point() +
   geom_errorbar(aes(ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
+  scale_y_log10() +
   xlab("Months") +
   ylab("Log10 Cells/L") + 
   labs(col = "Year") +
@@ -947,7 +949,23 @@ ggplot() +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+ggplotly(ggplot() + 
+  geom_point(data = month.rel %>% 
+               filter(Species %in% dsp$Species), 
+             aes(x = reorder(months, month), 
+                 y = abun, group = year, col = year), size = 1) +
+  geom_line(data = month.rel %>% 
+              filter(Species %in% dsp$Species), 
+            aes(x = reorder(months, month), 
+                y = abun, group = year, col = year), size = 1) +
+  facet_wrap(~Species, ncol = 2) +
+  theme_classic() +
+  xlab("Months") +
+  ylab("Relative abundance") + 
+  labs(col = "Phytoplankton species") +
+  ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)))
 
 
 
@@ -1265,6 +1283,265 @@ Sp.only_filter %>%
 
 
 ```{r}
+#### Biomass #####
+# Calculate number of days sampled
+Sp_only %>% 
+  ungroup() %>% 
+  select(Date) %>% 
+  distinct() %>% 
+  count()
+
+
+# Calculate highest and lowest biomass months 
+# Highest and lowest (change arrange())
+Sp_only %>% 
+  group_by(months, month, year, Season) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(monthlyMean))
+dailyDesc %>% 
+  arrange(desc(total_biomass)) %>% 
+  select(total_biomass, everything())
+
+
+
+#### Richness ####
+# Highest and lowest (change arrange())
+dailyDesc %>% 
+  group_by(months, month, year, Season) %>% 
+  summarise(monthlyRichness = mean(S, na.rm = TRUE), 
+            monthlyRichnessN = n(),
+            monthlyRichnessSD = sd(S, na.rm = TRUE), 
+            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyRichness))
+
+
+# July
+dailyDesc_jul <- dailyDesc  %>% 
+  filter(months == "July")%>% 
+  group_by(months, month, year, Season) %>% 
+  summarise(monthlyRichness = mean(S, na.rm = TRUE), 
+            monthlyRichnessN = n(),
+            monthlyRichnessSD = sd(S, na.rm = TRUE), 
+            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyRichness))
+
+
+
+# test using Kruskal
+kruskal.test(S ~ year, data = dailyDesc_jul)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(dailyDesc_jul$S, dailyDesc_jul$year, p.adjust.method = "bonf")
+
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(dailyDesc_jul$S, dailyDesc_jul$year, dist = "Tukey", p.adjust.methods = "bonferroni")
+
+# January
+dailyDesc_jan <- dailyDesc  %>% 
+  filter(months == "January")%>% 
+  group_by(months, month, year, Season)
+
+summarise(monthlyRichness = mean(S, na.rm = TRUE), 
+            monthlyRichnessN = n(),
+            monthlyRichnessSD = sd(S, na.rm = TRUE), 
+            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyRichness))
+
+
+
+# test using Kruskal
+kruskal.test(S ~ year, data = dailyDesc_jan)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(dailyDesc_jan$S, dailyDesc_jan$year, p.adjust.method = "bonf")
+
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(dailyDesc_jan$S, dailyDesc_jan$year, dist = "Tukey", p.adjust.methods = "bonferroni")
+
+
+# April
+dailyDesc_apr <- dailyDesc  %>% 
+  filter(months == "April")%>% 
+  group_by(months, month, year, Season)
+
+summarise(monthlyRichness = mean(S, na.rm = TRUE), 
+            monthlyRichnessN = n(),
+            monthlyRichnessSD = sd(S, na.rm = TRUE), 
+            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyRichness))
+
+
+
+# test using Kruskal
+kruskal.test(S ~ year, data = dailyDesc_apr)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(dailyDesc_apr$S, dailyDesc_apr$year, p.adjust.method = "bonf")
+
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(dailyDesc_apr$S, dailyDesc_apr$year, dist = "Tukey", p.adjust.methods = "bonferroni")
+
+
+
+
+##### Evenness #####
+dailyDesc_jul_J <- dailyDesc %>%
+  group_by(months, month, year, Season) %>% 
+  summarise(monthlyEvenness = mean(J, na.rm = TRUE), 
+            monthlyEvennessN = n(),
+            monthlyEvennessD = sd(J, na.rm = TRUE), 
+            monthlyEvennessSE = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyEvenness))
+
+dailyDesc_jul_J %>% 
+  filter(months == "July") %>% 
+  select(monthlyEvenness, monthlyEvennessSE, everything()) %>% 
+  arrange(desc(monthlyEvenness))
+
+yJ <- dailyDesc %>% 
+  group_by(months, month, year) %>% 
+  summarise(me = mean(J, na.rm = TRUE))
+
+# test using Kruskal
+kruskal.test(J ~ year, data = dailyDesc)
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(dailyDesc$J, dailyDesc$year, p.adjust.method = "bonf")
+
+# shannon diversity
+
+dailyDesc %>% 
+  group_by(months, month, year, Season) %>% 
+  summarise(monthlyshannon = mean(shannon, na.rm = TRUE), 
+            monthlyshannonN = n(),
+            monthlyshannonsD = sd(shannon, na.rm = TRUE), 
+            monthlyshannonSE = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyshannon))
+
+
+# test using Kruskal
+kruskal.test(shannon ~ year, data = dailyDesc)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(dailyDesc$shannon, dailyDesc$year, p.adjust.method = "bonf")
+
+
+
+#### dominant species ####
+Sp_only %>% 
+  group_by(months, month, year, Species) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(monthlyMean)) %>% 
+  filter(months == "April") %>% 
+  view()
+
+feb_18 <- Sp_only %>% 
+  filter(year == "2018") %>% 
+  filter (months == "February") %>%
+  group_by(Date, Species)
+
+pairwise.wilcox.test(ap_18$meanCells, ap_18$Species, p.adjust.method = "bonf")
+
+
+month.rel %>% 
+  filter(Species %in% dsp$Species) %>% 
+  arrange(desc(abun)) %>% 
+  distinct() %>% 
+  view()
+
+
+
+
+Crtmfs <- month.rel %>% 
+  filter(Sp_abb == "Crtmfs")
+
+
+Crtmfs_YM <- pairwise.wilcox.test(Crtmfs$abun, Crtmfs$YEarMonth, p.adjust.method = "bonf")
+Crtmfs_YM_pvalue <- Crtmfs_YM[["p.value"]]
+
+Crtmfs_YM_pvalue
+
+reorder(Crtmfs$months, Crtmfs$month)
+
+
+#### phytoplankton classes #####
+
+Sp_only %>% 
+  filter(Classification == "Ciliate", months == "August")
+
+
+Sp_only %>% 
+  group_by(months, month, Classification) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>%
+  #filter(monthlySE != "NA") %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, col = Classification)) +
+   geom_point(size = 1) +
+  #geom_line(size = 0.8) +
+  geom_errorbar(aes(ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
+  #facet_wrap(~year, ncol = 1) +
+  scale_y_log10()
+
+ggplotly(Sp_only %>% 
+  group_by(months, month, year, Season, Classification) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
+  geom_bar(stat = "Identity", position = "fill", col = "Black") +
+  facet_wrap(~year, ncol = 1) +
+  xlab("Months") +
+  ylab("Proportion monthly mean") + 
+  labs(fill = "Phytoplankton class") +
+  ggtitle("Comparing the proportion of mean monthly counts between phytoplankton 
+          classes over three consecutive years") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5)))
+
+Sp_only %>% 
+  group_by(months, month, year, Season, Classification) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
+  filter(Classification != "Dinoflagellate") %>% 
+  filter(Classification != "Diatom") %>%
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
+  geom_bar(stat = "Identity", position = "Dodge", col = "Black") +
+  facet_wrap(~year, ncol = 1)
+
+Sp_only %>% 
+  filter(months == "November" & year == "2019") %>%
+  group_by(Classification) %>% 
+  count(n_distinct(Species))
+
+Sp_only %>% 
+  filter(months == "October" & year == "2019" & Classification == "Diatom") %>% 
+  ungroup() %>% 
+  select(Species) %>%
+  distinct()
+
+
+
+
+##### NMDS #####
+
+
+
+
 ```
 
 
@@ -1297,8 +1574,7 @@ wide_avg_months <- Sp_only %>%
 
 wide_avg_months_relative <- make_relative(as.matrix(wide_avg_months))
 
-NMDS_avg_months <- metaMDS(wide_avg_months_relative, k = 3, autotransform = FALSE, trymax = 100)
-
+NMDS_avg_months <- metaMDS(wide_avg_months_relative, k = 2, autotransform = FALSE, trymax = 100)
 
 NMDS_avg_months
 
@@ -1316,6 +1592,7 @@ av_months_site_scores <- as.data.frame(scores(NMDS_avg_months, display = "sites"
 av_months_species <- as.data.frame(scores(NMDS_avg_months, display = "species")) %>% 
   rownames_to_column(var = "label") %>% 
   mutate(level = as.factor("Species"))
+
 
 # Might not be nec  
 av_months_site_sp <- bind_rows(av_months_site_scores, av_months_species)
@@ -1361,7 +1638,7 @@ date_year <- Sp_only %>%
 
 # create matrix
 date_year_relative <- as.matrix(
-    date_month[,3:ncol(date_year)]
+    date_year[,3:ncol(date_year)]
     )
 
 # Correct
