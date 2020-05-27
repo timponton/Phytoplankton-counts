@@ -18,11 +18,15 @@ knitr::opts_chunk$set(echo = TRUE)
 # Load data and clean -----------------------------------------------------
 
 #### load packages####
+library(cluster)
+library(pairwiseAdonis)
+library(PMCMR)
+library(rstatix)
+library(multcomp)
 library(tidyverse)
 library(ggplot2)
 library(lubridate)
 library(anytime)
-library(dplyr)
 library(reshape2)
 library(data.table)
 library(tidyr)
@@ -35,7 +39,8 @@ library(jtools)
 library(ggstance)
 library(funrar)
 library(PMCMRplus)
-
+library(dplyr)
+library(forcats)
 
 ### read in data and fix####
  
@@ -336,6 +341,25 @@ levels(all_max_cells_day$FWC_mod)
 # set order of factors 
 all_max_cells_day$FWC_mod <-  factor(all_max_cells_day$FWC_mod, 
                                  levels = c("High","Medium", "Low", "Very Low", "Normal"))
+
+
+# join year columns, tally per class per month per year (remove 2020) (CORRECT)
+are <- all_max_cells_day %>% 
+  left_join(select(PS, Date, months, year, YEarMonth), by = c("Date", "months"), keep = FALSE) %>%
+  filter(year != "2020") %>% 
+  group_by(months, month, year, FWC_mod) %>% 
+  distinct() %>% 
+  count() %>% 
+  arrange(desc(n))
+
+
+# join year columns, tally per class per month per year (remove 2020)
+re <- all_max_cells_day %>% 
+  left_join(select(PS, Date, months, year, YEarMonth), by = c("Date", "months"), keep = FALSE) %>%
+  filter(year != "2020") %>% 
+  group_by(months, month, year, FWC_mod) %>% 
+  count()
+
 # join year columns, tally per class per month per year (remove 2020)
 RT.classNumbers_monthYear <- all_max_cells_day %>% 
   left_join(select(PS, Date, months, year, YEarMonth), by = "Date", keep = FALSE) %>%
@@ -343,9 +367,6 @@ RT.classNumbers_monthYear <- all_max_cells_day %>%
   group_by(months.x, month, year, YEarMonth, FWC_mod) %>% 
   tally() %>% 
   arrange(desc(n))
-
-
-
 
 
 
@@ -1066,7 +1087,9 @@ orditorp(NMDStestmonth,display="sites",cex=1.25,air=0.01)
 
 #'*Compare Red tide classes per month ---------*
 # Compare the proportion of differnt red tide classes per month over the three years
-ggplot(RT.classNumbers_monthYear, aes(x = reorder(months.x, month), y = n, fill = FWC_mod)) +
+
+
+ggplot(are, aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
   geom_bar(stat = "Identity", position = "fill", col = "black") +
   facet_wrap(~year, ncol = 1) +
   xlab("Months") +
@@ -1075,6 +1098,27 @@ ggplot(RT.classNumbers_monthYear, aes(x = reorder(months.x, month), y = n, fill 
   ggtitle("The proportion of different red tide classes per month over the three years") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(re, aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
+  geom_bar(stat = "Identity", position = "fill", col = "black") +
+  facet_wrap(~year, ncol = 1) +
+  xlab("Months") +
+  ylab("Proportion number of days") + 
+  labs(fill = "Red Tide class") +
+  ggtitle("The proportion of different red tide classes per month over the three years") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# ggplot(RT.classNumbers_monthYear, aes(x = reorder(months.x, month), y = n, fill = FWC_mod)) +
+#   geom_bar(stat = "Identity", position = "fill", col = "black") +
+#   facet_wrap(~year, ncol = 1) +
+#   xlab("Months") +
+#   ylab("Proportion number of days") + 
+#   labs(fill = "Red Tide class") +
+#   ggtitle("The proportion of different red tide classes per month over the three years") +
+#   theme_classic() +
+#   theme(plot.title = element_text(hjust = 0.5))
 
 
 
@@ -1542,6 +1586,112 @@ Sp_only %>%
 
 
 
+##### Red Tide classes ####
+
+
+# Count number of days each class was present for each month
+are <- all_max_cells_day %>% 
+  left_join(select(PS, Date, months, year, YEarMonth), by = c("Date", "months"), keep = FALSE) %>%
+  filter(year != "2020") %>% 
+  group_by(months, month, year, YEarMonth, FWC_mod) %>% 
+  distinct() %>% 
+  count() %>% 
+  arrange(desc(n))
+
+kruskal.test(n ~ months, data = are)
+
+# pivot classes wider to individually compare
+FWC_classes_wide <- are %>% 
+  pivot_wider(names_from = "FWC_mod", values_from = "n", values_fill = list(n = 0))
+
+
+# Test each class for overall sig dif
+kruskal.test(`Very Low` ~ year, data = FWC_classes_wide)
+kruskal.test(Normal ~ year, data = FWC_classes_wide)
+kruskal.test(Medium ~ year, data = FWC_classes_wide)
+kruskal.test(Low ~ year, data = FWC_classes_wide)
+kruskal.test(High ~ year, data = FWC_classes_wide)
+
+
+
+# pairwise for Normal
+FWC_classes_wide %>% 
+  ungroup() %>% 
+  dplyr::select(Normal, year) %>% 
+  dunn_test(Normal ~ year, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj))
+
+# pairwise for low
+FWC_classes_wide %>% 
+  ungroup() %>% 
+  dplyr::select(Low, year) %>% 
+  dunn_test(Low ~ year, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj))
+
+FWC_classes_wide %>% 
+  ungroup() %>% 
+  dplyr::select(`Very Low`, year) %>% 
+  dunn_test(`Very Low` ~ year, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj))
+
+
+posthoc.kruskal.dunn.test(FWC_classes_wide$Normal, FWC_classes_wide$year, dist = "Tukey", p.adjust.method = "bonferroni")
+
+#### Resources ####
+
+link <- PS %>% 
+  dplyr::select(Date, year)
+
+# Daily counts
+daily_counts <- left_join(max_cells_day, Time_count, by = "Date") %>% 
+  semi_join(link, by = "Date")
+
+# Overall significance check
+kruskal.test(count_times ~ months, data = daily_counts)
+
+# pairwise check between months
+count_diff <- daily_counts %>% 
+  ungroup() %>% 
+  dplyr::select(months, count_times) %>% 
+  dunn_test(count_times ~ months, p.adjust.method = "bonferroni")
+
+
+# plot pairwise tests to visualise significant month partners
+ggplot(data = count_diff, aes(x = group1, y = group2, fill = p.adj)) + 
+  geom_tile(col = "black") +
+  geom_text(aes(label = round(p.adj, digits = 2))) +
+  coord_flip()
+
+ggplot(data = count_diff, aes(x = group1, y = group2, col = p.adj)) +
+  geom_point(aes(size = 1-p.adj)) +
+  coord_flip()
+
+
+count_diff %>% 
+  group_by(group1, p.adj.signif) %>% 
+  count() %>% 
+  arrange(desc(n))
+
+left_join(max_cells_day, Time_count, by = "Date")
+
+
+count_vs_cells <- lm(log10(count_times) ~ log10(totalCells) * months, data = daily_counts)
+
+summary(count_vs_cells)
+
+
+
+correl <- cor.test(daily_counts$count_times, log10(daily_counts$totalCells), method = "spearman")
+summary(correl)
+
+ggscatter(correl, x = "mpg", y = "wt", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Miles/(US) gallon", ylab = "Weight (1000 lbs)")
+
+
+
+
 ```
 
 
@@ -1550,10 +1700,6 @@ Sp_only %>%
 # ANOSIM to show differences between years
 # ANOSIM to show differences between months
 ```
-
-
-
-
 
 ```{r All years summarised to months CORRECT METHOD}
 # All years summarised to 12 months (Shows good grouping)
