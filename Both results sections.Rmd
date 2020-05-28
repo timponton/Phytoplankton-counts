@@ -1316,17 +1316,9 @@ Sp.only_filter %>%
 ```
 
 
-
-
-
-
-
 # Chapter stats
 
-## Chapter 2
-
-
-```{r}
+```{r Chapter 2}
 #### Biomass #####
 # Calculate number of days sampled
 Sp_only %>% 
@@ -1654,17 +1646,16 @@ count_diff <- daily_counts %>%
   ungroup() %>% 
   dplyr::select(months, count_times) %>% 
   dunn_test(count_times ~ months, p.adjust.method = "bonferroni")
-
-
 # plot pairwise tests to visualise significant month partners
 ggplot(data = count_diff, aes(x = group1, y = group2, fill = p.adj)) + 
   geom_tile(col = "black") +
   geom_text(aes(label = round(p.adj, digits = 2))) +
   coord_flip()
 
-ggplot(data = count_diff, aes(x = group1, y = group2, col = p.adj)) +
+
+ggplotly(ggplot(data = count_diff, aes(x = group1, y = group2, col = p.adj)) +
   geom_point(aes(size = 1-p.adj)) +
-  coord_flip()
+  coord_flip())
 
 
 count_diff %>% 
@@ -1672,36 +1663,453 @@ count_diff %>%
   count() %>% 
   arrange(desc(n))
 
-left_join(max_cells_day, Time_count, by = "Date")
-
-
-count_vs_cells <- lm(log10(count_times) ~ log10(totalCells) * months, data = daily_counts)
-
-summary(count_vs_cells)
-
-
-
-correl <- cor.test(daily_counts$count_times, log10(daily_counts$totalCells), method = "spearman")
-summary(correl)
-
-ggscatter(correl, x = "mpg", y = "wt", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Miles/(US) gallon", ylab = "Weight (1000 lbs)")
-
+# Correlation between sampling number and biomass 
+count_cells_cor <- daily_counts %>% 
+  ungroup() %>% 
+  select(count_times, totalCells) %>% 
+  mutate(count_times = log10(count_times), 
+         totalCells = log10(totalCells)) %>% 
+  cor_test(count_times, totalCells, method = "spearman")
 
 
 
 ```
 
 
-```{r}
-# NMDS plot made (on monthly averaged level)
-# ANOSIM to show differences between years
-# ANOSIM to show differences between months
+```{r Chapter 3}
+#### significant difference between biomass in different sites  ####
+
+# calculate descriptive stats
+Sp.only_filter %>% 
+  group_by(Site, months) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  view()
+
+### Total significance? 
+
+Sp.only_filter %>% 
+  group_by(Date, months, Site) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, mean_cells) %>% 
+  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+
+
+# Feb signif
+Sp.only_filter %>% 
+  group_by(Date, months, Site) %>% 
+  filter(months == "February") %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, mean_cells) %>% 
+  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+
+
+# March signif
+Sp.only_filter %>% 
+  group_by(Date, months, Site) %>% 
+  filter(months == "March") %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, mean_cells) %>% 
+  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+
+# April signif
+Sp.only_filter %>% 
+  group_by(Date, months, Site) %>% 
+  filter(months == "April") %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, mean_cells) %>% 
+  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+
+
+
+## richness sig dif ######
+
+dailydesc_filter %>% 
+  view()
+
+# Total sig dif
+dailydesc_filter %>% 
+  select(Site, S) %>% 
+  dunn_test(S ~ Site, p.adjust.method = "bonferroni")
+
+
+# Feb
+
+dailydesc_filter %>% 
+  filter(months == "February") %>% 
+  select(Site, S) %>% 
+  dunn_test(S ~ Site, p.adjust.method = "bonferroni")
+
+# March 
+dailydesc_filter %>% 
+  filter(months == "March") %>% 
+  select(Site, S) %>% 
+  dunn_test(S ~ Site, p.adjust.method = "bonferroni")
+
+# April
+dailydesc_filter %>% 
+  filter(months == "April") %>% 
+  select(Site, S) %>% 
+  dunn_test(S ~ Site, p.adjust.method = "bonferroni")
+
+
+
+
+
+
+## evenness sig dif ####
+
+# Total sig dif
+dailydesc_filter %>% 
+  select(Site, J) %>% 
+  dunn_test(J ~ Site, p.adjust.method = "bonferroni")
+
+# Feb
+dailydesc_filter %>% 
+  filter(months == "April") %>% 
+  select(Site, J) %>% 
+  dunn_test(J ~ Site, p.adjust.method = "bonferroni")
+
+# March 
+dailydesc_filter %>% 
+  filter(months == "March") %>% 
+  select(Site, J) %>% 
+  dunn_test(J ~ Site, p.adjust.method = "bonferroni")
+
+# April
+dailydesc_filter %>% 
+  filter(months == "April") %>% 
+  select(Site, J) %>% 
+  dunn_test(J ~ Site, p.adjust.method = "bonferroni")
+
+## diversity sig dif #####
+
+# Total sig dif
+dailydesc_filter %>% 
+  select(Site, shannon) %>% 
+  dunn_test(shannon ~ Site, p.adjust.method = "bonferroni")
+
+# Feb
+dailydesc_filter %>% 
+  filter(months == "February") %>% 
+  select(Site, shannon) %>% 
+  dunn_test(shannon ~ Site, p.adjust.method = "bonferroni")
+
+# March
+dailydesc_filter %>% 
+  filter(months == "March") %>% 
+  select(Site, shannon) %>% 
+  dunn_test(shannon ~ Site, p.adjust.method = "bonferroni")
+
+# April
+dailydesc_filter %>% 
+  filter(months == "April") %>% 
+  select(Site, shannon) %>% 
+  dunn_test(shannon ~ Site, p.adjust.method = "bonferroni")
+
+
+
+#### Species change betwen sites #####
+
+## P. micans 
+
+# total biommass for species over sites
+P.m_only <- Sp.only_filter %>% 
+  filter(Species == "Prorocentrum micans") %>% 
+  ungroup() 
+
+P.m_only %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# Monthly
+# Feb
+
+# descriptive statistics ( used to justify p-values)
+P.m_only %>% 
+  filter(months == "February") %>% 
+  group_by(Site) %>% 
+  summarise(me = mean(meanCells, na.rm = TRUE), 
+            se = sd(meanCells, na.rm = TRUE)/sqrt(n())) 
+
+# sig dif
+P.m_only %>% 
+  filter(months == "February") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# March
+
+# sig dif
+P.m_only %>% 
+  filter(months == "March") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# April
+# sig dif
+P.m_only %>% 
+  filter(months == "April") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+
+
+
+
+## L. polyedra
+
+# total biommass for species over sites
+L.p_only <- Sp.only_filter %>% 
+  filter(Species == "Lingulodinium polyedra") %>% 
+  ungroup() 
+
+# Feb
+# sig dif
+L.p_only %>% 
+  filter(months == "February") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# March
+# sig dif
+L.p_only %>% 
+  filter(months == "March") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# April
+# sig dif
+L.p_only %>% 
+  filter(months == "April") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+
+
+## G. polygramma
+
+# total biommass for species over sites
+G.p_only <- Sp.only_filter %>% 
+  filter(Species == "Gonyaulax polygramma") %>% 
+  ungroup() 
+
+
+# Feb
+# sig dif
+G.p_only %>% 
+  filter(months == "February") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+# March
+# sig dif
+G.p_only %>% 
+  filter(months == "March") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+
+
+# April
+# sig dif
+G.p_only %>% 
+  filter(months == "April") %>% 
+  select(Site, meanCells) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni")
+
+
+
+
+
+#### Which species are significantly reduced between the PS and ADf? #####
+
+# Pivot species wide
+# calculate descriptive on monthly level between sites, for each species
+# plot
+# decide which species to extract
+# do sig dif for top two
+
+# Which species have biggest range between sites?
+
+
+Sp.only_filter %>% 
+  ungroup() %>% 
+  select(Date, months, Site, Species, meanCells) %>% 
+  pivot_wider(names_from = Site, values_from = meanCells, values_fill = list(meanCells = 0)) %>% 
+  mutate(differ = `Primary sump` - `After Drumfilter`) %>% 
+  arrange(desc(differ)) %>% 
+  view()
+
+
+
+Sp.only_filter %>% 
+  ungroup() %>% 
+  select(Date, months, Site, Species, meanCells) %>% 
+  pivot_wider(names_from = Species, values_from = meanCells, values_fill = list(meanCells = 0)) %>% 
+  view()
+
+
+
+
+trans <- Sp.only_filter %>% 
+  mutate(meanCells = log10(meanCells))
+
+all_sp_feb <- trans %>% 
+  ungroup() %>% 
+  mutate(Sp_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "February") %>% 
+  select(meanCells, Sp_site) %>% 
+  dunn_test(meanCells ~ Sp_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+feb_sig <- trans %>% 
+  ungroup() %>% 
+  mutate(Sp_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "February") %>% 
+  select(meanCells, Sp_site) %>% 
+  dunn_test(meanCells ~ Sp_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+march_sig <- trans %>% 
+  ungroup() %>% 
+  mutate(Sp_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "March") %>% 
+  select(meanCells, Sp_site) %>% 
+  dunn_test(meanCells ~ Sp_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+apr_sig <- trans %>% 
+  ungroup() %>% 
+  mutate(Sp_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "April") %>% 
+  select(meanCells, Sp_site) %>% 
+  dunn_test(meanCells ~ Sp_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+
+# all_sp_feb %>%
+#   filter(substr(group1, 1, 10) == substr(group2, 1, 10))
+
+
+
+
+pairwise.wilcox.test(all_sp_feb$meanCells, all_sp_feb$Species, p.adjust.method = "bonf")
+
+
+## Classification
+
+cl <- Sp.only_filter %>% 
+  mutate(meanCells = log10(meanCells))
+
+cl %>% 
+  ungroup() %>% 
+  mutate(cl_site = paste(Classification, Site, sep = "_")) %>% 
+  # filter(months == "February") %>% 
+  select(meanCells, cl_site) %>% 
+  dunn_test(meanCells ~ cl_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+
+cl.feb_sig <- cl %>% 
+  ungroup() %>% 
+  mutate(cl_site = paste(Classification, Site, sep = "_")) %>% 
+  filter(months == "February") %>% 
+  select(meanCells, cl_site) %>% 
+  dunn_test(meanCells ~ cl_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+cl.march_sig <- cl %>% 
+  ungroup() %>% 
+  mutate(cl_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "March") %>% 
+  select(meanCells, cl_site) %>% 
+  dunn_test(meanCells ~ cl_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+cl.apr_sig <- cl %>% 
+  ungroup() %>% 
+  mutate(cl_site = paste(Species, Site, sep = "_")) %>% 
+  filter(months == "April") %>% 
+  select(meanCells, cl_site) %>% 
+  dunn_test(meanCells ~ cl_site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
 ```
+
+```{r Deeper look at all sites comparisons for chapter 3}
+
+compare_sites_days <- Sp.only_filter %>% 
+  group_by(Date, Site) %>% 
+  mutate(meanCells = log10(meanCells)) %>% 
+  get_summary_stats(meanCells, type = "mean_se")
+
+ggplot(data = compare_sites_days, aes(x = Date, y = mean, col = Site)) +
+  geom_point() +
+  geom_errorbar(aes(ymax = mean + se, ymin = mean - se))
+
+
+# This compare all counts for sites, and not only during the same days that all sites were sampled
+#  so might not be a good idea to use
+df %>% 
+  filter(Location != "NA") %>% 
+  filter(Location != "I'm not sure which site this two is") %>% 
+  group_by(Date, months, month, Species, Classification, Site, Location) %>% 
+  summarise(meanC = mean(log10(totalCells), na.rm = TRUE)) %>% 
+  filter(months == "April") %>% 
+  ungroup() %>% 
+  select(Date, meanC, Location) %>% 
+  dunn_test(meanC ~ Location, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+# Dates where Bergsig was sampled
+bs <- df %>% 
+  filter(Location == "Bergsig farm")
+ 
+# Plot these groups
+df %>% 
+  filter(Date %in% bs$Date) %>%
+  filter(Location == "Bergsig farm" | Location == "Hatchery farm" | 
+           Location == "Incoming seawater" | Location == "Seaview farm") %>%
+  mutate(mc = log10(Cells.L)) %>% 
+  ggplot(., aes(x = Location, y = mc)) +
+  geom_boxplot(outlier.shape = NA)
+  
+
+# Check for significance
+df %>% 
+  filter(Date %in% bs$Date) %>%
+  filter(Location == "Bergsig farm" | Location == "Hatchery farm" | 
+           Location == "Incoming seawater" | Location == "Seaview farm") %>%
+  mutate(mc = log10(Cells.L)) %>% 
+  group_by(Date, Location) %>% 
+  summarise(mc = mean(mc, na.rm = TRUE)) %>% 
+  # select(mc, Location) %>% 
+  dunn_test(mc ~ Location, p.adjust.method = "bonferroni") %>% 
+  view()
+  
+  
+```
+
 
 ```{r All years summarised to months CORRECT METHOD}
+
+
 # All years summarised to 12 months (Shows good grouping)
 
 wide_avg_months <- Sp_only %>%
@@ -1844,30 +2252,11 @@ ano_months
 
 
 
-
-
-## Chapter 3
-```{r}
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```{r}
 knitr::knit_exit()
 ```
 
-This is scrap work.
+####### This is scrap work #######
 
 ```{r NMDS all years sep}
 # Just 2019
@@ -2132,6 +2521,9 @@ orditorp(NMDStestmonth_test,display="species",col="red",air=0.01)
 orditorp(NMDStestmonth_test,display="sites",cex=1.25,air=0.01)
 
 ```
+
+
+
 
 
 
