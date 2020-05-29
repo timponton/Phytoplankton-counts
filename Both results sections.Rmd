@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Load data and clean -----------------------------------------------------
 
 #### load packages####
+library(dplyr)
 library(cluster)
 library(pairwiseAdonis)
 library(PMCMR)
@@ -39,7 +40,6 @@ library(jtools)
 library(ggstance)
 library(funrar)
 library(PMCMRplus)
-library(dplyr)
 library(forcats)
 
 ### read in data and fix####
