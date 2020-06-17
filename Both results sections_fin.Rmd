@@ -755,7 +755,6 @@ biomass.YM <- Sp_only %>%
             monthlySD = sd(meanCells, na.rm = TRUE), 
             monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
   arrange(desc(-monthlyMean)) %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, col = year)) +
   geom_point() +
   geom_errorbar(aes(ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
@@ -763,7 +762,7 @@ biomass.YM <- Sp_only %>%
   xlab("Months") +
   ylab("Log10 Cells/L") + 
   labs(col = "Year") +
-  #ggtitle("Comparing the log10 monthly mean phytoplankton counts between three consecutive years, with their standard error bars") +
+  ggtitle("Comparing the log10 monthly mean phytoplankton counts between three consecutive years, with their standard error bars") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -817,7 +816,6 @@ richness.YM <- dailyDesc %>%
             monthlyRichnessN = n(),
             monthlyRichnessSD = sd(S, na.rm = TRUE), 
             monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
   ggplot(., aes(x = reorder(months, month), y = (monthlyRichness), col = year, group = year)) +
   geom_point(size = 1) +
   #geom_line(size = 0.8) +
@@ -887,75 +885,6 @@ simpson.YM <- dailyDesc %>%
 
 
 # Figure out how to plot these
-
-### These are added to try and fix aesthetics - rerun above for proper individual plots of each descriptor
-#'*(1) ------------------*
-# Richness
-richness.YM <- dailyDesc %>% 
-  group_by(months, month, year, Season) %>% 
-  summarise(monthlyRichness = mean(S, na.rm = TRUE), 
-            monthlyRichnessN = n(),
-            monthlyRichnessSD = sd(S, na.rm = TRUE), 
-            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
-  ggplot(., aes(x = reorder(months, month), y = (monthlyRichness), col = year, group = year)) +
-  geom_point(size = 1) +
-  #geom_line(size = 0.8) +
-  geom_errorbar(aes(ymin = monthlyRichness - monthlyRichnessSE, ymax = monthlyRichness + monthlyRichnessSE), width=0.2) +
-  xlab("Months") +
-  ylab("Richness") + 
-  # ggtitle("Comparing the monthly species richness of phytoplankton counts between three consecutive years ") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5), 
-        axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank(), 
-        legend.position = "none")
-
-
-
-#'*(1) -----------------*
-# Evenness (J')
-evenness.YM <- dailyDesc %>% 
-  group_by(months, month, year, Season) %>% 
-  summarise(monthlyEvenness = mean(J, na.rm = TRUE), 
-            monthlyEvennessN = n(),
-            monthlyEvennessD = sd(J, na.rm = TRUE), 
-            monthlyEvennessSE = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
-  ggplot(., aes(x = reorder(months, month), y = (monthlyEvenness), col = year, group = year)) +
-  geom_point(size = 1) +
-  #geom_line(size = 0.8) +
-  geom_errorbar(aes(ymin = monthlyEvenness - monthlyEvennessSE, ymax = monthlyEvenness + monthlyEvennessSE), width=0.2) + 
-  xlab("Months") +
-  ylab("J'") + 
-  labs(col = "Year") +
-  # ggtitle("Comparing the monthly species evenness (J') of phytoplankton counts between three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5), 
-        axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
-
-#'*(1) ---------------*
-# Shannon
-shannon.YM <- dailyDesc %>% 
-  group_by(months, month, year, Season) %>% 
-  summarise(monthlyshannon = mean(shannon, na.rm = TRUE), 
-            monthlyshannonN = n(),
-            monthlyshannonsD = sd(shannon, na.rm = TRUE), 
-            monthlyshannonSE = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
-  ggplot(., aes(x = reorder(months, month), y = (monthlyshannon), col = year, group = year)) +
-  geom_point(size = 1) +
-  #geom_line(size = 0.8) +
-  geom_errorbar(aes(ymin = monthlyshannon - monthlyshannonSE, ymax = monthlyshannon + monthlyshannonSE), width=0.2) +
-  xlab("Months") +
-  ylab("H'") + 
-  # ggtitle("Comparing the monthly Shannon (H') Index of Diversity of phytoplankton between three consecutive years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5), 
-        legend.position = "none")
-
 # Must 1 legend be shown? ANd remove middle ad top x axis labels?
 # Capitalise legend title (labs(col = ""))
 biomass.YM
@@ -1023,23 +952,6 @@ dsp <- month.rel %>%
 
 
 # plot yearly fluctuations for each of the top species
-month.rel %>% 
-  filter(Species %in% dsp$Species) %>%
-  mutate(months = substr(months, 1, 3)) %>% 
-  ggplot(., aes(x = reorder(months, -month), 
-                y = abun, group = year, col = year), size = 1) +
-  geom_line() +
-  geom_point() +
-  facet_wrap(~Species, ncol = 7, scales = "free_y") +
-  coord_flip() +
-  theme_classic() +
-  xlab("Months") +
-  ylab("Relative abundance") + 
-  labs(col = "Species") +
-  #ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
-
 ggplot() + 
   geom_point(data = month.rel %>% 
                filter(Species %in% dsp$Species), 
@@ -1104,19 +1016,19 @@ Sp_only %>%
 
 
 
-#'*[Stacked bar graph] of different phyto classes, by months, faceted by year ------------------*
+#'*[Stacked bar graph] of different phyto classes, by months, facetd by year ------------------*
 # from Sp_Only df facet_wrap(~year)
 Sp_only %>% 
   group_by(months, month, year, Season, Classification) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE)) %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
   ggplot(., aes(x = reorder(months, month), y = monthlyMean, fill = Classification)) +
   geom_bar(stat = "Identity", position = "fill", col = "Black") +
   facet_wrap(~year, ncol = 1) +
   xlab("Months") +
   ylab("Proportion monthly mean") + 
   labs(fill = "Phytoplankton class") +
-  #ggtitle("Comparing the proportion of mean monthly counts between phytoplankton classes over three consecutive years") +
+  ggtitle("Comparing the proportion of mean monthly counts between phytoplankton 
+          classes over three consecutive years") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -1183,27 +1095,9 @@ ggplot(are, aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
   xlab("Months") +
   ylab("Proportion number of days") + 
   labs(fill = "Red Tide class") +
-  #ggtitle("The proportion of different red tide classes per month over the three years") +
+  ggtitle("The proportion of different red tide classes per month over the three years") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
-
-
-## Use are df for red tide classes#
-## This is just to abbreviate months
-are %>% 
-  mutate(months = substr(months, 1, 3)) %>% 
-  ggplot(., aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
-  geom_bar(stat = "Identity", position = "fill", col = "black") +
-  facet_wrap(~year, ncol = 1) +
-  xlab("Months") +
-  ylab("Class proportion per month") + 
-  labs(fill = "Red Tide class") +
-  #ggtitle("The proportion of different red tide classes per month over the three years") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-##
-
 
 
 ggplot(re, aes(x = reorder(months, month), y = n, fill = FWC_mod)) +
@@ -1240,9 +1134,10 @@ left_join(max_cells_day, Time_count, by = "Date") %>%
   geom_point(aes(col = FWC_mod, size = count_times)) +
   geom_line() +
   xlab("Date") +
-  ylab("Log Cells/L") + 
+  ylab("Log Phytoplankton counts") + 
   labs(col = "Red Tide class", size = "Samples collected per day") +
-  #ggtitle("Investigating how sampling frequency varied in relation to red tide severity in 2019") +
+  ggtitle("Investigating how sampling frequency varied in relation to 
+          red tide severity in 2019") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -1258,7 +1153,8 @@ ggplot(left_join(max_cells_day, Time_count, by = "Date") %>%
   xlab("Log Cells/L") +
   ylab("Number samples collected per day") + 
   labs(col = "Red Tide class") +
-  #ggtitle("Relationship between Cells/L counted and number of samples collected per day, when different Red tide severity classes were experienced") +
+  ggtitle("Relationship between Cells/L counted and number of samples collected per day, 
+          when different Red tide severity classes were experienced") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
