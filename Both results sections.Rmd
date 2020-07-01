@@ -1305,7 +1305,7 @@ ggplot(data = dailydesc_filter, aes(x = Date, y = total_biomass, col = Site)) +
 
 
 # Point with errorbar version
-Sp.only_filter %>% 
+bio <- Sp.only_filter %>% 
   group_by(months, month, year, YEarMonth, Site) %>% 
   summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
             n_cells = n(),
@@ -1327,7 +1327,7 @@ Sp.only_filter %>%
 
 ## Point errorbars can be done for the metrics  too if necessary ##
 
-# richness
+### richness
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = S, fill = Site)) +
   geom_boxplot() +
   xlab("Months") +
@@ -1338,7 +1338,39 @@ ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = S, fill = Si
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-# evenness
+# Point error
+
+
+rich <- dailydesc_filter %>% 
+  group_by(months, month, year, YEarMonth, Site) %>% 
+  summarise(mean_S = mean(S, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(S, na.rm = TRUE), 
+            se_cells = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_S, col = Site, group = Site)) +
+  geom_point() +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_S - se_cells, ymax = mean_S + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("Richness") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(), 
+        legend.position = "none")
+
+
+
+
+
+
+
+
+
+### evenness
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = J, fill = Site)) +
   geom_boxplot() +
   xlab("Months") +
@@ -1349,7 +1381,31 @@ ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = J, fill = Si
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-# diversity
+# Point error
+
+even <- dailydesc_filter %>% 
+  group_by(months, month, year, YEarMonth, Site) %>% 
+  summarise(mean_J = mean(J, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(J, na.rm = TRUE), 
+            se_cells = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_J, col = Site, group = Site)) +
+  geom_point() +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_J - se_cells, ymax = mean_J + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("J'") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+
+
+### diversity
 ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = shannon, fill = Site)) +
   geom_boxplot() +
   xlab("Months") +
@@ -1361,9 +1417,35 @@ ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = shannon, fil
   theme(plot.title = element_text(hjust = 0.5))
 
 
+# Point error
+
+shan <- dailydesc_filter %>% 
+  group_by(months, month, year, YEarMonth, Site) %>% 
+  summarise(mean_shannon = mean(shannon, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(shannon, na.rm = TRUE), 
+            se_cells = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_shannon, col = Site, group = Site)) +
+  geom_point() +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_shannon - se_cells, ymax = mean_shannon + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("H'") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
 
 
 
+
+
+### Put all together for drafts
+
+# diversity 
+bio
+rich/even/shan
 
 ## DOMINANT SPECIES DENSITIES BETWEEN SITES --------------------------------
 
@@ -1386,7 +1468,23 @@ Sp.only_filter %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
+## Point errorbar version
 
+Sp.only_filter %>% 
+  group_by(Site, months, month) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point() +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 #'* Graph for Aim 2 -----------*
@@ -1409,12 +1507,55 @@ Sp.only_filter %>%
   theme(plot.title = element_text(hjust = 0.5))
 
 
+# Plot as point error bars method
 
 
 
 
 
+## Use SD to plot errorbars (This works, and shows no significant difference)
+# MEasurements have been log10 transformed
 
+Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  filter(Species %in% top_species$Species) %>%
+  mutate(meanCells = log10(meanCells)) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point() +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - sd_cells, ymax = mean_cells + sd_cells), width=0.2) +
+  facet_wrap(~ Species, ncol = 1) +
+  xlab("Months") +
+  ylab("Cells/L (log10)") + 
+  labs(fill = "Site") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+# Use SE (where some errorbars do not overlap but pvalue isnt significant)
+
+Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  filter(Species %in% top_species$Species) %>%
+  #mutate(meanCells = log10(meanCells)) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point() +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  facet_wrap(~ Species, ncol = 1) +
+  scale_y_log10() +
+  xlab("Months") +
+  ylab("Cells/L (log10)") + 
+  labs(fill = "Site") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 ```
@@ -1821,6 +1962,9 @@ Sp.only_filter %>%
   select(Site, mean_cells) %>% 
   dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
 
+
+
+
 # April signif
 Sp.only_filter %>% 
   group_by(Date, months, Site) %>% 
@@ -1855,6 +1999,11 @@ dailydesc_filter %>%
   filter(months == "March") %>% 
   select(Site, S) %>% 
   dunn_test(S ~ Site, p.adjust.method = "bonferroni")
+
+
+
+
+
 
 # April
 dailydesc_filter %>% 
@@ -2106,7 +2255,26 @@ apr_sig <- trans %>%
 #   filter(substr(group1, 1, 10) == substr(group2, 1, 10))
 
 
+## _
+Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  filter(Species %in% "Prorocentrum micans") %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n()))
 
+Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  filter(Species %in% "Prorocentrum micans") %>% 
+  filter(months == "March") %>% 
+  select(meanCells, Site) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni") %>% 
+  arrange(desc(-p.adj)) %>% 
+  filter(p.adj.signif != "ns")
+
+
+## _
 
 pairwise.wilcox.test(all_sp_feb$meanCells, all_sp_feb$Species, p.adjust.method = "bonf")
 
