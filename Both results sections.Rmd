@@ -72,6 +72,7 @@ df <- df %>%
 # coerce year column as factor
 df$year <- as.factor(df$year)
 
+
 # Add Red Tide categories
 # incorporating red tide presence into df
 ## first set parameters for each cate
