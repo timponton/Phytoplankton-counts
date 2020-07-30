@@ -1329,9 +1329,9 @@ bio <- Sp.only_filter %>%
             sd_cells = sd(meanCells, na.rm = TRUE), 
             se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position=position_dodge(0.25)) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position=position_dodge(0.25)) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
@@ -1339,7 +1339,7 @@ bio <- Sp.only_filter %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+bio
 
 
 ## Point errorbars can be done for the metrics  too if necessary ##
@@ -1365,9 +1365,9 @@ rich <- dailydesc_filter %>%
             sd_cells = sd(S, na.rm = TRUE), 
             se_cells = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_S, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position=position_dodge(0.25)) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_S - se_cells, ymax = mean_S + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_S - se_cells, ymax = mean_S + se_cells), width=0.2, position=position_dodge(0.25)) +
   xlab("Months") +
   ylab("Richness") + 
   labs(fill = "Site") +
@@ -1407,9 +1407,9 @@ even <- dailydesc_filter %>%
             sd_cells = sd(J, na.rm = TRUE), 
             se_cells = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_J, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position=position_dodge(0.25)) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_J - se_cells, ymax = mean_J + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_J - se_cells, ymax = mean_J + se_cells), width=0.2, position=position_dodge(0.25)) +
   xlab("Months") +
   ylab("J'") + 
   labs(fill = "Site") +
@@ -1443,9 +1443,9 @@ shan <- dailydesc_filter %>%
             sd_cells = sd(shannon, na.rm = TRUE), 
             se_cells = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_shannon, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position=position_dodge(0.25)) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_shannon - se_cells, ymax = mean_shannon + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_shannon - se_cells, ymax = mean_shannon + se_cells), width=0.2, position=position_dodge(0.25)) +
   xlab("Months") +
   ylab("H'") + 
   labs(fill = "Site") +
@@ -1464,6 +1464,28 @@ shan <- dailydesc_filter %>%
 bio
 rich/even/shan
 
+## Dino Diatoms BETWEEN SITES #####
+--------------------------------
+
+Sp.only_filter %>% 
+  group_by(Site, months, month, Classification) %>% 
+  filter(Classification %in% c("Dinoflagellate", "Diatom")) %>%
+  #mutate(meanCells = log10(meanCells)) %>% 
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE), 
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position=position_dodge(0.25)) +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position=position_dodge(0.25)) +
+  facet_wrap(~ Classification, ncol = 1, scales = "free_y") +
+  #scale_y_log10() +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 ## DOMINANT SPECIES DENSITIES BETWEEN SITES --------------------------------
 
 
@@ -1552,7 +1574,7 @@ Sp.only_filter %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-# Use SE (where some errorbars do not overlap but pvalue isnt significant)
+# Use SE (where some error-bars do not overlap but p-value isn't significant)
 
 Sp.only_filter %>% 
   group_by(Site, months, month, Species, Classification) %>% 
@@ -1563,16 +1585,17 @@ Sp.only_filter %>%
             sd_cells = sd(meanCells, na.rm = TRUE), 
             se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position=position_dodge(0.25)) +
   #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position=position_dodge(0.25)) +
   facet_wrap(~ Species, ncol = 1) +
   scale_y_log10() +
   xlab("Months") +
   ylab("Cells/L (log10)") + 
   labs(fill = "Site") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"))
 
 
 ```
@@ -2298,6 +2321,21 @@ pairwise.wilcox.test(all_sp_feb$meanCells, all_sp_feb$Species, p.adjust.method =
 
 
 ## Classification
+
+# Check if significance between sites for each classification for each month manually
+# Manually change class and month to check
+
+Sp.only_filter %>% 
+  group_by(Site, months, month, Classification) %>% 
+  filter(Classification %in% "Dinoflagellate") %>% 
+  filter(months == "April") %>% 
+  ungroup() %>% 
+  select(meanCells, Site) %>% 
+  dunn_test(meanCells ~ Site, p.adjust.method = "bonferroni") 
+
+
+
+# 
 
 cl <- Sp.only_filter %>% 
   mutate(meanCells = log10(meanCells))
