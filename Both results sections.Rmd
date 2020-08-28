@@ -1032,7 +1032,7 @@ month.rel %>%
                 y = abun, group = year, col = year), size = 1) +
   geom_line() +
   geom_point() +
-  facet_wrap(~Species, ncol = 7, scales = "free_y") +
+  facet_wrap(~Species, ncol = 7, scales = "free_y", labeller = (groupwrap = label_wrap_gen(10))) +
   coord_flip() +
   theme_classic() +
   xlab("Months") +
@@ -1180,12 +1180,23 @@ orditorp(NMDStestmonth,display="sites",cex=1.25,air=0.01)
 dd <- vegdist(monthly.species_wide, method = "bray") * 100
 hc <- hclust(dd, method = "complete")
 
-fviz_dend(hc, cex = .60,
+fviz_dend(hc, cex = .75,
           main = "",
           xlab = "Months", ylab = "Similarity %", sub = "", 
           phylo_layout = layout.mds, 
-          ggtheme = theme_classic())
+          ggtheme = theme_light())
 
+ggdendrogram(hc) +
+  xlab("Months") +
+  ylab("Similarity %") +
+  theme_classic() +
+  theme(axis.ticks.x = element_blank(), axis.line.x = element_blank(), 
+        axis.text.x.bottom = element_text(size = 15, color = "Black"), 
+        axis.text.x = element_text(angle = 90), 
+        axis.text.y.left = element_text(colour = "Black"))
+
+
+library(ggdendro)
 
 ## RED TIDE CLASSES --------------------------------------------------------
 
@@ -1636,7 +1647,7 @@ dailyDesc %>%
             monthlyRichnessN = n(),
             monthlyRichnessSD = sd(S, na.rm = TRUE), 
             monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
-  arrange(desc(-monthlyRichness))
+  arrange(desc(monthlyRichness))
 
 
 # July
@@ -1760,6 +1771,12 @@ kruskal.test(shannon ~ year, data = dailyDesc)
 # ties are present so did not work
 pairwise.wilcox.test(dailyDesc$shannon, dailyDesc$year, p.adjust.method = "bonf")
 
+dailyDesc %>% 
+  group_by(year) %>% 
+  summarise(monthlyshannon = mean(shannon, na.rm = TRUE), 
+            monthlyshannonN = n(),
+            monthlyshannonsD = sd(shannon, na.rm = TRUE), 
+            monthlyshannonSE = sd(shannon, na.rm = TRUE)/sqrt(n()))
 
 
 #### dominant species ####

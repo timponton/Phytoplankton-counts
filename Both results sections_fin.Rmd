@@ -518,7 +518,29 @@ NMDStestmonth
 # stressplot of NMDS results
 stressplot(NMDStestmonth)
 
+# End
 
+
+
+#### To plot NMDS using ggplot2 usign B. Cloete methods
+monthly.species_wide <- monthly.species %>% 
+  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+              values_fill = list(averageDens = 0))
+
+com <- monthly.species_wide[, 2:ncol(monthly.species_wide)]
+m_com <- as.matrix(com)
+
+NMDStestmonth <- metaMDS(m_com, k = 3, autotransform = FALSE, trymax = 100)
+
+data.scores <- as.data.frame(scores(NMDStestmonth))
+data.scores$site <- monthly.species_wide$months
+
+# extract NMDS scores (x and y coordinates)
+data.scores = as.data.frame(scores(nmds))
+
+# add columns to data frame
+data.scores$site = abun$SITE
+data.scores$veg = abun$VEG
 
 # ## Original try, with no Abrev. Kept for just incase 
 # testmonth <- Sp_only %>%
