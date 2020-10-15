@@ -848,7 +848,7 @@ richness.YM <- dailyDesc %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+ggplotly(richness.YM)
 
 #'*(1) -----------------*
 # Evenness (J')
@@ -1358,7 +1358,10 @@ Sp_only %>%
             monthlyN = n(),
             monthlySD = sd(meanCells, na.rm = TRUE), 
             monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
-  arrange(desc(monthlyMean))
+  arrange(desc(monthlyMean)) %>% 
+  view()
+
+
 dailyDesc %>% 
   arrange(desc(total_biomass)) %>% 
   select(total_biomass, everything())
@@ -1373,7 +1376,8 @@ dailyDesc %>%
             monthlyRichnessN = n(),
             monthlyRichnessSD = sd(S, na.rm = TRUE), 
             monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
-  arrange(desc(-monthlyRichness))
+  arrange(desc(-monthlyRichness)) %>% 
+  view()
 
 
 # July
