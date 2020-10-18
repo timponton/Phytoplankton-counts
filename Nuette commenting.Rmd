@@ -44,7 +44,8 @@ library(forcats)
 
 ### read in data and fix####
  
-df <- read.csv("Updated data from April 2020/Combo-as-of-April-2020-OpenRefineCopy.csv")
+df <- read.csv("Oct 2020/2017.2019.OR/Main.df.Oct2020.csv") %>% 
+  left_join(spe_class, by = "Species")
 order <- read.csv("Updated data from April 2020/Ordered Sample sites - Abagold.csv")
 df <- df %>% 
   left_join(order, by = "Site")
@@ -78,7 +79,7 @@ df$year <- as.factor(df$year)
 RT <- df %>% 
   filter(Site == "Primary sump") %>% 
   group_by(Date) %>% 
-  summarise(totalCells = mean(Cells.L, na.rm = TRUE)) %>% 
+  summarise(totalCells = mean(Correct.Original, na.rm = TRUE)) %>% 
   mutate(RedTide = ifelse(totalCells <= 1000, "None detected", 
                           ifelse(totalCells >= 1001 & totalCells <= 5000, "Very Low (A)", 
                                  ifelse(totalCells >= 5001 & totalCells <= 10000, "Very Low (B)", 
@@ -93,8 +94,7 @@ RT <- df %>%
 df <- df %>% 
   left_join(RT, by = "Date")
 
-
-
+write.csv(df, "written_df_Oct.csv")
 
 ##### subset Primary sump####
 PS <- df %>% 
@@ -103,9 +103,9 @@ PS <- df %>%
 
 # The day that had the highest samples taken over the whole study period
 # Was there any fluctuation during that day?
-PS %>% 
-  filter(Date == "2019-03-22") %>% 
-  ggplot(., aes(x = Time, y = Cells.L)) +
+df %>% 
+  filter(Date == "2019-02-23") %>% 
+  ggplot(., aes(x = Time, y = Correct.Original)) +
   geom_col()
 
 
@@ -1194,4 +1194,67 @@ src_df %>%
 
 
 ```
+
+
+```{r join_df_SRC}
+
+xas <- read.csv("Oct 2020/Combine df and SRC/SRC_method_Oct.csv", stringsAsFactors = FALSE)
+
+xas$CellsCounted <- as.numeric(xas$CellsCounted)
+xas$Cells.L <- as.numeric(xas$Cells.L)
+
+
+xas$Date <- as.Date(xas$Date, "%d/%m/%Y")
+
+ini_join <- df %>% 
+  filter(year != "2020", 
+         CellsCounted != 0)
+
+t <- ini_join %>% 
+  left_join(xas, by = c("Date", "Time", "Counted.by", "Site")) %>% 
+  filter(CellsCounted.y != 0) %>% 
+  distinct()
+
+
+```
+
+```{r Main_df_Oct}
+
+spe_class <- read.csv("Species_names.csv")
+
+
+main_df <- read.csv("Oct 2020/2017.2019.OR/Main.df.Oct2020.csv") %>% 
+  left_join(spe_class, by = "Species")
+
+
+
+
+main_df$Date <- as.Date(main_df$Date, "%d/%m/%Y")
+
+main_df$dateTime <- as.POSIXct(paste(main_df$Date, main_df$Time), format = "%Y-%m-%d %H:%M")
+
+
+main_df %>% 
+  group_by(Date, Time) %>% 
+  summarise(sumc = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date) %>% 
+  summarise(meanC = mean(sumc, na.rm = TRUE)) %>% 
+  ggplot(., aes(x = Date, y = meanC)) +
+  geom_col() +
+  scale_y_log10()
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
 
