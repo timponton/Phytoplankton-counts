@@ -1,7 +1,7 @@
 ---
-title: '2019'
+title: "2018-2019"
 author: "Tim Ponton"
-date: "17/10/2020"
+date: "19/10/2020"
 output: html_document
 ---
 
@@ -61,7 +61,7 @@ df$year <- as.factor(df$year)
 
 # create a df to use as a basis
 nineTeen <- df %>% 
-  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(Date >= "2018-01-01" & Date <= "2019-12-31") %>%
   filter(Site == "Primary sump", 
          Correct.Original != 0) %>% 
   filter(Species != "Diatom", 
@@ -126,9 +126,6 @@ dailyMeans <- nineTeenClean %>%
   mutate(log1Mean = log1p(meanBiomass)) %>% 
   mutate(whatDay = weekdays(Date))
 
-ggplot(data = dailyMeans, aes(x = Date, y = meanBiomass)) +
-  geom_point() +
-  geom_line()
 # Wrangle data ------------------------------------------------------------
 
 ## Species biomass per day
@@ -581,7 +578,6 @@ data.scores$veg = abun$VEG
 # NMDStestmonth
 # stressplot(NMDStestmonth)
 
-
 ```
 
 
@@ -787,40 +783,45 @@ site_size <- Sp.only_filter %>%
 ###### Chapter 2 Phytoplankton #########
 ## PHYTOPLANKTON COMMUNITY DIVERSITY ETC -----------------------------------
 
-
+nineTeenClean %>% 
+  group_by(Date, Time, year, months, month) %>% 
+  summarise(meanCells = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(year, months, month) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  arrange(desc(-monthlyMean)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, col = year, group = year)) +
+  geom_point() +
+  geom_line() +
+  geom_errorbar(aes(ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
+  #scale_y_log10() +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(col = "Year") +
+  ggtitle("Comparing the monthly mean phytoplankton counts between two consecutive years, with their standard error bars") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+  
 
 
 
 #'*year-monthly biomass (1) ---------------*
 # Plot monthly total biomass, comparing years
-biomass.YM <- Sp_only %>%
-  filter(Classification != "Dictyochophyceae") %>% 
-  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
-  mutate(season = case_when(month == "1" ~ "Summer",
-                            month == "2" ~ "Summer",
-                            month == "3" ~ "Autumn",
-                            month == "4" ~ "Autumn",
-                            month == "5" ~ "Autumn",
-                            month == "6" ~ "Winter",
-                            month == "7" ~ "Winter",
-                            month == "8" ~ "Winter",
-                            month == "9" ~ "Spring",
-                            month == "10" ~ "Spring",
-                            month == "11" ~ "Spring",
-                            month == "12" ~ "Summer",
-                            TRUE ~ "Other")) %>%
-  group_by(YEarMonth, season, Classification) %>% 
+biomass.YM <- Sp_only %>% 
+  group_by(months, month, year) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
             monthlyN = n(),
             monthlySD = sd(meanCells, na.rm = TRUE), 
             monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
-  #arrange(desc(-monthlyMean)) %>% 
-  ggplot(., aes(x = as.factor(YEarMonth), y = monthlyMean, group = Classification)) +
-  geom_point(aes(col = Classification)) +
-  geom_path() +
-  geom_errorbar(aes(col = Classification, ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
-  #facet_wrap(~Classification, ncol = 1) +
-  #scale_y_log10() +
+  arrange(desc(-monthlyMean)) %>% 
+  ggplot(., aes(x = reorder(months, month), y = monthlyMean, col = year)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
+  scale_y_log10() +
   xlab("Months") +
   ylab("Log10 Cells/L") + 
   labs(col = "Year") +
@@ -1210,7 +1211,7 @@ left_join(max_cells_day, Time_count, by = "Date") %>%
 #'* USE TO COMPARE EXCLUDING ALL vs BELOW AVERAGE REGRESSIONS [Scatter and relationship line (smooth)] used to show counting times correlation, above daily counting average ------------*
 # correlation between total cells counted and numebr of times counted per day
 ggplot(left_join(max_cells_day, Time_count, by = "Date") %>% 
-         filter(count_times > 0), aes(x = log(totalCells), y = count_times)) +
+         filter(count_times > 0, Date >= "2018-09-01"), aes(x = log(totalCells), y = count_times)) +
   geom_point(aes(col = FWC_mod)) +
   geom_hline(yintercept = 3.17, size = 1) +
 #  geom_smooth(method = "lm", aes(col = FWC_mod), se = FALSE) +
@@ -1414,7 +1415,7 @@ dailyDesc %>%
 #### Richness ####
 # Highest and lowest (change arrange())
 dailyDesc %>% 
-  group_by(months, month, year, Season) %>% 
+  group_by(months, month, year) %>% 
   summarise(monthlyRichness = mean(S, na.rm = TRUE), 
             monthlyRichnessN = n(),
             monthlyRichnessSD = sd(S, na.rm = TRUE), 
@@ -1426,7 +1427,7 @@ dailyDesc %>%
 # July
 dailyDesc_jul <- dailyDesc  %>% 
   filter(months == "July")%>% 
-  group_by(months, month, year, Season) %>% 
+  group_by(months, month, year) %>% 
   summarise(monthlyRichness = mean(S, na.rm = TRUE), 
             monthlyRichnessN = n(),
             monthlyRichnessSD = sd(S, na.rm = TRUE), 
@@ -1528,7 +1529,7 @@ pairwise.wilcox.test(dailyDesc$J, dailyDesc$year, p.adjust.method = "bonf")
 # shannon diversity
 
 dailyDesc %>% 
-  group_by(months, month, year, Season) %>% 
+  group_by(months, month, year) %>% 
   summarise(monthlyshannon = mean(shannon, na.rm = TRUE), 
             monthlyshannonN = n(),
             monthlyshannonsD = sd(shannon, na.rm = TRUE), 
@@ -1700,7 +1701,7 @@ posthoc.kruskal.dunn.test(FWC_classes_wide$Normal, FWC_classes_wide$year, dist =
 
 #### Resources ####
 
-link <- nineTeenClean %>% 
+link <- PS %>% 
   dplyr::select(Date, year)
 
 # Daily counts
@@ -2590,6 +2591,7 @@ orditorp(NMDStestmonth_test,display="species",col="red",air=0.01)
 orditorp(NMDStestmonth_test,display="sites",cex=1.25,air=0.01)
 
 ```
+
 
 
 
