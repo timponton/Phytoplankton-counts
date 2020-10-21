@@ -102,6 +102,18 @@ maximum_fwc <- reds %>%
 nineTeenClean <- nineTeen %>% 
   left_join(maximum_fwc, by = "Date")
 
+ #Species epr functional group 
+nineTeenClean %>% 
+  select(Species, Classification) %>% 
+  group_by(Classification) %>% 
+  distinct() %>% 
+  count()
+
+nineTeenClean %>% 
+  select(Date) %>% 
+  distinct() %>% 
+  count()
+
 # Check results
 # nineTeenClean %>% 
 #   group_by(dateTime, FWC_mod) %>% 
@@ -599,12 +611,35 @@ sp_sizes <- read.csv("Updated data from April 2020/Dominant sizes.csv", stringsA
 
 # subset dates for when both Ps and ADF were sampled ----------------------
 
+filter(all(c("After Drumfilter", "Primary sump") %in% Site))df <- read.csv("Oct 2020/2017.2019.OR/written_df_Oct.csv")
+
+# fix date
+df$Date <- as.Date(df$Date, "%Y/%m/%d")
+
+# add month and year columns 
+df <- df %>% 
+  mutate(months = months(Date), month = month(Date), year = year(Date), YEarMonth = as.yearmon(paste(year, month), "%Y %m"))
+
+# merge date and times and coerce to proper format 
+df$dateTime <- as.POSIXct(paste(df$Date, df$Time), format = "%Y-%m-%d %H:%M")
+
+# coerce year column as factor
+df$year <- as.factor(df$year)
+
+# create a df to use as a basis
 ps_adf <- df %>% 
-  group_by(Date) %>% 
-  filter(Classification != "Various", Date != "2019-12-17", Date != "2019-02-17") %>% 
-  filter(all(c("After Drumfilter", "Primary sump") %in% Site)) %>% 
+  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site), Correct.Original != 0) %>% 
   filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
-  filter(Species != "Diatom")
+  filter(Species != "Diatom", 
+         Classification != "Various", 
+         Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea")
+
+
+
+
 
 
 # correct the order of sites (PS before ADf)
@@ -625,13 +660,12 @@ ps_adf$FWC_mod <-  factor(ps_adf$FWC_mod,
 ## calculate biomass evennes richness diversity per day/ week for each site
 # average counts for each species per day
 Sp.only_filter <- ps_adf %>% 
-  group_by(Date, Site, Species, Classification, months, month, year, 
-           YEarMonth, Season, SeasonOrder, RedTide, FWC_mod) %>% 
-  summarise(meanCells = mean(Cells.L, na.rm = TRUE))
+  group_by(Date, Site, Species, Classification, months, month, year) %>% 
+  summarise(meanCells = mean(Correct.Original, na.rm = TRUE))
 
 # total biomass per day (all species added together per day)
 total_sp_filter <- Sp.only_filter %>% 
-  group_by(Date, Site, months, month, year, YEarMonth, Season, FWC_mod) %>% 
+  group_by(Date, Site, months, month, year) %>% 
   summarise(total_biomass = sum(meanCells)) %>% 
   ungroup()
 
@@ -1063,7 +1097,25 @@ biomass.YM
 richness.YM/evenness.YM/shannon.YM
 simpson.YM
 
-
+# Evenness versus total abundance
+dailyDesc %>% 
+  filter(total_biomass < 500000) %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  ggplot(., aes(x = total_biomass, y = J)) +
+  geom_point(aes(col = season))
 
 #'*This was added late*
 # Plot dominants with others greyed out 
