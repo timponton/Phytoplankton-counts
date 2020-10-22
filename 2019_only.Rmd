@@ -402,198 +402,6 @@ RT.classNumbers_monthYear <- all_max_cells_day %>%
 
 
 
-# NMDS --------------------------------------------------------------------
-
-# dataframe of species with their abbreviations
-Sp_abbre <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  select(Species) %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  distinct()
-
-# finding relative abundance across total samples
-te <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(Sp_abb) %>% 
-  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
-  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
-              values_fill = list(averageDens = 0)) 
-
-tet <- make_relative(as.matrix(te))
-
-tet <- as.data.frame(tet)
-
-se <- tet %>% 
-  gather(key = "Sp_abb", value = "abun") %>% 
-  arrange(desc(abun)) %>% 
-  filter(abun > 0.003)
-
-se %>% 
-  summarise(S = n_distinct(Sp_abb))
-
-
-ggplotly(ggplot(data = se, aes(x = reorder(Sp_abb, abun), y = abun)) +
-  geom_col() +
-  coord_flip())
-
-
-# relative abudance per month
-mte <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(months, Sp_abb) %>% 
-  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
-  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
-              values_fill = list(averageDens = 0)) %>% 
-  remove_rownames %>% 
-  column_to_rownames(var="months")
-
-mtet <- make_relative(as.matrix(mte))
-
-mtet <- as.data.frame(mtet)%>% 
-  rownames_to_column(var = "months")
-
-# HAB species vs everything else relative abundance 
-# Get relative abundance per month for each species
-month.rel <- as.data.frame(
-  make_relative(
-  as.matrix(
-  Sp_only %>%
-  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(YEarMonth, Sp_abb) %>% 
-  summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
-  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
-              values_fill = list(averageDens = 0)) %>% 
-  remove_rownames %>% 
-  column_to_rownames(var="YEarMonth")))) %>% 
-  rownames_to_column(var = "YEarMonth")
-
-# add month order into df
-monthOrder <- Sp_only %>%
-  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
-  ungroup() %>% 
-  select(YEarMonth, months, month, year)
-
-monthOrder$YEarMonth <- as.factor(monthOrder$YEarMonth)
-
-# join month order, reorder columns and pivot longer
-month.rel <- month.rel %>%
-  ungroup() %>% 
-  left_join(monthOrder, by = "YEarMonth", keep = FALSE) %>% 
-  select(YEarMonth, months, month, year, everything()) %>% 
-  pivot_longer(-c(YEarMonth, months, month, year), names_to = "Sp_abb", values_to = "abun") %>% 
-  inner_join(Sp_abbre, by = "Sp_abb")
-  
-
-# find dom species
-dom_sp <- month.rel %>% 
-  group_by(Sp_abb) %>%
-  filter(abun > 0.5) %>% 
-  ungroup()
-
-
-
-
-mse <- mtet %>%
-  pivot_longer(-months, names_to = "Sp_abb", values_to = "abun") %>% 
-  group_by(months) %>% 
-  arrange(desc(abun)) %>% 
-  filter(abun > 0.01)
-
-mse %>% 
-  ungroup() %>% 
-  summarise(S = n_distinct(Sp_abb))
-
-
-
-## Overall months combined
-# summarise species to monthly aggre. and abbrev. species names after log10 transforming
-monthly.species <- Sp_only %>%
-  ungroup() %>% 
-  filter(Species != "Diatom") %>% 
-  mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
-  group_by(months, Sp_abb) %>% 
-  summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
-  semi_join(., mse, by = "Sp_abb")
-
-
-monthly.species %>% 
-  semi_join(., mse, by = "Sp_abb") %>% 
-  ungroup() %>% 
-  summarise(S = n_distinct(Sp_abb))
-
-# Pivot wider and change months column to rowname
-monthly.species_wide <- monthly.species %>% 
-  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
-              values_fill = list(averageDens = 0)) %>% 
-  remove_rownames %>% 
-  column_to_rownames(var="months")
-
-
-
-# whether to use relative abundance for NMDS or not
-# calculate relative abundances per month
-monthly.species_wide <- as.matrix(monthly.species_wide)
-rel_monthly.Sp <- make_relative(monthly.species_wide)
-
-
-# run NMDS (check to see what data are being used, rel abund or ave counts)
-NMDStestmonth <- metaMDS(monthly.species_wide, k = 3, autotransform = FALSE, trymax = 100)
-
-# check results
-NMDStestmonth
-# stressplot of NMDS results
-stressplot(NMDStestmonth)
-
-# End
-
-
-
-#### To plot NMDS using ggplot2 usign B. Cloete methods
-monthly.species_wide <- monthly.species %>% 
-  pivot_wider(names_from = Sp_abb, values_from = averageDens, 
-              values_fill = list(averageDens = 0))
-
-com <- monthly.species_wide[, 2:ncol(monthly.species_wide)]
-m_com <- as.matrix(com)
-
-NMDStestmonth <- metaMDS(m_com, k = 3, autotransform = FALSE, trymax = 100)
-
-data.scores <- as.data.frame(scores(NMDStestmonth))
-data.scores$site <- monthly.species_wide$months
-
-# extract NMDS scores (x and y coordinates)
-data.scores = as.data.frame(scores(nmds))
-
-# add columns to data frame
-data.scores$site = abun$SITE
-data.scores$veg = abun$VEG
-
-# ## Original try, with no Abrev. Kept for just incase 
-# testmonth <- Sp_only %>%
-#   ungroup() %>% 
-#   filter(Species != "Diatom") %>% 
-#   group_by(months, Species) %>% 
-#   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>%
-#   pivot_wider(names_from = Species, values_from = averageDens, 
-#               values_fill = list(averageDens = 0)) %>% 
-#   remove_rownames %>% 
-#   column_to_rownames(var="months")
-# 
-# 
-# NMDStestmonth <- metaMDS(testmonth, k = 3, autotransform = TRUE)
-# 
-# NMDStestmonth
-# stressplot(NMDStestmonth)
-
-
 ```
 
 
@@ -611,7 +419,8 @@ sp_sizes <- read.csv("Updated data from April 2020/Dominant sizes.csv", stringsA
 
 # subset dates for when both Ps and ADF were sampled ----------------------
 
-filter(all(c("After Drumfilter", "Primary sump") %in% Site))df <- read.csv("Oct 2020/2017.2019.OR/written_df_Oct.csv")
+df <- read.csv("Oct 2020/2017.2019.OR/written_df_Oct.csv") %>% 
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site))
 
 # fix date
 df$Date <- as.Date(df$Date, "%Y/%m/%d")
@@ -628,7 +437,7 @@ df$year <- as.factor(df$year)
 
 # create a df to use as a basis
 ps_adf <- df %>% 
-  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(Date >= "2019-02-01" & Date <= "2019-04-30") %>%
   filter(all(c("After Drumfilter", "Primary sump") %in% Site), Correct.Original != 0) %>% 
   filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
   filter(Species != "Diatom", 
@@ -671,6 +480,7 @@ total_sp_filter <- Sp.only_filter %>%
 
 # richness
 richness_filter <- Sp.only_filter %>% 
+  filter(Classification != "Various") %>% 
   group_by(Date, Site) %>% 
   summarise(S = n_distinct(Species))
 
@@ -833,7 +643,8 @@ totaL_density <- df %>%
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
   ungroup() %>% 
   group_by(Date, months, month, year) %>% 
-  summarise(meanCells = mean(sumC, na.rm = TRUE))
+  summarise(meanCells = mean(sumC, na.rm = TRUE)) %>% 
+  view()
   
 
 
@@ -957,7 +768,7 @@ sp_mat <- Sp_only %>%
 
 
 
-###############
+####### Community metrics ########
 
 
 #'*year-monthly metrics (1)*
@@ -1116,6 +927,10 @@ dailyDesc %>%
                             TRUE ~ "Other")) %>% 
   ggplot(., aes(x = total_biomass, y = J)) +
   geom_point(aes(col = season))
+
+
+
+### Dominant Species #####
 
 #'*This was added late*
 # Plot dominants with others greyed out 
@@ -1328,7 +1143,7 @@ bar_dinos <- Sp_only %>%
 
 
 
-# Dino-diatom changes ######
+# Dino-diatom changes ###
 
 # dino_dat <- Sp_only %>%
 #   #filter(Classification != "Dictyochophyceae") %>% 
@@ -1617,6 +1432,7 @@ ggplot(data = dailydesc_filter, aes(x = Date, y = total_biomass, col = Site)) +
 
 # Point with errorbar version
 Sp.only_filter %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
   group_by(months, month, year, YEarMonth, Site) %>% 
   summarise(mean_cells = mean(meanCells, na.rm = TRUE), 
             n_cells = n(),
@@ -1745,8 +1561,22 @@ Sp_only %>%
 
 # Calculate highest and lowest biomass months 
 # Highest and lowest (change arrange())
-Sp_only %>% 
-  group_by(months, month, year) %>% 
+Sp_only %>%
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  group_by(YEarMonth, season) %>% 
   summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
             monthlyN = n(),
             monthlySD = sd(meanCells, na.rm = TRUE), 
@@ -1754,14 +1584,150 @@ Sp_only %>%
   arrange(desc(monthlyMean)) %>% 
   view()
 
+##### New data (Sep - Dec) ####
+#### Biomass ####
+totaL_density %>%
+  #filter(Classification != "Dictyochophyceae") %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>%
+  group_by(YEarMonth, season) %>% 
+  summarise(monthlyMean = mean(meanCells, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(meanCells, na.rm = TRUE), 
+            monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
+  view()
 
-dailyDesc %>% 
-  arrange(desc(total_biomass)) %>% 
-  select(total_biomass, everything())
+march_feb_total <- nineTeenClean %>% 
+  group_by(Date, Time, months, month, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>%
+  filter(months %in% c("March", "February")) %>% 
+  group_by(Date, months, month, year) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE))
+
+march_feb_total <- df %>% 
+  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(Site == "Primary sump", 
+         Correct.Original != 0) %>% 
+  filter(Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea") %>% 
+  group_by(Date, Time, months, month, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, months, month, year) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  filter(months %in% c("March", "February"))
+
+
+# Kruskal W for March and Feb
+kruskal.test(sumC ~ months, data = march_feb_total)
+
+
+posthoc.kruskal.dunn.test(march_feb_total$sumC, march_feb_total$month, dist = "Tukey", p.adjust.methods = "bonferroni")
+
+####### Functional group differences ####
+
+pre_bloom <- nineTeenClean %>%
+  group_by(Date, Time, Classification, month, months, year) %>%
+  summarise(sumClas = sum(Correct.Original, na.rm = TRUE)) %>% 
+  #filter(Classification != "Dictyochophyceae") %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>%
+  group_by(YEarMonth, season, Classification) %>% 
+  summarise(monthlyMean = mean(sumClas, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(sumClas, na.rm = TRUE), 
+            monthlySE = sd(sumClas, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(bloom = case_when(YEarMonth == "Sep 2018" ~ "Pre", 
+                           YEarMonth == "Oct 2018" ~ "Pre",
+                           YEarMonth == "Nov 2018" ~ "Pre",
+                           YEarMonth == "Dec 2018" ~ "Bloom",
+                           YEarMonth == "Jan 2019" ~ "Bloom",
+                           YEarMonth == "Feb 2019" ~ "Bloom",
+                           YEarMonth == "Mar 2019" ~ "Bloom",
+                           YEarMonth == "Apr 2019" ~ "Bloom", 
+                           YEarMonth == "May 2019" ~ "Bloom", 
+                           YEarMonth == "Jun 2019" ~ "Bloom",
+                           YEarMonth == "Jul 2019" ~ "Post",
+                           YEarMonth == "Aug 2019" ~ "Post",
+                           YEarMonth == "Sep 2019" ~ "Post",
+                           YEarMonth == "Oct 2019" ~ "Post",
+                           YEarMonth == "Nov 2019" ~ "Post",
+                           YEarMonth == "Dec 2019" ~ "Post",
+                           TRUE ~ "Other")) %>% 
+  filter(bloom == "Post") %>% 
+  select(Classification, monthlyMean)
+
+
+# Kruskal W for March and Feb
+kruskal.test(monthlyMean ~ Classification, data = pre_bloom)
+
+
+posthoc.kruskal.dunn.test(march_feb_total$sumC, march_feb_total$month, dist = "Tukey", p.adjust.methods = "bonferroni")
 
 
 
-#### Richness ####
+##### Dominant species ####
+as.data.frame(
+  make_relative(
+    as.matrix(
+      Sp_only %>%
+        mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
+        ungroup() %>% 
+        filter(Species != "Diatom") %>% 
+        #mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+        group_by(YEarMonth, Species) %>% 
+        summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+        pivot_wider(names_from = Species, values_from = averageDens, 
+                    values_fill = list(averageDens = 0)) %>% 
+        remove_rownames %>% 
+        column_to_rownames(var="YEarMonth")))) %>% 
+  rownames_to_column(var = "YEarMonth") %>% 
+  pivot_longer(-YEarMonth, names_to = "Species", values_to = "abun") %>% 
+  ungroup() %>% 
+  left_join(monthOrder, by = "YEarMonth", keep = TRUE) %>% 
+  distinct() %>% 
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>%
+  filter(season == "Winter") %>% 
+  view()
+
+
+#### Richness (old) ####
 # Highest and lowest (change arrange())
 dailyDesc %>% 
   group_by(months, month, year, Season) %>% 
@@ -1851,7 +1817,62 @@ posthoc.kruskal.dunn.test(dailyDesc_apr$S, dailyDesc_apr$year, dist = "Tukey", p
 
 
 
-##### Evenness #####
+
+#### Richness (New Sep-Dec) ####
+
+richness_stats <- dailyDesc %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  group_by(YEarMonth, season) %>% 
+  summarise(monthlyRichness = mean(S, na.rm = TRUE), 
+            monthlyRichnessN = n(),
+            monthlyRichnessSD = sd(S, na.rm = TRUE), 
+            monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n()))
+
+spring_richness <- dailyDesc %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  filter(season == "Spring")
+
+
+# test using Kruskal
+kruskal.test(S ~ year, data = spring_richness)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(richness_stats$S, richness_stats$YEarMonth, p.adjust.method = "bonf")
+
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(richness_stats$S, richness_stats$season, dist = "Tukey", p.adjust.methods = "bonferroni")
+
+
+##### Evenness (old) #####
 dailyDesc_jul_J <- dailyDesc %>%
   group_by(months, month, year, Season) %>% 
   summarise(monthlyEvenness = mean(J, na.rm = TRUE), 
@@ -1892,6 +1913,74 @@ kruskal.test(shannon ~ year, data = dailyDesc)
 # Pairwise tests
 # ties are present so did not work
 pairwise.wilcox.test(dailyDesc$shannon, dailyDesc$year, p.adjust.method = "bonf")
+
+
+
+
+#### Evenness (new) #####
+dailyDesc %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  # group_by(YEarMonth, season) %>% 
+  # summarise(monthlyEvenness = mean(J, na.rm = TRUE), 
+  #           monthlyEvennessN = n(),
+  #           monthlyEvennessD = sd(J, na.rm = TRUE), 
+  #           monthlyEvennessSE = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
+  view()
+
+
+# Correlation between total cells and evenness
+J_dens_corr <- totaL_density %>% 
+  left_join(dailyDesc %>% 
+              select(Date, J), by = "Date")
+
+cor.test(J_dens_corr$meanCells, J_dens_corr$J, method = "spearman", alternative = "g")
+
+cor(J_dens_corr$meanCells, J_dens_corr$J, method = c("pearson", "kendall", "spearman"))
+
+
+#### Species diversity ####
+shannon_spring <- dailyDesc %>%
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  filter(season == "Spring")
+
+# test using Kruskal
+kruskal.test(shannon ~ year, data = shannon_spring)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(richness_stats$S, richness_stats$YEarMonth, p.adjust.method = "bonf")
+
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(richness_stats$S, richness_stats$season, dist = "Tukey", p.adjust.methods = "bonferroni")
+
 
 
 
@@ -2048,7 +2137,7 @@ FWC_classes_wide %>%
 
 posthoc.kruskal.dunn.test(FWC_classes_wide$Normal, FWC_classes_wide$year, dist = "Tukey", p.adjust.method = "bonferroni")
 
-#### Resources ####
+#### Resources (old) ####
 
 link <- nineTeenClean %>% 
   dplyr::select(Date, year)
@@ -2091,6 +2180,24 @@ count_cells_cor <- daily_counts %>%
   cor_test(count_times, totalCells, method = "spearman")
 
 
+
+
+#### Resources (new) ####
+
+
+
+
+
+# test using Kruskal
+kruskal.test(n ~ month, data = samples)
+
+# Pairwise tests
+# ties are present so did not work
+pairwise.wilcox.test(samples$n, samples$month, p.adjust.method = "bonf")
+
+
+# Posthoc using kruskal Dunn -> Works
+posthoc.kruskal.dunn.test(samples$n, samples$month, dist = "Tukey", p.adjust.methods = "bonferroni")
 
 ```
 
@@ -2942,6 +3049,200 @@ orditorp(NMDStestmonth_test,display="sites",cex=1.25,air=0.01)
 ```
 
 
+```{r NMDS}
+# # NMDS --------------------------------------------------------------------
+# 
+# # dataframe of species with their abbreviations
+# Sp_abbre <- Sp_only %>%
+#   ungroup() %>% 
+#   filter(Species != "Diatom") %>% 
+#   select(Species) %>% 
+#   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+#   distinct()
+# 
+# # finding relative abundance across total samples
+# te <- Sp_only %>%
+#   ungroup() %>% 
+#   filter(Species != "Diatom") %>% 
+#   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+#   group_by(Sp_abb) %>% 
+#   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+#   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+#               values_fill = list(averageDens = 0)) 
+# 
+# tet <- make_relative(as.matrix(te))
+# 
+# tet <- as.data.frame(tet)
+# 
+# se <- tet %>% 
+#   gather(key = "Sp_abb", value = "abun") %>% 
+#   arrange(desc(abun)) %>% 
+#   filter(abun > 0.003)
+# 
+# se %>% 
+#   summarise(S = n_distinct(Sp_abb))
+# 
+# 
+# ggplotly(ggplot(data = se, aes(x = reorder(Sp_abb, abun), y = abun)) +
+#   geom_col() +
+#   coord_flip())
+# 
+# 
+# # relative abudance per month
+# mte <- Sp_only %>%
+#   ungroup() %>% 
+#   filter(Species != "Diatom") %>% 
+#   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+#   group_by(months, Sp_abb) %>% 
+#   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+#   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+#               values_fill = list(averageDens = 0)) %>% 
+#   remove_rownames %>% 
+#   column_to_rownames(var="months")
+# 
+# mtet <- make_relative(as.matrix(mte))
+# 
+# mtet <- as.data.frame(mtet)%>% 
+#   rownames_to_column(var = "months")
+# 
+# # HAB species vs everything else relative abundance 
+# # Get relative abundance per month for each species
+# month.rel <- as.data.frame(
+#   make_relative(
+#   as.matrix(
+#   Sp_only %>%
+#   mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
+#   ungroup() %>% 
+#   filter(Species != "Diatom") %>% 
+#   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+#   group_by(YEarMonth, Sp_abb) %>% 
+#   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>% 
+#   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+#               values_fill = list(averageDens = 0)) %>% 
+#   remove_rownames %>% 
+#   column_to_rownames(var="YEarMonth")))) %>% 
+#   rownames_to_column(var = "YEarMonth")
+# 
+# # add month order into df
+# monthOrder <- Sp_only %>%
+#   mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
+#   ungroup() %>% 
+#   select(YEarMonth, months, month, year)
+# 
+# monthOrder$YEarMonth <- as.factor(monthOrder$YEarMonth)
+# 
+# # join month order, reorder columns and pivot longer
+# month.rel <- month.rel %>%
+#   ungroup() %>% 
+#   left_join(monthOrder, by = "YEarMonth", keep = FALSE) %>% 
+#   select(YEarMonth, months, month, year, everything()) %>% 
+#   pivot_longer(-c(YEarMonth, months, month, year), names_to = "Sp_abb", values_to = "abun") %>% 
+#   inner_join(Sp_abbre, by = "Sp_abb")
+#   
+# 
+# # find dom species
+# dom_sp <- month.rel %>% 
+#   group_by(Sp_abb) %>%
+#   filter(abun > 0.5) %>% 
+#   ungroup()
+# 
+# 
+# 
+# 
+# mse <- mtet %>%
+#   pivot_longer(-months, names_to = "Sp_abb", values_to = "abun") %>% 
+#   group_by(months) %>% 
+#   arrange(desc(abun)) %>% 
+#   filter(abun > 0.01)
+# 
+# mse %>% 
+#   ungroup() %>% 
+#   summarise(S = n_distinct(Sp_abb))
+# 
+# 
+# 
+# ## Overall months combined
+# # summarise species to monthly aggre. and abbrev. species names after log10 transforming
+# monthly.species <- Sp_only %>%
+#   ungroup() %>% 
+#   filter(Species != "Diatom") %>% 
+#   mutate(Sp_abb = abbreviate(Species, 5, strict = FALSE)) %>% 
+#   group_by(months, Sp_abb) %>% 
+#   summarise(averageDens = log10(mean(meanCells, na.rm = TRUE))) %>% 
+#   semi_join(., mse, by = "Sp_abb")
+# 
+# 
+# monthly.species %>% 
+#   semi_join(., mse, by = "Sp_abb") %>% 
+#   ungroup() %>% 
+#   summarise(S = n_distinct(Sp_abb))
+# 
+# # Pivot wider and change months column to rowname
+# monthly.species_wide <- monthly.species %>% 
+#   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+#               values_fill = list(averageDens = 0)) %>% 
+#   remove_rownames %>% 
+#   column_to_rownames(var="months")
+# 
+# 
+# 
+# # whether to use relative abundance for NMDS or not
+# # calculate relative abundances per month
+# monthly.species_wide <- as.matrix(monthly.species_wide)
+# rel_monthly.Sp <- make_relative(monthly.species_wide)
+# 
+# 
+# # run NMDS (check to see what data are being used, rel abund or ave counts)
+# NMDStestmonth <- metaMDS(monthly.species_wide, k = 3, autotransform = FALSE, trymax = 100)
+# 
+# # check results
+# NMDStestmonth
+# # stressplot of NMDS results
+# stressplot(NMDStestmonth)
+# 
+# # End
+# 
+# 
+# 
+# #### To plot NMDS using ggplot2 usign B. Cloete methods
+# monthly.species_wide <- monthly.species %>% 
+#   pivot_wider(names_from = Sp_abb, values_from = averageDens, 
+#               values_fill = list(averageDens = 0))
+# 
+# com <- monthly.species_wide[, 2:ncol(monthly.species_wide)]
+# m_com <- as.matrix(com)
+# 
+# NMDStestmonth <- metaMDS(m_com, k = 3, autotransform = FALSE, trymax = 100)
+# 
+# data.scores <- as.data.frame(scores(NMDStestmonth))
+# data.scores$site <- monthly.species_wide$months
+# 
+# # extract NMDS scores (x and y coordinates)
+# data.scores = as.data.frame(scores(nmds))
+# 
+# # add columns to data frame
+# data.scores$site = abun$SITE
+# data.scores$veg = abun$VEG
+# 
+# # ## Original try, with no Abrev. Kept for just incase 
+# # testmonth <- Sp_only %>%
+# #   ungroup() %>% 
+# #   filter(Species != "Diatom") %>% 
+# #   group_by(months, Species) %>% 
+# #   summarise(averageDens = mean(meanCells, na.rm = TRUE)) %>%
+# #   pivot_wider(names_from = Species, values_from = averageDens, 
+# #               values_fill = list(averageDens = 0)) %>% 
+# #   remove_rownames %>% 
+# #   column_to_rownames(var="months")
+# # 
+# # 
+# # NMDStestmonth <- metaMDS(testmonth, k = 3, autotransform = TRUE)
+# # 
+# # NMDStestmonth
+# # stressplot(NMDStestmonth)
+# 
+
+```
 
 
 
