@@ -419,8 +419,9 @@ sp_sizes <- read.csv("Updated data from April 2020/Dominant sizes.csv", stringsA
 
 # subset dates for when both Ps and ADF were sampled ----------------------
 
-df <- read.csv("Oct 2020/2017.2019.OR/written_df_Oct.csv") %>% 
-  filter(all(c("After Drumfilter", "Primary sump") %in% Site))
+df <- read.csv("Oct 2020/2017.2019.OR/written_df_Oct.csv")
+
+
 
 # fix date
 df$Date <- as.Date(df$Date, "%Y/%m/%d")
@@ -439,14 +440,50 @@ df$year <- as.factor(df$year)
 ps_adf <- df %>% 
   filter(Date >= "2019-02-01" & Date <= "2019-04-30") %>%
   filter(all(c("After Drumfilter", "Primary sump") %in% Site), Correct.Original != 0) %>% 
-  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
-  filter(Species != "Diatom", 
-         Classification != "Various", 
+  #filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  filter(#Species != "Diatom", 
+         #Classification != "Various", 
          Classification != "Ciliate", 
          Classification != "Spirotrichea", 
          Classification != "Litostomatea")
 
-
+# relationship between cell count and cells filtered between sites. 
+df %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-04-30") %>%
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site), Correct.Original != 0) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  filter(Species != "Diatom", 
+         #Classification != "Various", 
+         Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea") %>%
+  group_by(Date, Time, Site, months, month, YEarMonth, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = sumC, 
+              values_fill = list(meanC = 0)) %>% 
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
+  filter(delta != "NA", 
+         delta < 28140000, 
+         delta > 0) %>% 
+  ggplot(., aes(x = `Primary sump`, y = delta)) +
+  geom_point(aes(col = months)) +
+  geom_smooth(method = lm) +
+  scale_x_log10() +
+  scale_y_log10()
+  
+  
+  
+  group_by(Date, Site, months, month, YEarMonth, year) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Site, values_from = meanC, 
+              values_fill = list(meanC = 0)) %>% 
+  filter(`After Drumfilter` != 0) %>% 
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>%
+  filter(delta >= 0, 
+         delta < 2000000) %>% 
+  ggplot(., aes(x = `Primary sump`, y = delta)) +
+  geom_point(aes(col = months))
 
 
 
@@ -457,10 +494,10 @@ ps_adf$Site <-  factor(ps_adf$Site,
                        levels = c("Primary sump", "After Drumfilter"))
 
 
-# correct levels of FWC_mod classes
-ps_adf$FWC_mod <- as.factor(ps_adf$FWC_mod)
-ps_adf$FWC_mod <-  factor(ps_adf$FWC_mod, 
-                   levels = c("High","Medium", "Low", "Very Low", "Normal"))
+# # correct levels of FWC_mod classes
+# ps_adf$FWC_mod <- as.factor(ps_adf$FWC_mod)
+# ps_adf$FWC_mod <-  factor(ps_adf$FWC_mod, 
+#                    levels = c("High","Medium", "Low", "Very Low", "Normal"))
 
 
 
@@ -470,13 +507,26 @@ ps_adf$FWC_mod <-  factor(ps_adf$FWC_mod,
 # average counts for each species per day
 Sp.only_filter <- ps_adf %>% 
   group_by(Date, Site, Species, Classification, months, month, year) %>% 
-  summarise(meanCells = mean(Correct.Original, na.rm = TRUE))
+  summarise(meanCells = mean(Correct.Original, na.rm = TRUE)) %>% 
+  filter(Classification != "Various")
 
 # total biomass per day (all species added together per day)
-total_sp_filter <- Sp.only_filter %>% 
+total_sp_filter <- ps_adf %>%
+  group_by(Date, Site, Species, Classification, months, month, year) %>% 
+  summarise(meanCells = mean(Correct.Original, na.rm = TRUE)) %>% 
   group_by(Date, Site, months, month, year) %>% 
   summarise(total_biomass = sum(meanCells)) %>% 
   ungroup()
+
+
+total_sp_filter <- ps_adf %>% 
+  group_by(Date, Site, Species, Classification, months, month, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site, months, month, year) %>% 
+  summarise(total_biomass = mean(sumC, na.rm = TRUE)) %>% 
+  ungroup()
+
+
 
 # richness
 richness_filter <- Sp.only_filter %>% 
@@ -977,10 +1027,11 @@ month.rel <- as.data.frame(
                             TRUE ~ "Other")) %>% 
   filter(Species %in% c("Chaetoceros sp.", 
                         "Lingulodinium polyedra", 
-                        "Gonyaulax polygramma", 
+                        "Gonyaulax polygramma",
+                        "Prorocentrum minimum",
                         "Coscinodiscus granii"))
 
-month.rel$Species <- factor(month.rel$Species, levels = c("Chaetoceros sp.", "Gonyaulax polygramma", "Lingulodinium polyedra", "Coscinodiscus granii"))
+month.rel$Species <- factor(month.rel$Species, levels = c("Chaetoceros sp.", "Gonyaulax polygramma", "Lingulodinium polyedra","Prorocentrum minimum", "Coscinodiscus granii"))
 
 
 month.rel %>%
@@ -1220,9 +1271,11 @@ line_dinos <- nineTeenClean %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+line_dinos
 
 bar_dinos/line_dinos
+
+
 # NMDS --------------------------------------------------------------------
 
 
@@ -1415,19 +1468,19 @@ nineTeenClean %>%
 
 # DO NOT USE 
 # biomass
-ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = total_biomass, fill = Site)) +
-  geom_boxplot() +
-  xlab("Months") +
-  ylab("Cells/L") + 
-  labs(fill = "Site") +
-  ggtitle("Compare the difference in biomass of phytoplankton between the two sites, for three consecutive months") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+# ggplot(data = dailydesc_filter, aes(x = reorder(months, month), y = total_biomass, fill = Site)) +
+#   geom_boxplot() +
+#   xlab("Months") +
+#   ylab("Cells/L") + 
+#   labs(fill = "Site") +
+#   ggtitle("Compare the difference in biomass of phytoplankton between the two sites, for three consecutive months") +
+#   theme_classic() +
+#   theme(plot.title = element_text(hjust = 0.5))
 
 # Line version
 ggplot(data = dailydesc_filter, aes(x = Date, y = total_biomass, col = Site)) +
   geom_line(size = 1) +
-  facet_wrap(~reorder(months, month), ncol = 1, scales = "free_x")
+  facet_wrap(~reorder(months, month), ncol = 1, scales = "free")
 
 
 # Point with errorbar version
@@ -1449,7 +1502,23 @@ Sp.only_filter %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+total_sp_filter %>% 
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>% 
+  group_by(months, month, year, YEarMonth, Site) %>% 
+  summarise(mean_cells = mean(total_biomass, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(total_biomass, na.rm = TRUE), 
+            se_cells = sd(total_biomass, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point() +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
 
 
 ## Point errorbars can be done for the metrics  too if necessary ##
@@ -1536,6 +1605,10 @@ Sp.only_filter %>%
   theme(plot.title = element_text(hjust = 0.5))
 
 
+Sp.only_filter %>% 
+  group_by(Site, months, month, Species, Classification) %>% 
+  summarise(monthly.mean = mean(meanCells, na.rm = TRUE)) %>% 
+  filter(Species %in% top_species$Species)
 
 
 
@@ -1723,7 +1796,7 @@ as.data.frame(
                             month == "11" ~ "Spring",
                             month == "12" ~ "Summer",
                             TRUE ~ "Other")) %>%
-  filter(season == "Winter") %>% 
+  filter(season == "Spring") %>% 
   view()
 
 
@@ -2216,41 +2289,31 @@ Sp.only_filter %>%
 
 ### Total significance? 
 
-Sp.only_filter %>% 
-  group_by(Date, months, Site) %>% 
-  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  select(Site, mean_cells) %>% 
-  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+total_sp_filter %>% 
+  select(Site, total_biomass) %>% 
+  dunn_test(total_biomass ~ Site, p.adjust.method = "bonferroni") %>% 
+  view()
 
 
 # Feb signif
-Sp.only_filter %>% 
-  group_by(Date, months, Site) %>% 
+total_sp_filter %>% 
   filter(months == "February") %>% 
-  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  select(Site, mean_cells) %>% 
-  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+  select(Site, total_biomass) %>% 
+  dunn_test(total_biomass ~ Site, p.adjust.method = "bonferroni")
 
 
 # March signif
-Sp.only_filter %>% 
-  group_by(Date, months, Site) %>% 
+total_sp_filter %>% 
   filter(months == "March") %>% 
-  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  select(Site, mean_cells) %>% 
-  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+  select(Site, total_biomass) %>% 
+  dunn_test(total_biomass ~ Site, p.adjust.method = "bonferroni")
+
 
 # April signif
-Sp.only_filter %>% 
-  group_by(Date, months, Site) %>% 
+total_sp_filter %>% 
   filter(months == "April") %>% 
-  summarise(mean_cells = mean(meanCells, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  select(Site, mean_cells) %>% 
-  dunn_test(mean_cells ~ Site, p.adjust.method = "bonferroni")
+  select(Site, total_biomass) %>% 
+  dunn_test(total_biomass ~ Site, p.adjust.method = "bonferroni")
 
 
 
