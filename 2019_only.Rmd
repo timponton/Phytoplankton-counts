@@ -734,7 +734,9 @@ biomass.YM <- totaL_density %>%
   xlab("Months") +
   ylab("Cells/L") + 
   labs(col = "Season") +
-  ggtitle("Comparing the monthly mean phytoplankton counts over 16 consecutive months, with their standard error bars") +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE), 
+                     breaks = seq(0, 1000000, 100000)) +
+  #ggtitle("Comparing the monthly mean phytoplankton counts over 16 consecutive months, with their standard error bars") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -859,7 +861,8 @@ richness.YM <- dailyDesc %>%
   labs(col = "Season") +
   # ggtitle("Comparing the monthly species richness of phytoplankton counts between three consecutive years ") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
 
 richness.YM
 
@@ -915,7 +918,7 @@ shannon.YM <- dailyDesc %>%
                             month == "10" ~ "Spring",
                             month == "11" ~ "Spring",
                             month == "12" ~ "Summer",
-                            TRUE ~ "Other")) %>% 
+                            TRUE ~ "Other")) %>%
   group_by(YEarMonth, season) %>% 
   summarise(monthlyshannon = mean(shannon, na.rm = TRUE), 
             monthlyshannonN = n(),
@@ -927,10 +930,11 @@ shannon.YM <- dailyDesc %>%
   geom_errorbar(aes(col = season, ymin = monthlyshannon - monthlyshannonSE, ymax = monthlyshannon + monthlyshannonSE), width=0.2) +
   xlab("Months") +
   ylab("H'") +
-  labs(col = "Season") +
+  #labs(col = "Season") +
   # ggtitle("Comparing the monthly Shannon (H') Index of Diversity of phytoplankton between three consecutive years") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
 
 shannon.YM
 
@@ -1057,11 +1061,12 @@ ggplot() +
   facet_wrap(~Species, ncol = 1) +
   theme_classic() +
   xlab("Months") +
-  ylab("Relative abundance") + 
-  labs(col = "Phytoplankton species") +
-  ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  ylab("Relative Abundance") + 
+  labs(col = "Season") +
+  #ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"))
 
 # This might just be the same as above but for ggplotly
 ggplotly(ggplot() + 
@@ -1186,7 +1191,7 @@ species.list <- as.data.frame(
                                         Date >= "2019-03-01" & Date <= "2019-05-31" ~ "Autumn 2019", 
                                         Date >= "2019-06-01" & Date <= "2019-08-31" ~ "Winter 2019", 
                                         Date >= "2019-09-01" & Date <= "2019-11-30" ~ "Spring 2019",
-                                        Date >= "2019-12-01" & Date <= "2019-12-31" ~ "Summer 2019/2020",
+                                        Date >= "2019-12-01" & Date <= "2019-12-31" ~ "Summer 2019 (December only)",
                                         TRUE ~ "Other")) %>% 
   ungroup() %>% 
   filter(Species != "Diatom") %>% 
@@ -1205,10 +1210,10 @@ species.list <- as.data.frame(
   filter(Species %in% most_dom$Species) %>% 
   pivot_wider(names_from = season_exact, values_from = abun, 
               values_fill = list(abun = 0)) %>%
-  relocate(Species, `Spring 2018`,`Summer 2018/2019`, `Autumn 2019`, `Winter 2019`, `Spring 2019`, `Summer 2019/2020`)
+  relocate(Species, `Spring 2018`,`Summer 2018/2019`, `Autumn 2019`, `Winter 2019`, `Spring 2019`, `Summer 2019 (December only)`)
 
 formattable(species.list)
-
+write.csv(species.list, "Species_list.csv")
 
 # phyto class diversity --------------------------------------------------
 
@@ -1322,14 +1327,14 @@ line_dinos <- nineTeenClean %>%
   #arrange(desc(-monthlyMean)) %>% 
   ggplot(., aes(x = as.factor(YEarMonth), y = monthlyMean, group = Classification)) +
   geom_point(aes(col = Classification)) +
-  geom_path(aes(col = Classification)) +
+  geom_path(aes(col = Classification), size = 1.1) +
   geom_errorbar(aes(col = Classification, ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
   #facet_wrap(~Classification, ncol = 1) +
   scale_y_log10() +
   xlab("Months") +
-  ylab("Log10 Cells/L") + 
-  labs(col = "Functional group") +
-  ggtitle("Comparing the log10 monthly mean counts of phytoplankton functional groups between 16 consecutive months, with their standard error bars") +
+  ylab("Cells/L (Log10)") + 
+  labs(col = "Functional Group") +
+  #ggtitle("Comparing the log10 monthly mean counts of phytoplankton functional groups between 16 consecutive months, with their standard error bars") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -1498,11 +1503,12 @@ nineTeenClean %>%
   ggplot(.,aes(x = Date, y = meanC, group = 1)) +
   geom_point(aes(size = n, col = season)) +
   geom_line(aes(col = season)) +
-  scale_y_log10() +
+  scale_y_log10(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_x_date(date_breaks = "35 days") +
   xlab("Date") +
-  ylab("Log10 phytoplankton counts") + 
-  labs(col = "Season", size = "Samples collected") +
-  ggtitle("Relationship between Log10 Cells/L counted and number of samples collected per day over 16 consecutive months") +
+  ylab("Cells/L (Log10)") + 
+  labs(col = "Season", size = "Samples Collected") +
+  #ggtitle("Relationship between Log10 Cells/L counted and number of samples collected per day over 16 consecutive months") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 

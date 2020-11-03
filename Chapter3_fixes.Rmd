@@ -928,6 +928,8 @@ total_abun <- main_df %>%
 
 ```{r}
 
+pd <- position_dodge(width = 0.4)
+
 main_df %>% 
   group_by(Date, Time, months, month, Site) %>% 
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
@@ -939,9 +941,9 @@ main_df %>%
             sd_cells = sd(meanC, na.rm = TRUE), 
             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
@@ -949,16 +951,18 @@ main_df %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-total_abun %>% 
+abun_f <- total_abun %>% 
   group_by(months, month, Site) %>% 
   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(meanC, na.rm = TRUE), 
-            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>%
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
@@ -968,7 +972,7 @@ total_abun %>%
 
 
 ## Classification differences between Diatoms and Dino's
-main_df %>% 
+dinoDia <- main_df %>% 
   filter(Classification != "Various", 
          Species != "Diatom", 
          Classification != "Dictyochophyceae") %>% 
@@ -981,11 +985,13 @@ main_df %>%
             n_cells = n(),
             sd_cells = sd(meanC, na.rm = TRUE), 
             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
   facet_wrap(~Classification, scales = "free_y", ncol = 1) + 
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
@@ -993,7 +999,7 @@ main_df %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+dinoDia
 
 ## Dominant species
 
@@ -1005,7 +1011,7 @@ dominant_species <- main_df %>%
   ungroup() %>% 
   top_n(3)
 
-main_df %>% 
+main_sp <- main_df %>% 
   filter(Species %in% dominant_species$Species) %>% 
   group_by(Date, Site, Species, months, month) %>% 
   summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>%
@@ -1013,101 +1019,121 @@ main_df %>%
   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(meanC, na.rm = TRUE), 
-            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>%
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
-  facet_wrap(~Species, scales = "free_y", ncol = 1) + 
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  facet_wrap(~Species, scales = "free_y", ncol = 1) +
+  #scale_y_log10() +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"))
 
+main_sp
 
-main_df %>% 
-  filter(Species %in% dominant_species$Species) %>% 
-  group_by(Date, Site, Species, months, month) %>% 
-  summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>%
-  group_by(Site, Species, months, month) %>% 
-  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
-            n_cells = n(),
-            sd_cells = sd(meanC, na.rm = TRUE), 
-            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
-  view()
+# main_df %>% 
+#   filter(Species %in% dominant_species$Species) %>% 
+#   group_by(Date, Site, Species, months, month) %>% 
+#   summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>%
+#   group_by(Site, Species, months, month) %>% 
+#   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+#             n_cells = n(),
+#             sd_cells = sd(meanC, na.rm = TRUE), 
+#             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+#   view()
+# 
+# 
+# main_df %>% 
+#   filter(Species == "Gonyaulax polygramma") %>% 
+#   group_by(Date, Site, Species, months, month) %>% 
+#   summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>% 
+#   ggplot(., aes(x = Date, y = meanC, col = Site)) +
+#   geom_line() +
+#   scale_y_log10()
 
-
-main_df %>% 
-  filter(Species == "Gonyaulax polygramma") %>% 
-  group_by(Date, Site, Species, months, month) %>% 
-  summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>% 
-  ggplot(., aes(x = Date, y = meanC, col = Site)) +
-  geom_line() +
-  scale_y_log10()
-
-## Community metrics
+#### Community metrics ####
 
 # Richness
-daily_metrics %>%
+richness_f <- daily_metrics %>%
   mutate(months = months(Date), month = month(Date)) %>% 
   group_by(Site, months, month) %>% 
   summarise(mean_cells = mean(S, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(S, na.rm = TRUE), 
             se_cells = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) + 
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
   xlab("Months") +
-  ylab("Species Richness") + 
+  ylab("Richness") + 
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none", 
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
 
 
 # Evenness
-daily_metrics %>%
+evenness_f <- daily_metrics %>%
   mutate(months = months(Date), month = month(Date)) %>% 
   group_by(Site, months, month) %>% 
   summarise(mean_cells = mean(J, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(J, na.rm = TRUE), 
             se_cells = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) + 
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
   xlab("Months") +
-  ylab("Pielou's Evenness") + 
+  ylab("J'") + 
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
 
 
 # Shannon diversity
-daily_metrics %>%
+shannon_f <- daily_metrics %>%
   mutate(months = months(Date), month = month(Date)) %>% 
   group_by(Site, months, month) %>% 
   summarise(mean_cells = mean(shannon, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(shannon, na.rm = TRUE), 
             se_cells = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point() +
+  geom_point(position = pd) +
 #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) + 
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
   xlab("Months") +
-  ylab("Shannon-Weiner") + 
+  ylab("H'") + 
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none")
 
+abun_f
+richness_f/evenness_f/shannon_f
+dinoDia
+main_sp
 ```
 
 
