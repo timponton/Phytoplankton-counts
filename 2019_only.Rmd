@@ -854,7 +854,7 @@ richness.YM <- dailyDesc %>%
             monthlyRichnessSE = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = as.factor(YEarMonth), y = monthlyRichness, group = 1)) +
   geom_point(size = 1, aes(col = season)) +
-  geom_line(size = 0.5) +
+  #geom_line(size = 0.5) +
   geom_errorbar(aes(col = season, ymin = monthlyRichness - monthlyRichnessSE, ymax = monthlyRichness + monthlyRichnessSE), width=0.2) +
   xlab("Months") +
   ylab("Richness") + 
@@ -890,7 +890,7 @@ evenness.YM <- dailyDesc %>%
             monthlyEvennessSE = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = as.factor(YEarMonth), y = monthlyEvenness, group = 1)) +
   geom_point(size = 1, aes(col = season)) +
-  geom_line(size = 0.5) +
+  #geom_line(size = 0.5) +
   geom_errorbar(aes(col = season,ymin = monthlyEvenness - monthlyEvennessSE, ymax = monthlyEvenness + monthlyEvennessSE), width=0.2) + 
   xlab("Months") +
   ylab("J'") +
@@ -926,7 +926,7 @@ shannon.YM <- dailyDesc %>%
             monthlyshannonSE = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
   ggplot(., aes(x = as.factor(YEarMonth), y = (monthlyshannon), group = 1)) +
   geom_point(size = 1, aes(col = season)) +
-  geom_line(size = 0.5) +
+  #geom_line(size = 0.5) +
   geom_errorbar(aes(col = season, ymin = monthlyshannon - monthlyshannonSE, ymax = monthlyshannon + monthlyshannonSE), width=0.2) +
   xlab("Months") +
   ylab("H'") +
@@ -1035,38 +1035,102 @@ month.rel <- as.data.frame(
                         "Lingulodinium polyedra", 
                         "Gonyaulax polygramma",
                         "Prorocentrum minimum",
-                        "Coscinodiscus granii"))
+                        "Coscinodiscus granii")) %>% 
+  mutate(abun = abun*100) %>% 
+  mutate(year_chopped = str_sub(year, 3)) %>% 
+  mutate(ym = paste(abbreviate(months, minlength = 3, strict = TRUE, use.classes = FALSE), year_chopped))
+
+month.rel$ym <- as.factor(month.rel$ym)
 
 
+month.rel %>% 
+  mutate(ym = paste(abbreviate(months, minlength = 2, strict = TRUE), year_chopped)) %>% 
+  select(YEarMonth.y, ym) %>% 
+  distinct()
+
+month.rel$ym <- factor(month.rel$ym, levels = c("Sep 18", "Oct 18", "Nov 18", "Dec 18", 
+                                                   "Jan 19", "Feb 19", "Mar 19", "Apr 19", "May 19",
+                                                   "Jun 19", "Jul 19", "Aug 19", "Sep 19", "Oct 19", "Nov 19",
+                                                   "Dec 19"))
+
+month.rel$ym
 
 
 month.rel$Species <- factor(month.rel$Species, levels = c("Chaetoceros sp.", "Gonyaulax polygramma", "Lingulodinium polyedra","Prorocentrum minimum", "Coscinodiscus granii"))
 
 
-month.rel %>%
-  #pivot_longer(-YEarMonth, names_to = "Species", values_to = "speAb") %>% 
-  group_by(year, season) %>% 
-  summarise(summing = sum(abun))
+# month.rel %>%
+#   #pivot_longer(-YEarMonth, names_to = "Species", values_to = "speAb") %>% 
+#   group_by(year, season) %>% 
+#   summarise(summing = sum(abun))
 
-
+warnings()
 
 # plot yearly fluctuations for each of the top species
 ggplot() + 
   geom_point(data = month.rel, 
-             aes(x = YEarMonth.y, 
+             aes(x = ym, 
                  y = abun, group = 1, col = season), size = 1) +
   geom_line(data = month.rel, 
-            aes(x = YEarMonth.y, 
+            aes(x = ym, 
                 y = abun, group = 1, col = season), size = 1) +
   facet_wrap(~Species, ncol = 1) +
   theme_classic() +
   xlab("Months") +
-  ylab("Relative Abundance") + 
+  ylab("Relative Abundance (%)") + 
   labs(col = "Season") +
   #ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
         strip.text.x = element_text(face = "italic"))
+
+# plot yearly fluctuations for Diatoms
+ggplot() + 
+  geom_point(data = month.rel %>% 
+               filter(Species %in% c("Chaetoceros sp.", "Coscinodiscus granii")), 
+             aes(x = ym, 
+                 y = abun, group = 1, col = season), size = 1) +
+  geom_line(data = month.rel %>% 
+               filter(Species %in% c("Chaetoceros sp.", "Coscinodiscus granii")), 
+            aes(x = ym, 
+                y = abun, group = 1, col = season), size = 1) +
+  facet_wrap(~Species, ncol = 1) +
+  theme_classic() +
+  xlab("Months") +
+  ylab("Relative Abundance (%)") + 
+  labs(col = "Season") +
+  #ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"), 
+        text=element_text(size=15))
+
+
+# plot yearly fluctuations for Dinoflagellates
+ggplot() + 
+  geom_point(data = month.rel %>% 
+               filter(Species %in% c("Gonyaulax polygramma", "Lingulodinium polyedra","Prorocentrum minimum")), 
+             aes(x = YEarMonth.y, 
+                 y = abun, group = 1, col = season), size = 1) +
+  geom_line(data = month.rel %>% 
+               filter(Species %in% c("Gonyaulax polygramma", "Lingulodinium polyedra","Prorocentrum minimum")), 
+            aes(x = YEarMonth.y, 
+                y = abun, group = 1, col = season), size = 1) +
+  facet_wrap(~Species, ncol = 1) +
+  theme_classic() +
+  xlab("Months") +
+  ylab("Relative Abundance (%)") + 
+  labs(col = "Season") +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  #ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"), 
+        text=element_text(size=15))
+
+
+
+
 
 # This might just be the same as above but for ggplotly
 ggplotly(ggplot() + 
@@ -1086,6 +1150,11 @@ ggplotly(ggplot() +
   ggtitle("Fluctuations in the relative abundances of dominant phytoplankton species on a monthly aggregate") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)))
+
+
+
+
+
 
 ## Random working out
 
