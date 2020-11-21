@@ -930,26 +930,33 @@ total_abun <- main_df %>%
 
 pd <- position_dodge(width = 0.4)
 
-main_df %>% 
-  group_by(Date, Time, months, month, Site) %>% 
-  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
-  group_by(Date, months, month, Site) %>% 
-  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
-  group_by(months, month, Site) %>% 
-  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
-            n_cells = n(),
-            sd_cells = sd(meanC, na.rm = TRUE), 
-            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
-  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
-  geom_point(position = pd) +
-#  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
-  xlab("Months") +
-  ylab("Cells/L") + 
-  labs(fill = "Site") +
-#  ggtitle("") +
-  theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+# main_df %>% 
+#   group_by(Date, Time, months, month, Site) %>% 
+#   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+#   group_by(Date, months, month, Site) %>% 
+#   summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+#   group_by(months, month, Site) %>% 
+#   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+#             n_cells = n(),
+#             sd_cells = sd(meanC, na.rm = TRUE), 
+#             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+#   ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+#   geom_point(position = pd) +
+# #  geom_line() +
+#   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+#   scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE), 
+#                      breaks = seq(0, 1000000, 200000)) +
+#   xlab("Months") +
+#   ylab("Cells/L") + 
+#   labs(fill = "Site") +
+# #  ggtitle("") +
+#   theme_classic() +
+#   theme(plot.title = element_text(hjust = 0.5), 
+#         text=element_text(size=17), 
+# axis.text.x = element_text(face="bold", 
+#                            size=14),
+# axis.text.y = element_text(face="bold", 
+#                            size=14))
 
 abun_f <- total_abun %>% 
   group_by(months, month, Site) %>% 
@@ -962,13 +969,19 @@ abun_f <- total_abun %>%
   geom_point(position = pd) +
 #  geom_line() +
   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
-  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE), 
+                     breaks = seq(0, 1000000, 200000)) +
   xlab("Months") +
   ylab("Cells/L") + 
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 
 ## Classification differences between Diatoms and Dino's
@@ -997,7 +1010,12 @@ dinoDia <- main_df %>%
   labs(fill = "Site") +
 #  ggtitle("") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 dinoDia
 
@@ -1034,7 +1052,12 @@ main_sp <- main_df %>%
 #  ggtitle("") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
-        strip.text.x = element_text(face = "italic"))
+        strip.text.x = element_text(face = "italic"), 
+        text=element_text(size=17),
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 main_sp
 
@@ -1082,7 +1105,10 @@ richness_f <- daily_metrics %>%
         legend.position = "none", 
         axis.title.x=element_blank(),
         axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
+        axis.ticks.x=element_blank(), 
+        text=element_text(size=17),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 
 # Evenness
@@ -1106,7 +1132,10 @@ evenness_f <- daily_metrics %>%
   theme(plot.title = element_text(hjust = 0.5),
         axis.title.x=element_blank(),
         axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
+        axis.ticks.x=element_blank(), 
+        text=element_text(size=17),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 
 # Shannon diversity
@@ -1128,12 +1157,19 @@ shannon_f <- daily_metrics %>%
 #  ggtitle("") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
-        legend.position = "none")
+        legend.position = "none", 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 abun_f
 richness_f/evenness_f/shannon_f
 dinoDia
 main_sp
+
+
 ```
 
 
