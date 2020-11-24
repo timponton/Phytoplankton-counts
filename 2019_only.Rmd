@@ -106,8 +106,7 @@ maximum_fwc <- reds %>%
   select(Date, FWC_mod, maxc)
 
 # Join to basis df
-nineTeenClean <- nineTeen %>% 
-  left_join(maximum_fwc, by = "Date")
+nineTeenClean <- nineTeen
 
  #Species epr functional group 
 nineTeenClean %>% 
@@ -738,7 +737,7 @@ biomass.YM$ym <- factor(biomass.YM$ym, levels = c("Sep 18", "Oct 18", "Nov 18", 
                                                 "Jan 19", "Feb 19", "Mar 19", "Apr 19", "May 19",
                                                 "Jun 19", "Jul 19", "Aug 19", "Sep 19", "Oct 19", "Nov 19",
                                                 "Dec 19"))
-# slected are 
+# selected are 
 smaller <- ggplot(biomass.YM, aes(x = ym, y = monthlyMean, group = 1)) +
   geom_point(aes(col = season), size = 2.5) +
   geom_path(size = 1) +
@@ -1477,16 +1476,29 @@ line_dinos <- nineTeenClean %>%
                             month == "11" ~ "Spring",
                             month == "12" ~ "Summer",
                             TRUE ~ "Other")) %>%
-  group_by(YEarMonth, season, Classification) %>% 
+  group_by(YEarMonth, season, Classification, year, months, month) %>% 
   summarise(monthlyMean = mean(sumClas, na.rm = TRUE), 
             monthlyN = n(),
             monthlySD = sd(sumClas, na.rm = TRUE), 
-            monthlySE = sd(sumClas, na.rm = TRUE)/sqrt(n())) %>% 
-  #arrange(desc(-monthlyMean)) %>% 
-  ggplot(., aes(x = as.factor(YEarMonth), y = monthlyMean, group = Classification)) +
+            monthlySE = sd(sumClas, na.rm = TRUE)/sqrt(n())) %>%
+  mutate(year_chopped = str_sub(year, 3)) %>% 
+  mutate(ym = paste(abbreviate(months, minlength = 3, strict = TRUE, use.classes = FALSE), year_chopped))
+
+
+line_dinos$ym <- as.factor(line_dinos$ym)
+
+line_dinos$ym <- factor(line_dinos$ym, levels = c("Sep 18", "Oct 18", "Nov 18", "Dec 18",
+                                                "Jan 19", "Feb 19", "Mar 19", "Apr 19", "May 19",
+                                                "Jun 19", "Jul 19", "Aug 19", "Sep 19", "Oct 19", "Nov 19",
+                                                "Dec 19"))
+
+
+
+ggplot(line_dinos, aes(x = ym, y = monthlyMean, group = Classification)) +
   geom_point(aes(col = Classification)) +
   geom_path(aes(col = Classification), size = 1.1) +
   geom_errorbar(aes(col = Classification, ymin = monthlyMean - monthlySE, ymax = monthlyMean + monthlySE), width=0.2) +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
   #facet_wrap(~Classification, ncol = 1) +
   scale_y_log10() +
   xlab("Months") +
@@ -1494,7 +1506,12 @@ line_dinos <- nineTeenClean %>%
   labs(col = "Functional Group") +
   #ggtitle("Comparing the log10 monthly mean counts of phytoplankton functional groups between 16 consecutive months, with their standard error bars") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 line_dinos
 
@@ -1662,16 +1679,78 @@ nineTeenClean %>%
   geom_point(aes(size = n, col = season)) +
   geom_line(aes(col = season)) +
   scale_y_log10(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  scale_x_date(date_breaks = "35 days") +
+  scale_x_date(date_labels = "%b%y", date_breaks = "1 month", guide = guide_axis(n.dodge = 2)) +
   xlab("Date") +
   ylab("Cells/L (Log10)") + 
   labs(col = "Season", size = "Samples Collected") +
   #ggtitle("Relationship between Log10 Cells/L counted and number of samples collected per day over 16 consecutive months") +
   theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 
 
+samples <- df %>% 
+  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(Site == "Primary sump", 
+         Correct.Original != 0) %>% 
+  filter(Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea") %>% 
+  group_by(Date, Time, months, month, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  distinct() %>% 
+  group_by(Date, months, month, year) %>%
+  count() %>% 
+  arrange(desc(n))
 
+
+df %>% 
+  filter(Date >= "2018-09-01" & Date <= "2019-12-31") %>%
+  filter(Site == "Primary sump", 
+         Correct.Original != 0) %>% 
+  filter(Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea") %>% 
+  group_by(Date, Time, months, month, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  distinct() %>% 
+  group_by(Date, months, month, year) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  left_join(samples, by = c("Date", "month", "months", "year"), keep = FALSE) %>%
+  mutate(YEarMonth = as.yearmon(paste(year, month), "%Y %m")) %>%
+  mutate(season = case_when(month == "1" ~ "Summer",
+                            month == "2" ~ "Summer",
+                            month == "3" ~ "Autumn",
+                            month == "4" ~ "Autumn",
+                            month == "5" ~ "Autumn",
+                            month == "6" ~ "Winter",
+                            month == "7" ~ "Winter",
+                            month == "8" ~ "Winter",
+                            month == "9" ~ "Spring",
+                            month == "10" ~ "Spring",
+                            month == "11" ~ "Spring",
+                            month == "12" ~ "Summer",
+                            TRUE ~ "Other")) %>% 
+  ggplot(.,aes(x = Date, y = meanC, group = 1)) +
+  geom_point(aes(size = n, col = season)) +
+  geom_line(aes(col = season)) +
+  scale_y_log10(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_x_date(date_labels = "%b%y", date_breaks = "1 month", guide = guide_axis(n.dodge = 2)) +
+  xlab("Date") +
+  ylab("Cells/L (Log10)") + 
+  labs(col = "Season", size = "Samples Collected") +
+  #ggtitle("Relationship between Log10 Cells/L counted and number of samples collected per day over 16 consecutive months") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
 ```
 
 
@@ -2022,7 +2101,7 @@ as.data.frame(
                             month == "11" ~ "Spring",
                             month == "12" ~ "Summer",
                             TRUE ~ "Other")) %>%
-  filter(season == "Spring") %>% 
+  #filter(season == "Spring") %>% 
   view()
 
 
@@ -2291,7 +2370,7 @@ Sp_only %>%
             monthlySD = sd(meanCells, na.rm = TRUE), 
             monthlySE = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>% 
   arrange(desc(monthlyMean)) %>% 
-  filter(months == "April") %>% 
+  #filter(months == "March") %>% 
   view()
 
 feb_18 <- Sp_only %>% 

@@ -1,0 +1,539 @@
+---
+title: "Just similar sample amounts Chapter 3"
+author: "Tim Ponton"
+date: "24/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+
+ps_adf <- df %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-04-30") %>%
+  filter(Date %in% correct_dates$Date) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  #filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  filter(#Species != "Diatom", 
+         #Classification != "Various", 
+         Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea")
+
+ps_adf$Site <- as.factor(ps_adf$Site)
+ps_adf$Site <-  factor(ps_adf$Site, 
+                       levels = c("Primary sump", "After Drumfilter"))
+
+
+## Dates when Sites had similar samples
+small_diff_dates <- ps_adf %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
+  select(Date, Time, Site) %>% 
+  distinct() %>% 
+  group_by(Date, Site) %>% 
+  count() %>% 
+  pivot_wider(names_from = Site, values_from = n, values_fill = list(n = 0)) %>%
+  mutate(differ = abs(`After Drumfilter` - `Primary sump`)) %>% 
+  filter(`After Drumfilter` > 1, 
+         `Primary sump` > 1, 
+         differ < 3)
+
+small_diff_dates %>% 
+  pivot_longer(-c(differ, Date), names_to = "Site", values_to = "n") %>% 
+  select(-differ) %>% 
+  ggplot(., aes(x = Date, y = n, fill = Site)) +
+  geom_col(position = "Dodge")
+
+ps_adf %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
+  select(Date, Time, Site) %>% 
+  distinct() %>% 
+  group_by(Date, Site) %>% 
+  count() %>% 
+  ggplot(., aes(x = Date, y = n, fill = Site)) +
+  geom_col(position = "Dodge")
+
+
+## Number of samples per month
+ps_adf %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
+  select(Date, Time, Site, month, months) %>% 
+  distinct() %>% 
+  group_by(Site, months) %>% 
+  count()
+
+
+# Dates when PS > ADF using above df dates
+ps_bigger_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>% 
+  select(Date, mean_cells, Site) %>% 
+  pivot_wider(names_from = Site, values_from = mean_cells) %>% 
+  filter(`After Drumfilter` < `Primary sump`)
+
+
+# Dates when significant difference was seen 
+small_date_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>% 
+  select(Site, Correct.Original, Date) %>% 
+  group_by(Date) %>% 
+  dunn_test(Correct.Original ~ Site, p.adjust.method = "bonferroni") %>% 
+  select(Date, p.adj.signif) %>% 
+  mutate(refe = 5000000)
+
+
+# Dates when sig diff was seen inclduing times 
+small_time_date_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC, Date, Time) %>% 
+  group_by(Date) %>% 
+  dunn_test(sumC ~ Site, p.adjust.method = "bonferroni") %>% 
+  select(Date, p.adj.signif, p.adj, statistic) %>% 
+  mutate(refe = 1700000)
+
+
+
+# Daily differences with ste and sig diff symbols
+daily_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n()))
+
+ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
+  ggplot(., aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+  #geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.4, position = pd) +
+  theme_classic()
+
+ggplotly(ggplot() +
+  geom_point(data = daily_sig, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+#  geom_line() +
+  geom_errorbar(data = daily_sig, aes(x = Date, y = mean_cells, ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(data = small_time_date_sig %>% 
+              filter(p.adj.signif != "ns"), aes(x = Date, y = refe, label = p.adj.signif)))
+
+
+# Graph represents the delta between Sites with sig symbols included
+ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>% 
+  select(Date, mean_cells, Site) %>% 
+  pivot_wider(names_from = Site, values_from = mean_cells) %>% 
+  left_join(small_time_date_sig, by = "Date") %>% 
+  mutate(delta = `Primary sump`-`After Drumfilter`) %>%
+  ggplot(., aes(x = Date, y = delta)) +
+  geom_point() +
+  geom_line() +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(label = p.adj.signif, vjust = -1.5)) +
+  theme_classic()
+  
+
+
+
+## Time period that can be used to look at smaller values
+ps_adf %>% 
+  filter(Date >= "2019-02-14" & Date <= "2019-03-12", 
+         Site == "Primary sump") %>% 
+  group_by(Date, dateTime, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>%
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  left_join(small_time_date_sig, by = "Date") %>% 
+  ggplot(., aes(x = Date, y = meanC)) +
+  geom_line() +
+  geom_point() +
+  geom_text(aes(label = p.adj.signif, vjust = 1))
+
+
+
+# Check specific days with multiple sampling if there was sigfnicant 
+twentyThirdFebTimes <- ps_adf %>% 
+  filter(Date == "2019-02-25") %>% 
+  select(Time, Site) %>% 
+  distinct() %>%
+  mutate(dum = 1) %>% 
+  pivot_wider(names_from = Site, values_from = dum, values_fill = list(dum = 0)) %>% 
+  filter(`After Drumfilter` > 0, 
+         `Primary sump` > 0)
+
+
+ps_adf %>% 
+  filter(Date == "2019-02-25") %>%
+  filter(Time %in% twentyThirdFebTimes$Time) %>% 
+  group_by(Time, Site, Species) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>%
+  group_by(Time, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
+  ggplot(., aes(x = Time, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.4, position = pd)
+
+ps_adf %>% 
+  filter(Date == "2019-02-25") %>% 
+  view()
+
+```
+
+## Plot data ###
+
+```{r}
+
+pd <- position_dodge(width = 0.4)
+
+here <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>% 
+  group_by(Date, Site, Time, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE))
+
+ps_adf %>% 
+  ungroup() %>% 
+  filter(Date %in% small_date_sig$Date) %>% 
+  select(Site, Date, Time) %>% 
+  distinct() %>% 
+  group_by(Site, Date) %>% 
+  count() %>% 
+  ggplot(.,aes(x = Date, y = n, fill = Site)) +
+  geom_col(position = "Dodge")
+
+
+abun_f <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>% 
+  group_by(Date, Site, Time, months, month) %>% 
+  summarise(meanC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(months, month, Site) %>% 
+  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanC, na.rm = TRUE), 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>%
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE), 
+                     breaks = seq(0, 1000000, 200000)) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+abun_f
+## Classification differences between Diatoms and Dino's
+dinoDia <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>%
+  filter(Classification != "Various", 
+         Species != "Diatom", 
+         Classification != "Dictyochophyceae") %>%
+  group_by(Date, Site, Time, months, month, Classification) %>% 
+  summarise(meanC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Classification, months, month, Site) %>% 
+  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanC, na.rm = TRUE), 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  facet_wrap(~Classification, scales = "free_y", ncol = 1) + 
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+dinoDia
+
+## Dominant species
+
+dominant_species <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>% 
+  filter(Classification != "Various") %>% 
+  group_by(Species) %>% 
+  summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>% 
+  arrange(desc(meanC)) %>%
+  ungroup() %>% 
+  top_n(3)
+
+main_sp <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>% 
+  filter(Species %in% dominant_species$Species) %>% 
+  group_by(Date, Site, Species, months, month) %>% 
+  summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>%
+  group_by(Site, Species, months, month) %>% 
+  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanC, na.rm = TRUE), 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>%
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  facet_wrap(~Species, scales = "free_y", ncol = 1) +
+  #scale_y_log10() +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        strip.text.x = element_text(face = "italic"), 
+        text=element_text(size=17),
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+main_sp
+
+# main_df %>% 
+#   filter(Species %in% dominant_species$Species) %>% 
+#   group_by(Date, Site, Species, months, month) %>% 
+#   summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>%
+#   group_by(Site, Species, months, month) %>% 
+#   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+#             n_cells = n(),
+#             sd_cells = sd(meanC, na.rm = TRUE), 
+#             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+#   view()
+# 
+# 
+# main_df %>% 
+#   filter(Species == "Gonyaulax polygramma") %>% 
+#   group_by(Date, Site, Species, months, month) %>% 
+#   summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>% 
+#   ggplot(., aes(x = Date, y = meanC, col = Site)) +
+#   geom_line() +
+#   scale_y_log10()
+
+#### Community metrics ####
+
+# Richness
+richness_f <- daily_metrics %>%
+  mutate(months = months(Date), month = month(Date)) %>% 
+  group_by(Site, months, month) %>% 
+  summarise(mean_cells = mean(S, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(S, na.rm = TRUE), 
+            se_cells = sd(S, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
+  xlab("Months") +
+  ylab("Richness") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none", 
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(), 
+        text=element_text(size=17),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+
+# Evenness
+evenness_f <- daily_metrics %>%
+  mutate(months = months(Date), month = month(Date)) %>% 
+  group_by(Site, months, month) %>% 
+  summarise(mean_cells = mean(J, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(J, na.rm = TRUE), 
+            se_cells = sd(J, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
+  xlab("Months") +
+  ylab("J'") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(), 
+        text=element_text(size=17),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+
+# Shannon diversity
+shannon_f <- daily_metrics %>%
+  mutate(months = months(Date), month = month(Date)) %>% 
+  group_by(Site, months, month) %>% 
+  summarise(mean_cells = mean(shannon, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(shannon, na.rm = TRUE), 
+            se_cells = sd(shannon, na.rm = TRUE)/sqrt(n())) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>%
+  ggplot(., aes(x = reorder(months, month), y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) + 
+  xlab("Months") +
+  ylab("H'") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        legend.position = "none", 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=14),
+axis.text.y = element_text(face="bold", 
+                           size=14))
+
+abun_f
+richness_f/evenness_f/shannon_f
+dinoDia
+main_sp
+
+
+```
+
+
+
+## Stats on data ####
+
+```{r}
+
+## Total abundance
+
+total_abun <- ps_adf %>%
+  filter(Date %in% small_date_sig$Date) %>% 
+  group_by(Date, Site, Time, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE))
+
+total_abun %>% 
+  ungroup() %>% 
+  filter(months == "March") %>% 
+  select(Site, sumC) %>% 
+  dunn_test(sumC ~ Site, p.adjust.method = "bonferroni")
+
+# Compare on a large scale between sites
+main_df %>% 
+  group_by(Date, Time, months, month, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site, months, month) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  group_by(Site) %>% 
+  summarise(mean_cells = mean(meanC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(meanC, na.rm = TRUE), 
+            se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
+  ggplot(., aes(x = Site, y = mean_cells, col = Site, group = Site)) +
+  geom_point() +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
+  xlab("Months") +
+  ylab("Cells/L") + 
+  labs(fill = "Site") +
+#  ggtitle("") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+## Functional group differences 
+total_abun %>% 
+  filter(Classification != "Various", 
+         Species != "Diatom", 
+         Classification != "Dictyochophyceae") %>% 
+  group_by(Date, Time, Site, months, month, Classification) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site, months, month, Classification) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  group_by(Classification, months, month, Site) %>% 
+  filter(Classification == "Dinoflagellate", 
+         months == "April") %>%
+  ungroup() %>% 
+  dunn_test(meanC ~ Site, p.adjust.method = "bonferroni")
+
+
+## Dominant Species
+main_df %>% 
+  filter(Species %in% dominant_species$Species) %>% 
+  group_by(Date, Site, Species, months, month) %>% 
+  summarise(meanC = mean(Correct.Original, na.rm = TRUE)) %>% 
+  filter(Species == "Lingulodinium polyedra", 
+         months == "February") %>% 
+  ungroup() %>% 
+  dunn_test(meanC ~ Site, p.adjust.method = "bonferroni")
+
+
+## Community metrics
+
+daily_metrics %>%
+  mutate(months = months(Date), month = month(Date)) %>% 
+  ungroup() %>% 
+  #filter(months == "February") %>% 
+  dunn_test(shannon ~ Site, p.adjust.method = "bonferroni")
+
+```
+
+
+
+
+
+
+
+
+
+
+

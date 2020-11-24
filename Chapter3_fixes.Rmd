@@ -81,15 +81,56 @@ df %>%
               values_fill = list(meanC = 0)) %>% 
   mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
   filter(delta != "NA", 
-         delta < 28140000, 
-         delta > 0) %>% 
+         delta < 28140000,
+         `Primary sump` < 5000000,
+         delta > 0, 
+         `After Drumfilter` > 0) %>%
+  left_join(sig_dates, by = "Date") %>% 
   ggplot(., aes(x = `Primary sump`, y = delta)) +
-  geom_point(aes(col = months)) +
+  geom_point(aes(col = p.adj.signif)) +
   geom_smooth(method = lm) +
   scale_x_log10() +
   scale_y_log10()
   
-  
+
+## different signficance levels (23 Nov)
+
+sig_dates <- ps_adf %>% 
+  #filter(Date == "2019-03-02") %>% 
+  select(Site, Correct.Original, Date) %>% 
+  group_by(Date) %>% 
+  dunn_test(Correct.Original ~ Site, p.adjust.method = "bonferroni") %>% 
+  select(Date, p.adj.signif)
+
+df %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-04-30") %>%
+  filter(all(c("After Drumfilter", "Primary sump") %in% Site), Correct.Original != 0) %>% 
+  filter(Site %in% c("After Drumfilter", "Primary sump")) %>% 
+  filter(Species != "Diatom", 
+         #Classification != "Various", 
+         Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea") %>%
+  group_by(Date, Time, Site, months, month, YEarMonth, year) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>%
+  group_by(Date, Site, months, month, YEarMonth, year) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, 
+              values_fill = list(meanC = 0)) %>% 
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
+  filter(delta != "NA", 
+         delta < 28140000,
+         `Primary sump` < 5000000,
+         delta > 0, 
+         `After Drumfilter` > 0) %>% 
+  left_join(sig_dates, by = "Date") %>% 
+  #filter(p.adj.signif != "ns") %>% 
+  ggplot(., aes(x = `Primary sump`, y = `After Drumfilter`, col = months, size = delta)) +
+  geom_point() +
+  #scale_y_log10() +
+  #scale_x_log10() +
+  facet_wrap(~ p.adj.signif, scales = "free")
+
   
   group_by(Date, Site, months, month, YEarMonth, year) %>% 
   summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
@@ -112,10 +153,37 @@ ps_adf$Site <-  factor(ps_adf$Site,
                        levels = c("Primary sump", "After Drumfilter"))
 
 
+
+ps_adf %>% 
+  pivot_wider(names_from = Site, values_from = Correct.Original, 
+              values_fill = list(Correct.Original = 0)) %>%
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
+  #filter(delta > 0) %>%
+  view()
+  select(Date, Time, Species, Classification, `Primary sump`, `After Drumfilter`) %>% 
+  pivot_longer(cols = `Primary sump`:`After Drumfilter`, names_to = "Site", values_to = "cells") %>% 
+  ggplot(., aes(x = Date, y = cells, col = Site)) +
+  geom_line()
+
+ps_adf %>% 
+  group_by(Date, months, month, Site) %>%
+  summarise(mean_cells = mean(Correct.Original, na.rm = TRUE),
+            n_cells = n(),
+            sd_cells = sd(Correct.Original, na.rm = TRUE),
+            se_cells = sd(Correct.Original, na.rm = TRUE)/sqrt(n())) %>%
+  ggplot(., aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.2, position = pd) +
+  #geom_line(aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+  coord_cartesian(ylim = c(0, 200000))
+
+ps_adf
+
 # # correct levels of FWC_mod classes
 # ps_adf$FWC_mod <- as.factor(ps_adf$FWC_mod)
 # ps_adf$FWC_mod <-  factor(ps_adf$FWC_mod, 
 #                    levels = c("High","Medium", "Low", "Very Low", "Normal"))
+
 
 
 
@@ -128,6 +196,62 @@ Sp.only_filter <- ps_adf %>%
   summarise(meanCells = mean(Correct.Original, na.rm = TRUE)) %>% 
   filter(Classification != "Various", 
          Species != "Diatom")
+
+
+## Pivot wider to see if species are in PS and ADF on the same day 
+ggplotly(Sp.only_filter %>% 
+  pivot_wider(names_from = Site, values_from = meanCells, values_fill = list(meanCells = 0)) %>% 
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
+  filter(delta != 0) %>% 
+  ggplot(.,aes(x = Date, y = delta, col = Classification)) +
+  geom_point())
+
+
+basis <- Sp.only_filter %>% 
+  pivot_wider(names_from = Site, values_from = meanCells, values_fill = list(meanCells = 0)) %>% 
+  mutate(delta = `Primary sump` - `After Drumfilter`) %>% 
+  filter(delta > 0) %>% 
+  select(-delta) %>% 
+  pivot_longer(cols = `Primary sump`:`After Drumfilter`, names_to = "Site", values_to = "cells")
+
+
+# correct the order of sites (PS before ADf)
+basis$Site <- as.factor(basis$Site)
+basis$Site <-  factor(basis$Site, 
+                       levels = c("Primary sump", "After Drumfilter"))
+
+
+ggplot(data = basis, aes(x = Date, y = cells, col = Site)) +
+  geom_line() +
+  scale_y_log10()
+
+basis %>% 
+  group_by(Date, months, month, Site) %>%
+  summarise(mean_cells = mean(cells, na.rm = TRUE),
+            n_cells = n(),
+            sd_cells = sd(cells, na.rm = TRUE),
+            se_cells = sd(cells, na.rm = TRUE)/sqrt(n())) %>%
+  ggplot(., aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd)
+
+
+
+
+
+
+Sp.only_filter %>% 
+  filter(Date %in% basis$Date & Species %in% basis$Species) %>% 
+  group_by(Date, months, month, Site) %>%
+  summarise(mean_cells = mean(meanCells, na.rm = TRUE),
+            n_cells = n(),
+            sd_cells = sd(meanCells, na.rm = TRUE),
+            se_cells = sd(meanCells, na.rm = TRUE)/sqrt(n())) %>%
+  ggplot(., aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd)
+
+
 
 # total biomass per day (all species added together per day)
 
@@ -478,6 +602,16 @@ total_sp_filter %>%
   select(Site, total_biomass) %>% 
   dunn_test(total_biomass ~ Site, p.adjust.method = "bonferroni") %>% 
   view()
+
+sig_dates <- ps_adf %>% 
+  #filter(Date == "2019-03-02") %>% 
+  select(Site, Correct.Original, Date) %>% 
+  group_by(Date) %>% 
+  dunn_test(Correct.Original ~ Site, p.adjust.method = "bonferroni") %>% 
+  select(Date, p.adj.signif)
+
+
+  
 
 
 # Feb signif
@@ -1196,7 +1330,7 @@ main_df %>%
             n_cells = n(),
             sd_cells = sd(meanC, na.rm = TRUE), 
             se_cells = sd(meanC, na.rm = TRUE)/sqrt(n())) %>% 
- ggplot(., aes(x = Site, y = mean_cells, col = Site, group = Site)) +
+  ggplot(., aes(x = Site, y = mean_cells, col = Site, group = Site)) +
   geom_point() +
 #  geom_line() +
   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2) +
