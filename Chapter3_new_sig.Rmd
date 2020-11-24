@@ -207,6 +207,68 @@ ps_adf %>%
   filter(Date == "2019-02-25") %>% 
   view()
 
+
+### Look at species data for significance
+
+sp_base_sig <- ps_adf %>% 
+  filter(Date %in% small_time_date_sig$Date) %>% 
+  select(Date, Site, Species, Classification, Correct.Original) %>%
+  filter(Classification != "Various", 
+         Species != "Diatom") %>%
+  ungroup() %>% 
+  group_by(Date, Species, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = 0)) %>% 
+  filter(`Primary sump` > 0, 
+         `After Drumfilter` > 0) %>% 
+  pivot_longer(-c(Date, Species), names_to = "Site", values_to = "sumC") %>% 
+  group_by(Date, Species) %>% 
+  dunn_test(sumC ~ Site, p.adjust.method = "bonferroni") %>% 
+  select(Date, Species)
+
+
+
+# Dates when specific species were signficantly reduced between PS and ADF
+sig_sp <- ps_adf %>% 
+  filter(Date %in% small_time_date_sig$Date) %>% 
+  select(Date, Site, Species, Classification, Correct.Original) %>%
+  filter(Classification != "Various") %>% 
+  right_join(sp_base_sig, by = c("Date", "Species")) %>% 
+  group_by(Date, Species) %>% 
+  dunn_test(Correct.Original ~ Site, p.adjust.method = "bonferroni") %>% 
+  filter(p.adj.signif != "ns")
+
+
+
+test_it <- ps_adf %>% 
+  filter(Date %in% small_time_date_sig$Date, 
+         Species %in% c("Ceratium fusus", "Gonyaulax polygramma", "Lingulodinium polyedra", 
+                        "Ceratium furca")) %>% 
+  group_by(Species, Date, Site) %>% 
+  summarise(mean_cells = mean(Correct.Original, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(Correct.Original, na.rm = TRUE), 
+            se_cells = sd(Correct.Original, na.rm = TRUE)/sqrt(n()))
+
+manage <- sig_sp %>% 
+  select(Date, Species, p.adj.signif) %>% 
+  mutate(refe = if_else(Species == "Gonyaulax polygramma", 1000000, if_else(Species == "Lingulodinium polyedra", 210000, if_else(Species == "Ceratium furca", 75000, 6000)))) %>% 
+  filter(Species %in% test_it$Species)
+
+
+
+
+ggplot() +
+  geom_point(data = test_it, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+  #geom_line() +
+  geom_errorbar(data = test_it, aes(x = Date, y = mean_cells, col = Site, group = Site, ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.4, position = pd) +
+  facet_wrap(~Species, ncol = 2, scales = "free") +
+  geom_text(data = manage, aes(x = Date, y = refe,label = p.adj.signif)) +
+  theme_classic()
+
+
+
 ```
 
 ## Plot data ###
