@@ -46,14 +46,38 @@ small_diff_dates %>%
   ggplot(., aes(x = Date, y = n, fill = Site)) +
   geom_col(position = "Dodge")
 
-ps_adf %>% 
-  filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
-  select(Date, Time, Site) %>% 
-  distinct() %>% 
-  group_by(Date, Site) %>% 
-  count() %>% 
-  ggplot(., aes(x = Date, y = n, fill = Site)) +
-  geom_col(position = "Dodge")
+
+small_time_date_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC, Date, Time) %>% 
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
+  group_by(Date) %>% 
+  wilcox_test(sumC ~ Site, p.adjust.method = "none", exact = TRUE, detailed = TRUE) %>% 
+  add_significance() %>% 
+  select(Date, p.signif) %>% 
+  mutate(refe = 1700000)
+
+small_date_sig <- ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  select(Site, Correct.Original, Date, Time) %>% 
+  #mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
+  group_by(Date) %>% 
+  wilcox_test(Correct.Original ~ Site, p.adjust.method = "none", exact = TRUE, detailed = TRUE) %>% 
+  add_significance() %>% 
+  select(Date, p.signif) %>% 
+  mutate(refe = 1700000)
+
+# ps_adf %>% 
+#   filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
+#   select(Date, Time, Site) %>% 
+#   distinct() %>% 
+#   group_by(Date, Site) %>% 
+#   count() %>% 
+#   ggplot(., aes(x = Date, y = n, fill = Site)) +
+#   geom_col(position = "Dodge")
 
 
 ## Number of samples per month
@@ -80,27 +104,7 @@ ps_bigger_sig <- ps_adf %>%
   filter(`After Drumfilter` < `Primary sump`)
 
 
-# Dates when significant difference was seen 
-small_date_sig <- ps_adf %>% 
-  filter(Date %in% small_diff_dates$Date) %>% 
-  select(Site, Correct.Original, Date) %>% 
-  group_by(Date) %>% 
-  dunn_test(Correct.Original ~ Site, p.adjust.method = "bonferroni") %>% 
-  select(Date, p.adj.signif) %>% 
-  mutate(refe = 5000000)
 
-
-# Dates when sig diff was seen inclduing times 
-small_time_date_sig <- ps_adf %>% 
-  filter(Date %in% small_diff_dates$Date) %>%
-  group_by(Date, Time, Site) %>% 
-  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
-  ungroup() %>% 
-  select(Site, sumC, Date, Time) %>% 
-  group_by(Date) %>% 
-  dunn_test(sumC ~ Site, p.adjust.method = "bonferroni") %>% 
-  select(Date, p.adj.signif, p.adj, statistic) %>% 
-  mutate(refe = 1700000)
 
 
 
@@ -129,6 +133,91 @@ ps_adf %>%
   #geom_line() +
   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.4, position = pd) +
   theme_classic()
+
+
+
+#### Date vs cells and significant difference ####
+ggplot() +
+  geom_point(data = daily_sig, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+#  geom_line() +
+  geom_errorbar(data = daily_sig, aes(x = Date, y = mean_cells, ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(data = small_time_date_sig %>% 
+              filter(p.adj.signif != "ns"), aes(x = Date, y = refe, label = p.adj.signif)) +
+  theme_classic()
+
+daily_sig %>% 
+  left_join(small_time_date_sig, by = "Date") %>% 
+  ggplot(., aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(aes(y = mean_cells + se_cells, label = if_else(Site == "Primary sump" & p.adj.signif != "ns", p.adj.signif, ""), group = Date), col = "Black", vjust = -1, size = 5) +
+  scale_x_date(breaks = .$Date) +
+  theme_classic()
+  
+
+tester <- daily_sig %>% 
+  left_join(small_time_date_sig, by = "Date")
+
+
+ggplot(tester, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(aes(y = mean_cells + se_cells, label = if_else(Site == "Primary sump" & p.adj.signif != "ns", p.adj.signif, ""), group = Date), col = "Black", vjust = -0.5, size = 7) +
+  scale_x_date(label = date_format("%d/%m"), breaks = tester$Date) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  ylab("Cells/L") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=13, angle = 90),
+axis.text.y = element_text(face="bold", 
+                           size=13))
+
+
+##### small_time_date_sig
+## This is a better graph to use  for DAILY SIG DIFFERENCES
+# Try make dates as factors. 
+tester <- daily_sig %>% 
+  left_join(small_date_sig, by = "Date") %>% 
+  mutate(other_date = factor(format(Date, "%d/%m")))
+
+tester$other_date <- as.factor(tester$other_date)
+
+ggplot(tester, aes(x = other_date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(aes(y = mean_cells + se_cells, label = if_else(Site == "Primary sump" & p.adj.signif != "ns", p.adj.signif, ""), group = other_date), col = "Black", vjust = -0.5, size = 7) +
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  ylab("Cells/L") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+axis.text.x = element_text(face="bold", 
+                           size=13),
+axis.text.y = element_text(face="bold", 
+                           size=13))
+
+
+
+
+
+
+
+
+ggplot(data = daily_sig, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+#  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(aes(x = Date, y = refe, label = p.adj.signif)) +
+  theme_classic()
+
+
+
 
 ggplotly(ggplot() +
   geom_point(data = daily_sig, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
@@ -229,7 +318,7 @@ sp_base_sig <- ps_adf %>%
 
 
 
-# Dates when specific species were signficantly reduced between PS and ADF
+# Dates when specific species were significantly reduced between PS and ADF
 sig_sp <- ps_adf %>% 
   filter(Date %in% small_time_date_sig$Date) %>% 
   select(Date, Site, Species, Classification, Correct.Original) %>%
@@ -270,6 +359,96 @@ ggplot() +
 
 
 ```
+
+
+```{r}
+
+
+## Dates when Sites had similar samples
+small_diff_dates <- ps_adf %>% 
+  filter(Date >= "2019-02-01" & Date <= "2019-03-12") %>% 
+  select(Date, Time, Site) %>% 
+  distinct() %>% 
+  group_by(Date, Site) %>% 
+  count() %>% 
+  pivot_wider(names_from = Site, values_from = n, values_fill = list(n = 0)) %>%
+  mutate(differ = abs(`After Drumfilter` - `Primary sump`)) %>% 
+  filter(`After Drumfilter` > 1, 
+         `Primary sump` > 1, 
+         differ < 3)
+
+small_diff_dates %>% 
+  pivot_longer(-c(differ, Date), names_to = "Site", values_to = "n") %>% 
+  select(-differ) %>% 
+  ggplot(., aes(x = Date, y = n, fill = Site)) +
+  geom_col(position = "Dodge")
+
+small_time_date_sig %>% 
+  view()
+
+# Date vs cells and significant difference 
+ggplot() +
+  geom_point(data = daily_sig, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+#  geom_line() +
+  geom_errorbar(data = daily_sig, aes(x = Date, y = mean_cells, ymin = mean_cells - se_cells, ymax = mean_cells + se_cells, col = Site, group = Site), width=0.4, position = pd) +
+  geom_text(data = small_time_date_sig %>% 
+              filter(p.adj.signif != "ns"), aes(x = Date, y = refe, label = p.adj.signif)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  theme_classic() +
+  theme(text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                           size=14),
+          axis.text.y = element_text(face="bold", 
+                           size=14))
+
+# Graph represents the delta between Sites with sig symbols included
+ps_adf %>% 
+  filter(Date %in% small_diff_dates$Date) %>%
+  group_by(Date, Time, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>% 
+  select(Date, mean_cells, Site) %>% 
+  pivot_wider(names_from = Site, values_from = mean_cells) %>% 
+  left_join(small_time_date_sig, by = "Date") %>% 
+  mutate(delta = `Primary sump`-`After Drumfilter`) %>%
+  ggplot(., aes(x = Date, y = delta)) +
+  geom_point() +
+  geom_line() +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(label = p.adj.signif, vjust = -1.5)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  theme_classic() +
+  theme(text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                           size=14),
+          axis.text.y = element_text(face="bold", 
+                           size=14))
+
+
+ggplot() +
+  geom_point(data = test_it, aes(x = Date, y = mean_cells, col = Site, group = Site), position = pd) +
+  #geom_line() +
+  geom_errorbar(data = test_it, aes(x = Date, y = mean_cells, col = Site, group = Site, ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.4, position = pd) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  facet_wrap(~Species, ncol = 2, scales = "free") +
+  geom_text(data = manage, aes(x = Date, y = refe,label = p.adj.signif)) +
+  theme_classic() +
+  theme(strip.text.x = element_text(face = "italic"), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                           size=14),
+          axis.text.y = element_text(face="bold", 
+                           size=14))
+
+
+```
+
+
+
 
 ## Plot data ###
 

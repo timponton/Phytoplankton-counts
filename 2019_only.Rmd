@@ -43,7 +43,7 @@ library(forcats)
 library(formattable)
 library(extrafont)
 library(ggforce)
-
+library(bdscale)
 library(plotrix)
 options(scipen=5)
 
@@ -1734,7 +1734,7 @@ df %>%
                             month == "10" ~ "Spring",
                             month == "11" ~ "Spring",
                             month == "12" ~ "Summer",
-                            TRUE ~ "Other")) %>% 
+                            TRUE ~ "Other")) %>%
   ggplot(.,aes(x = Date, y = meanC, group = 1)) +
   geom_point(aes(size = n, col = season)) +
   geom_line(aes(col = season)) +
@@ -1751,6 +1751,26 @@ axis.text.x = element_text(face="bold",
                            size=14),
 axis.text.y = element_text(face="bold", 
                            size=14))
+
+
+
+
+df %>% 
+  filter(Date == "2019-03-24") %>%
+  filter(Classification != "Ciliate", 
+         Classification != "Spirotrichea", 
+         Classification != "Litostomatea", 
+         Site == "Primary sump") %>% 
+  group_by(Date, Time) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>%
+  ungroup() %>% 
+  group_by(Date) %>% 
+  summarise(monthlyMean = mean(sumC, na.rm = TRUE), 
+            monthlyN = n(),
+            monthlySD = sd(sumC, na.rm = TRUE), 
+            monthlySE = sd(sumC, na.rm = TRUE)/sqrt(n()))
+
+
 ```
 
 
@@ -2561,7 +2581,6 @@ count_cells_cor <- daily_counts %>%
 
 
 #### Resources (new) ####
-
 
 
 

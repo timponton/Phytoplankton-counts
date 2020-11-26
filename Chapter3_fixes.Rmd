@@ -1015,7 +1015,10 @@ species_df <- main_df %>%
   filter(Classification != "Various", 
          Species != "Diatom")
 
-
+species_df %>% 
+  ungroup() %>% 
+  select(Date) %>% 
+  distinct()
 # daily richness
 daily_richness <- species_df %>%
   group_by(Date, Site) %>% 
@@ -1315,7 +1318,7 @@ main_sp
 ## Total abundance
 total_abun %>% 
   ungroup() %>% 
-  filter(months == "April") %>% 
+  filter(months == "February") %>% 
   select(Site, meanC) %>% 
   dunn_test(meanC ~ Site, p.adjust.method = "bonferroni")
 
