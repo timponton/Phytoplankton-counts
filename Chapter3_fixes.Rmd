@@ -1322,12 +1322,31 @@ total_abun %>%
   select(Site, meanC) %>% 
   dunn_test(meanC ~ Site, p.adjust.method = "bonferroni")
 
+
+
+# Wilcox enitre study period
+main_df %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  wilcox_test(sumC ~ Site, p.adjust.method = "bonferroni") %>% 
+  view()
+
+# Wilcox method monthly
+total_abun %>% 
+  ungroup() %>% 
+  select(Site, meanC, months) %>% 
+  group_by(months) %>% 
+  wilcox_test(meanC ~ Site, p.adjust.method = "bonferroni")
+
+
+
 # Compare on a large scale between sites
 main_df %>% 
   group_by(Date, Time, months, month, Site) %>% 
-  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
-  group_by(Date, Site, months, month) %>% 
-  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  summarise(meanC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  #group_by(Date, Site, months, month) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
   group_by(Site) %>% 
   summarise(mean_cells = mean(meanC, na.rm = TRUE), 
             n_cells = n(),
@@ -1344,6 +1363,19 @@ main_df %>%
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
 
+
+main_df %>% 
+  group_by(Date, Time, months, month, Site) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  group_by(Date, Site, months, month) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  wilcox_test(meanC ~ Site, p.adjust.method = "none")
+
+
+
+
+
 ## Functional group differences 
 main_df %>% 
   filter(Classification != "Various", 
@@ -1359,6 +1391,21 @@ main_df %>%
   ungroup() %>% 
   dunn_test(meanC ~ Site, p.adjust.method = "bonferroni")
 
+# Wilcox
+main_df %>% 
+  filter(Classification != "Various", 
+         Species != "Diatom", 
+         Classification != "Dictyochophyceae") %>% 
+  group_by(Date, Time, Site, months, month, Classification) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  #group_by(Date, Site, months, month, Classification) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(months, Classification) %>% 
+  wilcox_test(sumC ~ Site, p.adjust.method = "none") %>% 
+  view()
+
+wilco
 
 ## Dominant Species
 main_df %>% 
