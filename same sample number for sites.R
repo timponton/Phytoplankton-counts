@@ -107,13 +107,15 @@ daily_plot_data <- Perfect_df %>%
   group_by(Date, Time, Site, months, month) %>% 
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
   ungroup() %>% 
-  group_by(Date, Site) %>% 
+  group_by(Date, Site, months) %>% 
   summarise(mean_cells = mean(sumC, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(sumC, na.rm = TRUE), 
             se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
   left_join(wilcox_dates, by = "Date") %>% 
-  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump"))
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
+  mutate(months = factor(months, levels = c("February", "March", "April"))) %>% 
+  filter(months != "April")
 
 
 
@@ -127,7 +129,10 @@ smaller_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
   scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  coord_cartesian(ylim = c(0, 2500000)) +
+  scale_x_date(date_breaks = "2 day", date_labels = "%d") +
+  coord_cartesian(ylim = c(0, 2200000)) +
+  geom_text(inherit.aes = FALSE, x = as.Date("2019-02-15"), y = 1750000, label = "B", size = 10) +
+  facet_wrap(~months, nrow = 1, scales = "free_x", strip.position="bottom") +
   xlab("Date") +
   ylab("Cells/L") +
   theme_classic() +
@@ -136,10 +141,11 @@ smaller_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site
         axis.text.x = element_text(face="bold", 
                                    size=13),
         axis.text.y = element_text(face="bold", 
-                                   size=13))
+                                   size=13), 
+        legend.position='none', panel.spacing = unit(0, "lines"))
 
 
-
+smaller_than
 
 
   
@@ -151,7 +157,10 @@ bigger_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site,
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
   scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  geom_hline(yintercept = 2500000, linetype = "dashed") +
+  scale_x_date(date_breaks = "2 day", date_labels = "%d") +
+  geom_hline(yintercept = 2200000, linetype = "dashed") +
+  geom_text(inherit.aes = FALSE, x = as.Date("2019-02-15"), y = 10000000, label = "A", size = 10) +
+  facet_wrap(~months, nrow = 1, scales = "free_x") +
   ylab("Cells/L") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
@@ -160,8 +169,12 @@ bigger_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site,
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
         axis.text.y = element_text(face="bold", 
-                                   size=13))
+                                   size=13), 
+        strip.background = element_blank(), 
+        strip.text.x = element_blank(), 
+        legend.position = "top", panel.spacing = unit(0, "lines"))
 
+## This will be USED 
 bigger_than/smaller_than  
   
 
@@ -182,6 +195,9 @@ Perfect_df %>%
 
 ## Check filtered/primary sump (Or percentage of PS)
 # daily (Use this to show relationship between density and filtration ability)
+
+
+## This will be USED
 Perfect_df %>% 
   group_by(Date, Time, Site, months, month, dateTime) %>% 
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
@@ -197,10 +213,14 @@ Perfect_df %>%
   ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
   geom_point(aes(col = p.signif), size = 4) +
   geom_smooth(span = 2, se = FALSE) +
+  geom_label_repel(aes(label = factor(Date)),
+                   box.padding   = 0.35, 
+                   point.padding = 0.5,
+                   segment.color = "grey50") +
   scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
   xlab("Primary Sump Cells/L") +
   ylab("Percentage Filtered (%)") +
-  labs(col = "P Significance") +
+  labs(col = paste("P-value", "\n", "Significance")) +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
         text=element_text(size=17), 
@@ -396,6 +416,9 @@ Perfect_df %>%
 
 
 ## Just check filtered vs adf for when ps was reduced to < 10 000
+
+
+## This will be USED
 Perfect_df %>% 
   group_by(Date, Time, Site, months, month, dateTime) %>% 
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
@@ -410,9 +433,14 @@ Perfect_df %>%
   filter(delta > 0, 
          `After Drumfilter` < 10000, 
          `Primary sump` > 10000) %>%
+  mutate(`Primary sump` = format(`Primary sump`, big.mark = ",", scientific = FALSE)) %>% 
   #filter(delta > 0, n1 > 4, p.signif != "ns") %>% 
   ggplot(., aes(x = filtered_to_PS, y = `After Drumfilter`)) +
   geom_point(size = 4) +
+  geom_label_repel(aes(label = paste("PS", ":", `Primary sump`, "Cells/L")),
+                   box.padding   = 0.35, 
+                   point.padding = 0.5,
+                   segment.color = "grey50") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
         text=element_text(size=17), 
@@ -420,7 +448,9 @@ Perfect_df %>%
                                    size=13),
         axis.text.y = element_text(face="bold", 
                                    size=13)) +
-  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE), 
+                     breaks = seq(0, 10000, 750)) +
+  scale_x_continuous(breaks = seq(0, 100, 5)) +
   ylab("Secondary Sump Cells/L") +
   xlab("Percentage Filtered (%)") +
   labs(col = "Primary Sump Cells/L") +
@@ -669,7 +699,7 @@ wilcox_dates_LP <- Perfect_df_LP %>%
   ungroup() %>% 
   select(Date, Site, sumC) %>% 
   group_by(Date) %>% 
-  wilcox_test(sumC ~ Site, paired = TRUE, p.adjust.method = "none") %>% 
+  wilcox_test(sumC ~ Site, paired = TRUE, p.adjust.method = "bonferroni") %>% 
   add_significance() %>% 
   select(Date, p.signif)
 
@@ -681,19 +711,23 @@ daily_plot_data_LP <- Perfect_df_LP %>%
   group_by(Date, Time, Site, months, month) %>% 
   summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
   ungroup() %>% 
-  group_by(Date, Site) %>% 
+  group_by(Date, Site, months) %>% 
   summarise(mean_cells = mean(sumC, na.rm = TRUE), 
             n_cells = n(),
             sd_cells = sd(sumC, na.rm = TRUE), 
             se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
   left_join(wilcox_dates_LP, by = "Date") %>% 
-  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump"))
+  mutate(Site = recode(Site, `After Drumfilter` = "Secondary Sump", `Primary sump` = "Primary Sump")) %>% 
+  mutate(starting = row_number(Date)) %>% 
+  mutate(date_2 = factor(format(Date, "%d/%m"))) %>% 
+  mutate(months = factor(months, levels = c("February", "March", "April"))) %>% 
+  filter(months != "April")
 
 
+daily_plot_data_LP$date_2 <- as.factor(daily_plot_data_LP$date_2)
+reorder(date_2, starting)
 
-
-
-smaller_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+smaller_than_LP <- ggplot(daily_plot_data_LP, aes(x = reorder(date_2, starting), y = mean_cells, col = Site, group = Site)) +
   geom_point(position = pd) +
   #  geom_line() +
   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
@@ -717,7 +751,7 @@ smaller_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col 
 
 
 
-bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
+bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = format.Date(Date, "%d"), y = mean_cells, col = Site, group = Site)) +
   geom_point(position = pd) +
   #  geom_line() +
   geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
@@ -725,17 +759,21 @@ bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col =
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
   scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  facet_wrap(~months, scales = "free_x", strip.position="bottom") +
   ylab("Cells/L") +
+  xlab("Date") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
-        text=element_text(size=17), 
-        axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank(),
+        text=element_text(size=17),
         axis.text.y = element_text(face="bold", 
-                                   size=13))
+                                   size=13), panel.spacing = unit(0, "lines"))
 
+## This will be USED
 bigger_than_LP
+
+
+
+
 
 
 df %>% 
