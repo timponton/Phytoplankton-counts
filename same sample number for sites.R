@@ -96,7 +96,7 @@ wilcox_dates <- Perfect_df %>%
   group_by(Date) %>% 
   wilcox_test(sumC ~ Site, paired = TRUE) %>% 
   add_significance() %>% 
-  select(Date, p.signif)
+  select(Date, p.signif, n1)
 
 
 
@@ -180,6 +180,361 @@ Perfect_df %>%
   geom_point() +
   coord_cartesian(ylim = c(-2500000, 2500000))
 
+## Check filtered/primary sump (Or percentage of PS)
+# daily (Use this to show relationship between density and filtration ability)
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, n1 >= 4, p.signif != "ns") %>% 
+  ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
+  geom_point(aes(col = p.signif), size = 4) +
+  geom_smooth(span = 2, se = FALSE) +
+  scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  xlab("Primary Sump Cells/L") +
+  ylab("Percentage Filtered (%)") +
+  labs(col = "P Significance") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, n1 >= 4, p.signif != "ns") %>% 
+  ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
+  geom_point(aes(col = p.signif), size = 4) +
+  #geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = FALSE) +
+  scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  xlab("Primary Sump Cells/L") +
+  ylab("Percentage Filtered (%)") +
+  labs(col = "P Significance") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+
+### Maybe try and select adjacent days and check filtered patterns. selected days should have lots of samples. 
+
+# Fluctuations in a specifc day 
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  filter(Date >= "2019-02-18" & Date <= "2019-02-23") %>%
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = 0)) %>% 
+  view()
+  
+ggplot(., aes(x = dateTime, y = sumC, fill = Site)) +
+  geom_bar(stat = "Identity", position = "Dodge")
+geom_point(position = pd) +
+  geom_line()
+
+
+
+
+## Just check filtered vs adf for all
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  #group_by(Date, Site) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, 
+         `After Drumfilter` < 2500000) %>%
+  filter(delta > 0, n1 > 4, p.signif != "ns") %>% 
+  ggplot(., aes(x = filtered_to_PS, y = `After Drumfilter`)) +
+  geom_point(aes(col = p.signif), size = 4) +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 3), se = FALSE) +
+  geom_hline(yintercept = 10000) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  ylab("Secondary Sump Cells/L") +
+  xlab("Percentage Filtered (%)") +
+  labs(col = "P Significance") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+
+
+
+####
+
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  #group_by(Date, Site) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, 
+         `After Drumfilter` < 2500000) %>%
+  filter(delta > 0, n1 > 4, p.signif != "ns") %>% 
+  mutate(perc_case = case_when(filtered_to_PS > 0 & filtered_to_PS < 50 ~ "<50",
+                               filtered_to_PS >= 50 & filtered_to_PS < 80 ~ "50-79", 
+                               filtered_to_PS >= 80 ~ ">80",
+                               TRUE ~ "Other"), 
+         perc_case = factor(perc_case, levels = c("<50", "50-79", ">80"))) %>% 
+  ggplot(., aes(x = `Primary sump`, y = `After Drumfilter`)) +
+  geom_point(aes(col = p.signif)) +
+  facet_wrap(~perc_case, ncol = 1, scales = "free") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  coord_cartesian(xlim = c(0, 2500000)) +
+  ylab("Secondary Sump Cells/L") +
+  xlab("Primary Sump Cells/L") +
+  labs(col = "Percentage Filtered (%)") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, 
+         `After Drumfilter` < 2500000) %>%
+  filter(delta > 0, n1 > 4, p.signif != "ns") %>% 
+  mutate(perc_case = case_when(filtered_to_PS > 0 & filtered_to_PS < 50 ~ "<50",
+                               filtered_to_PS >= 50 & filtered_to_PS < 55 ~ "50-54", 
+                               filtered_to_PS >= 55 & filtered_to_PS < 60 ~ "55-59",
+                               filtered_to_PS >= 60 & filtered_to_PS <= 65 ~ "60-65",
+                               TRUE ~ "Other"), 
+         perc_case = factor(perc_case, levels = c("<50", "50-54", "55-59", "60-65"))) %>% 
+  ggplot(., aes(x = `Primary sump`, y = `After Drumfilter`)) +
+  geom_point(aes(col = perc_case), size = 4) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  #coord_cartesian(xlim = c(0, 2500000)) +
+  ylab("Secondary Sump Cells/L") +
+  xlab("Primary Sump Cells/L") +
+  labs(col = "Percentage Filtered (%)") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+###
+
+
+## Just check filtered vs adf for when ps was reduced to < 10 000
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  #group_by(Date, Site) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, 
+         `After Drumfilter` < 10000, 
+         `Primary sump` > 10000) %>%
+  #filter(delta > 0, n1 > 4, p.signif != "ns") %>% 
+  ggplot(., aes(x = filtered_to_PS, y = `After Drumfilter`)) +
+  geom_point(size = 4) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13)) +
+  scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  ylab("Secondary Sump Cells/L") +
+  xlab("Percentage Filtered (%)") +
+  labs(col = "Primary Sump Cells/L") +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+################### Below this is scrap work ####
+
+
+# Time-ly
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  #group_by(Date, Site) %>% 
+  #summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(p.signif != "ns", 
+         delta > 0) %>% 
+  ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
+  geom_point(aes(col = p.signif), size = 2) +
+  geom_smooth(method = "loess", span = 2) +
+  coord_cartesian(xlim = c(0, 2000000), ylim = c(0, 100)) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+
+
+
+
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  ggplot(., aes(x = Date, y = filtered_to_PS)) +
+  geom_point(aes(col = p.signif, size = `Primary sump`)) +
+  geom_line() +
+  #coord_cartesian(xlim = c(0, 200000)) +
+  theme_classic() +
+  theme(plot.title = element_text(hjust = 0.5), 
+        text=element_text(size=17), 
+        axis.text.x = element_text(face="bold", 
+                                   size=13),
+        axis.text.y = element_text(face="bold", 
+                                   size=13))
+
+
+# Faceted days 
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  #filter(`Primary sump` < 200000, 
+         #filtered_to_PS < 100) %>% 
+  ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
+  geom_point(aes(col = p.signif)) +
+  geom_smooth() +
+  facet_wrap(~Date, scales = "free")
+  
+
+
+
+
+
+
+##
+
+
+# DateTime with filtered percentage
+ggplotly(Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = Site, values_from = sumC, values_fill = list(sumC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>% 
+  ggplot(., aes(x = dateTime, y = filtered_to_PS)) +
+  geom_point(aes(col = factor(Date))) +
+  geom_line())
+
+
+
 
 
 #### Species data
@@ -230,7 +585,7 @@ Total_dates_LP <- df %>%
          Classification != "Spirotrichea", 
          Classification != "Litostomatea", 
          Site %in% c("Primary sump", "After Drumfilter"), 
-         Species == "Ceratium furca") %>% 
+         Species == "Lingulodinium polyedra") %>% 
   select(Date, Site) %>% 
   distinct() %>% 
   mutate(dum = 1) %>% 
@@ -245,7 +600,7 @@ Total_dates_LP <- df %>%
 Density_total_LP <- df %>% 
   filter(Date %in% Total_dates_LP$Date, 
          Site %in% c("Primary sump", "After Drumfilter"), 
-         Species == "Ceratium furca")
+         Species == "Lingulodinium polyedra")
 
 
 adequate_dates_LP <- Density_total_LP %>%
@@ -293,7 +648,7 @@ Perfect_df_LP <- df %>%
          Classification != "Litostomatea", 
          Site %in% c("Primary sump", "After Drumfilter")) %>% 
   filter(dateTime %in% adequate_date_times_LP$dateTime) %>% 
-  filter(Species == "Ceratium furca") %>% 
+  filter(Species == "Lingulodinium polyedra") %>% 
   mutate(Site = factor(Site, levels = c("Primary sump", "After Drumfilter")))
   
 
@@ -370,7 +725,6 @@ bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col =
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
   scale_y_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  geom_hline(yintercept = 50000, linetype = "dashed") +
   ylab("Cells/L") +
   theme_classic() +
   theme(plot.title = element_text(hjust = 0.5), 
@@ -381,8 +735,7 @@ bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = Date, y = mean_cells, col =
         axis.text.y = element_text(face="bold", 
                                    size=13))
 
-bigger_than_LP/smaller_than_LP 
-
+bigger_than_LP
 
 
 df %>% 
