@@ -25,6 +25,95 @@ Total_dates <- df %>%
          Date != "2019-11-21", 
          Date != "2019-11-22")
 
+#### Statistics ####
+Total_dates %>% 
+  ungroup() %>% 
+  filter(Date <= "2019-03-31") %>% 
+  select(Date) %>% 
+  distinct() %>% 
+  count()
+
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC) %>% 
+  group_by(Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
+  #view() %>% 
+  ggplot(., aes(x = Site, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd)
+
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC) %>% 
+  #group_by(Date) %>% 
+  wilcox_test(sumC ~ Site, paired = TRUE) %>% 
+  add_significance() %>% 
+  view()
+
+
+
+# L. polyedra
+Perfect_df_LP %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC) %>% 
+  group_by(Site) %>% 
+  summarise(mean_cells = mean(sumC, na.rm = TRUE), 
+            n_cells = n(),
+            sd_cells = sd(sumC, na.rm = TRUE), 
+            se_cells = sd(sumC, na.rm = TRUE)/sqrt(n())) %>%
+  view()  
+  ggplot(., aes(x = Site, y = mean_cells, col = Site, group = Site)) +
+  geom_point(position = pd) +
+  #  geom_line() +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd)
+
+Perfect_df_LP %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Site, sumC) %>% 
+  #group_by(Date) %>% 
+  wilcox_test(sumC ~ Site, paired = TRUE) %>% 
+  add_significance() %>% 
+  view()
+
+
+
+# Filter ability
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month, dateTime) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  group_by(Date, Site) %>% 
+  summarise(meanC = mean(sumC, na.rm = TRUE)) %>% 
+  pivot_wider(names_from = Site, values_from = meanC, values_fill = list(meanC = NA)) %>% 
+  mutate(abs_delta = abs(`Primary sump` - `After Drumfilter`), 
+         delta = `Primary sump` - `After Drumfilter`, 
+         filtered_to_PS = abs_delta/`Primary sump`*100) %>% 
+  left_join(wilcox_dates, by = "Date") %>%
+  filter(delta > 0, n1 >= 4, p.signif != "ns") %>% 
+  ungroup() %>% 
+  view() %>% 
+  summarise(meanF = median(filtered_to_PS))
+
+
+
+
+
+######
+
 # Use date to reference what to filter from main df
 Density_total <- df %>% 
   filter(Date %in% Total_dates$Date, 
@@ -98,7 +187,19 @@ wilcox_dates <- Perfect_df %>%
   add_significance() %>% 
   select(Date, p.signif, n1)
 
-
+Perfect_df %>% 
+  group_by(Date, Time, Site, months, month) %>% 
+  summarise(sumC = sum(Correct.Original, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  select(Date, Site, sumC) %>% 
+  group_by(Date) %>% 
+  wilcox_test(sumC ~ Site, paired = TRUE) %>% 
+  add_significance() %>% 
+  filter(p.signif != "ns") %>% 
+  mutate(group2= recode(group2, "After Drumfilter" = "Secondary Sump"), 
+         group1= recode(group1, "Primary sump" = "Primary Sump")) %>% 
+  select(-`.y.`) %>% 
+  view()
 
 ## Plot daily differences between Sites for each day (mean ± ste)
 pd <- position_dodge(width = 0.4)
@@ -117,14 +218,20 @@ daily_plot_data <- Perfect_df %>%
   mutate(months = factor(months, levels = c("February", "March", "April"))) %>% 
   filter(months != "April")
 
+daily_plot_data %>% 
+  ungroup() %>% 
+  select(Date) %>% 
+  distinct() %>% 
+  count()
 
 
+  
 
 
 smaller_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
-  geom_point(position = pd) +
+  geom_point(position = pd, size = 2) +
   #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd, size = 1.5) +
   geom_text(aes(y = mean_cells + se_cells, 
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
@@ -150,9 +257,9 @@ smaller_than
 
   
 bigger_than <- ggplot(daily_plot_data, aes(x = Date, y = mean_cells, col = Site, group = Site)) +
-  geom_point(position = pd) +
+  geom_point(position = pd, size = 2) +
   #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd, size = 1.5) +
   geom_text(aes(y = mean_cells + se_cells, 
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +
@@ -211,12 +318,13 @@ Perfect_df %>%
   left_join(wilcox_dates, by = "Date") %>%
   filter(delta > 0, n1 >= 4, p.signif != "ns") %>% 
   ggplot(., aes(x = `Primary sump`, y = filtered_to_PS)) +
-  geom_point(aes(col = p.signif), size = 4) +
-  geom_smooth(span = 2, se = FALSE) +
+  geom_point(aes(col = p.signif), size = 5) +
+  #geom_smooth(span = 2, se = FALSE) +
+  #stat_regline_equation() +
   geom_label_repel(aes(label = factor(Date)),
-                   box.padding   = 0.35, 
-                   point.padding = 0.5,
-                   segment.color = "grey50") +
+                   box.padding = unit(0.35, "lines"),
+                   point.padding = unit(1, "lines"),
+                   segment.color = "grey50", size = 5, force = 10) +
   scale_x_continuous(labels=function(x) format(x, big.mark = ",", scientific = FALSE)) +
   xlab("Primary Sump Cells/L") +
   ylab("Percentage Filtered (%)") +
@@ -228,7 +336,6 @@ Perfect_df %>%
                                    size=13),
         axis.text.y = element_text(face="bold", 
                                    size=13))
-
 
 
 
@@ -461,6 +568,11 @@ Perfect_df %>%
                                    size=13),
         axis.text.y = element_text(face="bold", 
                                    size=13))
+
+
+
+
+
 
 
 ################### Below this is scrap work ####
@@ -723,6 +835,15 @@ daily_plot_data_LP <- Perfect_df_LP %>%
   mutate(months = factor(months, levels = c("February", "March", "April"))) %>% 
   filter(months != "April")
 
+daily_plot_data_LP %>% 
+  ungroup() %>% 
+  select(Date) %>% 
+  distinct() %>% 
+  count()
+
+
+
+
 
 daily_plot_data_LP$date_2 <- as.factor(daily_plot_data_LP$date_2)
 reorder(date_2, starting)
@@ -752,9 +873,9 @@ smaller_than_LP <- ggplot(daily_plot_data_LP, aes(x = reorder(date_2, starting),
 
 
 bigger_than_LP <- ggplot(daily_plot_data_LP, aes(x = format.Date(Date, "%d"), y = mean_cells, col = Site, group = Site)) +
-  geom_point(position = pd) +
+  geom_point(position = pd, size = 2) +
   #  geom_line() +
-  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd) +
+  geom_errorbar(aes(ymin = mean_cells - se_cells, ymax = mean_cells + se_cells), width=0.2, position = pd, size = 1.5) +
   geom_text(aes(y = mean_cells + se_cells, 
                 label = if_else(Site == "Primary Sump" & p.signif != "ns", p.signif, "")), 
             col = "Black", size = 7, vjust = -0.5) +

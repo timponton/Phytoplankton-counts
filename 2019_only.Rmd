@@ -45,6 +45,8 @@ library(extrafont)
 library(ggforce)
 library(bdscale)
 library(plotrix)
+library(ggrepel)
+library(ggpubr)
 options(scipen=5)
 
 loadfonts(device = "win", quiet = TRUE)
